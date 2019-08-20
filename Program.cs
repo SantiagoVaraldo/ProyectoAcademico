@@ -7,7 +7,8 @@ namespace Hola_Mundo
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine("Sebastian de los Santos!");
+            Console.WriteLine("Joaquín");
+            Console.WriteLine("Santiago");
         }
     }
 }
