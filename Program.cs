@@ -10,6 +10,7 @@ namespace Hola_Mundo
             Console.WriteLine("Joaquín");
             Console.WriteLine("Santiago");
             Console.WriteLine("Sebastian de los Santos");
+            Console.WriteLine("Seba");
         }
     }
 }
