@@ -27,6 +27,6 @@ namespace ExerciseOne
 			// Imprimimos el contenido en la consola y esperamos una tecla para terminar
 			Console.WriteLine(content);
 			Console.ReadKey();
-		}
+        }
 	}
 }
