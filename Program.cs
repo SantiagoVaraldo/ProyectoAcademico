@@ -25,8 +25,21 @@ namespace ExerciseOne
 			string content;
 			content = downloader.Download();
 			// Imprimimos el contenido en la consola y esperamos una tecla para terminar
-			Console.WriteLine(content);
-			Console.ReadKey();
-        }
+			TagFinder.findTags(content);
+/*
+			Console.WriteLine("Antes de foreach");
+			//Mostrar contenido aca
+			
+			foreach (var linea in TagFinder.findTags(content)){
+				Console.WriteLine(linea);
+			}
+			Console.WriteLine("Despues de foreach");
+
+ */
+			
+			
+			
+			//Console.ReadKey();
+		}
 	}
 }
