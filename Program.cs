@@ -25,7 +25,10 @@ namespace ExerciseOne
 			string content;
 			content = downloader.Download();
 			// Imprimimos el contenido en la consola y esperamos una tecla para terminar
-			TagFinder.findTags(content);
+			TagFinder objeto = new TagFinder();
+			var lista = objeto.findTags(content);
+			var lista1 = objeto.FindAtributos(content);
+			ImprimirEtiquetas.Imprimir(lista1);
 /*
 			Console.WriteLine("Antes de foreach");
 			//Mostrar contenido aca
