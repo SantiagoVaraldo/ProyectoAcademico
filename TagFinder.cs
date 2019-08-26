@@ -42,8 +42,11 @@ namespace ExerciseOne
             }
             
             //TESTING
-            foreach (var linea in tagsAndAtributes){
-				Console.WriteLine(linea);
+            foreach (string linea in tagsAndAtributes){
+                if (linea != "")
+                {
+                Console.WriteLine(linea);
+                }
 			}
 			
             return tagsAndAtributes;
