@@ -58,17 +58,22 @@ namespace ExerciseOne
                 bool FoundAtributo = false;        //indica si se encontro una tag
                     
                 foreach (char caracter in linea) {  //se fija caracter por caracter de content
+
                 
                     if (caracter.Equals(fin) || found && caracter.Equals(barra)){ //Si es un tag terminando, un espacio, o el siguiente caracter despeus de un < es un /, pone found false, y continua a la siguiente linea.
                         found = false;
-                        continue;
+                        //continue;
                     }
-                    if (caracter.Equals(fin) || caracter.Equals(barra) || FoundAtributo && caracter.Equals(espacio)){ //Si es un tag terminando, un espacio, o el siguiente caracter despeus de un < es un /, pone found false, y continua a la siguiente linea.
+                    if (caracter.Equals(fin) || caracter.Equals(barra) || (FoundAtributo && caracter.Equals(espacio))){ //Si es un tag terminando, un espacio, o el siguiente caracter despeus de un < es un /, pone found false, y continua a la siguiente linea.
+                        if (FoundAtributo && caracter.Equals(espacio))
+                        {
+                            tag+= "\n";
+                        }
                         FoundAtributo = false;
-                        continue;
+                        //continue;
                     }
                     
-                    if (found && FoundAtributo){ //si se encontro un <, escribe los caracteres al string tag.
+                    if (found && FoundAtributo && caracter!= '"'){ //si se encontro un <, escribe los caracteres al string tag.
                         tag += caracter;
                     }
 
@@ -76,7 +81,7 @@ namespace ExerciseOne
                         
                         found = true;
                     }
-                    if (caracter.Equals(espacio))
+                    if (caracter.Equals(espacio)&&found)
                     {
                         FoundAtributo = true;
                     }
