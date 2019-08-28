@@ -24,9 +24,28 @@ namespace ExerciseOne
 			// Pedimos al descargador que descargue el contenido
 			string content;
 			content = downloader.Download();
-			// Imprimimos el contenido en la consola y esperamos una tecla para terminar
-			Console.WriteLine(content);
-			Console.ReadKey();
+			// creamos un objeto TagFinder ya que ahora sus metodos son de instancia y no de clase
+			TagFinder objeto = new TagFinder();
+			// agregamos a una lista los tags y los atributos, para eso llamamos a ambos metodos 
+			var lista = objeto.findTags(content);
+			var lista1 = objeto.FindAtributos(content);
+			// utilizando la clase ImprimirEtiquetas que tiene un solo metodo de clase imprimimos la lista
+			ImprimirEtiquetas.Imprimir(lista1);
+			//EncontrarEtiquetas.Tags(lista1);
+/*
+			Console.WriteLine("Antes de foreach");
+			//Mostrar contenido aca
+			
+			foreach (var linea in TagFinder.findTags(content)){
+				Console.WriteLine(linea);
+			}
+			Console.WriteLine("Despues de foreach");
+
+ */
+			
+			
+			
+			//Console.ReadKey();
 		}
 	}
 }
