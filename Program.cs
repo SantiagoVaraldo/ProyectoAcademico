@@ -26,10 +26,12 @@ namespace ExerciseOne
 			content = downloader.Download();
 			// creamos un objeto TagFinder ya que ahora sus metodos son de instancia y no de clase
 			TagFinder objeto = new TagFinder();
+			AttributeFinder objeto2 = new AttributeFinder();
 			// agregamos a una lista los tags y los atributos, para eso llamamos a ambos metodos 
 			var lista = objeto.findTags(content);
-			var lista1 = objeto.FindAtributos(content);
+			var lista1 = objeto2.FindAtributos(content);
 			// utilizando la clase ImprimirEtiquetas que tiene un solo metodo de clase imprimimos la lista
+			ImprimirEtiquetas.Imprimir(lista);
 			ImprimirEtiquetas.Imprimir(lista1);
 			//EncontrarEtiquetas.Tags(lista1);
 /*
