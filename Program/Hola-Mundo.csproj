@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>pii_2019_2_equipo9</RootNamespace>
+    <RootNamespace>Hola_Mundo</RootNamespace>
   </PropertyGroup>
 
 </Project>
