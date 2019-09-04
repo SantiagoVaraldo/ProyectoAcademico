@@ -31,8 +31,8 @@ namespace ExerciseOne
 			var lista = objeto.findTags(content);
 			var lista1 = objeto2.FindAtributos(content);
 			// utilizando la clase ImprimirEtiquetas que tiene un solo metodo de clase imprimimos la lista
-			ImprimirEtiquetas.Imprimir(lista);
-			ImprimirEtiquetas.Imprimir(lista1);
+			PrintTags.Print(lista);
+			PrintTags.Print(lista1);
 			//EncontrarEtiquetas.Tags(lista1);
 /*
 			Console.WriteLine("Antes de foreach");
