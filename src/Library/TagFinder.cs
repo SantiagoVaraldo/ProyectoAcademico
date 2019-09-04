@@ -3,6 +3,22 @@ using System.IO;
 using System.Net;
 using System.Collections;
 
+
+/* ------------------------------------------------------------------------------------------------------------------------
+NOMBRE: TagFinder
+DESCRIPCION: esta clase se encarga de encontar los tags y los atributos de un codigo HTML y guardarlos en una lista
+             para esto, la clase TagFinder tiene 2 metodos, el metodo findTags recibe un codigo HTML y devuelve los
+             tags en una lista. El metodo findAtributes recibe un codigo HTML y agrega los atributos a la misma lista.
+PATRON EXPERT: 
+SRP: esta clase tiene la responsabilidad de encontrar tags y atributos de un codigo HTML, tiene solo una razon de cambio,
+     la razon de cambio es cambiar la manera de encontrar tags y atributos en un codigo HTML.
+COLABORACIONES: esta clase colabora con las clases Tag y Atribute, ya que va a enviar mensajes a estas clases para crear
+                los objetos.
+---------------------------------------------------------------------------------------------------------------------------
+ */
+
+// debe recorrer el codigo HTML, cada vez que recorra una linea, debe crear objetos atributos y luego un objeto tag con la lista de atributos
+
 namespace ExerciseOne
 {
 	
