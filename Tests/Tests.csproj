@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Program\Hola-Mundo.csproj" />
+    <ProjectReference Include="..\src\Library\Library.csproj" />
   </ItemGroup>
 
 </Project>
