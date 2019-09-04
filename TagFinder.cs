@@ -10,6 +10,7 @@ SRP: esta clase tiene la responsabilidad de encontrar tags y atributos de un cod
 ---------------------------------------------------------------------------------------------------------------------------
  */
 
+// debe recorrer el codigo HTML, cada vez que recorra una linea, debe crear objetos atributos y luego un objeto tag con la lista de atributos
 namespace ExerciseOne
 {
 

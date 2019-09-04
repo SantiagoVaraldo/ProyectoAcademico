@@ -11,6 +11,8 @@ SRP: esta clase presenta una unica responsabilidad que es imrpimir los elementos
 ------------------------------------------------------------------------------------------------------------------------------
  */
 
+ // se puede separar en una clase Format que me devuelva una lista con lo que voy a imprimir y una clase Print que la recorra e imprima
+
 namespace ExerciseOne
 {
          public class PrintTags
@@ -19,13 +21,17 @@ namespace ExerciseOne
                   /// metodo static que imprime los elementos de una lista.
                   /// </summary>
                   /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
-                  public static void Print(ArrayList lista)
+                  public static void Print(ArrayList listaTags)
                   {
-                           foreach (string linea in lista)
+                           foreach (Tag elemento in listaTags)
                            {
-                                    if (linea != "")
+                                    Console.WriteLine(elemento.Name + "\n");
+                                    if (elemento.ListaAtributos != null)
                                     {
-                                             Console.WriteLine(linea);
+                                             foreach(Atribute Elemento in elemento.ListaAtributos)
+                                             {
+                                                      Console.WriteLine(Elemento.Clave + "=" + Elemento.Valor);
+                                             }
                                     }
                            }
                   }
