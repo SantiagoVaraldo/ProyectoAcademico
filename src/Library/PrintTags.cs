@@ -12,8 +12,6 @@ COLABORACIONES: colabora con la clase Format que es quien le pasa la lista de lo
 ------------------------------------------------------------------------------------------------------------------------------
  */
 
- // se puede separar en una clase Format que me devuelva una lista con lo que voy a imprimir y una clase Print que la recorra e imprima
-
 namespace ExerciseOne
 {
          public class PrintTags
@@ -22,18 +20,11 @@ namespace ExerciseOne
                   /// metodo static que imprime los elementos de una lista.
                   /// </summary>
                   /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
-                  public static void Print(ArrayList listaTags)
+                  public static void Print(ArrayList lista)
                   {
-                           foreach (Tag elemento in listaTags)
+                           foreach (var elemento in lista)
                            {
-                                    Console.WriteLine(elemento.Name + "\n");
-                                    if (elemento.ListaAtributos != null)
-                                    {
-                                             foreach(Atribute Elemento in elemento.ListaAtributos)
-                                             {
-                                                      Console.WriteLine(Elemento.Clave + "=" + Elemento.Valor);
-                                             }
-                                    }
+                                    Console.WriteLine(elemento);
                            }
                   }
          }
