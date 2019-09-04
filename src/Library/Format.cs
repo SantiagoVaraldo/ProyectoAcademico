@@ -29,7 +29,7 @@ namespace ExerciseOne
                                     Format.lista_formated.Add(elemento.Name + "\n");
                                     if (elemento.ListaAtributos != null)
                                     {
-                                             foreach(Atribute Elemento in elemento.ListaAtributos)
+                                             foreach(Attribute Elemento in elemento.ListaAtributos)
                                              {
                                                       Format.lista_formated.Add(Elemento.Clave + "=" + Elemento.Valor);
                                              }
