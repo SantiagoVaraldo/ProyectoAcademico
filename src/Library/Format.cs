@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 /*----------------------------------------------------------------------------------------------------------------------------
 NOMBRE: Format
@@ -22,11 +23,11 @@ namespace ExerciseOne
                   /// metodo static que crea formatea una lista para ser impresa.
                   /// </summary>
                   /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
-                  public static ArrayList formater(ArrayList lista)
+                  public static ArrayList formater(List<Tag> lista)
                   {
                            foreach (Tag elemento in lista)
                            {
-                                    Format.lista_formated.Add(elemento.Name + "\n");
+                                    Format.lista_formated.Add(elemento.Name);
                                     if (elemento.ListaAtributos != null)
                                     {
                                              foreach(Attribute Elemento in elemento.ListaAtributos)
