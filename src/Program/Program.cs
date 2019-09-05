@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace ExerciseOne
 {
@@ -25,7 +27,9 @@ namespace ExerciseOne
 			string content;
 			content = downloader.Download();
 
-			Finder.Find(content);
+			List<Tag> listaTags = Finder.Find(content);
+			ArrayList ListaParaImprimir = Format.formater(listaTags);
+			PrintTags.Print(ListaParaImprimir);
 
 			// creamos un objeto TagFinder ya que ahora sus metodos son de instancia y no de clase
 			//TagFinder objeto = new TagFinder();
