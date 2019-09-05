@@ -18,12 +18,27 @@ namespace ExerciseOne
 {
     public class Tag
     {
-        public List<Attribute> ListaAtributos = new List<Attribute>();
-        public string Name;
-        public Tag (string name, List<Attribute> lista_atributos)
+        private List<Attribute> listaAtributos = new List<Attribute>();
+        public List<Attribute> ListaAtributos
         {
-            this.Name = name;
-            this.ListaAtributos = lista_atributos;
+            get { return this.listaAtributos;}
+            set { this.listaAtributos = value; }
+        }
+        private string name;
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+        public Tag(string Name, List<Attribute> Lista_atributos)
+        {
+            this.Name = Name;
+            this.ListaAtributos = Lista_atributos;
+        }
+        public Tag(string Name)
+        {
+            this.Name = Name;
+            this.ListaAtributos = null;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ExerciseOne
 	public static class Program
 	{
 		//variable constante con el nombre del archivo
-		const String fileName = @"..\..\..\test.html";	
+		const String fileName = @"..\..\..\..\Library\test.html";	
 		/// <summary>
 		/// Punto de entrada
 		/// </summary>
@@ -24,15 +24,18 @@ namespace ExerciseOne
 			// Pedimos al descargador que descargue el contenido
 			string content;
 			content = downloader.Download();
+
+			Finder.Find(content);
+
 			// creamos un objeto TagFinder ya que ahora sus metodos son de instancia y no de clase
-			TagFinder objeto = new TagFinder();
-			AttributeFinder objeto2 = new AttributeFinder();
+			//TagFinder objeto = new TagFinder();
+			//AttributeFinder objeto2 = new AttributeFinder();
 			// agregamos a una lista los tags y los atributos, para eso llamamos a ambos metodos 
-			var lista = objeto.findTags(content);
-			var lista1 = objeto2.FindAtributos(content);
+			//var lista = objeto.findTags(content);
+			//var lista1 = objeto2.FindAtributos(content);
 			// utilizando la clase ImprimirEtiquetas que tiene un solo metodo de clase imprimimos la lista
-			PrintTags.Print(lista);
-			PrintTags.Print(lista1);
+			//PrintTags.Print(lista);
+			//PrintTags.Print(lista1);
 			//EncontrarEtiquetas.Tags(lista1);
 /*
 			Console.WriteLine("Antes de foreach");
