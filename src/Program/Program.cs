@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace ExerciseOne
 {
@@ -23,34 +24,17 @@ namespace ExerciseOne
 			Downloader downloader = new Downloader(uri);
 			// Pedimos al descargador que descargue el contenido
 			string content;
+			//Carga el contenido del archivo en la variable content
 			content = downloader.Download();
 
-			Finder.Find(content);
+			//Busca las tags y sus correspondientes atributos
+			List<Tag> tags = Finder.Find(content);
 
-			// creamos un objeto TagFinder ya que ahora sus metodos son de instancia y no de clase
-			//TagFinder objeto = new TagFinder();
-			//AttributeFinder objeto2 = new AttributeFinder();
-			// agregamos a una lista los tags y los atributos, para eso llamamos a ambos metodos 
-			//var lista = objeto.findTags(content);
-			//var lista1 = objeto2.FindAtributos(content);
-			// utilizando la clase ImprimirEtiquetas que tiene un solo metodo de clase imprimimos la lista
-			//PrintTags.Print(lista);
-			//PrintTags.Print(lista1);
-			//EncontrarEtiquetas.Tags(lista1);
-/*
-			Console.WriteLine("Antes de foreach");
-			//Mostrar contenido aca
-			
-			foreach (var linea in TagFinder.findTags(content)){
-				Console.WriteLine(linea);
-			}
-			Console.WriteLine("Despues de foreach");
+			//Formatea las tags y sus atributos para mostrarlos de la manera deseada
+			List<string> formatedTags = Formater.Format(tags);
 
- */
-			
-			
-			
-			//Console.ReadKey();
+			//Muestra en pantalla las tags con sus atributos
+			Printer.Print(formatedTags);
 		}
 	}
 }

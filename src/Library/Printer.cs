@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 /*----------------------------------------------------------------------------------------------------------------------------
 NOMBRE: PrintTags.
@@ -18,18 +18,18 @@ COLABORACIONES: colabora con la clase Format que es quien le pasa la lista de lo
 
 namespace ExerciseOne
 {
-         public class PrintTags
-         {
-                  /// <summary>
-                  /// metodo static que imprime los elementos de una lista.
-                  /// </summary>
-                  /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
-                  public static void Print(ArrayList lista)
-                  {
-                           foreach (var elemento in lista)
-                           {
-                                    Console.WriteLine(elemento);
-                           }
-                  }
-         }
+    public class Printer
+    {
+        /// <summary>
+        /// metodo static que imprime los elementos de una lista.
+        /// </summary>
+        /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
+        public static void Print(List<string> lista)
+        {
+            foreach (var elemento in lista)
+            {
+                Console.WriteLine(elemento);
+            }
+        }
+    }
 }

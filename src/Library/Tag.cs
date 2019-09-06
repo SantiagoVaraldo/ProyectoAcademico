@@ -21,7 +21,7 @@ namespace ExerciseOne
         private List<Attribute> listaAtributos = new List<Attribute>();
         public List<Attribute> ListaAtributos
         {
-            get { return this.listaAtributos;}
+            get { return this.listaAtributos; }
             set { this.listaAtributos = value; }
         }
         private string name;
