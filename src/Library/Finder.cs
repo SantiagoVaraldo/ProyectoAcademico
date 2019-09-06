@@ -60,12 +60,16 @@ namespace ExerciseOne
                         foreach (string atribute in lineElements)
                         {
                             //separa entre name y value los atributos
-                            string[] atributeElements = atribute.Trim().Split("=");
-                            string name = atributeElements[0];
-                            string value = atributeElements[1].Trim('"');
-                            //crea el atributo y lo guarda en attributes
-                            Attribute atr = new Attribute(name, value);
-                            attributes.Add(atr);
+                            string[] atributeElements = atribute.Split("=");
+                            if (atributeElements.Length > 1)
+                            {
+                                string name = atributeElements[0];
+                                string value = atributeElements[1].Trim('"');
+                                //crea el atributo y lo guarda en attributes
+                                Attribute atr = new Attribute(name, value);
+                                attributes.Add(atr);
+                            }
+
 
                         }
                         t.ListaAtributos = attributes;
