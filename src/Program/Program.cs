@@ -2,10 +2,6 @@
 using System.IO;
 using System.Reflection;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using System.Collections;
-=======
->>>>>>> master
 
 namespace ExerciseOne
 {
@@ -31,14 +27,8 @@ namespace ExerciseOne
 			//Carga el contenido del archivo en la variable content
 			content = downloader.Download();
 
-<<<<<<< HEAD
-			List<Tag> listaTags = Finder.Find(content);
-			ArrayList ListaParaImprimir = Format.formater(listaTags);
-			PrintTags.Print(ListaParaImprimir);
-=======
 			//Busca las tags y sus correspondientes atributos
 			List<Tag> tags = Finder.Find(content);
->>>>>>> master
 
 			//Formatea las tags y sus atributos para mostrarlos de la manera deseada
 			List<string> formatedTags = Formater.Format(tags);
