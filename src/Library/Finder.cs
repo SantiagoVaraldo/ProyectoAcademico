@@ -18,9 +18,9 @@ COLABORACIONES: esta clase colabora con las clases Tag y Atribute, ya que va a e
 
 namespace ExerciseOne
 {
-    public static class Finder
+    public class Finder
     {
-        public static List<Tag> Find(string content)
+        public List<Tag> Find(string content)
         {
             //to-do aprolijar comentarios.
 

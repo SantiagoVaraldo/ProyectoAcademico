@@ -28,14 +28,16 @@ namespace ExerciseOne
 			content = downloader.Download();
 
 			//Busca las tags y sus correspondientes atributos
-			List<Tag> tags = Finder.Find(content);
+			Finder finder = new Finder();
+			List<Tag> tags = finder.Find(content);
 
 			//Formatea las tags y sus atributos para mostrarlos de la manera deseada
-			List<string> formatedTags = Formater.Format(tags);
+			Formater formater = new Formater();
+			List<string> formatedTags = formater.Format(tags);
 
 			//Muestra en pantalla las tags con sus atributos
-			Printer p = new Printer();
-			p.Print(formatedTags);
+			Printer printer = new Printer();
+			printer.Print(formatedTags);
 		}
 	}
 }
