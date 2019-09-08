@@ -34,7 +34,8 @@ namespace ExerciseOne
 			List<string> formatedTags = Formater.Format(tags);
 
 			//Muestra en pantalla las tags con sus atributos
-			Printer.Print(formatedTags);
+			Printer p = new Printer();
+			p.Print(formatedTags);
 		}
 	}
 }
