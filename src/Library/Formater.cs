@@ -26,13 +26,13 @@ namespace ExerciseOne
         {
             foreach (Tag t in tags)
             {
-                Console.WriteLine(t.Name);
+                lista_formated.Add(t.Name);
                 if (t.ListaAtributos != null)
                 {
                     foreach (Attribute att in t.ListaAtributos)
                     {
                         string attributeInfo = att.Clave + "=" + att.Valor;
-                        Console.WriteLine(attributeInfo);
+                        lista_formated.Add(attributeInfo);
                     }
                 }
 

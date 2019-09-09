@@ -18,7 +18,7 @@ COLABORACIONES: colabora con la clase Format que es quien le pasa la lista de lo
 
 namespace ExerciseOne
 {
-    public class Printer
+    public class Printer : IPrinter
     {
         /// <summary>
         /// metodo static que imprime los elementos de una lista.
