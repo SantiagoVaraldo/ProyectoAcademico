@@ -17,12 +17,12 @@ namespace ExerciseOne
 {
     public class Formater
     {
-        public static List<string> lista_formated = new List<string>();
+        public List<string> lista_formated = new List<string>();
         /// <summary>
         /// metodo static que crea formatea una lista para ser impresa.
         /// </summary>
         /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
-        public static List<string> Format(List<Tag> tags)
+        public List<string> Format(List<Tag> tags)
         {
             foreach (Tag t in tags)
             {

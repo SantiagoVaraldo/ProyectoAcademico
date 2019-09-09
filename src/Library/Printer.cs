@@ -24,7 +24,7 @@ namespace ExerciseOne
         /// metodo static que imprime los elementos de una lista.
         /// </summary>
         /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
-        public static void Print(List<string> lista)
+        public void Print(List<string> lista)
         {
             foreach (var elemento in lista)
             {
