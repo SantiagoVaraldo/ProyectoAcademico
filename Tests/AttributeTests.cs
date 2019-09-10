@@ -35,5 +35,14 @@ namespace Tests
                            Assert.Equal(attribute.Valor, ValorExpected);
                            Assert.Equal(attribute.Clave, ClaveExpected);
                   }
+                  [Fact]
+                  public void ValorYClaveInvalidos()
+                  {
+                           string ClaveExpected = null;
+                           string ValorExpected = null;
+                           Attribute attribute = new Attribute("", "");
+                           Assert.Equal(attribute.Valor, ValorExpected);
+                           Assert.Equal(attribute.Clave, ClaveExpected);
+                  }
          }
 }
