@@ -1,27 +1,25 @@
 using System;
 using System.Collections.Generic;
 
-/*----------------------------------------------------------------------------------------------------------------------------
-NOMBRE: Format
-DESCRIPCION: esta clase se encarga de darle formato a los elementos de una lista para ser impresos.
-PATRON EXPERT:
-SRP: esta clase presenta una unica responsabilidad que es dar formato a elements para que puedan ser impresos adecuadamente.
-COLABORACIONES: colabora con la clase TagFinder que le brinda una lista con elementos para ser formateados.
-
-------------------------------------------------------------------------------------------------------------------------------
- */
-
-// se puede separar en una clase Format que me devuelva una lista con lo que voy a imprimir y una clase Print que la recorra e imprima
-
 namespace ExerciseOne
 {
+    /// <summary>
+    /// NOMBRE: Format
+    /// DESCRIPCION: esta clase se encarga de darle formato a los elementos de una lista para ser impresos.
+    /// PATRON EXPERT: conoce una List<string> que va a ser llenada de la manera deseada con elementos do otra lista
+    ///                List<Tag> que se le brinda por parametros, conoce la informacion necesaria para cumplir 
+    ///                con su responsabilidad.
+    /// SRP: esta clase presenta una unica responsabilidad que es dar formato a elements para que puedan ser impresos adecuadamente.
+    /// COLABORACIONES: colabora con la clase TagFinder que le brinda una lista con elementos para ser formateados.
+    /// </summary>
     public class Formater
     {
         public List<string> lista_formated = new List<string>();
         /// <summary>
-        /// metodo static que crea formatea una lista para ser impresa.
+        /// /// metodo que crea una lista formateada para ser impresa.
         /// </summary>
-        /// <param name="lista">recibe un elemento de tipo ArrayList para ser recorrido</param>
+        /// <param name="tags">List<Tag> una lista con objetos Tag para ser formateada y preparada para imprimir</param>
+        /// <returns>List<string> una lista de string formateada lista para imprimir</returns>
         public List<string> Format(List<Tag> tags)
         {
             foreach (Tag t in tags)
