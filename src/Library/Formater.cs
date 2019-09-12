@@ -9,8 +9,8 @@ namespace ExerciseOne
     /// PATRON EXPERT: conoce una List<string> que va a ser llenada de la manera deseada con elementos do otra lista
     ///                List<Tag> que se le brinda por parametros, conoce la informacion necesaria para cumplir 
     ///                con su responsabilidad.
-    /// SRP: esta clase presenta una unica responsabilidad que es dar formato a elements para que puedan ser impresos adecuadamente.
-    /// COLABORACIONES: colabora con la clase TagFinder que le brinda una lista con elementos para ser formateados.
+    /// SRP: esta clase presenta una unica responsabilidad que es dar formato a elementos para que puedan ser impresos adecuadamente.
+    /// COLABORACIONES: colabora con la clase Finder que le brinda una lista con objetos Tag para ser formateados.
     /// </summary>
     public class Formater
     {

@@ -7,11 +7,12 @@ namespace ExerciseOne
     /// <summary>
     /// NOMBRE: Tag.
     /// DESCRIPCION: esta clase se encarga de crear objetos con los tags del codigo HTML.
-    /// PATRON EXPERT: esta clase cumple con el patron expert, porque es experta en conocer el nombre de un tag.
-    /// SRP: esta clase presenta una unica responsabilidad que es crear los objetos, su unica razon de cambio es
+    /// PATRON EXPERT: esta clase cumple con el patron expert, porque es experta en conocer el nombre de un Tag
+    ///                y una lista de objetos Attribute para crear el objeto Tag.
+    /// SRP: esta clase presenta una unica responsabilidad que es crear los objetos Tag, su unica razon de cambio es
     ///      modificar la manera de crear objetos Tag.
-    /// COLABORACIONES: colabora con la clase Atribute ya que recibe como parametro de creacion del Tag una lista 
-    ///                 de objetos Atribute.
+    /// COLABORACIONES: colabora con la clase Attribute ya que debe conocer una lista 
+    ///                 de objetos Attribute.
     /// </summary>
     public class Tag
     {

@@ -6,9 +6,7 @@ namespace ExerciseOne
          /// <summary>
          /// NOMBRE: IPrinter.
          /// DESCRIPCION: interface Iprinter con la firma Print
-         /// PATRON EXPERT:
-         /// SRP:
-         /// COLABORACIONES: 
+         /// PATRON POLIMORFISMO:
          /// </summary>
          public interface IPrinter
          {

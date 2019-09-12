@@ -7,10 +7,11 @@ namespace ExerciseOne
     /// NOMBRE: PrintTags.
     /// DESCRIPCION: esta clase se encarga de imprimir una lista que se le pasa por parametros.
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque tiene la información necesaria para poder 
-    ///                cumplir con la responsabilidad de imprimir tags.
+    ///                cumplir con la responsabilidad. no necesita conocer mas nada, solo se encarga de imprimir por 
+    ///                consola una lista formateada.
     /// SRP: esta clase presenta una unica responsabilidad que es imrpimir los elementos de una lista, tiene una sola 
     ///      razon de cambio que es cambiar el metodo de impresion.
-    /// COLABORACIONES: colabora con la clase Format que es quien le pasa la lista de lo que debe imprimir.
+    /// COLABORACIONES: colabora con IPrinter (interface con la firma Print).
     /// </summary>
     public class Printer : IPrinter
     {
