@@ -6,7 +6,7 @@ namespace ExerciseOne
     /// NOMBRE: Attribute.
     /// DESCRIPCION: Esta clase se encarga de crear objetos con los atributos del codigo HTML.
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-    ///                de los datos, de la clase Attribute.
+    ///                de los datos para crear los objetos Attribute, conoce calve y valor del atributo.
     /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es crear los objetos, su unica 
     ///      razon de cambio es modificar la manera de crear objetos Attribute.
     /// COLABORACIONES: No colabora con ninguna otra clase.

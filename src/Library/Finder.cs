@@ -10,10 +10,10 @@ namespace ExerciseOne
     /// DESCRIPCION: Esta clase se encarga de encontar los tags y los atributos de un codigo HTML y guardar los objetos
     ///              creados en una lista.              
     /// PATRON EXPERT: La clase Finder es la experta en conocer la informacion adecuada para llevar a cabo su tarea y 
-    ///                cumplir con su responsabilidad, conoce el contenido que va a utilizar para encontrar los tags.
-    /// SRP: esta clase tiene la responsabilidad de encontrar tags y atributos de un codigo HTML, tiene solo una razon de cambio,
-    ///      la razon de cambio es cambiar la manera de encontrar tags y atributos en un codigo HTML.
-    /// COLABORACIONES: esta clase colabora con las clases Tag y Atribute, ya que va a enviar mensajes a estas clases para crear
+    ///                cumplir con su responsabilidad.
+    /// SRP: esta clase tiene la responsabilidad de encontrar tags y atributos en un string, tiene solo una razon de cambio,
+    ///      la razon de cambio es cambiar la manera de encontrar tags y atributos en un string.
+    /// COLABORACIONES: esta clase colabora con las clases Tag y Attribute, ya que va a enviar mensajes a estas clases para crear
     ///                 los objetos.
     /// </summary>
     public class Finder
@@ -29,7 +29,6 @@ namespace ExerciseOne
         /// en el codigo</returns>
         public List<Tag> Find(string content)
         {
-            //to-do aprolijar comentarios.
 
             List<Tag> tags = new List<Tag>();
             string pattern = "<\\w+((\\s+\\w+(\\s*=\\s*(?:\".*?\"|'.*?'|[^'\">\\s]+))?)+\\s*|\\s*)\\/?>";
