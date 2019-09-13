@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-/* ------------------------------------------------------------------------------------------------------------------------
-NOMBRE: Finder
-DESCRIPCION: esta clase se encarga de encontar los tags y los atributos de un codigo HTML y guardarlos en una lista
-             para esto, la clase TagFinder tiene 2 metodos, el metodo findTags recibe un codigo HTML y devuelve los
-             tags en una lista. El metodo Find recibe un codigo HTML y agrega los atributos a la misma lista.
-PATRON EXPERT: 
-SRP: esta clase tiene la responsabilidad de encontrar tags y atributos de un codigo HTML, tiene solo una razon de cambio,
-     la razon de cambio es cambiar la manera de encontrar tags y atributos en un codigo HTML.
-COLABORACIONES: esta clase colabora con las clases Tag y Atribute, ya que va a enviar mensajes a estas clases para crear
-                los objetos.
----------------------------------------------------------------------------------------------------------------------------
- */
-
 namespace ExerciseOne
 {
+    /// <summary>
+    /// NOMBRE: Finder
+    /// DESCRIPCION: Esta clase se encarga de encontar los tags y los atributos de un codigo HTML y guardar los objetos
+    ///              creados en una lista.              
+    /// PATRON EXPERT: La clase Finder es la experta en conocer la informacion adecuada para llevar a cabo su tarea y 
+    ///                cumplir con su responsabilidad.
+    /// SRP: esta clase tiene la responsabilidad de encontrar tags y atributos en un string, tiene solo una razon de cambio,
+    ///      la razon de cambio es cambiar la manera de encontrar tags y atributos en un string.
+    /// COLABORACIONES: esta clase colabora con las clases Tag y Attribute, ya que va a enviar mensajes a estas clases para crear
+    ///                 los objetos.
+    /// </summary>
     public class Finder
     {
+        /// <summary>
+        /// este metodo Find recorre el codigo y busca los tags y los atributos, la busqueda la realiza por medio de 
+        /// expresiones regulares, buscando y leyendo en internet encontramos que esta era una buena manera de poder
+        /// realizar esta accion, creemos que es un codigo mas claro y sencillo si se utiliza expresiones regulares
+        /// </summary>
+        /// <param name="content">codigo HTML en forma de string brindado por la clase Download listo para ser
+        /// recorrido y utilizado</param>
+        /// <returns>List<Tag> una lista de objetos tag creada a partir de los tag y atributos que se encontraron
+        /// en el codigo</returns>
         public List<Tag> Find(string content)
         {
-            //to-do aprolijar comentarios.
 
             List<Tag> tags = new List<Tag>();
             string pattern = "<\\w+((\\s+\\w+(\\s*=\\s*(?:\".*?\"|'.*?'|[^'\">\\s]+))?)+\\s*|\\s*)\\/?>";
