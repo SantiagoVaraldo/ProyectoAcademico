@@ -10,7 +10,7 @@ namespace ExerciseOne
     /// creados en una lista.
     /// 
     /// PATRON EXPERT: La clase Finder es experta en conocer la informacion adecuada para llevar a cabo su tarea y 
-    /// cumplir con su responsabilidad (explicado en la descripción).
+    /// cumplir con su responsabilidad, conoce una lista de objetos Tag. (explicado en la descripción).
     /// 
     /// SRP: Esta clase tiene la responsabilidad de encontrar tags y atributos en un string, tiene solo una razon de cambio,
     /// la razon de cambio es cambiar la manera de encontrar tags y atributos en un string.
