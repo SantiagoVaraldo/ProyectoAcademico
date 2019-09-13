@@ -18,23 +18,5 @@ namespace Tests
                            listaString.Add("ClaveAtributo");
                            listaString.Add("ValorAtributo");
                   }
-                  [Fact]
-                  public void CreacionDeUnTagConUnSoloParametro_SinAtibutos()
-                  {
-                           Tag tag = new Tag("personas");
-                           string NameExpected = "personas";
-                           List<Attribute> ListaAtributosExpected = null;
-                           Assert.Equal(NameExpected, tag.Name);
-                           Assert.Equal(ListaAtributosExpected, tag.ListaAtributos);
-                  }
-                  [Fact]
-                  public void CreacionDeUnTagConDosParametros_ListaxributosNull()
-                  {
-                           Tag tag = new Tag("personas", null);
-                           string NameExpected = "personas";
-                           List<Attribute> ListaAtributosExpected = null;
-                           Assert.Equal(NameExpected, tag.Name);
-                           Assert.Equal(ListaAtributosExpected, tag.ListaAtributos);
-                  }
          }
 }
