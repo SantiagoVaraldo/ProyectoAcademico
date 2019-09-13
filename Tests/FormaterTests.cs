@@ -9,7 +9,7 @@ namespace Tests
     public class FormaterTests
     {
         [Fact]
-        public void CreacionCorrectaDeUnTkonDosParametros()
+        public void ListFormatedCorrectly()
         {
             Formater format = new Formater();
             List<Attribute> listaAtributos = new List<Attribute>();
@@ -19,12 +19,29 @@ namespace Tests
             ListaTags.Add(new Tag("personas",listaAtributos));
             List<string> listaFormated = format.Format(ListaTags);
             List<string> ListaExpected = new List<string>{"personas","pedro=15","marcos=13"};
-            for (int i=0; i <= ListaExpected.Count; i++)
+            for (int i=0; i < ListaExpected.Count; i++)
             {
-                Assert.Equal(ListaExpected[i],listaFormated[i]);
+                string elemento = listaFormated[i];
+                string elementoExpected = ListaExpected[i];
+                Assert.Equal(elemento,elementoExpected);
             }
-            //CollectionAssert.AreEquivalent(ListaExpected, format.Format(ListaTags));
-
+        }
+        [Fact]
+        public void ListFormatedCorrectlyWithoutAttributes()
+        {
+            Formater format = new Formater();
+            List<Attribute> listaAtributos = new List<Attribute>();
+            List<Tag> ListaTags = new List<Tag>();
+            ListaTags.Add(new Tag("personas"));
+            ListaTags.Add(new Tag("pedro"));
+            List<string> listaFormated = format.Format(ListaTags);
+            List<string> ListaExpected = new List<string>{"personas","pedro"};
+            for (int i=0; i < ListaExpected.Count; i++)
+            {
+                string elemento = listaFormated[i];
+                string elementoExpected = ListaExpected[i];
+                Assert.Equal(elemento,elementoExpected);
+            }
         }
     }
 }
