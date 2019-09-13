@@ -36,7 +36,7 @@ namespace Tests
                            Assert.Equal(attribute.Clave, ClaveExpected);
                   }
                   [Fact]
-                  public void ValorYClaveInvalidos()
+                  public void InvalidKeyAndValue()
                   {
                            string ClaveExpected = null;
                            string ValorExpected = null;
