@@ -4,13 +4,18 @@ using System.Collections.Generic;
 namespace ExerciseOne
 {
     /// <summary>
-    /// NOMBRE: Format
-    /// DESCRIPCION: esta clase se encarga de darle formato a los elementos de una lista para ser impresos.
-    /// PATRON EXPERT: conoce una List<string> que va a ser llenada de la manera deseada con elementos do otra lista
-    ///                List<Tag> que se le brinda por parametros, conoce la informacion necesaria para cumplir 
-    ///                con su responsabilidad.
-    /// SRP: esta clase presenta una unica responsabilidad que es dar formato a elementos para que puedan ser impresos adecuadamente.
-    /// COLABORACIONES: colabora con la clase Finder que le brinda una lista con objetos Tag para ser formateados.
+    /// NOMBRE: Formater
+    /// 
+    /// DESCRIPCION: Esta clase se encarga de darle formato a los elementos de una lista para ser impresos 
+    /// por una subclase de IPrinter (interfaz).
+    /// 
+    /// PATRON EXPERT: Conoce una List<string> que va a ser llenada de la manera deseada con elementos de otra lista
+    /// List<Tag> que se le brinda por parametros, conoce la informacion necesaria para cumplir 
+    /// con su responsabilidad.
+    /// 
+    /// SRP: Esta clase presenta una unica responsabilidad que es dar formato a elementos para que puedan ser impresos adecuadamente.
+    /// 
+    /// COLABORACIONES: Colabora con la clase Finder que le brinda una lista con objetos Tag para ser formateados.
     /// </summary>
     public class Formater
     {
