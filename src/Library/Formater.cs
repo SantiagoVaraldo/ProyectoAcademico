@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace ExerciseOne
@@ -21,7 +20,7 @@ namespace ExerciseOne
     {
         public List<string> lista_formated = new List<string>();
         /// <summary>
-        /// /// metodo que crea una lista formateada para ser impresa.
+        /// metodo que crea una lista formateada para ser impresa.
         /// </summary>
         /// <param name="tags">List<Tag> una lista con objetos Tag para ser formateada y preparada para imprimir</param>
         /// <returns>List<string> una lista de string formateada lista para imprimir</returns>
