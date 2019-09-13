@@ -7,8 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/pii_2019_2_equipo9.csproj",
-                "${workspaceFolder}/Hola-Mundo.csproj",
+                "${workspaceFolder}/src/Program/Program.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -20,8 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/pii_2019_2_equipo9.csproj",
-                "${workspaceFolder}/Hola-Mundo.csproj",
+                "${workspaceFolder}/src/Program/Program.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -34,8 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/pii_2019_2_equipo9.csproj",
-                "${workspaceFolder}/Hola-Mundo.csproj",
+                "${workspaceFolder}/src/Program/Program.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

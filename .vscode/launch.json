@@ -10,10 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/pii_2019_2_equipo9.dll",
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/Hola-Mundo.dll",
+            "program": "${workspaceFolder}/src/Program/bin/Debug/netcoreapp2.2/Program.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/src/Program",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
