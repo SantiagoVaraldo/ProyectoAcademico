@@ -6,13 +6,18 @@ namespace ExerciseOne
 {
          /// <summary>
          /// NOMBRE: Downloader
-         /// DESCRIPCION: Descarga archivos de una ubicación de la forma "http://server/directory/file" o
-         /// 	        "file:///drive:/directory/file"
-	/// PATRON EXPERT: esta clase conoce una URL, tiene la informacion necesaria para descargar los contenidos
-         ///                de esa URL 
-	/// SRP: su unica responsabilidad es descargar los contenidos de una URL, su unica razon de cambio es modificar
-         ///      la manera de descargar dichos contenidos 
-	/// COLABORACIONES: no colabora con ninguna de las clases creadas por nosotros
+         /// 
+         /// DESCRIPCION: Descarga archivos locales y los parsea a string, de una direccion con el formato: "file:///drive:/directory/file",
+         /// siendo posible modificar la clase para que acepte descargas remotas con este formato de direccion: "http://server/directory/file".
+         /// 
+         /// PATRON EXPERT: Esta clase conoce una URL, tiene la informacion necesaria para descargar los contenidos
+         /// de esa URL.
+         /// 
+         /// SRP: Su unica responsabilidad es descargar los contenidos de una URL, su unica razon de cambio es modificar
+         /// la manera de descargar dichos contenidos.
+         /// 
+         /// COLABORACIONES: No colabora con ninguna de las clases creadas por nosotros.
+
          /// </summary>
          public class Downloader
          {
