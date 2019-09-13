@@ -7,7 +7,7 @@ namespace ExerciseOne
          /// DESCRIPCION: Interface Iprinter con la firma Print
          /// PATRON POLIMORFISMO: Decidimos usar el patron polimorfismo pensando a futuro, imaginando que podriamos utilizar 
          /// otras maneras de mostrar el resultado de nuestro programa. Utilizando esta interfaz podremos crear otras clases
-         /// hijas de ella, controlando que tambien tengan un metodo Print().
+         /// que implementen dicha interfaz, controlando que tambien tengan un metodo Print().
          /// </summary>
          public interface IPrinter
          {
