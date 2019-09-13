@@ -9,7 +9,7 @@ namespace Tests
     public class TagTests
     {
         [Fact]
-        public void CreacionCorrectaDeUnTagConDosParametros()
+        public void TagWithName_And_ListAttributes()
         {
             List<Attribute> listaAtributos = new List<Attribute>();
             listaAtributos.Add(new Attribute("pedro","15"));
@@ -21,7 +21,7 @@ namespace Tests
             Assert.Equal(ListaAtributosExpected,tag.ListaAtributos);
         }
         [Fact]
-        public void CreacionDeUnTagConUnSoloParametro_SinAtributos()
+        public void TagWithout_ListAttributes()
         {
             Tag tag = new Tag("personas");
             string NameExpected = "personas";
@@ -30,7 +30,7 @@ namespace Tests
             Assert.Equal(ListaAtributosExpected,tag.ListaAtributos);
         }
         [Fact]
-        public void CreacionDeUnTagConDosParametros_ListaAtributosNull()
+        public void TagWithName_And_ListAttributesNull()
         {
             Tag tag = new Tag("personas",null);
             string NameExpected = "personas";

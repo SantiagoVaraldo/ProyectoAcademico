@@ -4,13 +4,17 @@ using System.Collections.Generic;
 namespace ExerciseOne
 {
     /// <summary>
-    /// NOMBRE: PrintTags.
-    /// DESCRIPCION: esta clase se encarga de imprimir una lista que se le pasa por parametros.
+    /// NOMBRE: Printer.
+    /// 
+    /// DESCRIPCION: Esta clase se encarga de imprimir por consola una lista de Tags.
+    /// 
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque tiene la información necesaria para poder 
-    ///                cumplir con la responsabilidad. no necesita conocer mas nada, solo se encarga de imprimir por 
-    ///                consola una lista formateada.
-    /// SRP: esta clase presenta una unica responsabilidad que es imrpimir los elementos de una lista, tiene una sola 
-    ///      razon de cambio que es cambiar el metodo de impresion.
+    /// cumplir con su responsabilidad. No necesita conocer mas nada, solo se encarga de imprimir por 
+    /// consola una lista formateada.
+    /// 
+    /// SRP: Esta clase presenta una unica responsabilidad que es imprimir los elementos de una lista. Tiene una sola 
+    /// razon de cambio que es cambiar la manera en la cual se imprime los contenidos de la lista de Tags.
+    /// 
     /// COLABORACIONES: colabora con IPrinter (interface con la firma Print).
     /// </summary>
     public class Printer : IPrinter
