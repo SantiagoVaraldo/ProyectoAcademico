@@ -1,7 +1,4 @@
-using System;
 using Xunit;
-using ExerciseOne;
-using System.Collections.Generic;
 using Attribute = ExerciseOne.Attribute;
 
 namespace Tests
