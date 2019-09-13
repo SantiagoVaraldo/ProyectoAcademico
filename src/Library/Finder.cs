@@ -8,13 +8,16 @@ namespace ExerciseOne
     /// <summary>
     /// NOMBRE: Finder
     /// DESCRIPCION: Esta clase se encarga de encontar los tags y los atributos de un codigo HTML y guardar los objetos
-    ///              creados en una lista.              
-    /// PATRON EXPERT: La clase Finder es la experta en conocer la informacion adecuada para llevar a cabo su tarea y 
-    ///                cumplir con su responsabilidad.
-    /// SRP: esta clase tiene la responsabilidad de encontrar tags y atributos en un string, tiene solo una razon de cambio,
-    ///      la razon de cambio es cambiar la manera de encontrar tags y atributos en un string.
-    /// COLABORACIONES: esta clase colabora con las clases Tag y Attribute, ya que va a enviar mensajes a estas clases para crear
-    ///                 los objetos.
+    /// creados en una lista.
+    /// 
+    /// PATRON EXPERT: La clase Finder es experta en conocer la informacion adecuada para llevar a cabo su tarea y 
+    /// cumplir con su responsabilidad (explicado en la descripción).
+    /// 
+    /// SRP: Esta clase tiene la responsabilidad de encontrar tags y atributos en un string, tiene solo una razon de cambio,
+    /// la razon de cambio es cambiar la manera de encontrar tags y atributos en un string.
+    /// 
+    /// COLABORACIONES: esta clase colabora con las clases Tag y Attribute, ya que va a enviar mensajes a estas clases para 
+    /// instanciar los objetos.
     /// </summary>
     public class Finder
     {
