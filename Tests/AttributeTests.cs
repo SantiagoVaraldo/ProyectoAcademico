@@ -10,7 +10,7 @@ namespace Tests
          {
 
                   [Fact]
-                  public void ClaveInvalida()
+                  public void InvalidKey()
                   {
                            string expected = null;
                            string valor = "nombre";
@@ -19,7 +19,7 @@ namespace Tests
                   }
 
                   [Fact]
-                  public void ValorInvalido()
+                  public void InvalidValue()
                   {
                            string expected = null;
                            string clave = "clave";
@@ -27,7 +27,7 @@ namespace Tests
                            Assert.Equal(attribute.Valor, expected);
                   }
                   [Fact]
-                  public void ValorYClaveValidos()
+                  public void ValueAndKeyValid()
                   {
                            string ClaveExpected = "color";
                            string ValorExpected = "rojo";
