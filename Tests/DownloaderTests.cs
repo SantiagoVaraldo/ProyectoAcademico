@@ -9,13 +9,13 @@ using System.Net;
 
 namespace Tests
 {
-         public class DownloaderTests
-         {
-                  [Fact]
-                  public void CorrectDownload()
-                  {
+    public class DownloaderTests
+    {
+        [Fact]
+        public void CorrectDownload()
+        {
 
-                           string expected = @"<html>
+            string expected = @"<html>
 	                                <body>
 		                                <font color=""blue"" size=""3"">
 			                                Ingrese su nombre 
@@ -27,24 +27,24 @@ namespace Tests
 		                                </font>
 	                                </body>
                                 </html>";
-                           const String fileName = @"..\..\..\..\src\Library\test.html";
-                           String path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), fileName);
-                           UriBuilder builder = new UriBuilder("file", "", 0, path);
-                           String uri = builder.Uri.ToString();
-                           Downloader downloader = new Downloader(uri);
-                           string actual = downloader.Download();
-                           expected = expected.Replace(" ", "");
-                           actual = actual.Replace(" ", "");
-                           Assert.Equal(expected, actual);
+            const String fileName = @"..\..\..\..\src\Library\test.html";
+            String path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), fileName);
+            UriBuilder builder = new UriBuilder("file", "", 0, path);
+            String uri = builder.Uri.ToString();
+            Downloader downloader = new Downloader(uri);
+            string actual = downloader.Download();
+            expected = expected.Replace(" ", "");
+            actual = actual.Replace(" ", "");
+            Assert.Equal(expected, actual);
 
 
-                  }
-                  [Fact]
-                  public void CorrectCreationDownloader()
-                  {
-                           Downloader downloader = new Downloader(@"..\..\..\..\Library\test.html");
-                           string urlExpected = @"..\..\..\..\Library\test.html";
-                           Assert.Equal(urlExpected, downloader.Url);
-                  }
-         }
+        }
+        [Fact]
+        public void CorrectCreationDownloader()
+        {
+            Downloader downloader = new Downloader(@"..\..\..\..\Library\test.html");
+            string urlExpected = @"..\..\..\..\Library\test.html";
+            Assert.Equal(urlExpected, downloader.Url);
+        }
+    }
 }
