@@ -24,7 +24,7 @@ namespace Tests
                            Assert.Equal(attribute.Valor, expected);
                   }
                   [Fact]
-                  public void ValueAndKeyValid()
+                  public void ValidValueAndkey()
                   {
                            string ClaveExpected = "color";
                            string ValorExpected = "rojo";
