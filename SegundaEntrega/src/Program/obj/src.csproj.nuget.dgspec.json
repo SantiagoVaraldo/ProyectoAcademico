@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\src.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\src.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\src.csproj",
+        "projectName": "src",
+        "projectPath": "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\src.csproj",
+        "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
