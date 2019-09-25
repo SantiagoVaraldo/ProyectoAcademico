@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 
 namespace Library
 {
-         // crear una clase singleton para aplicar el patron con World
-         public class World
+         public class Level
          {
-                  public World(string name, int size)
+                  public Level(string name, World world)
                   {
                            this.name = name;
-                           this.size = size;
+                           this.world = world;
                   }
                   private string name;
-                  private int size;
+                  private World world;
                   public string Name
                   {
                            get
@@ -24,17 +23,6 @@ namespace Library
                                     {
                                              this.name = value;
                                     }
-                           }
-                  }
-                  public int Size
-                  {
-                           get
-                           {
-                                    return this.size;
-                           }
-                           set
-                           {
-                                    // verificar que size sea mayor que 0
                            }
                   }
          }
