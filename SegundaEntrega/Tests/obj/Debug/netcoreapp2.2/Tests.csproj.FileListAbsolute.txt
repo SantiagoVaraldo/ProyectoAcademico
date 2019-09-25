@@ -1,0 +1,4 @@
+C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csprojAssemblyReference.cache
+C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CoreCompileInputs.cache
+C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfoInputs.cache
+C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfo.cs
