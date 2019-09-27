@@ -19,13 +19,15 @@ namespace Library
          // crear una clase singleton para aplicar el patron con World
          public class World
          {
-                  public World(string name, int size)
+                  public World(string Name, int Length, int Width)
                   {
-                           this.name = name;
-                           this.size = size;
+                           this.Name = Name;
+                           this.Length = Length;
+                           this.Width = Width;
                   }
                   private string name;
-                  private int size;
+                  private int length;
+                  private int width;
                   public string Name
                   {
                            get
@@ -40,17 +42,32 @@ namespace Library
                                     }
                            }
                   }
-                  public int Size
+                  public int Length
                   {
                            get
                            {
-                                    return this.size;
+                                    return this.length;
                            }
                            set
                            {
-                                    if (size > 0)
+                                    if (value != null) // ¿si es negativo?
                                     {
-                                             this.size = size;// verificar que size sea mayor que 0
+                                             this.length = value;
+                                    }
+
+                           }
+                  }
+                  public int Width
+                  {
+                           get
+                           {
+                                    return this.width;
+                           }
+                           set
+                           {
+                                    if (value != null) // ¿si es negativo?
+                                    {
+                                             this.width = value;
                                     }
 
                            }
