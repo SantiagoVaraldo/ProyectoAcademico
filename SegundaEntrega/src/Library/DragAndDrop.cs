@@ -18,9 +18,9 @@ namespace Library
 {
     public class DragAndDrop : Element
     {
-        public Image(string Name, int PositionY, int PositionX, int Length, int Width, Level Level)
+        public DragAndDrop(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string ImagePath)
+        :base(Name, PositionY, PositionX, Length, Width, Level, ImagePath)
         {
-            base(Name, PositionY, PositionX, Length, Width, Level);
         }
     }
 }
