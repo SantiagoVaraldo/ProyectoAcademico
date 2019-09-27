@@ -12,3 +12,17 @@ C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\src\P
 C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Library.dll
 C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Library.pdb
 C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.csproj.CopyComplete
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Program.deps.json
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Program.runtimeconfig.json
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Program.runtimeconfig.dev.json
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Program.dll
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Program.pdb
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Library.dll
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\netcoreapp2.2\Library.pdb
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.csprojAssemblyReference.cache
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.csproj.CoreCompileInputs.cache
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.AssemblyInfoInputs.cache
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.AssemblyInfo.cs
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.csproj.CopyComplete
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.dll
+C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\netcoreapp2.2\Program.pdb

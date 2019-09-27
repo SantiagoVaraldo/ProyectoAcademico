@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
+      "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FIT\\programacion2\\proyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
+      "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
