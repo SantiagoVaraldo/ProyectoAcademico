@@ -18,7 +18,7 @@ namespace Library
 {
     public class Element
     {
-        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level)
+        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string ImagePath)
         {
             this.Name = Name;
             this.PositionY = PositionY;
@@ -26,6 +26,7 @@ namespace Library
             this.Length = Length;
             this.Width = Width;
             this.Level = Level;
+            this.ImagePath = ImagePath;
         }
         private string name;
         public string Name
@@ -114,6 +115,22 @@ namespace Library
                 if (value != null)
                 {
                     this.level = value;
+                }
+            }
+        }
+
+        private string ImagePath;
+        public string ImagePath
+        {
+            get
+            {
+                return this.imagePath;
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    this.imagePath = value;
                 }
             }
         }
