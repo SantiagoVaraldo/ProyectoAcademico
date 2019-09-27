@@ -18,25 +18,9 @@ namespace Library
 {
     public class Image : Element
     {
-        public Image(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string Path)
+        public Image(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string ImagePath)
+        :base(Name, PositionY, PositionX, Length, Width, Level, ImagePath)
         {
-            base(Name, PositionY, PositionX, Length, Width, Level);
-            this.Path = Path;
-        }
-        private string path;
-        public string Path
-        {
-            get
-            {
-                return this.path;
-            }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.path = value;
-                }
-            }
         }
     }
 }
