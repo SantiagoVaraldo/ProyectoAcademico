@@ -19,10 +19,10 @@ namespace Library
 {
          public class Screen
          {
-                  public Screen(string name, Level level)
+                  public Screen(string Name, Level Level)
                   {
-                           this.name = name;
-                           this.level = level;
+                           this.Name = Name;
+                           this.Level = Level;
                   }
                   private string name;
                   private Level level;
@@ -37,6 +37,20 @@ namespace Library
                                     if (!string.IsNullOrEmpty(value))
                                     {
                                              this.name = value;
+                                    }
+                           }
+                  }
+                  public Level Level
+                  {
+                           get
+                           {
+                                    return this.level; // al ser un objeto no se que tan bueno sea esto
+                           }
+                           set
+                           {
+                                    if (value != null)
+                                    {
+                                             this.level = value;
                                     }
                            }
                   }
