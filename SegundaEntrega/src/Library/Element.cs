@@ -53,7 +53,7 @@ namespace Library
             {
                 if (value != null)
                 {
-                    this.positionY = value;
+                    this.positionY = value; // ¿si se sale del margen del World?
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace Library
             {
                 if (value != null)
                 {
-                    this.positionX = value;
+                    this.positionX = value; // ¿si se sale del margen del World?
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace Library
             {
                 if (value != null)
                 {
-                    this.length = value;
+                    this.length = value; // ¿si es negativo?
                 }
             }
         }
@@ -98,7 +98,7 @@ namespace Library
             {
                 if (value != null)
                 {
-                    this.width = value;
+                    this.width = value; // ¿si es negativo?
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace Library
         {
             get
             {
-                return this.level;
+                return this.level; // al ser un objeto no se que tan bueno sea esto
             }
             set
             {
