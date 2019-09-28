@@ -18,7 +18,7 @@ namespace Library
 {
     public class Element
     {
-        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string ImagePath)
+        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level)
         {
             this.Name = Name;
             this.PositionY = PositionY;
@@ -118,8 +118,7 @@ namespace Library
                 }
             }
         }
-
-        private string ImagePath;
+        private string imagePath;
         public string ImagePath
         {
             get

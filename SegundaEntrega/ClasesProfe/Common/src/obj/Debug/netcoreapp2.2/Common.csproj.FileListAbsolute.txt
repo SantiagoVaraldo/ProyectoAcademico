@@ -1,0 +1,9 @@
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\bin\Debug\netcoreapp2.2\Common.deps.json
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\bin\Debug\netcoreapp2.2\Common.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\bin\Debug\netcoreapp2.2\Common.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\obj\Debug\netcoreapp2.2\Common.csprojAssemblyReference.cache
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\obj\Debug\netcoreapp2.2\Common.csproj.CoreCompileInputs.cache
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\obj\Debug\netcoreapp2.2\Common.AssemblyInfoInputs.cache
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\obj\Debug\netcoreapp2.2\Common.AssemblyInfo.cs
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\obj\Debug\netcoreapp2.2\Common.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\ClasesProfe\Common\src\obj\Debug\netcoreapp2.2\Common.pdb
