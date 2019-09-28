@@ -18,7 +18,7 @@ namespace Library
 {
     public class Element
     {
-        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level)
+        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level,string ImagePath)
         {
             this.Name = Name;
             this.PositionY = PositionY;

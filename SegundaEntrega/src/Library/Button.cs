@@ -20,26 +20,9 @@ namespace Library
 {
     public class Button : Element
     {
-        public Button(string name, int size, int posicionX, int posicionY, Screen screen)
+        public Button(string Name, int Size, int PositionX, int PositionY, int Length,Level Level,Screen screen,string ImagePath,int Width)
+        :base(Name, PositionY, PositionX, Length, Width, Level, ImagePath)
         {
-            this.name = name;
-        }
-
-
-        private string name;
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.name = value;
-                }
-            }
         }
     }
 }

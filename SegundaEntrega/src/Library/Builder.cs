@@ -1,4 +1,5 @@
 using System;
+using Proyecto.StudentsCode;
 
 /// <summary>
 /// NOMBRE: Builder.
@@ -22,7 +23,10 @@ namespace Library
         }
         private World world;
 
-        public void Build(IMainViewAdapter adapter);
+        public void Build(IMainViewAdapter adapter)
+        {
+
+        }
 
     }
 }
