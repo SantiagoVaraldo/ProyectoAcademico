@@ -127,7 +127,7 @@ namespace Library
             }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value)) // la imagePath puede ser nula ya que los botones por ejemplo pueden no tener imagen y tener texto
                 {
                     this.imagePath = value;
                 }

@@ -10,7 +10,7 @@ using Proyecto.StudentsCode;
 /// 
 /// SRP: .
 /// 
-/// COLABORACIONES: Colabora con la clase World y hereda de IBuilder ya que debe conocer un objeto de tipo World.
+/// COLABORACIONES: Colabora con la clase World ya que debe conocer un objeto de tipo World y es de tipo IBuilder.
 /// </summary>
 
 namespace Library
