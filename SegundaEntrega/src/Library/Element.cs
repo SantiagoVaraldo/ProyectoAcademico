@@ -18,14 +18,14 @@ namespace Library
 {
     public class Element
     {
-        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Level Level,string ImagePath)
+        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen,string ImagePath)
         {
             this.Name = Name;
             this.PositionY = PositionY;
             this.PositionX = PositionX;
             this.Length = Length;
             this.Width = Width;
-            this.Level = Level;
+            this.Screen = Screen;
             this.ImagePath = ImagePath;
         }
         private string name;
@@ -103,18 +103,18 @@ namespace Library
                 }
             }
         }
-        private Level level;
-        public Level Level
+        private Screen screen;
+        public Screen Screen
         {
             get
             {
-                return this.level; // al ser un objeto no se que tan bueno sea esto
+                return this.screen; // al ser un objeto no se que tan bueno sea esto
             }
             set
             {
                 if (value != null)
                 {
-                    this.level = value;
+                    this.screen = value;
                 }
             }
         }

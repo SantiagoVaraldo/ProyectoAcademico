@@ -207,16 +207,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Common.dll": {}
-        }
       }
     }
   },
@@ -688,53 +678,41 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Common/1.0.0": {
-      "type": "project",
-      "path": "../../ClasesProfes/Common/src/Common.csproj",
-      "msbuildProject": "../../ClasesProfes/Common/src/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "Common >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\estudiante.fit\\.nuget\\packages\\": {},
+    "C:\\Users\\FIT\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
-      "packagesPath": "C:\\Users\\estudiante.fit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
+      "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj",
+      "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\estudiante.fit\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {
-            "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\ClasesProfes\\Common\\src\\Common.csproj": {
-              "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\ClasesProfes\\Common\\src\\Common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
