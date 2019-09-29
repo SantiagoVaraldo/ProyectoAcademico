@@ -26,8 +26,8 @@ namespace Library
             this.Width = Width;
         }
         private string name;
-        private int length;
-        private int width;
+        private int? length;
+        private int? width;
         public string Name
         {
             get
@@ -42,7 +42,7 @@ namespace Library
                 }
             }
         }
-        public int Length
+        public int? Length
         {
             get
             {
@@ -50,14 +50,14 @@ namespace Library
             }
             set
             {
-                if (value != null) // ¿si es negativo?
+                if (value > 0) 
                 {
                     this.length = value;
                 }
 
             }
         }
-        public int Width
+        public int? Width
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Library
             }
             set
             {
-                if (value != null) // ¿si es negativo?
+                if (value > 0) 
                 {
                     this.width = value;
                 }

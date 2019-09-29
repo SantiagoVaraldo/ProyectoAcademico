@@ -1,18 +1,14 @@
 <World name="TheWorld" size="50">
 	<Level name="Level2" world="TheWorld">
 		<Screen name="Screen1" level="Level2">
-			<Image name="CowImage" size="10" posicion_x="-25" posicion_y="-25" screen="Screen1">
+			<Image name="CowImage" posicion_y="-25" posicion_x="-25" length="10" width="10" screen="Screen1" imagepath="">
 			</Image>
-			<DragAndDropItem name="LetrasCAS" size="10" posicion_x="-20" posicion_y="30" screen="Screen1">
+			<Button name="CowImage" posicion_y="-25" posicion_x="25" length="10" width="10" screen="Screen1" imagepath="">
+			</Button>
+			<DragAndDropItem name="LetrasCAS" posicion_y="25" posicion_x="-25" length="10" width="10" screen="Screen1" imagepath="">
 			</DragAndDropItem>
-			<DragAndDropItem name="LetrasVA" size="10" posicion_x="-10" posicion_y="30" screen="Screen1">
-			</DragAndDropItem>
-			<DragAndDropItem name="LetrasVE" size="10" posicion_x="0" posicion_y="30" screen="Screen1">
-			</DragAndDropItem>
-			<DragAndDropItem name="LetrasCOS" size="10" posicion_x="10" posicion_y="30" screen="Screen1">
-			</DragAndDropItem>
-			<DragAndDropDestination name="destination1" size="10" posicion_x="-5" posicion_y="-35" screen="Screen1">
-			</DragAndDropDestination>
+			<DragAndDropSource name="source1" size="10" posicion_x="-5" posicion_y="-35" screen="Screen1">
+			</DragAndDropSource>
 			<DragAndDropDestination name="destination2" size="10" posicion_x="5" posicion_y="-35" screen="Screen1">
 			</DragAndDropDestination>
 		</Screen>

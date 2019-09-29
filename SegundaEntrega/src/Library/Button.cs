@@ -20,8 +20,8 @@ namespace Library
 {
     public class Button : Element
     {
-        public Button(string Name, int Size, int PositionX, int PositionY, int Length,Level Level,Screen screen,string ImagePath,int Width)
-        :base(Name, PositionY, PositionX, Length, Width, Level, ImagePath)
+        public Button(string Name, int PositionY, int PositionX, int Length,int Width,Screen screen,string ImagePath)
+        :base(Name, PositionY, PositionX, Length, Width, screen, ImagePath)
         {
         }
     }
