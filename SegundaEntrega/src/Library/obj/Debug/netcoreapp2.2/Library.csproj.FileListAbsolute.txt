@@ -22,3 +22,9 @@ C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\
 C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\netcoreapp2.2\Library.AssemblyInfo.cs
 C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\netcoreapp2.2\Library.dll
 C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\netcoreapp2.2\Library.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\netcoreapp2.2\Library.deps.json
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\netcoreapp2.2\Library.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\netcoreapp2.2\Library.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\netcoreapp2.2\Common.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\netcoreapp2.2\Common.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\netcoreapp2.2\Library.csproj.CopyComplete

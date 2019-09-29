@@ -18,8 +18,8 @@ namespace Library
 {
     public class Image : Element
     {
-        public Image(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string ImagePath)
-        :base(Name, PositionY, PositionX, Length, Width, Level, ImagePath)
+        public Image(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
+        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
         }
     }

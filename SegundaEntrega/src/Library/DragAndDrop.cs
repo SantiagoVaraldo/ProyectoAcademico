@@ -18,8 +18,8 @@ namespace Library
 {
     public class DragAndDrop : Element
     {
-        public DragAndDrop(string Name, int PositionY, int PositionX, int Length, int Width, Level Level, string ImagePath)
-        :base(Name, PositionY, PositionX, Length, Width, Level, ImagePath)
+        public DragAndDrop(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
+        :base(Name, PositionY, PositionX, Length, Width, Screen,ImagePath)
         {
         }
     }

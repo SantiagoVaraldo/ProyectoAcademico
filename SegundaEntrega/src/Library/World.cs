@@ -16,61 +16,61 @@
 
 namespace Library
 {
-         // crear una clase singleton para aplicar el patron con World
-         public class World
-         {
-                  public World(string Name, int Length, int Width)
-                  {
-                           this.Name = Name;
-                           this.Length = Length;
-                           this.Width = Width;
-                  }
-                  private string name;
-                  private int length;
-                  private int width;
-                  public string Name
-                  {
-                           get
-                           {
-                                    return this.name;
-                           }
-                           set
-                           {
-                                    if (!string.IsNullOrEmpty(value))
-                                    {
-                                             this.name = value;
-                                    }
-                           }
-                  }
-                  public int Length
-                  {
-                           get
-                           {
-                                    return this.length;
-                           }
-                           set
-                           {
-                                    if (value != null) // ¿si es negativo?
-                                    {
-                                             this.length = value;
-                                    }
+    // crear una clase singleton para aplicar el patron con World
+    public class World
+    {
+        public World(string Name, int Length, int Width)
+        {
+            this.Name = Name;
+            this.Length = Length;
+            this.Width = Width;
+        }
+        private string name;
+        private int? length;
+        private int? width;
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    this.name = value;
+                }
+            }
+        }
+        public int? Length
+        {
+            get
+            {
+                return this.length;
+            }
+            set
+            {
+                if (value > 0) 
+                {
+                    this.length = value;
+                }
 
-                           }
-                  }
-                  public int Width
-                  {
-                           get
-                           {
-                                    return this.width;
-                           }
-                           set
-                           {
-                                    if (value != null) // ¿si es negativo?
-                                    {
-                                             this.width = value;
-                                    }
+            }
+        }
+        public int? Width
+        {
+            get
+            {
+                return this.width;
+            }
+            set
+            {
+                if (value > 0) 
+                {
+                    this.width = value;
+                }
 
-                           }
-                  }
-         }
+            }
+        }
+    }
 }
