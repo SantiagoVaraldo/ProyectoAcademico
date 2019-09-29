@@ -207,6 +207,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
       }
     }
   },
@@ -678,10 +688,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../ClasesProfes/Common/src/Common.csproj",
+      "msbuildProject": "../../ClasesProfes/Common/src/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Common >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
@@ -714,7 +730,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\ClasesProfes\\Common\\src\\Common.csproj": {
+              "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\ClasesProfes\\Common\\src\\Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
