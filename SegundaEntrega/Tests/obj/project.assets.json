@@ -1676,9 +1676,22 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Library.dll": {}
         },
@@ -5871,6 +5884,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../ClasesProfes/Common/src/Common.csproj",
+      "msbuildProject": "../ClasesProfes/Common/src/Common.csproj"
+    },
     "Library/1.0.0": {
       "type": "project",
       "path": "../src/Library/Library.csproj",
@@ -5893,38 +5911,40 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FIT\\.nuget\\packages\\": {},
+    "C:\\Users\\estudiante.fit\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\estudiante.fit\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\estudiante.fit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj": {
-              "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj"
+            "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj": {
+              "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\Library.csproj"
             },
-            "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Program\\Program.csproj": {
-              "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Program\\Program.csproj"
+            "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Program\\Program.csproj": {
+              "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Program\\Program.csproj"
             }
           }
         }
