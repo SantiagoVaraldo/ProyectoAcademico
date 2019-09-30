@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Library/1.0.0": {
-        "dependencies": {
-          "Common": "1.0.0"
-        },
-        "runtime": {
-          "Library.dll": {}
-        }
-      },
       "Common/1.0.0": {
         "runtime": {
           "Common.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "Library/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Common/1.0.0": {
       "type": "project",
       "serviceable": false,
