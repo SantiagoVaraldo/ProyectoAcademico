@@ -18,7 +18,7 @@ namespace Library
 {
     public class Element
     {
-        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen,string ImagePath)
+        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
         {
             this.Name = Name;
             this.PositionY = PositionY;
@@ -52,9 +52,9 @@ namespace Library
             }
             set
             {
-                if (value != null)
+                if (value <= width && value >= length)
                 {
-                    this.positionY = value; // ¿si se sale del margen del World?
+                    this.positionY = value;
                 }
             }
         }
@@ -67,14 +67,14 @@ namespace Library
             }
             set
             {
-                if (value != null)
+                if (value <= length && value >= width) //Hay que revisar este set y el de PositionY.
                 {
-                    this.positionX = value; // ¿si se sale del margen del World?
+                    this.positionX = value;
                 }
             }
         }
-        private int length;
-        public int Length
+        private int? length;
+        public int? Length
         {
             get
             {
@@ -82,14 +82,14 @@ namespace Library
             }
             set
             {
-                if (value != null)
+                if (value > 0)
                 {
-                    this.length = value; // ¿si es negativo?
+                    this.length = value;
                 }
             }
         }
-        private int width;
-        public int Width
+        private int? width;
+        public int? Width
         {
             get
             {
@@ -97,10 +97,11 @@ namespace Library
             }
             set
             {
-                if (value != null)
+                if (value > 0)
                 {
-                    this.width = value; // ¿si es negativo?
+                    this.width = value;
                 }
+
             }
         }
         private Screen screen;
