@@ -21,7 +21,7 @@ namespace Proyecto.StudentsCode
         {
             
         }
-        private World world;
+        
 
         public void Build(IMainViewAdapter adapter)
         {
