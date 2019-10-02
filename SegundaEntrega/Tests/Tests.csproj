@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Library\Library.csproj" />
+    <ProjectReference Include="..\src\Library\StudentsCode.csproj" />
     <ProjectReference Include="..\src\Program\Program.csproj" />
   </ItemGroup>
 

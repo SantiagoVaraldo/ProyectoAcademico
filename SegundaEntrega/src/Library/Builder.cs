@@ -1,5 +1,6 @@
 using System;
 using Proyecto.Common;
+using Library;
 
 /// <summary>
 /// NOMBRE: Builder.
@@ -12,15 +13,15 @@ using Proyecto.Common;
 /// 
 /// COLABORACIONES: Colabora con la clase World y hereda de IBuilder ya que debe conocer un objeto de tipo World.
 /// </summary>
-namespace Library
+namespace Proyecto.StudentsCode
 {
     public class Builder : IBuilder
     {
-        public Builder(World world)
+        public Builder()
         {
-            this.world = world;
+            
         }
-        private World world;
+        
 
         public void Build(IMainViewAdapter adapter)
         {
