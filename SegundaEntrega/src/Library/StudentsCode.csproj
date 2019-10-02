@@ -4,7 +4,7 @@
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
     <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ClasesProfes\PII_Proyecto2019\Common\src\Common.csproj" />
+    <ProjectReference Include="..\..\..\..\ClasesProfes\PII_Proyecto2019-master\Common\src\Common.csproj" />
   </ItemGroup>
 
 </Project>
