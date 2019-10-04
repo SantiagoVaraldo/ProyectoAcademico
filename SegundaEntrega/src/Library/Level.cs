@@ -19,13 +19,14 @@ namespace Library
 {
     public class Level
     {
-        public Level(string Name, World World)
+        public Level(string Name, string WorldName)
         {
             this.Name = Name;
-            this.World = World;
+            this.WorldName = WorldName;
         }
         private string name;
-        private World world1;
+        private string worldname;
+        private World world;
         public string Name
         {
             get
@@ -51,6 +52,21 @@ namespace Library
                 if (value != null)
                 {
                     this.world = value;
+                }
+            }
+        }
+
+        public string WorldName
+        {
+            get
+            {
+                return this.worldname;
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    this.worldname = value;
                 }
             }
         }
