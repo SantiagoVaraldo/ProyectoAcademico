@@ -19,10 +19,10 @@ namespace Library
 {
     public class Level
     {
-        public Level(string Name, World World1)
+        public Level(string Name, World World)
         {
             this.Name = Name;
-            this.World1 = World1;
+            this.World = World;
         }
         private string name;
         private World world1;
@@ -40,17 +40,17 @@ namespace Library
                 }
             }
         }
-        public World World1
+        public World World
         {
             get
             {
-                return this.world1; // al ser un objeto no se que tan bueno sea esto
+                return this.world; // al ser un objeto no se que tan bueno sea esto
             }
             set
             {
                 if (value != null)
                 {
-                    this.world1 = value;
+                    this.world = value;
                 }
             }
         }
