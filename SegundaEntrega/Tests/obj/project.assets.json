@@ -112,6 +112,16 @@
           "bin/placeholder/Common.dll": {}
         }
       },
+      "Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "compile": {
+          "bin/placeholder/Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Library.dll": {}
+        }
+      },
       "Program/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.2",
@@ -126,7 +136,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Common": "1.0.0"
+          "Common": "1.0.0",
+          "Library": "1.0.0"
         },
         "compile": {
           "bin/placeholder/StudentsCode.dll": {}
@@ -338,6 +349,11 @@
       "type": "project",
       "path": "../../../ClasesProfes/PII_Proyecto2019-master/Common/src/Common.csproj",
       "msbuildProject": "../../../ClasesProfes/PII_Proyecto2019-master/Common/src/Common.csproj"
+    },
+    "Library/1.0.0": {
+      "type": "project",
+      "path": "../../PrimeraEntrega/src/Library/Library.csproj",
+      "msbuildProject": "../../PrimeraEntrega/src/Library/Library.csproj"
     },
     "Program/1.0.0": {
       "type": "project",
