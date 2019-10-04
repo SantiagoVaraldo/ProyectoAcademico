@@ -48,7 +48,7 @@ namespace ExerciseOne
                     line = line.TrimEnd('/');
 
                     //divide la line por espacios
-                    List<string> lineElements = line.Split(" ").ToList();
+                    List<string> lineElements = line.Split(' ').ToList();
                     //si el array tiene 1 solo elemento (nombre del tag) crea una tag y la agrega al la lista de tags.
                     if (lineElements.Count == 1)
                     {
@@ -68,7 +68,7 @@ namespace ExerciseOne
                         foreach (string atribute in lineElements)
                         {
                             //separa entre name y value los atributos
-                            string[] atributeElements = atribute.Split("=");
+                            string[] atributeElements = atribute.Split('=');
                             if (atributeElements.Length > 1)
                             {
                                 string name = atributeElements[0];
