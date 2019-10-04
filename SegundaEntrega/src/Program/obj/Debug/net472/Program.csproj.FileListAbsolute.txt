@@ -6,3 +6,4 @@ c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.AssemblyInfo.cs
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.exe
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.pdb
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.csprojAssemblyReference.cache

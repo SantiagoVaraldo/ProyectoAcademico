@@ -8,12 +8,14 @@ namespace Library
 {
     public class CreateElements
     {   // hacer un metodo para cada objeto
+
+        List<object> all = new List<object>();
         World world;
         List<Screen> listScreen = new List<Screen>();
         List<Element> listElements = new List<Element>();
         List<Level> listLevels = new List<Level>();
 
-        public World Create(List<Tag> listTags)
+        public List<object> Create(List<Tag> listTags)
         {
 
             foreach (Tag tag in listTags)
@@ -40,6 +42,7 @@ namespace Library
                         }
                     }
                     world = new World(name, length, width);
+                    all.Add(world);
                 }
                 else if (tag.Name == "Level")
                 {
@@ -57,6 +60,7 @@ namespace Library
                         }
                     }
                     listLevels.Add(new Level(name, worldname));
+                    all.Add(listLevels);
                 }
                 else if (tag.Name == "Screen")
                 {
@@ -74,6 +78,7 @@ namespace Library
                         }
                     }
                     listScreen.Add(new Screen(name, levelname));
+                    all.Add(listScreen);
                 }
                 else if (tag.Name == "Image")
                 {
@@ -116,6 +121,7 @@ namespace Library
                         }
                     }
                     listElements.Add(new Image(name, posicionY, posicionX, length, width, screenname, imagepath));
+                    
                 }
                 else if (tag.Name == "Button")
                 {
@@ -158,6 +164,8 @@ namespace Library
                         }
                     }
                     listElements.Add(new Button(name, posicionY, posicionX, length, width, screenname, imagepath));
+                    all.Add(listElements);
+                    
                 }
             }
 
@@ -188,7 +196,8 @@ namespace Library
                     level.World = world;
                 }
             }
-            return world;
+            return all;
+
         }
     }
 }
