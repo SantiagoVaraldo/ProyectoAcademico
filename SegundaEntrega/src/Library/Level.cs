@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 /// <summary>
 /// NOMBRE: Level.
 /// 
@@ -27,6 +27,7 @@ namespace Library
         private string name;
         private string worldname;
         private World world;
+        private List<Screen> listascreen = new List<Screen>();
         public string Name
         {
             get
@@ -68,6 +69,17 @@ namespace Library
                 {
                     this.worldname = value;
                 }
+            }
+        }
+        public List<Screen> ListaScreen
+        {
+            get
+            {
+                return this.listascreen;
+            }
+            set
+            {
+                this.listascreen = value;
             }
         }
     }

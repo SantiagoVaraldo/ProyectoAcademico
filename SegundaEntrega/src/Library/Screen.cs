@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// NOMBRE: Screen.
@@ -67,6 +68,18 @@ namespace Library
                 {
                     this.levelname = value;
                 }
+            }
+        }
+        private List<Element> listaelement = new List<Element>();
+        public List<Element> ListaElement
+        {
+            get
+            {
+                return this.listaelement;
+            }
+            set
+            {
+                this.listaelement = value;
             }
         }
     }

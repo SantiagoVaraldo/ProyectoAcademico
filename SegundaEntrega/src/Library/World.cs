@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 /// <summary>
 /// NOMBRE: World.
 /// 
@@ -28,6 +28,7 @@ namespace Library
         private string name;
         private int? length;
         private int? width;
+        private List<Level> listalevel = new List<Level>();
         public string Name
         {
             get
@@ -50,7 +51,7 @@ namespace Library
             }
             set
             {
-                if (value > 0) 
+                if (value > 0)
                 {
                     this.length = value;
                 }
@@ -65,11 +66,23 @@ namespace Library
             }
             set
             {
-                if (value > 0) 
+                if (value > 0)
                 {
                     this.width = value;
                 }
 
+            }
+        }
+
+        public List<Level> ListaLevel
+        {
+            get 
+            { 
+                return this.listalevel; 
+            }
+            set 
+            { 
+                this.listalevel = value; 
             }
         }
     }
