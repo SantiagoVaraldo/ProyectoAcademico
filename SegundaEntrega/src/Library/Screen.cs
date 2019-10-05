@@ -67,13 +67,9 @@ namespace Library
                 this.listaelement = value;
             }
         }
-        //Creates Elements
-        //string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath
-        public IXML Add(Dictionary<string, Attribute> dictionary, IContainer container)
+        public void Add(IXML ixml)
         {
-            Element element = new Element(dictionary["Name"].Valor, dictionary["PositionY"].Valor, dictionary["PositionX"].Valor, dictionary["Length"].Valor, dictionary["Width"].Valor, container, dictionary["ImagePath"].Valor);
-            ListaElement.Add(element);
-            return element;
+            ListaElement.Add(ixml);
         }
     }
 }

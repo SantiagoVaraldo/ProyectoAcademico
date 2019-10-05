@@ -67,13 +67,9 @@ namespace Library
                 this.listascreen = value;
             }
         }
-        //Creates Screens
-        //(string Name, Level Level)
-        public IXML Add(Dictionary<string, Attribute> dictionary, IContainer container)
+        public void Add(IXML ixml)
         {
-            Screen screen = new Screen(dictionary["Name"].Valor, container);
-            ListaScreen.Add(screen);
-            return screen;
+            ListaScreen.Add(ixml);
         }
     }
 }

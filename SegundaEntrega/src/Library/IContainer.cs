@@ -7,6 +7,6 @@ namespace Library
 {
     public interface IContainer : IXML 
     {
-        IXML Add(Dictionary<string, Attribute> dictionary, IContainer container);
+        void Add(IXML ixml);
     }
 }

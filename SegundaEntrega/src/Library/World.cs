@@ -85,12 +85,9 @@ namespace Library
                 this.listalevel = value;
             }
         }
-        //Creates Level
-        public IXML Add(Dictionary<string, Attribute> dictionary, IContainer container)
+        public void Add(IXML ixml)
         {
-            Level level = new Level(dictionary["Name"].Valor, container);
-            ListaLevel.Add(level);
-            return level;
+            ListaLevel.Add(ixml);
         }
 
 
