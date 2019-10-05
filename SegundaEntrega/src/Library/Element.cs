@@ -16,7 +16,7 @@ using System;
 
 namespace Library
 {
-    public class Element
+    public class Element : IXML
     {
         public Element(string Name, int PositionY, int PositionX, int Length, int Width, string ScreenName, string ImagePath)
         {
@@ -52,7 +52,7 @@ namespace Library
             }
             set
             {
-                if (value <= width && value >= length)
+                if (value <= this.Width && value >= this.Length)
                 {
                     this.positionY = value;
                 }
@@ -67,7 +67,7 @@ namespace Library
             }
             set
             {
-                if (value <= length && value >= width) //Hay que revisar este set y el de PositionY.
+                if (value <= this.Length && value >= this.Width) //Hay que revisar este set y el de PositionY.
                 {
                     this.positionX = value;
                 }

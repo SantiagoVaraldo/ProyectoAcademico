@@ -31,7 +31,7 @@ namespace ExerciseOne
                 lista_formated.Add(t.Name);
                 if (t.ListaAtributos != null)
                 {
-                    foreach (Attribute att in t.ListaAtributos)
+                    foreach (Attribute att in t.ListaAtributos.Values)
                     {
                         string attributeInfo = att.Clave + "=" + att.Valor;
                         lista_formated.Add(attributeInfo);

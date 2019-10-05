@@ -17,7 +17,7 @@ using System;
 
 namespace Library
 {
-    public class Level
+    public class Level : IXML
     {
         public Level(string Name, string WorldName)
         {

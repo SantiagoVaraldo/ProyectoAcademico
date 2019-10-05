@@ -8,10 +8,10 @@ namespace Library
 {
     public class CreateElements
     {   // hacer un metodo para cada objeto
-        World world;
-        List<Screen> listScreen = new List<Screen>();
-        List<Element> listElements = new List<Element>();
-        List<Level> listLevels = new List<Level>();
+        public World world;
+        public List<Screen> listScreen = new List<Screen>();
+        public List<Element> listElements = new List<Element>();
+        public List<Level> listLevels = new List<Level>();
 
         public World Create(List<Tag> listTags)
         {
@@ -102,7 +102,7 @@ namespace Library
                         {
                             width = Int32.Parse(attribute.Valor);
                         }
-                        else if (attribute.Clave == "Imagepath")
+                        else if (attribute.Clave == "ImagePath")
                         {
                             imagepath = attribute.Valor;
                         }

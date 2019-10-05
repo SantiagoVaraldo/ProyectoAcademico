@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\src\Library\StudentsCode.csproj" />
     <ProjectReference Include="..\src\Program\Program.csproj" />
+    <ProjectReference Include="..\..\PrimeraEntrega\src\Library\Library.csproj" />
   </ItemGroup>
 
 </Project>

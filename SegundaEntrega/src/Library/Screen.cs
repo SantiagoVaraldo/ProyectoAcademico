@@ -17,7 +17,7 @@ using System;
 
 namespace Library
 {
-    public class Screen
+    public class Screen : IXML
     {
         public Screen(string Name, string LevelName)
         {
