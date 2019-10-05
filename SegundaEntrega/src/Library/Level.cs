@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 /// <summary>
 /// NOMBRE: Level.
 /// 
@@ -19,14 +19,14 @@ namespace Library
 {
     public class Level : IXML
     {
-        public Level(string Name, string WorldName)
+        public Level(string Name, World World)
         {
             this.Name = Name;
-            this.WorldName = WorldName;
+            this.World = World;
         }
         private string name;
-        private string worldname;
         private World world;
+        private List<Screen> listascreen = new List<Screen>();
         public string Name
         {
             get
@@ -56,18 +56,15 @@ namespace Library
             }
         }
 
-        public string WorldName
+        public List<Screen> ListaScreen
         {
             get
             {
-                return this.worldname;
+                return this.listascreen;
             }
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.worldname = value;
-                }
+                this.listascreen = value;
             }
         }
     }

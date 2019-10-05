@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// NOMBRE: Screen.
@@ -19,10 +20,10 @@ namespace Library
 {
     public class Screen : IXML
     {
-        public Screen(string Name, string LevelName)
+        public Screen(string Name, Level Level)
         {
             this.Name = Name;
-            this.LevelName = LevelName;
+            this.Level = Level;
         }
         private string name;
         public string Name
@@ -54,19 +55,16 @@ namespace Library
                 }
             }
         }
-        private string levelname;
-        public string LevelName
+        private List<Element> listaelement = new List<Element>();
+        public List<Element> ListaElement
         {
             get
             {
-                return this.levelname;
+                return this.listaelement;
             }
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.levelname = value;
-                }
+                this.listaelement = value;
             }
         }
     }
