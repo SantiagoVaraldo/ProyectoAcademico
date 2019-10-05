@@ -11,7 +11,7 @@ namespace Library
                   {
                            get {return this.Result; }
                   }
-                  public IXML Filter(Tag tag, Container container)
+                  public IXML Filter(Tag tag, IContainer container)
                   {
                            if (tag.Name == "World")
                            {
