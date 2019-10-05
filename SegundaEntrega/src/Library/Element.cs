@@ -18,14 +18,14 @@ namespace Library
 {
     public class Element
     {
-        public Element(string Name, int PositionY, int PositionX, int Length, int Width, string ScreenName, string ImagePath)
+        public Element(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
         {
             this.Name = Name;
             this.PositionY = PositionY;
             this.PositionX = PositionX;
             this.Length = Length;
             this.Width = Width;
-            this.ScreenName = ScreenName;
+            this.Screen = Screen;
             this.ImagePath = ImagePath;
         }
         private string name;
@@ -134,21 +134,6 @@ namespace Library
                 }
             }
         }
-        private string screenname;
 
-        public string ScreenName
-        {
-            get
-            {
-                return this.screenname;
-            }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.screenname = value;
-                }
-            }
-        }
     }
 }
