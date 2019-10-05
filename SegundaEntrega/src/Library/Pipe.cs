@@ -1,3 +1,6 @@
+using Library;
+using ExerciseOne;
+
 namespace CompAndDel.Pipes
 {
     public class PipeConditional : IPipe
@@ -10,7 +13,7 @@ namespace CompAndDel.Pipes
             this.falsePipe = falsePipe;
             this.filter = filter;
         }
-        public IXML Send(Tag tag)
+        public Tag Send(Tag tag)
         {
             IXML resultTag = filter.Filter(tag);
             if (filter.Result)
