@@ -10,16 +10,17 @@ namespace CompAndDel.Pipes
             this.falsePipe = falsePipe;
             this.filter = filter;
         }
-        public IXML Send(Tag tag)
+        public Tag Send(Tag tag)
         {
-            IXML resultTag = filter.Filter(tag);
+            Tag filteredTag = filter.Filter(tag);
+            Tag resultTag;
             if (filter.Result)
             {
-                resultTag = truePipe.Send(resultTag);
+                resultTag = truePipe.Send(filteredTag);
             }
             else 
             {
-                resultTag = falsePipe.Send(resultTag);
+                resultTag = falsePipe.Send(tag);
             }
             return resultTag;
         }

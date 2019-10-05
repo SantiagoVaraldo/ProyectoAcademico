@@ -16,7 +16,7 @@ namespace Library
         /// </summary>
         /// <param name="tag">El tag a procesar</param>
         /// <returns>El mismo tag o un objeto creado</returns>
-        IXML Filter(Tag tag, IContainer container); // crear un tipo mas generico que contenga todas nuestras clases
+        Tag Filter(Tag tag, IContainer container); // crear un tipo mas generico que contenga todas nuestras clases
         bool Result {get;}
     }
 }

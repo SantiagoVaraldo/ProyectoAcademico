@@ -5,25 +5,26 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-         public class FilterLevel : IFilterConditional
+         public class FilterImage : IFilterConditional
          {
                   public bool Result
                   {
-                           get { return this.Result; }
+                           get {return this.Result; }
                   }
                   public Tag Filter(Tag tag, Container container)
                   {
-                           if (tag.Name == "Level")
+                           if (tag.Name == "Image")
                            {
                                     this.Result = true;
-                                    IContainer level = new Level(tag.ListaAtributos["Name"].Valor, container);
-                                    container.Add(level);
+                                    Element image = new Image(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["PositionY"].Valor, tag.ListaAtributos["PositionX"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor, container, tag.ListaAtributos["ImagePath"].Valor );
+                                    container.Add(image);
                            }
                            else
                            {
                                     this.Result = false;
                            }
                            return tag;
+
                   }
          }
 }

@@ -12,7 +12,7 @@ namespace Library
         /// Envia el tag a traves de la caneria.
         /// </summary>
         /// <param name="tag">el tag a enviar</param>
-        IXML Send(Tag tag); // cambiar por object
+        Tag Send(Tag tag); // cambiar por object
 
     }
 }

@@ -11,19 +11,19 @@ namespace Library
                   {
                            get {return this.Result; }
                   }
-                  public IXML Filter(Tag tag, IContainer container)
+                  public Tag Filter(Tag tag, IContainer container)
                   {
                            if (tag.Name == "World")
                            {
                                     this.Result = true;
-                                    World world = new World();
-                                    return world;
+                                    IContainer world = new World(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor );
+                                    container.Add(world);
                            }
                            else
                            {
                                     this.Result = false;
-                                    return tag;
                            }
+                           return tag;
 
                   }
          }
