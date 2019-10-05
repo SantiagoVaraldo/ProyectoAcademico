@@ -45,7 +45,7 @@ namespace Library
         {
             get
             {
-                return this.level; // al ser un objeto no se que tan bueno sea esto
+                return this.level; 
             }
             set
             {

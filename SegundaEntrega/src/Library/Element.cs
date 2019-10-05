@@ -109,7 +109,7 @@ namespace Library
         {
             get
             {
-                return this.screen; // al ser un objeto no se que tan bueno sea esto
+                return this.screen; 
             }
             set
             {
@@ -128,7 +128,7 @@ namespace Library
             }
             set
             {
-                if (!string.IsNullOrEmpty(value)) // la imagePath puede ser nula ya que los botones por ejemplo pueden no tener imagen y tener texto
+                if (value != "") 
                 {
                     this.imagePath = value;
                 }
