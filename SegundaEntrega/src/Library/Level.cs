@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Level
+    public class Level : IXML
     {
         public Level(string Name, World World)
         {
@@ -45,7 +45,7 @@ namespace Library
         {
             get
             {
-                return this.world; // al ser un objeto no se que tan bueno sea esto
+                return this.world; 
             }
             set
             {

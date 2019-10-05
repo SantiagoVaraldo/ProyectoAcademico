@@ -58,7 +58,7 @@ namespace ExerciseOne
                     //si el array tiene mas de 1 elemento (nombre de tag y atributo/s) crea un tag con sus atributos y guarda el tag en la lista de tags. 
                     else if (lineElements.Count > 1)
                     {
-                        List<Attribute> attributes = new List<Attribute>();
+                        //Dictionary<string, Attribute> attributes = new Dictionary<string, Attribute>();
                         Tag t = new Tag(lineElements[0].Trim());
 
                         //Quita el nombre del tag
@@ -75,12 +75,13 @@ namespace ExerciseOne
                                 string value = atributeElements[1].Trim('"');
                                 //crea el atributo y lo guarda en attributes
                                 Attribute atr = new Attribute(name, value);
-                                attributes.Add(atr);
+                               // attributes.Add(name,atr);
+                               t.AddAttribute(atr);
                             }
 
 
                         }
-                        t.ListaAtributos = attributes;
+                        //t.ListaAtributos = attributes;
                         tags.Add(t);
                     }
                 }

@@ -17,7 +17,7 @@ using System.Collections.Generic;
 namespace Library
 {
     // crear una clase singleton para aplicar el patron con World
-    public class World
+    public class World : IXML
     {
         public World(string Name, int Length, int Width)
         {

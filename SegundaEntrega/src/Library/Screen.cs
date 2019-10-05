@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Screen
+    public class Screen : IXML
     {
         public Screen(string Name, Level Level)
         {
@@ -45,7 +45,7 @@ namespace Library
         {
             get
             {
-                return this.level; // al ser un objeto no se que tan bueno sea esto
+                return this.level; 
             }
             set
             {

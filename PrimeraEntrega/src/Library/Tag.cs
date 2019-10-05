@@ -18,11 +18,13 @@ namespace ExerciseOne
     /// </summary>
     public class Tag
     {
-        private List<Attribute> listaAtributos = new List<Attribute>();
-        public List<Attribute> ListaAtributos
+        //private List<Attribute> listaAtributos = new List<Attribute>();
+
+        private Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+        public Dictionary<string, Attribute> ListaAtributos
         {
             get { return this.listaAtributos; }
-            set { this.listaAtributos = value; }
+            //set { this.listaAtributos = value; }
         }
         private string name;
         public string Name
@@ -30,15 +32,20 @@ namespace ExerciseOne
             get { return this.name; }
             set { this.name = value; }
         }
-        public Tag(string Name, List<Attribute> Lista_atributos)
+        public Tag(string Name, Dictionary<string, Attribute> Lista_atributos)
         {
             this.Name = Name;
-            this.ListaAtributos = Lista_atributos;
+            this.listaAtributos = Lista_atributos;
         }
         public Tag(string Name)
         {
             this.Name = Name;
-            this.ListaAtributos = null;
+            this.listaAtributos = null;
+        }
+
+        public void AddAttribute(Attribute attribute)
+        {
+            this.listaAtributos.Add(attribute.Clave, attribute);
         }
     }
 }

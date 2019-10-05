@@ -107,7 +107,7 @@ namespace Library
                         {
                             width = Int32.Parse(attribute.Valor);
                         }
-                        else if (attribute.Clave == "Imagepath")
+                        else if (attribute.Clave == "ImagePath")
                         {
                             imagepath = attribute.Valor;
                         }
