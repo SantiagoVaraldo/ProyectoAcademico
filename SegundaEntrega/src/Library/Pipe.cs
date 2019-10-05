@@ -1,3 +1,6 @@
+using Library;
+using ExerciseOne;
+
 namespace CompAndDel.Pipes
 {
     public class PipeConditional : IPipe

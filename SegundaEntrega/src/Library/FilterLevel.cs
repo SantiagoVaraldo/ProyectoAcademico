@@ -11,7 +11,7 @@ namespace Library
                   {
                            get { return this.Result; }
                   }
-                  public Tag Filter(Tag tag, Container container)
+                  public Tag Filter(Tag tag, IContainer container)
                   {
                            if (tag.Name == "Level")
                            {
