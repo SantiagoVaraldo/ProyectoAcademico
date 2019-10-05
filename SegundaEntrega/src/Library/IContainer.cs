@@ -5,8 +5,8 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-    public interface IContainer
+    public interface IContainer : IXML 
     {
-        void Add(Dictionary<string, Attribute> dictionary, IContainer container);
+        void Add(IXML ixml);
     }
 }

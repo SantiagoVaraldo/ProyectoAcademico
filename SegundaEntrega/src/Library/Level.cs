@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Level : IXML
+    public class Level : IContainter
     {
         public Level(string Name, World World)
         {
@@ -66,6 +66,10 @@ namespace Library
             {
                 this.listascreen = value;
             }
+        }
+        public void Add(IXML ixml)
+        {
+            ListaScreen.Add(ixml);
         }
     }
 }

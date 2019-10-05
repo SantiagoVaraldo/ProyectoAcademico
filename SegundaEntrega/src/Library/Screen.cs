@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Screen : IXML
+    public class Screen : IContainer
     {
         public Screen(string Name, Level Level)
         {
@@ -66,6 +66,10 @@ namespace Library
             {
                 this.listaelement = value;
             }
+        }
+        public void Add(IXML ixml)
+        {
+            ListaElement.Add(ixml);
         }
     }
 }
