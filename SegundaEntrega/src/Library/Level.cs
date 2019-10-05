@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Level : IContainter
+    public class Level : IContainer
     {
         public Level(string Name, World World)
         {

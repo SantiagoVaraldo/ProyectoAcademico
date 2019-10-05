@@ -15,14 +15,15 @@ namespace CompAndDel.Pipes
         }
         public Tag Send(Tag tag)
         {
-            IXML resultTag = filter.Filter(tag);
+            Tag filteredTag = filter.Filter(tag);
+            Tag resultTag;
             if (filter.Result)
             {
-                resultTag = truePipe.Send(resultTag);
+                resultTag = truePipe.Send(filteredTag);
             }
             else 
             {
-                resultTag = falsePipe.Send(resultTag);
+                resultTag = falsePipe.Send(tag);
             }
             return resultTag;
         }

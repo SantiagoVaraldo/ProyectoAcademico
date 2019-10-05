@@ -11,34 +11,19 @@ namespace Library
                   {
                            get { return this.Result; }
                   }
-                  public IXML Filter(Tag tag, Container container)
+                  public Tag Filter(Tag tag, IContainer container)
                   {
                            if (tag.Name == "Level")
                            {
-                                    string name = null;
-                                    string worldname = null;
-                                    foreach (Attribute attribute in tag.ListaAtributos)
-                                    {
-                                             if (attribute.Clave == "Name")
-                                             {
-                                                      name = attribute.Valor;
-                                             }
-                                             else if (attribute.Clave == "World")
-                                             {
-                                                      worldname = attribute.Valor;
-                                             }
-                                    }
                                     this.Result = true;
-                                    // Level level = new Level();
-                                    // container.AddLevel(name,container)
-                                    return level;
+                                    IContainer level = new Level(tag.ListaAtributos["Name"].Valor, container);
+                                    container.Add(level);
                            }
                            else
                            {
                                     this.Result = false;
-                                    return tag;
                            }
-
+                           return tag;
                   }
          }
 }

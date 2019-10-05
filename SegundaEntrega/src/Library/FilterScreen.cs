@@ -11,19 +11,19 @@ namespace Library
                   {
                            get {return this.Result; }
                   }
-                  public IXML Filter(Tag tag)
+                  public Tag Filter(Tag tag, IContainer container)
                   {
                            if (tag.Name == "Screen")
                            {
                                     this.Result = true;
-                                    Screen screen = new Screen();
-                                    return screen;
+                                    IContainer screen = new Screen(tag.ListaAtributos["Name"].Valor, container);
+                                    container.Add(screen);
                            }
                            else
                            {
                                     this.Result = false;
-                                    return tag;
                            }
+                           return tag;
 
                   }
          }

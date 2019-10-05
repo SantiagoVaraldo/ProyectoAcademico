@@ -5,25 +5,25 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-         public class FilterElement : IFilterConditional
+         public class FilterButton : IFilterConditional
          {
                   public bool Result
                   {
                            get {return this.Result; }
                   }
-                  public IXML Filter(Tag tag, Container container)
+                  public Tag Filter(Tag tag, IContainer container)
                   {
                            if (tag.Name == "Button")
                            {
                                     this.Result = true;
-                                    Element Button = new Button(); // cambiar Tag por Element
-                                    return Button;
+                                    Element button = new Button(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["PositionY"].Valor, tag.ListaAtributos["PositionX"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor, container, tag.ListaAtributos["ImagePath"].Valor );
+                                    container.Add(button);
                            }
                            else
                            {
                                     this.Result = false;
-                                    return tag;
                            }
+                           return tag;
 
                   }
          }

@@ -5,7 +5,7 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-         public class FilterWorld : IFilterConditional
+         public class FilterImage : IFilterConditional
          {
                   public bool Result
                   {
@@ -13,11 +13,11 @@ namespace Library
                   }
                   public Tag Filter(Tag tag, IContainer container)
                   {
-                           if (tag.Name == "World")
+                           if (tag.Name == "Image")
                            {
                                     this.Result = true;
-                                    IContainer world = new World(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor );
-                                    container.Add(world);
+                                    Element image = new Image(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["PositionY"].Valor, tag.ListaAtributos["PositionX"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor, container, tag.ListaAtributos["ImagePath"].Valor );
+                                    container.Add(image);
                            }
                            else
                            {

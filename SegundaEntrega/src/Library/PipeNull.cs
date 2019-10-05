@@ -1,9 +1,7 @@
 using Library;
 using ExerciseOne;
 
-
-
-namespace CompAndDel.Pipes
+namespace Library
 {
     public class PipeNull : IPipe
     {
