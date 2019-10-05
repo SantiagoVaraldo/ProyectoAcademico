@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Level : IXML
+    public class Level : IContainter
     {
         public Level(string Name, World World)
         {
@@ -66,6 +66,14 @@ namespace Library
             {
                 this.listascreen = value;
             }
+        }
+        //Creates Screens
+        //(string Name, Level Level)
+        public IXML Add(Dictionary<string, Attribute> dictionary, IContainer container)
+        {
+            Screen screen = new Screen(dictionary["Name"].Valor, container);
+            ListaScreen.Add(screen);
+            return screen;
         }
     }
 }

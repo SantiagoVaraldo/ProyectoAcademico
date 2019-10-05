@@ -17,7 +17,7 @@ using System.Collections.Generic;
 namespace Library
 {
     // crear una clase singleton para aplicar el patron con World
-    public class World : IXML
+    public class World : IContainer
     {
         public World(string Name, int Length, int Width)
         {
@@ -76,14 +76,23 @@ namespace Library
 
         public List<Level> ListaLevel
         {
-            get 
-            { 
-                return this.listalevel; 
+            get
+            {
+                return this.listalevel;
             }
-            set 
-            { 
-                this.listalevel = value; 
+            set
+            {
+                this.listalevel = value;
             }
         }
+        //Creates Level
+        public IXML Add(Dictionary<string, Attribute> dictionary, IContainer container)
+        {
+            Level level = new Level(dictionary["Name"].Valor, container);
+            ListaLevel.Add(level);
+            return level;
+        }
+
+
     }
 }
