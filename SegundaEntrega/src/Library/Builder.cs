@@ -55,7 +55,10 @@ namespace Proyecto.StudentsCode
                         }
                         else if (element is Button)
                         {
-                            Render.renderButton((Button)element, adapter);
+                            Button button = (Button) element;
+                            //Render.renderButton((Button)element, adapter);
+                            string buttonId = adapter.CreateButton(button.PositionX, button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToNextPage);
+                            adapter.SetImage(buttonId, button.ImagePath);
                         }
 
                     }
