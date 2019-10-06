@@ -21,11 +21,12 @@ namespace Proyecto.StudentsCode
         private string firstPageName;
 
         private string nextPageName;
-      
-        
+
+
 
         public void Build(IMainViewAdapter providedAdapter)
         {
+
             string imageId;
 
             this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
@@ -36,6 +37,34 @@ namespace Proyecto.StudentsCode
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
 
+            Creator creator = new Creator();
+            creator.Create();
+            World world = Creator.world;
+
+            foreach (Level level in world.ListaLevel)
+            {
+                foreach (Screen screen in level.ListaScreen)
+                {
+                    //screen.Render();
+
+                    foreach (Element element in screen.ListaElement)
+                    {
+                        if (element is Image)
+                        {
+                            Render.renderImage((Image)element, adapter);
+                        }
+                        else if (element is Button)
+                        {
+                            Render.renderButton((Button)element, adapter);
+                        }
+
+                    }
+                }
+            }
+
+
+
+            /*
             imageId = this.adapter.CreateImage(-(1024 / 2 - 100 / 2), -(768 / 2 - 100 / 2), 100, 100);
             try
             {
@@ -72,8 +101,9 @@ namespace Proyecto.StudentsCode
             imageId = this.adapter.CreateImage(40, 100, 100, 100);
             this.adapter.SetImage(imageId, "Martillo.jpg");
         }
-
-            public void AfterBuildShowFirstPage()
+        */
+        }
+        public void AfterBuildShowFirstPage()
         {
             this.adapter.ShowPage(this.firstPageName);
         }
