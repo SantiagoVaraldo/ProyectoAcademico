@@ -11,9 +11,9 @@ namespace Tests
         public void ListFormatedCorrectly()
         {
             Formater format = new Formater();
-            List<Attribute> listaAtributos = new List<Attribute>();
-            listaAtributos.Add(new Attribute("pedro", "15"));
-            listaAtributos.Add(new Attribute("marcos", "13"));
+            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Attribute attribute = new Attribute("pedro", "15");
+            Attribute attribute2 = new Attribute("marcos", "13");
             List<Tag> ListaTags = new List<Tag>();
             ListaTags.Add(new Tag("personas", listaAtributos));
             List<string> listaFormated = format.Format(ListaTags);
@@ -29,7 +29,6 @@ namespace Tests
         public void ListFormatedCorrectlyWithoutAttributes()
         {
             Formater format = new Formater();
-            List<Attribute> listaAtributos = new List<Attribute>();
             List<Tag> ListaTags = new List<Tag>();
             ListaTags.Add(new Tag("personas"));
             ListaTags.Add(new Tag("pedro"));
