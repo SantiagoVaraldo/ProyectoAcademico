@@ -10,9 +10,9 @@ namespace Library
          public interface IPipe
          {
                   /// <summary>
-                  /// Envia el tag a traves de la caneria.
+                  /// Envia el Tag a traves de la caneria.
                   /// </summary>
-                  /// <param name="tag">el tag a enviar</param>
+                  /// <param name="tag">el Tag a enviar</param>
                   Tag Send(Tag tag);
 
          }

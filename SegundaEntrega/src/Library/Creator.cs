@@ -4,19 +4,27 @@ using System.Reflection;
 using System.Collections.Generic;
 using ExerciseOne;
 
+/// <summary>
+/// NOMBRE: Creator
+/// 
+/// DESCRIPCION: Esta clase llama a los metodos de la clase CreatorHelper y crea la cadena de Pipes And Filters.
+/// </summary>
+
 namespace Library
 {
     public class Creator
     {
         public static World world;
+        private List<Tag> listtags = new List<Tag>();
+        
+        /// <summary>
+        /// crea la cadena de pipes and filters 
+        /// </summary>
         public void Create()
         {
-            const String fileName = @"test.xml";
-            string content = getContent(fileName);
+            CreatorHelper creatorhelper = new CreatorHelper();
+            this.listtags = creatorhelper.GetListTags();
 
-            //Busca las tags y sus correspondientes atributos
-            Finder finder = new Finder();
-            List<Tag> listtags = finder.Find(content);
             // creamos un pipeNull
             IPipe pipenull = new PipeNull();
 
@@ -40,25 +48,7 @@ namespace Library
             {
                 pipe0.Send(tag);
             }
-            // enviamos la imagen al primer pipeSerial
-        }
-        public string getContent(string fileName)
-        {
-            //variable constante con el nombre del archivo
-            /// <summary>
-            /// Punto de entrada
-            /// </summary>
-            String path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), fileName);
-            UriBuilder builder = new UriBuilder("file", "", 0, path);
-            String uri = builder.Uri.ToString();
-            // Creamos un nuevo descargador pasándole una ubicación.
-            Downloader downloader = new Downloader(uri);
-            // Pedimos al descargador que descargue el contenido
-            string content;
-            //Carga el contenido del archivo en la variable content
-            content = downloader.Download();
-
-            return content;
+            
         }
     }
 }
