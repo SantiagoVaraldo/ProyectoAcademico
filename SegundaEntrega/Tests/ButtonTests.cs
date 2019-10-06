@@ -9,6 +9,15 @@ namespace Tests
 {
     public class ButtonTests
     {
+        World world1;
+        Level level;
+        Screen screen;
+        public static void Setup()
+        {
+            world1 = new World("world1", 50, 50);
+            level = new Level("level1", world1);
+            screen = new Screen("screen1", level);
+        }
         public static void Compared(Button button, string NameExpected, int PositionYExpected, int PositionXExpected, int LengthExpected, int WidthExpected, Screen ScreenExpected, string ImagePathExpected)
         {
             Assert.Equal(button.Name, NameExpected);
@@ -23,9 +32,7 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            World world1 = new World("world1", 50, 50);
-            Level level = new Level("level1", world1);
-            Screen screen = new Screen("screen1", level);
+            Setup();
             Button button = new Button("button1", 20, 20, 10, 20, screen, "ImagePath");
             string NameExpected = "button1";
             int PositionYExpected = 20;
@@ -35,14 +42,12 @@ namespace Tests
             Screen ScreenExpected = screen;
             string ImagePathExpected = "ImagePath";
             button.Screen = screen;
-            ButtonTests.Compared(button,NameExpected,PositionYExpected,PositionXExpected,LengthExpected,WidthExpected,ScreenExpected,ImagePathExpected);
+            ButtonTests.Compared(button, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
         }
         [Fact]
         public void ButtonWithoutName()
         {
-            World world1 = new World("world1", 50, 50);
-            Level level = new Level("level1", world1);
-            Screen screen = new Screen("screen1", level);
+            Setup();
             Button button = new Button(null, 20, 20, 10, 20, screen, "ImagePath");
             string NameExpected = null;
             int PositionYExpected = 20;
@@ -52,15 +57,13 @@ namespace Tests
             Screen ScreenExpected = screen;
             string ImagePathExpected = "ImagePath";
             button.Screen = screen;
-            ButtonTests.Compared(button,NameExpected,PositionYExpected,PositionXExpected,LengthExpected,WidthExpected,ScreenExpected,ImagePathExpected);
+            ButtonTests.Compared(button, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
 
         }
         [Fact]
         public void ButtonWithoutScreen()
         {
-            World world1 = new World("world1", 50, 50);
-            Level level = new Level("level1", world1);
-            Screen screen = new Screen("screen1", level);
+            Setup();
             Button button = new Button("button1", 20, 20, 10, 20, null, "ImagePath");
             string NameExpected = "button1";
             int PositionYExpected = 20;
@@ -70,15 +73,13 @@ namespace Tests
             Screen ScreenExpected = null;
             string ImagePathExpected = "ImagePath";
             button.Screen = null;
-            ButtonTests.Compared(button,NameExpected,PositionYExpected,PositionXExpected,LengthExpected,WidthExpected,ScreenExpected,ImagePathExpected);
+            ButtonTests.Compared(button, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
         }
 
         [Fact]
         public void ButtonWithoutImagePath()
         {
-            World world1 = new World("world1", 50, 50);
-            Level level = new Level("level1", world1);
-            Screen screen = new Screen("screen1", level);
+            Setup();
             Button button = new Button("button1", 20, 20, 10, 20, screen, null);
             string NameExpected = "button1";
             int PositionYExpected = 20;
@@ -88,15 +89,13 @@ namespace Tests
             Screen ScreenExpected = screen;
             string ImagePathExpected = null;
             button.Screen = screen;
-            ButtonTests.Compared(button,NameExpected,PositionYExpected,PositionXExpected,LengthExpected,WidthExpected,ScreenExpected,ImagePathExpected);
+            ButtonTests.Compared(button, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
         }
 
         [Fact]
         public void ButtonLengthNegative()
         {
-            World world1 = new World("world1", 50, 50);
-            Level level = new Level("level1", world1);
-            Screen screen = new Screen("screen1", level);
+            Setup();
             Button button = new Button("button1", 20, 20, -10, 20, screen, "ImagePath");
             string NameExpected = "button1";
             int PositionYExpected = 20;
@@ -118,9 +117,7 @@ namespace Tests
         [Fact]
         public void ButtonWidthNegative()
         {
-            World world1 = new World("world1", 50, 50);
-            Level level = new Level("level1", world1);
-            Screen screen = new Screen("screen1", level);
+            Setup();
             Button button = new Button("button1", 20, 20, 10, -20, screen, "ImagePath");
             string NameExpected = "button1";
             int PositionYExpected = 20;
@@ -139,6 +136,6 @@ namespace Tests
             Assert.Equal(button.ImagePath, ImagePathExpected);
 
         }
-    
+
     }
 }
