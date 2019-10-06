@@ -54,10 +54,10 @@ namespace Program
             }
             foreach (Level level in Creator.world.ListaLevel)
             {
-                Console.WriteLine(level);
+                Console.WriteLine(level.Name);
                 foreach (Screen screen in level.ListaScreen)
                 {
-                    Console.WriteLine(screen);
+                    Console.WriteLine(screen.Name);
                     foreach (Element element in screen.ListaElement)
                     {
                         Console.WriteLine(element);
