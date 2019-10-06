@@ -10,21 +10,23 @@ namespace Tests
         [Fact]
         public void TagWithName_And_ListAttributes()
         {
-            List<Attribute> listaAtributos = new List<Attribute>();
-            listaAtributos.Add(new Attribute("pedro", "15"));
-            listaAtributos.Add(new Attribute("marcos", "13"));
+            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Attribute attribute = new Attribute("pedro", "15");
+            Attribute attribute2 = new Attribute("marcos", "13");
+            listaAtributos.Add(attribute.Clave, attribute);
+            listaAtributos.Add(attribute2.Clave, attribute2);
             Tag tag = new Tag("personas", listaAtributos);
             string NameExpected = "personas";
-            List<Attribute> ListaAtributosExpected = listaAtributos;
+            Dictionary<string, Attribute> ListaAtributosExpected = listaAtributos;
             Assert.Equal(NameExpected, tag.Name);
             Assert.Equal(ListaAtributosExpected, tag.ListaAtributos);
         }
         [Fact]
         public void TagWithout_ListAttributes()
         {
-            Tag tag = new Tag("personas");
+            Tag tag = new Tag("personas", null);
             string NameExpected = "personas";
-            List<Attribute> ListaAtributosExpected = null;
+            Dictionary<string, Attribute> ListaAtributosExpected = null;
             Assert.Equal(NameExpected, tag.Name);
             Assert.Equal(ListaAtributosExpected, tag.ListaAtributos);
         }
@@ -33,7 +35,7 @@ namespace Tests
         {
             Tag tag = new Tag("personas", null);
             string NameExpected = "personas";
-            List<Attribute> ListaAtributosExpected = null;
+            Dictionary<string, Attribute> ListaAtributosExpected = null;
             Assert.Equal(NameExpected, tag.Name);
             Assert.Equal(ListaAtributosExpected, tag.ListaAtributos);
         }
