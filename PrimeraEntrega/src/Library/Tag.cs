@@ -45,6 +45,10 @@ namespace ExerciseOne
 
         public void AddAttribute(Attribute attribute)
         {
+            if (this.listaAtributos == null)
+            {
+                this.listaAtributos = new Dictionary<string, Attribute>();
+            }
             this.listaAtributos.Add(attribute.Clave, attribute);
         }
     }
