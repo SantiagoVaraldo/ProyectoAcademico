@@ -3,7 +3,7 @@ using System;
 /// <summary>
 /// NOMBRE: Element.
 /// 
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos.
+/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos es de tipo IXML.
 /// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos Element.
@@ -11,7 +11,7 @@ using System;
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de Element, su unica razon de cambio es modificar los datos que guardamos sobre el elemento.
 /// 
-/// COLABORACIONES: Colabora con la clase Level ya que un elemento debe pertenecer a un nivel.
+/// COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
 /// </summary>
 
 namespace Library

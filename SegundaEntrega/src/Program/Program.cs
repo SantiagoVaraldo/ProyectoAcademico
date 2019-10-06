@@ -55,14 +55,14 @@ namespace Program
             foreach (Level level in Creator.world.ListaLevel)
             {
                 Console.WriteLine(level.Name);
-                foreach (Screen screen in level.ListaScreen)
-                {
-                    Console.WriteLine(screen.Name);
-                    foreach (Element element in screen.ListaElement)
-                    {
-                        Console.WriteLine(element);
-                    }
-                }
+               // foreach (Screen screen in level.ListaScreen)
+                //{
+                    //Console.WriteLine(screen.Name);
+                    //foreach (Element element in screen.ListaElement)
+                    //{
+                     //   Console.WriteLine(element);
+                   // }
+                //}
             }
         }
     }
