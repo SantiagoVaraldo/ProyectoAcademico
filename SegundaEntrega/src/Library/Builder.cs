@@ -51,8 +51,8 @@ namespace Proyecto.StudentsCode
                                              {
                                                       if (element is Image)
                                                       {
-                                                                Image image = (Image)element;
-                                                               imageId = adapter.CreateImage(-(1024 / 2 - (int)image.PositionX / 2), -(768 / 2 - (int)image.PositionY / 2), (int)image.Width, (int)image.Length);
+                                                               Image image = (Image)element;
+                                                               imageId = adapter.CreateImage((int)image.PositionX, (int)image.PositionY, (int)image.Width, (int)image.Length);
                                                                adapter.SetImage(imageId, image.ImagePath);
                                                       }
                                                       else if (element is Button)
@@ -60,11 +60,11 @@ namespace Proyecto.StudentsCode
                                                                Button button = (Button)element;
                                                                //Render.renderButton((Button)element, adapter);
                                                                string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToNextPage);
-                                                               adapter.SetImage(buttonId, button.ImagePath);
+                                                               //adapter.SetImage(buttonId, button.ImagePath);
                                                       }
-                                                      this.nextPageName = this.adapter.AddPage();
-                                                      this.adapter.ChangeLayout(Layout.Grid);
                                              }
+                                             this.nextPageName = this.adapter.AddPage();
+                                             this.adapter.ChangeLayout(Layout.Grid);
                                     }
                            }
 
