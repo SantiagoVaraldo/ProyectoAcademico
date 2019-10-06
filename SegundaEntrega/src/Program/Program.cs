@@ -12,7 +12,7 @@ namespace Program
                   static void Main(string[] args)
                   {
                            //variable constante con el nombre del archivo
-                           const String fileName = @"test.xml";
+                           const String fileName = @"..\..\..\..\Library\test.xml";
                            /// <summary>
                            /// Punto de entrada
                            /// </summary>
