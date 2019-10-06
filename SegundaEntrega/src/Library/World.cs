@@ -3,10 +3,12 @@ using System.Collections.Generic;
 /// <summary>
 /// NOMBRE: World.
 /// 
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos.
+/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos, implementa la interfaz
+/// IContainer.
 /// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-/// pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre y tamaño del World.
+/// pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre, tamaño del World y una lista con
+/// los niveles pertinentes a ese World.
 /// 
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
