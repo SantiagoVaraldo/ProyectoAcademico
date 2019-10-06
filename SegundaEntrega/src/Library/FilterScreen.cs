@@ -10,14 +10,15 @@ namespace Library
                   public bool Result
                   {
                            get {return this.Result; }
+                           set {this.Result = value;}
                   }
-                  public Tag Filter(Tag tag, IContainer container)
+                  public Tag Filter(Tag tag)
                   {
                            if (tag.Name == "Screen")
                            {
                                     this.Result = true;
-                                    IContainer screen = new Screen(tag.ListaAtributos["Name"].Valor, container);
-                                    container.Add(screen);
+                                    Screen screen = new Screen(tag.ListaAtributos["Name"].Valor, Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1]);
+                                    Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].Add(screen);
                            }
                            else
                            {

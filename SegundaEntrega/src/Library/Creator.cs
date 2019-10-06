@@ -8,6 +8,7 @@ namespace Library
 {
          public class Creator
          {
+                  public static World world;
                   public void Create()
                   {
                            //variable constante con el nombre del archivo
@@ -41,11 +42,11 @@ namespace Library
                            // creamos instancias de todos los pipeSerial que vayamos a utilizar
                            //IPipe pipeserial7 = new PipeSerial(filtertwitter,pipenull);
 
-                           IPipe pipe4 = new Pipe(FilterImage, pipenull, pipenull);
-                           IPipe pipe3 = new Pipe(FilterButton, pipenull, pipe4);
-                           IPipe pipe2 = new Pipe(FilteScreen, pipenull, pipe3);
-                           IPipe pipe1 = new Pipe(FilterLevel, pipenull, pipe2);
-                           IPipe pipe0 = new Pipe(FilterWorld, pipenull, pipe1);
+                           IPipe pipe4 = new PipeConditional(filterimage, pipenull, pipenull);
+                           IPipe pipe3 = new PipeConditional(filterbutton, pipenull, pipe4);
+                           IPipe pipe2 = new PipeConditional(filterscreen, pipenull, pipe3);
+                           IPipe pipe1 = new PipeConditional(filterlevel, pipenull, pipe2);
+                           IPipe pipe0 = new PipeConditional(filterworld, pipenull, pipe1);
 
                            foreach (Tag tag in listtags)
                            {

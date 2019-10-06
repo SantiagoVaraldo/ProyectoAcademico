@@ -71,7 +71,7 @@ namespace Library
                   {
                            if (ixml is Element)
                            {
-                                    ListaLevel.Add((Element)ixml);
+                                    this.ListaElement.Add((Element)ixml);
                            }
                   }
          }

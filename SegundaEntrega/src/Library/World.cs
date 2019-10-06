@@ -89,7 +89,7 @@ namespace Library
                   {
                            if (ixml is Level)
                            {
-                                    ListaLevel.Add((Level)ixml);
+                                    this.ListaLevel.Add((Level)ixml);
                            }
                   }
 

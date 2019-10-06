@@ -71,7 +71,7 @@ namespace Library
                   {
                            if (ixml is Screen)
                            {
-                                    ListaLevel.Add((Screen)ixml);
+                                    this.ListaScreen.Add((Screen)ixml);
                            }
                   }
          }
