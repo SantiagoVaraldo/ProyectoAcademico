@@ -1,10 +1,13 @@
 <World Name="TheWorld" Length="50" Width="50">
-	<Level Name="Level2" World="TheWorld">
-		<Screen Name="Screen1" level="Level2">
-			<Image Name="CowImage" PositionY="-25" PositionX="-25" Length="10" Width="10" Screen="Screen1" ImagePath="banana.jpg">
-			</Image>
-			<Button Name="CowImage" PositionY="-25" PositionX="25" Length="10" Width="10" Screen="Screen1", ImagePath="manzana.jpg">
-			</Button>
+	<Level Name="Level" World="TheWorld">
+		<Screen Name="Screen" level="Level">
+			<Image Name="ImageBanana" PositionY="-150" PositionX="-150" Length="50" Width="50" Screen="Screen" ImagePath="banana.jpg"/>
+			<Image Name="ImageCamara" PositionY="-150" PositionX="0" Length="50" Width="50" Screen="Screen", ImagePath="camara.jpg"/>
+			<Image Name="ImageLampara" PositionY="-150" PositionX="150" Length="50" Width="50" Screen="Screen", ImagePath="lampara.jpg"/>
+			<Image Name="ImageLapiz" PositionY="150" PositionX="-150" Length="50" Width="50" Screen="Screen", ImagePath="lapiz.jpg"/>
+			<Image Name="ImageManzana" PositionY="150" PositionX="0" Length="50" Width="50" Screen="Screen", ImagePath="manzana.jpg"/>
+			<Image Name="ImageOceano" PositionY="150" PositionX="150" Length="50" Width="50" Screen="Screen", ImagePath="oceano.jpg"/>
+			<Button Name="Button1" PositionY="200" PositionX="0" Length="20" Width="50" Screen="Screen", ImagePath=""/>
 		</Screen>
 	</Level>
 </World>
