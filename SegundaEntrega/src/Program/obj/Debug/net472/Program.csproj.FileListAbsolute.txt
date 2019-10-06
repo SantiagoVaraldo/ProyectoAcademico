@@ -14,3 +14,19 @@ C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\
 C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.csproj.CopyComplete
 C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.exe
 C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Program.exe.config
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Program.exe
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Program.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Common.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Library.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\StudentsCode.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\StudentsCode.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Common.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\bin\Debug\net472\Library.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.csprojAssemblyReference.cache
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.csproj.CoreCompileInputs.cache
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.AssemblyInfoInputs.cache
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.AssemblyInfo.cs
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.csproj.CopyComplete
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.exe
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Program\obj\Debug\net472\Program.pdb
