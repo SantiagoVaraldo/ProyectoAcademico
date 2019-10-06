@@ -125,6 +125,11 @@
       "Program/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "Common": "1.0.0",
+          "Library": "1.0.0",
+          "StudentsCode": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Program.dll": {}
         },
