@@ -15,85 +15,121 @@ using Library;
 /// </summary>
 namespace Proyecto.StudentsCode
 {
-    public class Builder : IBuilder
-    {
-        private IMainViewAdapter adapter;
-        private string firstPageName;
+         public class Builder : IBuilder
+         {
+                  private IMainViewAdapter adapter;
+                  private string firstPageName;
 
-        private string nextPageName;
-      
-        
+                  private string nextPageName;
 
-        public void Build(IMainViewAdapter providedAdapter)
-        {
-            string imageId;
 
-            this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
 
-            this.adapter.ToDoAfterBuild(this.AfterBuildShowFirstPage);
+                  public void Build(IMainViewAdapter providedAdapter)
+                  {
 
-            this.firstPageName = this.adapter.AddPage();
+                           string imageId;
 
-            this.adapter.ChangeLayout(Layout.ContentSizeFitter);
+                           this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
 
-            imageId = this.adapter.CreateImage(-(1024 / 2 - 100 / 2), -(768 / 2 - 100 / 2), 100, 100);
-            try
-            {
-                this.adapter.SetImage(imageId, "Martillo.jpg");
-            }
-            catch (Exception ex)
-            {
-                this.adapter.Debug(ex.Message);
-            }
-            imageId = this.adapter.CreateImage(1024 / 2 - 100 / 2, 768 / 2 - 100 / 2, 100, 100);
-            this.adapter.SetImage(imageId, "Martillo.jpg");
+                           this.adapter.ToDoAfterBuild(this.AfterBuildShowFirstPage);
 
-            string sourceCellImageId = this.adapter.CreateDragAndDropSource(50, 180, 100, 200);
-            this.adapter.SetImage(sourceCellImageId, "Martillo.jpg");
+                           this.firstPageName = this.adapter.AddPage();
 
-            string destinationCellImageId = this.adapter.CreateDragAndDropDestination(250, 180, 200, 100);
-            this.adapter.SetImage(destinationCellImageId, "Martillo.jpg");
+                           this.adapter.ChangeLayout(Layout.ContentSizeFitter);
 
-            string itemId = this.adapter.CreateDragAndDropItem(0, 0, 100, 100);
-            this.adapter.SetImage(itemId, "Martillo.jpg");
-            this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
+                           Creator creator = new Creator();
+                           creator.Create();
+                           World world = Creator.world;
 
-            imageId = this.adapter.CreateImage(40, 100, 100, 100);
-            this.adapter.SetImage(imageId, "Martillo.jpg");
+                           foreach (Level level in world.ListaLevel)
+                           {
+                                    foreach (Screen screen in level.ListaScreen)
+                                    {
+                                             //screen.Render();
 
-            string buttonId = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
-            this.adapter.SetImage(buttonId, "Martillo.jpg");
+                                             foreach (Element element in screen.ListaElement)
+                                             {
+                                                      if (element is Image)
+                                                      {
+                                                                Image image = (Image)element;
+                                                               imageId = adapter.CreateImage(-(1024 / 2 - (int)image.PositionX / 2), -(768 / 2 - (int)image.PositionY / 2), (int)image.Width, (int)image.Length);
+                                                               adapter.SetImage(imageId, image.ImagePath);
+                                                      }
+                                                      else if (element is Button)
+                                                      {
+                                                               Button button = (Button)element;
+                                                               //Render.renderButton((Button)element, adapter);
+                                                               string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToNextPage);
+                                                               adapter.SetImage(buttonId, button.ImagePath);
+                                                      }
+                                                      this.nextPageName = this.adapter.AddPage();
+                                                      this.adapter.ChangeLayout(Layout.Grid);
+                                             }
+                                    }
+                           }
 
-            this.nextPageName = this.adapter.AddPage();
-            this.adapter.ChangeLayout(Layout.Grid);
 
-            buttonId = this.adapter.CreateButton(100, 100, 100, 100, "#BC2FA864", this.GoToFirstPage);
-            this.adapter.SetImage(buttonId, "Arco.jpg");
-            imageId = this.adapter.CreateImage(40, 100, 100, 100);
-            this.adapter.SetImage(imageId, "Martillo.jpg");
-        }
 
-            public void AfterBuildShowFirstPage()
-        {
-            this.adapter.ShowPage(this.firstPageName);
-        }
+                           /*
+                           imageId = this.adapter.CreateImage(-(1024 / 2 - 100 / 2), -(768 / 2 - 100 / 2), 100, 100);
+                           try
+                           {
+                               this.adapter.SetImage(imageId, "Martillo.jpg");
+                           }
+                           catch (Exception ex)
+                           {
+                               this.adapter.Debug(ex.Message);
+                           }
+                           imageId = this.adapter.CreateImage(1024 / 2 - 100 / 2, 768 / 2 - 100 / 2, 100, 100);
+                           this.adapter.SetImage(imageId, "Martillo.jpg");
 
-        private void GoToFirstPage()
-        {
-            this.adapter.ShowPage(this.firstPageName);
-            this.adapter.PlayAudio("Speech On.wav");
-        }
+                           string sourceCellImageId = this.adapter.CreateDragAndDropSource(50, 180, 100, 200);
+                           this.adapter.SetImage(sourceCellImageId, "Martillo.jpg");
 
-        private void GoToNextPage()
-        {
-            this.adapter.ShowPage(this.nextPageName);
-            this.adapter.PlayAudio("Speech Off.wav");
-        }
+                           string destinationCellImageId = this.adapter.CreateDragAndDropDestination(250, 180, 200, 100);
+                           this.adapter.SetImage(destinationCellImageId, "Martillo.jpg");
 
-        private void OnClick()
-        {
-            this.adapter.Debug($"Button clicked!");
-            this.adapter.ShowPage("MainPage");
-        }
-    }
+                           string itemId = this.adapter.CreateDragAndDropItem(0, 0, 100, 100);
+                           this.adapter.SetImage(itemId, "Martillo.jpg");
+                           this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
+
+                           imageId = this.adapter.CreateImage(40, 100, 100, 100);
+                           this.adapter.SetImage(imageId, "Martillo.jpg");
+
+                           string buttonId = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
+                           this.adapter.SetImage(buttonId, "Martillo.jpg");
+
+                           this.nextPageName = this.adapter.AddPage();
+                           this.adapter.ChangeLayout(Layout.Grid);
+
+                           buttonId = this.adapter.CreateButton(100, 100, 100, 100, "#BC2FA864", this.GoToFirstPage);
+                           this.adapter.SetImage(buttonId, "Arco.jpg");
+                           imageId = this.adapter.CreateImage(40, 100, 100, 100);
+                           this.adapter.SetImage(imageId, "Martillo.jpg");
+                       }
+                       */
+                  }
+                  public void AfterBuildShowFirstPage()
+                  {
+                           this.adapter.ShowPage(this.firstPageName);
+                  }
+
+                  private void GoToFirstPage()
+                  {
+                           this.adapter.ShowPage(this.firstPageName);
+                           this.adapter.PlayAudio("Speech On.wav");
+                  }
+
+                  private void GoToNextPage()
+                  {
+                           this.adapter.ShowPage(this.nextPageName);
+                           this.adapter.PlayAudio("Speech Off.wav");
+                  }
+
+                  private void OnClick()
+                  {
+                           this.adapter.Debug($"Button clicked!");
+                           this.adapter.ShowPage("MainPage");
+                  }
+         }
 }
