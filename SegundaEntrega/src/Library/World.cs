@@ -13,7 +13,7 @@ using System.Collections.Generic;
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
 /// 
-/// COLABORACIONES: No colabora con ninguna otra clase.
+/// COLABORACIONES: Colabora con Level ya que conoce una lista de Level y con la interfaz IContainer.
 /// </summary>
 
 namespace Library
@@ -87,6 +87,11 @@ namespace Library
                                     this.listalevel = value;
                            }
                   }
+                  /// <summary>
+                  /// metodo de la interfaz IContainer donde agrega un elemento de tipo 
+                  /// IXML en este caso un level a la lista de niveles
+                  /// </summary>
+                  /// <param name="ixml"> recibe un IXML para agregar a la lista </param>
                   public void Add(IXML ixml)
                   {
                            if (ixml is Level)

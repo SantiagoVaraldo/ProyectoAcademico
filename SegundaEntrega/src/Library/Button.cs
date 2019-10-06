@@ -12,8 +12,12 @@ using System;
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de Button, su unica razon de cambio es modificar los datos que guardamos sobre un boton.
 /// 
-/// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen, y debe 
-/// conocer la informacion de un objeto Element.
+/// HERENCIA: esta clase hereda de la clase mas general Element, de momento el boton va a heredar todo de elemento
+/// y no agrega comportamiento ni atributos extras.(optamos pr herencia en lugar de composicion ya que necesitabamos 
+/// todo los datos de Element y no ibamos a crear comportamiento)
+/// 
+/// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
+/// y es de tipo Element.
 /// </summary>
 
 namespace Library

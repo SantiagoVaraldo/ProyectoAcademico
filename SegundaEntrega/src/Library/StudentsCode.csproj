@@ -4,7 +4,7 @@
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
     <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ClasesProfes\PII_Proyecto2019-master\Common\src\Common.csproj" />
+    <ProjectReference Include="..\..\..\..\ClasesProfes\PII_Proyecto2019\Common\src\Common.csproj" />
     <ProjectReference Include="..\..\..\PrimeraEntrega\src\Library\Library.csproj" />
   </ItemGroup>
 
@@ -13,8 +13,8 @@
       <AllLibraries Include="$(OutDir)\*.dll" />
     </ItemGroup>
 
-    <Message Text="Copying output file: @(AllLibraries) to: ..\..\..\..\ClasesProfes\PII_Proyecto2019-master\Unity\Assets" Importance="High" />
-    <Copy SourceFiles="@(AllLibraries)" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019-master\Unity\Assets" />
+    <Message Text="Copying output file: @(AllLibraries) to: ..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" Importance="High" />
+    <Copy SourceFiles="@(AllLibraries)" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" />
   </Target> 
 
 </Project>
