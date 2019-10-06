@@ -87,6 +87,11 @@ namespace Library
                                     this.listalevel = value;
                            }
                   }
+                  /// <summary>
+                  /// metodo de la interfaz IContainer donde agrega un elemento de tipo 
+                  /// IXML en este caso un level a la lista de niveles
+                  /// </summary>
+                  /// <param name="ixml"> recibe un IXML para agregar a la lista </param>
                   public void Add(IXML ixml)
                   {
                            if (ixml is Level)

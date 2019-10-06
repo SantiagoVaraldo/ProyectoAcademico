@@ -18,7 +18,7 @@ namespace Library
                            if (tag.Name == "Image")
                            {
                                     this.Result = true;
-                                    Element image = new Image(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["PositionY"].Valor), Int32.Parse(tag.ListaAtributos["PositionX"].Valor), Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor), Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].ListaScreen.Count-1], tag.ListaAtributos["ImagePath"].Valor );
+                                    IXML image = new Image(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["PositionY"].Valor), Int32.Parse(tag.ListaAtributos["PositionX"].Valor), Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor), Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].ListaScreen.Count-1], tag.ListaAtributos["ImagePath"].Valor );
                                     Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].ListaScreen.Count-1].Add(image);
                            }
                            else

@@ -17,7 +17,7 @@ namespace Library
                            if (tag.Name == "Screen")
                            {
                                     this.Result = true;
-                                    Screen screen = new Screen(tag.ListaAtributos["Name"].Valor, Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1]);
+                                    IXML screen = new Screen(tag.ListaAtributos["Name"].Valor, Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1]);
                                     Creator.world.ListaLevel[Creator.world.ListaLevel.Count -1].Add(screen);
                            }
                            else

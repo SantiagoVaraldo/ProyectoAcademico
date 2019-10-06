@@ -67,6 +67,11 @@ namespace Library
                                     this.listascreen = value;
                            }
                   }
+                  /// <summary>
+                  /// metodo de la interfaz IContainer donde agrega un elemento de tipo 
+                  /// IXML en este caso una Screen a la lista de Screen
+                  /// </summary>
+                  /// <param name="ixml"> recibe un IXML para agregar a la lista </param>
                   public void Add(IXML ixml)
                   {
                            if (ixml is Screen)
