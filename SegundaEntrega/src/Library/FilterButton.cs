@@ -16,7 +16,7 @@ namespace Library
                            if (tag.Name == "Button")
                            {
                                     this.Result = true;
-                                    Element button = new Button(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["PositionY"].Valor, tag.ListaAtributos["PositionX"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor, container, tag.ListaAtributos["ImagePath"].Valor );
+                                    Element button = new Button(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["PositionY"].Valor), Int32.Parse(tag.ListaAtributos["PositionX"].Valor), Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor), container, tag.ListaAtributos["ImagePath"].Valor );
                                     container.Add(button);
                            }
                            else

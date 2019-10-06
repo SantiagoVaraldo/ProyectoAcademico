@@ -16,7 +16,7 @@ namespace Library
                            if (tag.Name == "World")
                            {
                                     this.Result = true;
-                                    IContainer world = new World(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor );
+                                    IContainer world = new World(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor) );
                                     container.Add(world);
                            }
                            else

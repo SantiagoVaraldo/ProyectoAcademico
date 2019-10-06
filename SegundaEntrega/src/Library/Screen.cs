@@ -18,58 +18,61 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Screen : IContainer
-    {
-        public Screen(string Name, Level Level)
-        {
-            this.Name = Name;
-            this.Level = Level;
-        }
-        private string name;
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.name = value;
-                }
-            }
-        }
-        private Level level;
-        public Level Level
-        {
-            get
-            {
-                return this.level; 
-            }
-            set
-            {
-                if (value != null)
-                {
-                    this.level = value;
-                }
-            }
-        }
-        private List<Element> listaelement = new List<Element>();
-        public List<Element> ListaElement
-        {
-            get
-            {
-                return this.listaelement;
-            }
-            set
-            {
-                this.listaelement = value;
-            }
-        }
-        public void Add(IXML ixml)
-        {
-            ListaElement.Add(ixml);
-        }
-    }
+         public class Screen : IContainer
+         {
+                  public Screen(string Name, Level Level)
+                  {
+                           this.Name = Name;
+                           this.Level = Level;
+                  }
+                  private string name;
+                  public string Name
+                  {
+                           get
+                           {
+                                    return this.name;
+                           }
+                           set
+                           {
+                                    if (!string.IsNullOrEmpty(value))
+                                    {
+                                             this.name = value;
+                                    }
+                           }
+                  }
+                  private Level level;
+                  public Level Level
+                  {
+                           get
+                           {
+                                    return this.level;
+                           }
+                           set
+                           {
+                                    if (value != null)
+                                    {
+                                             this.level = value;
+                                    }
+                           }
+                  }
+                  private List<Element> listaelement = new List<Element>();
+                  public List<Element> ListaElement
+                  {
+                           get
+                           {
+                                    return this.listaelement;
+                           }
+                           set
+                           {
+                                    this.listaelement = value;
+                           }
+                  }
+                  public void Add(IXML ixml)
+                  {
+                           if (ixml is Element)
+                           {
+                                    ListaLevel.Add((Element)ixml);
+                           }
+                  }
+         }
 }

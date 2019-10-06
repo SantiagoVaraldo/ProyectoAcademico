@@ -17,59 +17,62 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Level : IContainer
-    {
-        public Level(string Name, World World)
-        {
-            this.Name = Name;
-            this.World = World;
-        }
-        private string name;
-        private World world;
-        private List<Screen> listascreen = new List<Screen>();
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.name = value;
-                }
-            }
-        }
-        public World World
-        {
-            get
-            {
-                return this.world; 
-            }
-            set
-            {
-                if (value != null)
-                {
-                    this.world = value;
-                }
-            }
-        }
+         public class Level : IContainer
+         {
+                  public Level(string Name, World World)
+                  {
+                           this.Name = Name;
+                           this.World = World;
+                  }
+                  private string name;
+                  private World world;
+                  private List<Screen> listascreen = new List<Screen>();
+                  public string Name
+                  {
+                           get
+                           {
+                                    return this.name;
+                           }
+                           set
+                           {
+                                    if (!string.IsNullOrEmpty(value))
+                                    {
+                                             this.name = value;
+                                    }
+                           }
+                  }
+                  public World World
+                  {
+                           get
+                           {
+                                    return this.world;
+                           }
+                           set
+                           {
+                                    if (value != null)
+                                    {
+                                             this.world = value;
+                                    }
+                           }
+                  }
 
-        public List<Screen> ListaScreen
-        {
-            get
-            {
-                return this.listascreen;
-            }
-            set
-            {
-                this.listascreen = value;
-            }
-        }
-        public void Add(IXML ixml)
-        {
-            ListaScreen.Add(ixml);
-        }
-    }
+                  public List<Screen> ListaScreen
+                  {
+                           get
+                           {
+                                    return this.listascreen;
+                           }
+                           set
+                           {
+                                    this.listascreen = value;
+                           }
+                  }
+                  public void Add(IXML ixml)
+                  {
+                           if (ixml is Screen)
+                           {
+                                    ListaLevel.Add((Screen)ixml);
+                           }
+                  }
+         }
 }
