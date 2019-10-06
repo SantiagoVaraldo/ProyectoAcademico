@@ -43,8 +43,8 @@ namespace Library
                 }
             }
         }
-        private int positionY;
-        public int PositionY
+        private int? positionY;
+        public int? PositionY
         {
             get
             {
@@ -52,14 +52,14 @@ namespace Library
             }
             set
             {
-                if (value <= this.Width && value >= this.Length)
+                if (value!=null)
                 {
                     this.positionY = value;
                 }
             }
         }
-        private int positionX;
-        public int PositionX
+        private int? positionX;
+        public int? PositionX
         {
             get
             {
@@ -67,7 +67,7 @@ namespace Library
             }
             set
             {
-                if (value <= this.Length && value >= this.Width) //Hay que revisar este set y el de PositionY.
+                if (value != null) //Hay que revisar este set y el de PositionY.
                 {
                     this.positionX = value;
                 }
