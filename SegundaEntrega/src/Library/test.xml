@@ -1,9 +1,17 @@
 <World Name="TheWorld" Length="50" Width="50">
 	<Level Name="Level2" World="TheWorld">
 		<Screen Name="Screen1" level="Level2">
-			<Image Name="CowImage" Posicion_y="-25" Posicion_x="-25" Length="10" Width="10" Screen="Screen1" Imagepath="">
+			<Image Name="CowImage" PositionY="-25" PositionX="-25" Length="10" Width="10" Screen="Screen1" ImagePath="">
 			</Image>
-			<Button Name="CowImage" Posicion_y="-25" Posicion_x="25" Length="10" Width="10" Screen="Screen1">
+			<Button Name="CowImage" PositionY="-25" PositionX="25" Length="10" Width="10" Screen="Screen1", ImagePath="">
+			</Button>
+		</Screen>
+	</Level>
+	<Level Name="Level2" World="TheWorld">
+		<Screen Name="Screen1" level="Level2">
+			<Image Name="CowImage" PositionY="-25" PositionX="-25" Length="10" Width="10" Screen="Screen1" ImagePath="">
+			</Image>
+			<Button Name="CowImage" PositionY="-25" PositionX="25" Length="10" Width="10" Screen="Screen1", ImagePath="">
 			</Button>
 		</Screen>
 	</Level>
