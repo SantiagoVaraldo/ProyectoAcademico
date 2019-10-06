@@ -4,7 +4,7 @@ using ExerciseOne;
 namespace Library
 {
     /// <summary>
-    /// Un filtro grafico.
+    /// Un filtro con condicion.
     /// </summary>
     /// <remarks>
     /// Un filtro procesa un tag, creando un objeto en caso que corresponda.
@@ -12,11 +12,11 @@ namespace Library
     public interface IFilterConditional
     {
         /// <summary>
-        /// Procesa el tag pasado por parametro y devuelve un objeto creado o el mismo tag.
+        /// Procesa el tag pasado por parametro y crea un objeto en caso correcto
         /// </summary>
         /// <param name="tag">El tag a procesar</param>
-        /// <returns>El mismo tag o un objeto creado</returns>
-        Tag Filter(Tag tag, IContainer container); // crear un tipo mas generico que contenga todas nuestras clases
+        /// <returns>El mismo tag</returns>
+        Tag Filter(Tag tag);
         bool Result {get;}
     }
 }
