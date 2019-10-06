@@ -37,3 +37,16 @@ C:\Users\Sebastian\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Librar
 C:\Users\Sebastian\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\Common.pdb
 C:\Users\Sebastian\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\Library.pdb
 C:\Users\Sebastian\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.csproj.CopyComplete
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.csprojAssemblyReference.cache
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.csproj.CoreCompileInputs.cache
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.AssemblyInfoInputs.cache
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.AssemblyInfo.cs
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\StudentsCode.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\StudentsCode.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\Common.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\Library.dll
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\Common.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\bin\Debug\net472\Library.pdb
+C:\Users\FIT\Documents\GitHub\pii_2019_2_equipo9\SegundaEntrega\src\Library\obj\Debug\net472\StudentsCode.csproj.CopyComplete
