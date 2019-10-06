@@ -16,8 +16,8 @@ namespace Library
         }
         public static void renderButton(Button button, IMainViewAdapter adapter)
         {
-            string buttonId = adapter.CreateButton(button.PositionX, button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", null);
-            adapter.SetImage(buttonId, button.ImagePath);
+            //string buttonId = adapter.CreateButton(button.PositionX, button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", null);
+            //adapter.SetImage(buttonId, button.ImagePath);
         }
     }
 }
