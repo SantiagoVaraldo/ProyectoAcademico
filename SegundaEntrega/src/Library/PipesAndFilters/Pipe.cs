@@ -1,18 +1,20 @@
 using Library;
 using ExerciseOne;
 
-namespace CompAndDel.Pipes
+namespace Library
 {
     public class PipeConditional : IPipe
     {
         IPipe truePipe, falsePipe;
         IFilterConditional filter;
+        
         public PipeConditional(IFilterConditional filter, IPipe truePipe, IPipe falsePipe)
         {
             this.truePipe = truePipe;
             this.falsePipe = falsePipe;
             this.filter = filter;
         }
+        
         public Tag Send(Tag tag)
         {
             Tag filteredTag = filter.Filter(tag);

@@ -2,22 +2,24 @@ using System;
 using ExerciseOne;
 using System.Collections.Generic;
 using Attribute = ExerciseOne.Attribute;
+using System.IO;
 
 namespace Library
 {
-         public class FilterButton : IFilterConditional
+         public class FilterWorld : IFilterConditional
          {
                   public bool Result
                   {
                            get {return this.Result; }
+                           set {this.Result = value;}
                   }
-                  public Tag Filter(Tag tag, IContainer container)
+                  public Tag Filter(Tag tag)
                   {
-                           if (tag.Name == "Button")
+                           if (tag.Name == "World")
                            {
                                     this.Result = true;
-                                    Element button = new Button(tag.ListaAtributos["Name"].Valor, tag.ListaAtributos["PositionY"].Valor, tag.ListaAtributos["PositionX"].Valor, tag.ListaAtributos["Length"].Valor, tag.ListaAtributos["Width"].Valor, container, tag.ListaAtributos["ImagePath"].Valor );
-                                    container.Add(button);
+                                    World world = new World(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor) );
+                                    Creator.world = world;
                            }
                            else
                            {

@@ -10,14 +10,15 @@ namespace Library
                   public bool Result
                   {
                            get { return this.Result; }
+                           set {this.Result = value;}
                   }
-                  public Tag Filter(Tag tag, IContainer container)
+                  public Tag Filter(Tag tag)
                   {
                            if (tag.Name == "Level")
                            {
                                     this.Result = true;
-                                    IContainer level = new Level(tag.ListaAtributos["Name"].Valor, container);
-                                    container.Add(level);
+                                    Level level = new Level(tag.ListaAtributos["Name"].Valor, Creator.world);
+                                    Creator.world.Add(level);
                            }
                            else
                            {
