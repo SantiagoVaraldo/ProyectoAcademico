@@ -3,6 +3,8 @@ using ExerciseOne;
 using System.Collections.Generic;
 using Attribute = ExerciseOne.Attribute;
 
+// los tests de la primera entrega no nos funcionan debido a un error que no pudimos solucionar al cambiar el framework a net472.
+
 namespace Tests
 {
     public class TagTests
