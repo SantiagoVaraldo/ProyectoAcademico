@@ -7,8 +7,14 @@ using Library;
 /// 
 /// DESCRIPCION: contiene un IMainvieadapter, contiene un metodo build que crea el mundo en unity a partir del World
 /// utilizando los metodos del IMainviewadapter.
+/// 
+/// POLIMORFISMO: en un principio intentamos hacer uso de polimorfismo añadiendo un metodo Render a la clase Element para
+/// posteriormente al recorrer la lista de elementos, se llamara al metodo Render sin especificarle que tipo de elemento
+/// fuera.
 ///  
 /// COLABORACIONES: Colabora con la clase World y la interfaz IMainviewadapter y es de tipo IBuilder ya que debe conocer un objeto de tipo World.
+/// 
+/// COMENTARIO: intentamos aplicar el Patron Visitor en builder pero no fuimos capaces de lograrlo exitosamente.
 /// </summary>
 namespace Proyecto.StudentsCode
 {
