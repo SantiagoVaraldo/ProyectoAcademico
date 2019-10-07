@@ -8,6 +8,9 @@ using ExerciseOne;
 /// NOMBRE: Creator
 /// 
 /// DESCRIPCION: Esta clase llama a los metodos de la clase CreatorHelper y crea la cadena de Pipes And Filters.
+/// 
+/// PATRON CREATOR: el builder crea las instancias de los pipes and filters ya que es quien va a hacer uso de los mismos
+/// de forma cercana, cumple una de las condiciones necesarias para crear los objetos.
 /// </summary>
 
 namespace Library

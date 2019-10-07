@@ -15,6 +15,10 @@ using ExerciseOne;
 /// CHAIN RESPONSiBILITY: decidimos solucionar el problema de crear objetos a partir de una lista de tags utilizando
 /// este patron, para eso creamos una secuencia de Pipes And Filters donde mandamos cada tag por la cañeria.
 /// 
+/// PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
+/// simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
+/// modificacion ya que no se debera modificar los pipes and filters ya creados.
+/// 
 /// COLABORACIONES: Colabora con la interfaz IFilterConditional y con la interfaz IPipe, conoce un filtro de tipo
 /// IFilterConditional y el pipe es de tipo IPipe.
 /// 
