@@ -5,13 +5,10 @@ using Library;
 /// <summary>
 /// NOMBRE: Builder.
 /// 
-/// DESCRIPCION: .
-/// 
-/// PATRON EXPERT: .
-/// 
-/// SRP: .
-/// 
-/// COLABORACIONES: Colabora con la clase World y es de tipo IBuilder ya que debe conocer un objeto de tipo World.
+/// DESCRIPCION: contiene un IMainvieadapter, contiene un metodo build que crea el mundo en unity a partir del World
+/// utilizando los metodos del IMainviewadapter.
+///  
+/// COLABORACIONES: Colabora con la clase World y la interfaz IMainviewadapter y es de tipo IBuilder ya que debe conocer un objeto de tipo World.
 /// </summary>
 namespace Proyecto.StudentsCode
 {
