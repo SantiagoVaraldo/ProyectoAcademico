@@ -15,6 +15,11 @@ using System.IO;
 /// 
 /// PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
 /// 
+/// PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para 
+/// crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
+/// (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
+/// si conoce los datos necesarios)
+/// 
 /// CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
 /// </summary>
 
