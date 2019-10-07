@@ -16,7 +16,7 @@ namespace Library
     {
         public static World world;
         private List<Tag> listtags = new List<Tag>();
-        
+
         /// <summary>
         /// crea la cadena de pipes and filters 
         /// </summary>
@@ -48,7 +48,7 @@ namespace Library
             {
                 pipe0.Send(tag);
             }
-            
+
         }
     }
 }

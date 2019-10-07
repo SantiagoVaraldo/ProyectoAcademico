@@ -13,12 +13,9 @@ c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\xunit.core.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\xunit.execution.desktop.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Common.dll
-c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Program.exe
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\StudentsCode.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Library.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\StudentsCode.pdb
-c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Program.pdb
-c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Program.exe.config
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Common.pdb
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\net472\Library.pdb
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\net472\Tests.csproj.CopyComplete
