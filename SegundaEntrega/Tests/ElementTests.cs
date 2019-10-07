@@ -18,7 +18,7 @@ namespace Tests
             level = new Level("level1", world1);
             screen = new Screen("screen1", level);
         }
-        public void Compared(Element element, string NameExpected, int PositionYExpected, int PositionXExpected, int LengthExpected, int WidthExpected, Screen ScreenExpected, string ImagePathExpected)
+        public void Compared(Element element, string NameExpected, int PositionYExpected, int PositionXExpected, int? LengthExpected, int? WidthExpected, Screen ScreenExpected, string ImagePathExpected)
         {
             Assert.Equal(element.Name, NameExpected);
             Assert.Equal(element.PositionY, PositionYExpected);
@@ -105,7 +105,8 @@ namespace Tests
             Screen ScreenExpected = screen;
             string ImagePathExpected = "ImagePath";
             element.Screen = screen;
-            Compared(element, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
+
+            Compared(element, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, (int)WidthExpected, ScreenExpected, ImagePathExpected);
         }
         [Fact]
         public void WidthNegative()
@@ -121,7 +122,6 @@ namespace Tests
             string ImagePathExpected = "ImagePath";
             element.Screen = screen;
             Compared(element, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
-
         }
         [Fact]
         public void PositionXPositive()
@@ -136,8 +136,7 @@ namespace Tests
             Screen ScreenExpected = screen;
             string ImagePathExpected = "ImagePath";
             element.Screen = screen;
-            Compared(element, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
-
+            Compared(element, NameExpected, PositionYExpected, PositionXExpected, (int)LengthExpected, (int)WidthExpected, ScreenExpected, ImagePathExpected);
         }
         [Fact]
         public void PositionYPositive()
@@ -152,7 +151,7 @@ namespace Tests
             Screen ScreenExpected = screen;
             string ImagePathExpected = "ImagePath";
             element.Screen = screen;
-            Compared(element, NameExpected, PositionYExpected, PositionXExpected, LengthExpected, WidthExpected, ScreenExpected, ImagePathExpected);
+            Compared(element, NameExpected, PositionYExpected, PositionXExpected, (int)LengthExpected, (int)WidthExpected, ScreenExpected, ImagePathExpected);
         }
     }
 }
