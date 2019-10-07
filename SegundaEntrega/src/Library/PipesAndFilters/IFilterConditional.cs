@@ -7,15 +7,15 @@ namespace Library
     /// Un filtro con condicion.
     /// </summary>
     /// <remarks>
-    /// Un filtro procesa un tag, creando un objeto en caso que corresponda.
+    /// Un filtro procesa un Tag, creando un objeto en caso que corresponda.
     /// </remarks>
     public interface IFilterConditional
     {
         /// <summary>
-        /// Procesa el tag pasado por parametro y crea un objeto en caso correcto
+        /// Procesa el Tag pasado por parametro y crea un objeto en caso correcto
         /// </summary>
-        /// <param name="tag">El tag a procesar</param>
-        /// <returns>El mismo tag</returns>
+        /// <param name="tag">El Tag a procesar</param>
+        /// <returns>El mismo Tag</returns>
         Tag Filter(Tag tag);
         bool Result {get;}
     }
