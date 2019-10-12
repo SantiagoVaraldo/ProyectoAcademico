@@ -35,14 +35,15 @@ namespace Library
             IFilterConditional filterworld = new FilterWorld();
             IFilterConditional filterlevel = new FilterLevel();
             IFilterConditional filterscreen = new FilteScreen();
-            IFilterConditional filterbutton = new FilterButton();
+            IFilterConditional filterbuttonnextpage = new FilterButtonNextPage();
+            IFilterConditional filterbuttonsound = new FilterButtonSound();
             IFilterConditional filterimage = new FilterImage();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
             //IPipe pipeserial7 = new PipeSerial(filtertwitter,pipenull);
-
-            IPipe pipe4 = new PipeConditional(filterimage, pipenull, pipenull);
-            IPipe pipe3 = new PipeConditional(filterbutton, pipenull, pipe4);
+            IPipe pipe5 = new PipeConditional(filterimage, pipenull, pipenull);
+            IPipe pipe4 = new PipeConditional(filterbuttonsound, pipenull, pipe5);
+            IPipe pipe3 = new PipeConditional(filterbuttonnextpage, pipenull, pipe4);
             IPipe pipe2 = new PipeConditional(filterscreen, pipenull, pipe3);
             IPipe pipe1 = new PipeConditional(filterlevel, pipenull, pipe2);
             IPipe pipe0 = new PipeConditional(filterworld, pipenull, pipe1);

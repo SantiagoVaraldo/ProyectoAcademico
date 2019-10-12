@@ -58,11 +58,18 @@ namespace Proyecto.StudentsCode
                             imageId = adapter.CreateImage((int)image.PositionX, (int)image.PositionY, (int)image.Width, (int)image.Length);
                             adapter.SetImage(imageId, image.ImagePath);
                         }
-                        else if (element is Button)
+                        else if (element is ButtonNextPage)
                         {
-                            Button button = (Button)element;
+                            ButtonNextPage button = (ButtonNextPage)element;
                             //Render.renderButton((Button)element, adapter);
                             string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToNextPage);
+                            //adapter.SetImage(buttonId, button.ImagePath);
+                        }
+                        else if (element is ButtonSound)
+                        {
+                            ButtonSound button = (ButtonSound)element;
+                            //Render.renderButton((Button)element, adapter);
+                            string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToFirstPage);
                             //adapter.SetImage(buttonId, button.ImagePath);
                         }
                     }

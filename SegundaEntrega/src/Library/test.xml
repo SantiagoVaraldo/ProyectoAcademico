@@ -7,7 +7,8 @@
 			<Image Name="ImageLapiz" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen", ImagePath="Lapiz.jpg"/>
 			<Image Name="ImageManzana" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="Manzana.jpg"/>
 			<Image Name="ImageOceano" PositionY="100" PositionX="150" Length="100" Width="100" Screen="Screen", ImagePath="Oceano.jpg"/>
-			<Button Name="Button1" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath=""/>
+			<ButtonNextPage Name="Button1" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath=""/>
+			<ButtonSound Name="Button2" PositionY="0" PositionX="100" Length="100" Width="100" Screen="Screen", ImagePath=""/>
 		</Screen>
 	</Level>
 </World>
