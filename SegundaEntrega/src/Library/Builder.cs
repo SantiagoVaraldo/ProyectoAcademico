@@ -21,7 +21,6 @@ namespace Proyecto.StudentsCode
 {
     public class Builder : IBuilder
     {
-        private List<string> listPages = new List<string>();
         private IMainViewAdapter adapter;
         private string firstPageName;
 
