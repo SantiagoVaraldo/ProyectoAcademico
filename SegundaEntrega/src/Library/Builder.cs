@@ -1,6 +1,7 @@
 using System;
 using Proyecto.Common;
 using Library;
+using System.Collections.Generic;
 
 /// <summary>
 /// NOMBRE: Builder.
@@ -20,10 +21,12 @@ namespace Proyecto.StudentsCode
 {
     public class Builder : IBuilder
     {
+        private List<string> listPages = new List<string>();
         private IMainViewAdapter adapter;
         private string firstPageName;
 
         private string nextPageName;
+        private string sourceCellImageId;
 
 
 
@@ -39,6 +42,7 @@ namespace Proyecto.StudentsCode
             this.firstPageName = this.adapter.AddPage();
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
+            string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
 
             Creator creator = new Creator();
             creator.Create();
@@ -49,6 +53,10 @@ namespace Proyecto.StudentsCode
                 foreach (Screen screen in level.ListaScreen)
                 {
                     //screen.Render();
+                    this.nextPageName = this.adapter.AddPage();
+                    this.adapter.ChangeLayout(Layout.ContentSizeFitter);
+                    //this.AfterBuildShowPage(this.nextPageName);
+                    
 
                     foreach (Element element in screen.ListaElement)
                     {
@@ -72,9 +80,28 @@ namespace Proyecto.StudentsCode
                             string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToFirstPage);
                             //adapter.SetImage(buttonId, button.ImagePath);
                         }
+                        else if (element is DragAndDropSource)
+                        {
+                            DragAndDropSource dragAndDropSource = (DragAndDropSource)element;
+                            sourceCellImageId = this.adapter.CreateDragAndDropSource((int)dragAndDropSource.PositionX, (int)dragAndDropSource.PositionY, (int)dragAndDropSource.Width, (int)dragAndDropSource.Length);
+                            this.adapter.SetImage(sourceCellImageId, dragAndDropSource.ImagePath);
+                        }
+                        else if (element is DragAndDropDestination)
+                        {
+                            DragAndDropDestination dragAndDropDestination = (DragAndDropDestination)element;
+                            string destinationCellImageId = this.adapter.CreateDragAndDropDestination((int)dragAndDropDestination.PositionX, (int)dragAndDropDestination.PositionY, (int)dragAndDropDestination.Width, (int)dragAndDropDestination.Length);
+                            //this.adapter.SetImage(destinationCellImageId, "Cell.png");
+                        }
+                        else if (element is DragAndDropItem)
+                        {
+                            DragAndDropItem dragAndDropItem = (DragAndDropItem)element;
+                            string itemId = this.adapter.CreateDragAndDropItem((int)dragAndDropItem.PositionX, (int)dragAndDropItem.PositionY, (int)dragAndDropItem.Width, (int)dragAndDropItem.Length);
+                            this.adapter.SetImage(itemId, dragAndDropItem.ImagePath);
+                            this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
+                        }
                     }
-                    this.nextPageName = this.adapter.AddPage();
-                    this.adapter.ChangeLayout(Layout.Grid);
+                    //this.nextPageName = this.adapter.AddPage();
+                    //this.adapter.ChangeLayout(Layout.Grid);
                 }
             }
 
@@ -82,6 +109,10 @@ namespace Proyecto.StudentsCode
         public void AfterBuildShowFirstPage()
         {
             this.adapter.ShowPage(this.firstPageName);
+        }
+        public void AfterBuildShowPage(string page)
+        {
+            this.adapter.ShowPage(page);
         }
 
         private void GoToFirstPage()
