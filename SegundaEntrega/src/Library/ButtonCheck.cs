@@ -1,7 +1,7 @@
 using System;
 
 /// <summary>
-/// NOMBRE: Button.
+/// NOMBRE: ButtonCheck.
 /// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los botones.
 /// 
@@ -22,12 +22,49 @@ using System;
 
 namespace Library
 {
-    public class Button : Element
+    public class ButtonCheck : Element, IButton
     {
-        public Button(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        public ButtonCheck(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, string ImagePath2, bool Check)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
+            this.Check = Check;
+            this.ImagePath2 = ImagePath2;
         }
-        
+        private bool check;
+        public bool Check
+        {
+            get
+            {
+                return this.check;
+            }
+            set
+            {
+                if (value == true)
+                {
+                    this.check = value;
+                }
+            }
+        }
+        private string imagepath2;
+        public string ImagePath2
+        {
+            get
+            {
+                return this.imagepath2;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    this.imagepath2 = value;
+                }
+            }
+
+        }
+        public void Action()
+        {        
+        }
+
+
     }
 }

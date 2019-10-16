@@ -22,21 +22,21 @@ using System;
 
 namespace Library
 {
-    public class ButtonSound : Button
+    public class ButtonSound : Element, IButton
     {
-        public ButtonSound(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, string SoundPath)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        public ButtonSound(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, string SoundPath)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.SoundPath = SoundPath;
         }
         private string soundPath;
         public string SoundPath
         {
-            get 
+            get
             {
                 return this.soundPath;
             }
-            set 
+            set
             {
                 if (value != null)
                 {
@@ -44,6 +44,9 @@ namespace Library
                 }
             }
         }
-        
+        public void Action()
+        {        
+        }
+
     }
 }
