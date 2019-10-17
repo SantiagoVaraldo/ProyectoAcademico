@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Button.
@@ -22,8 +23,8 @@ using System;
 
 namespace Library
 {
-    public interface IButton 
+    public interface IButton
     {
-        void Action();
+        void Action(IMainViewAdapter adapter);
     }
 }

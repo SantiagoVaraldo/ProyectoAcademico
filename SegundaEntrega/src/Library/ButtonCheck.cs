@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: ButtonCheck.
@@ -61,7 +62,7 @@ namespace Library
             }
 
         }
-        public void Action()
+        public void Action(IMainViewAdapter adapter)
         {        
         }
 

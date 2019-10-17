@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Button.
@@ -28,9 +29,14 @@ namespace Library
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
         }
-        public void Action()
-        {        
+        public void Action(IMainViewAdapter adapter)
+        {
+            //adapter.ShowPage(this.nextPageName); hay q pasarle la pagina q debe mostrar
         }
-        
+        public override void Render(IMainViewAdapter adapter)
+        {
+            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", null);
+            //adapter.SetImage(buttonId, this.ImagePath);
+        }
     }
 }

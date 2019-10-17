@@ -1,3 +1,4 @@
+using Proyecto.Common;
 using System;
 
 /// <summary>
@@ -27,5 +28,11 @@ namespace Library
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
         }
+        public override void Render(IMainViewAdapter adapter)
+        {
+            string imageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
+            adapter.SetImage(imageId, this.ImagePath);
+        }
     }
+    
 }

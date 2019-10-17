@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Element.
@@ -27,6 +28,10 @@ namespace Library
             this.Width = Width;
             this.Screen = Screen;
             this.ImagePath = ImagePath;
+        }
+        public virtual void Render(IMainViewAdapter adapter)
+        {
+
         }
         private string name;
         public string Name

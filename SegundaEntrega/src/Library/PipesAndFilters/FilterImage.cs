@@ -47,7 +47,16 @@ namespace Library
             if (tag.Name == "Image")
             {
                 this.Result = true;
-                IXML image = new Image(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["PositionY"].Valor), Int32.Parse(tag.ListaAtributos["PositionX"].Valor), Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor), Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1], tag.ListaAtributos["ImagePath"].Valor);
+
+                string name = tag.ListaAtributos["Name"].Valor;
+                int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+                Screen screen = Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1];
+                string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
+
+                IXML image = new Image(name, positionY, positionX, length, width, screen, imagePath);
                 Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1].Add(image);
             }
             else

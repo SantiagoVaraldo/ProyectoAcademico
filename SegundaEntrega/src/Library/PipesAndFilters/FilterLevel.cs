@@ -45,7 +45,11 @@ namespace Library
             if (tag.Name == "Level")
             {
                 this.Result = true;
-                IXML level = new Level(tag.ListaAtributos["Name"].Valor, Creator.world);
+
+                string name = tag.ListaAtributos["Name"].Valor;
+                World world = Creator.world;
+
+                IXML level = new Level(name, world);
                 Creator.world.Add(level);
             }
             else

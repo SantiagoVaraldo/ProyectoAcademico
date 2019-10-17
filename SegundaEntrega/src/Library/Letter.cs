@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 namespace Library
 {
@@ -21,8 +22,14 @@ namespace Library
                 this.right = value;        
             }
         }
-        public void Action()
-        {        
+        public void Action(IMainViewAdapter adapter)
+        {
+            //adapter.hacer_algo
+        }
+        public override void Render(IMainViewAdapter adapter)
+        {
+            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", null);
+            //adapter.SetImage(buttonId, this.ImagePath);
         }
     }
 }

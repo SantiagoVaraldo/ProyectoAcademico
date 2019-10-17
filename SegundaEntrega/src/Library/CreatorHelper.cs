@@ -14,7 +14,22 @@ namespace Library
 {
     public class CreatorHelper
     {
-        const String fileName = @"test.xml";
+        public CreatorHelper(String FileName)
+        {
+            this.FileName = FileName;
+        }
+        private string fileName;
+        public string FileName
+        {
+            get
+            {
+                return this.fileName;
+            }
+            set
+            {
+                this.fileName = value;
+            }
+        }
         List<Tag> listtags = new List<Tag>();
 
         /// <summary>
@@ -23,7 +38,7 @@ namespace Library
         /// <returns>devuelve una lista de Tags</returns>
         public List<Tag> GetListTags()
         {
-            string content = getContent(fileName);
+            string content = getContent(this.fileName);
 
             //Busca las tags y sus correspondientes atributos
             Finder finder = new Finder();
