@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Button.
@@ -22,7 +23,7 @@ using System;
 
 namespace Library
 {
-    public class ButtonSound : Button
+    public class ButtonSound : Element, IButton
     {
         public ButtonSound(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, string SoundPath)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
@@ -43,6 +44,15 @@ namespace Library
                     this.soundPath = value;
                 }
             }
+        }
+        public void Action(IMainViewAdapter adapter)
+        {
+            //adapter.PlayAudio("Speech Off.wav"); hay q pasarle el audio a reproducir
+        }
+        public override void Render(IMainViewAdapter adapter)
+        {
+            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", null);
+            //adapter.SetImage(buttonId, this.ImagePath);
         }
         
     }

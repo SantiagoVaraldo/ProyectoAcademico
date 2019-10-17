@@ -25,14 +25,9 @@ namespace Proyecto.StudentsCode
         private string firstPageName;
 
         private string nextPageName;
-        private string sourceCellImageId;
-
-
 
         public void Build(IMainViewAdapter providedAdapter)
         {
-
-            string imageId;
 
             this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
 
@@ -51,53 +46,13 @@ namespace Proyecto.StudentsCode
             {
                 foreach (Screen screen in level.ListaScreen)
                 {
-                    //screen.Render();
                     this.nextPageName = this.adapter.AddPage();
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
-                    //this.AfterBuildShowPage(this.nextPageName);
-                    
+                    //this.AfterBuildShowPage(this.nextPageName);   
 
                     foreach (Element element in screen.ListaElement)
                     {
-                        if (element is Image)
-                        {
-                            Image image = (Image)element;
-                            imageId = adapter.CreateImage((int)image.PositionX, (int)image.PositionY, (int)image.Width, (int)image.Length);
-                            adapter.SetImage(imageId, image.ImagePath);
-                        }
-                        else if (element is ButtonNextPage)
-                        {
-                            ButtonNextPage button = (ButtonNextPage)element;
-                            //Render.renderButton((Button)element, adapter);
-                            string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToNextPage);
-                            //adapter.SetImage(buttonId, button.ImagePath);
-                        }
-                        else if (element is ButtonSound)
-                        {
-                            ButtonSound button = (ButtonSound)element;
-                            //Render.renderButton((Button)element, adapter);
-                            string buttonId = adapter.CreateButton((int)button.PositionX, (int)button.PositionY, (int)button.Width, (int)button.Length, "#BC2FA864", this.GoToFirstPage);
-                            //adapter.SetImage(buttonId, button.ImagePath);
-                        }
-                        else if (element is DragAndDropSource)
-                        {
-                            DragAndDropSource dragAndDropSource = (DragAndDropSource)element;
-                            sourceCellImageId = this.adapter.CreateDragAndDropSource((int)dragAndDropSource.PositionX, (int)dragAndDropSource.PositionY, (int)dragAndDropSource.Width, (int)dragAndDropSource.Length);
-                            this.adapter.SetImage(sourceCellImageId, dragAndDropSource.ImagePath);
-                        }
-                        else if (element is DragAndDropDestination)
-                        {
-                            DragAndDropDestination dragAndDropDestination = (DragAndDropDestination)element;
-                            string destinationCellImageId = this.adapter.CreateDragAndDropDestination((int)dragAndDropDestination.PositionX, (int)dragAndDropDestination.PositionY, (int)dragAndDropDestination.Width, (int)dragAndDropDestination.Length);
-                            //this.adapter.SetImage(destinationCellImageId, "Cell.png");
-                        }
-                        else if (element is DragAndDropItem)
-                        {
-                            DragAndDropItem dragAndDropItem = (DragAndDropItem)element;
-                            string itemId = this.adapter.CreateDragAndDropItem((int)dragAndDropItem.PositionX, (int)dragAndDropItem.PositionY, (int)dragAndDropItem.Width, (int)dragAndDropItem.Length);
-                            this.adapter.SetImage(itemId, dragAndDropItem.ImagePath);
-                            this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
-                        }
+                        element.Render(this.adapter);
                     }
                     //this.nextPageName = this.adapter.AddPage();
                     //this.adapter.ChangeLayout(Layout.Grid);

@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: DragAndDrop.
@@ -29,6 +30,13 @@ namespace Library
         public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
+        }
+        public override void Render(IMainViewAdapter adapter)
+        {
+            string itemId = adapter.CreateDragAndDropItem((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
+            adapter.SetImage(itemId, this.ImagePath);
+            //this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
+            //this.adapter.SetImage(destinationCellImageId, "Cell.png");
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Button.
@@ -22,12 +23,8 @@ using System;
 
 namespace Library
 {
-    public class Button : Element
+    public interface IButton
     {
-        public Button(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
-        {
-        }
-        
+        void Action(IMainViewAdapter adapter);
     }
 }
