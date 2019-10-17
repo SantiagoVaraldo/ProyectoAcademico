@@ -25,7 +25,7 @@ namespace Library
         /// </summary>
         public void Create()
         {
-            CreatorHelper creatorhelper = new CreatorHelper();
+            CreatorHelper creatorhelper = new CreatorHelper(@"test.xml");
             this.listtags = creatorhelper.GetListTags();
 
             // creamos un pipeNull

@@ -47,7 +47,12 @@ namespace Library
             if (tag.Name == "World")
             {
                 this.Result = true;
-                World world = new World(tag.ListaAtributos["Name"].Valor, Int32.Parse(tag.ListaAtributos["Length"].Valor), Int32.Parse(tag.ListaAtributos["Width"].Valor));
+    
+                string name = tag.ListaAtributos["Name"].Valor;
+                int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+
+                World world = new World(name, length, width);
                 Creator.world = world;
             }
             else
