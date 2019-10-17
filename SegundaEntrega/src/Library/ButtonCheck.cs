@@ -2,7 +2,7 @@ using System;
 using Proyecto.Common;
 
 /// <summary>
-/// NOMBRE: Button.
+/// NOMBRE: ButtonCheck.
 /// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los botones.
 /// 
@@ -23,37 +23,49 @@ using Proyecto.Common;
 
 namespace Library
 {
-    public class ButtonSound : Element, IButton
+    public class ButtonCheck : Element, IButton
     {
-        public ButtonSound(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, string SoundPath)
+        public ButtonCheck(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, string ImagePath2, bool Check)
         : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
-            this.SoundPath = SoundPath;
+            this.Check = Check;
+            this.ImagePath2 = ImagePath2;
         }
-        private string soundPath;
-        public string SoundPath
+        private bool check;
+        public bool Check
         {
             get
             {
-                return this.soundPath;
+                return this.check;
+            }
+            set
+            {
+                if (value == true)
+                {
+                    this.check = value;
+                }
+            }
+        }
+        private string imagepath2;
+        public string ImagePath2
+        {
+            get
+            {
+                return this.imagepath2;
             }
             set
             {
                 if (value != null)
                 {
-                    this.soundPath = value;
+                    this.imagepath2 = value;
                 }
             }
+
         }
         public void Action(IMainViewAdapter adapter)
-        {
-            //adapter.PlayAudio("Speech Off.wav"); hay q pasarle el audio a reproducir
+        {        
         }
-        public override void Render(IMainViewAdapter adapter)
-        {
-            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", null);
-            //adapter.SetImage(buttonId, this.ImagePath);
-        }
-        
+
+
     }
 }
