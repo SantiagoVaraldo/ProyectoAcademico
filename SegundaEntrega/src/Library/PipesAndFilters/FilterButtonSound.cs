@@ -5,11 +5,11 @@ using Attribute = ExerciseOne.Attribute;
 using System.IO;
 
 /// <summary>
-/// NOMBRE: FilterButton.
+/// NOMBRE: FilterButtonSound.
 /// 
-/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Button.
+/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ButtonSound.
 /// 
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Button en caso
+/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ButtonSound en caso
 /// de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
 /// 
 /// PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
