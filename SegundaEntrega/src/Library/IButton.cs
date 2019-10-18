@@ -2,23 +2,7 @@ using System;
 using Proyecto.Common;
 
 /// <summary>
-/// NOMBRE: Button.
-/// 
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los botones.
-/// 
-/// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-/// pertinente para nuestros requisitos de crear objetos Button, conoce el nombre, tamaño, la posicion
-/// y la pantalla de Button.
-/// 
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
-/// de Button, su unica razon de cambio es modificar los datos que guardamos sobre un boton.
-/// 
-/// HERENCIA: esta clase hereda de la clase mas general Element, de momento el boton va a heredar todo de elemento
-/// y no agrega comportamiento ni atributos extras.(optamos pr herencia en lugar de composicion ya que necesitabamos 
-/// todo los datos de Element y no ibamos a crear comportamiento)
-/// 
-/// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
-/// y es de tipo Element.
+/// interfaz IButton con la firma Action(se utiliza para que cada tipo de boton tenga una accion particular).
 /// </summary>
 
 namespace Library
