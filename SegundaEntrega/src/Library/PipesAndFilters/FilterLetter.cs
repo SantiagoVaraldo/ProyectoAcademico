@@ -53,12 +53,14 @@ namespace Library
                 int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
                 int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                 int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                Screen screen = Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1];
-                string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                int lastLevelId = Creator.world.ListaLevel.Count - 1;
+                Level level = Creator.world.ListaLevel[lastLevelId];
+                int lastScreenId = level.ListaScreen.Count - 1;
+                Screen screen = level.ListaScreen[lastScreenId];                string imagePath = tag.ListaAtributos["ImagePath"].Valor;
                 bool rigth = Convert.ToBoolean(tag.ListaAtributos["Right"].Valor); 
 
                 IXML letter = new Letter(name, positionY, positionX, length, width, screen, imagePath, rigth);
-                Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1].Add(letter);
+                screen.Add(letter);
             }
             else
             {

@@ -48,10 +48,12 @@ namespace Library
                 this.Result = true;
 
                 string name = tag.ListaAtributos["Name"].Valor;
-                Level level = Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1];
+
+                int lastLevelId = Creator.world.ListaLevel.Count - 1;
+                Level level = Creator.world.ListaLevel[lastLevelId];
 
                 IXML screen = new Screen(name, level);
-                Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].Add(screen);
+                level.Add(screen);
             }
             else
             {
