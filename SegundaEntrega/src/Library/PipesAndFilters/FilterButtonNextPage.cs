@@ -53,11 +53,19 @@ namespace Library
                 int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
                 int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                 int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                Screen screen = Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1];
+
+
+                int lastLevelId = Creator.world.ListaLevel.Count - 1;
+                Level level = Creator.world.ListaLevel[lastLevelId];
+                int lastScreenId = level.ListaScreen.Count - 1;
+                Screen screen = level.ListaScreen[lastScreenId];
+                
+
+                
                 string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
 
                 IXML button = new ButtonNextPage(name, positionY, positionX, length, width, screen, imagePath);
-                Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen[Creator.world.ListaLevel[Creator.world.ListaLevel.Count - 1].ListaScreen.Count - 1].Add(button);
+                screen.Add(button);
             }
             else
             {
