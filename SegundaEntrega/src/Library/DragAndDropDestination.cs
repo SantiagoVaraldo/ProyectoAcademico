@@ -35,7 +35,7 @@ namespace Library
         public override void Render(IMainViewAdapter adapter)
         {
             string destinationCellImageId = adapter.CreateDragAndDropDestination((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            //adapter.SetImage(destinationCellImageId, this.ImagePath);
+            adapter.SetImage(destinationCellImageId, this.ImagePath);
         }
     }
 }
