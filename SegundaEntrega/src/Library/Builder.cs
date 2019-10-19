@@ -38,7 +38,7 @@ namespace Proyecto.StudentsCode
             this.firstPageName = this.adapter.AddPage();
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
-            string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
+            string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", null);
 
             Creator creator = new Creator();
             creator.Create();
