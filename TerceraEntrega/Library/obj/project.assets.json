@@ -1,0 +1,73 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../../ClasesProfes/PII_Proyecto2019/Common/src/Common.csproj",
+      "msbuildProject": "../../../ClasesProfes/PII_Proyecto2019/Common/src/Common.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "Common >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\FIT\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\TerceraEntrega\\Library\\TerceraEntrega.csproj",
+      "projectName": "TerceraEntrega",
+      "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\TerceraEntrega\\Library\\TerceraEntrega.csproj",
+      "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\TerceraEntrega\\Library\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {
+            "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj": {
+              "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net472": {}
+    }
+  }
+}
