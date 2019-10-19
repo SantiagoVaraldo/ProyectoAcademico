@@ -37,7 +37,7 @@ namespace Library
             string itemId = adapter.CreateDragAndDropItem((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(itemId, this.ImagePath);
             //this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
-            //this.adapter.SetImage(destinationCellImageId, "Cell.png");
+            adapter.SetImage(itemId, this.ImagePath);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace Library
 {
     public interface IButton
     {
-        void Action(IMainViewAdapter adapter);
+        void Action();
     }
 }
