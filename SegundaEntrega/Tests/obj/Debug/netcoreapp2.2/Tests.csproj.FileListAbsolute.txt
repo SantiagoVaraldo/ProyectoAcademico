@@ -19,3 +19,5 @@ c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CopyComplete
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\TerceraEntrega.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\TerceraEntrega.pdb

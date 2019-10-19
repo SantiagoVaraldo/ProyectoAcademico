@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "53bc55b321daaef2183996c0ca5438df4aa5f4be"
+    "signature": "769fefe8a16057b52e80a5f58be9bfa7d286a15f"
   },
   "compilationOptions": {},
   "targets": {
@@ -38,15 +38,6 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.3": {
-        "dependencies": {
-          "Microsoft.CodeAnalysis.VersionCheckAnalyzer": "2.9.3",
-          "Microsoft.CodeQuality.Analyzers": "2.9.3",
-          "Microsoft.NetCore.Analyzers": "2.9.3",
-          "Microsoft.NetFramework.Analyzers": "2.9.3"
-        }
-      },
-      "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.3": {},
       "Microsoft.CodeCoverage/15.9.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -55,7 +46,6 @@
           }
         }
       },
-      "Microsoft.CodeQuality.Analyzers/2.9.3": {},
       "Microsoft.CSharp/4.0.1": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -115,8 +105,6 @@
           "Microsoft.TestPlatform.TestHost": "15.9.0"
         }
       },
-      "Microsoft.NetCore.Analyzers/2.9.3": {},
-      "Microsoft.NetFramework.Analyzers/2.9.3": {},
       "Microsoft.TestPlatform.ObjectModel/15.9.0": {
         "dependencies": {
           "System.ComponentModel.EventBasedAsync": "4.0.11",
@@ -443,7 +431,6 @@
         }
       },
       "runtime.native.System/4.3.0": {},
-      "StyleCop.Analyzers/1.1.118": {},
       "System.AppContext/4.1.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1102,11 +1089,18 @@
         "dependencies": {
           "Common": "1.0.0",
           "Library": "1.0.0",
-          "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.9.3",
-          "StyleCop.Analyzers": "1.1.118"
+          "TerceraEntrega": "1.0.0"
         },
         "runtime": {
           "StudentsCode.dll": {}
+        }
+      },
+      "TerceraEntrega/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "runtime": {
+          "TerceraEntrega.dll": {}
         }
       }
     }
@@ -1124,33 +1118,12 @@
       "path": "castle.core/4.4.0",
       "hashPath": "castle.core.4.4.0.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-k8wrTEpm0BE16zxqOHJ4xXxsWTbx5oINrgkLrMc3US8H/LJAx0OyXmTGOuwGEM2Tqa6L5RU1MPgeiWKwAMVkuw==",
-      "path": "microsoft.codeanalysis.fxcopanalyzers/2.9.3",
-      "hashPath": "microsoft.codeanalysis.fxcopanalyzers.2.9.3.nupkg.sha512"
-    },
-    "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jUQbGsWTF/x4a6ZiWfXvOL3f9LFS7L7QkrDhdv25BaYQg4K7yzBMYcElN3le5S6dk7JG8F3AjRnlXp9QTGcBNg==",
-      "path": "microsoft.codeanalysis.versioncheckanalyzer/2.9.3",
-      "hashPath": "microsoft.codeanalysis.versioncheckanalyzer.2.9.3.nupkg.sha512"
-    },
     "Microsoft.CodeCoverage/15.9.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-oherNadUtHKqFQbtdRKXgPvZVWyGkOeS83pFWT864587npS7JIFWIJ/LJV0c25cWNkCytn2S9XGSSkKscnNFAQ==",
       "path": "microsoft.codecoverage/15.9.0",
       "hashPath": "microsoft.codecoverage.15.9.0.nupkg.sha512"
-    },
-    "Microsoft.CodeQuality.Analyzers/2.9.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5KFSFcQjibITq33jojBITiGIZZkf2OMdggT7ZeNryMAUkT3VkPB/csRWaA8erItQlEvrBzgIwzYnW0531HFV7g==",
-      "path": "microsoft.codequality.analyzers/2.9.3",
-      "hashPath": "microsoft.codequality.analyzers.2.9.3.nupkg.sha512"
     },
     "Microsoft.CSharp/4.0.1": {
       "type": "package",
@@ -1179,20 +1152,6 @@
       "sha512": "sha512-sGDhl1lTcyC4nbMA6vta+nADm50IEGnm9SW9+JNaie1zjtSmUdOPHu02+WK2SJND+3vbr9DWvgfi9qlSPfUAyw==",
       "path": "microsoft.net.test.sdk/15.9.0",
       "hashPath": "microsoft.net.test.sdk.15.9.0.nupkg.sha512"
-    },
-    "Microsoft.NetCore.Analyzers/2.9.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6QTU/GKuB/s4eX/VD9ZgiIpD8dhP+BuGMUpp2VRDPflrbka+1DmdnayqPO18epUa/79n1OR9uT9hpvd0jgdggg==",
-      "path": "microsoft.netcore.analyzers/2.9.3",
-      "hashPath": "microsoft.netcore.analyzers.2.9.3.nupkg.sha512"
-    },
-    "Microsoft.NetFramework.Analyzers/2.9.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-umTMyEaz29EkSuTNJ3As2wrhomQqqQfkBURZHWh59d+LwAbA7YYveUwe6ZFSx1A83pJRQVnsqaSBPbfQ5+niaA==",
-      "path": "microsoft.netframework.analyzers/2.9.3",
-      "hashPath": "microsoft.netframework.analyzers.2.9.3.nupkg.sha512"
     },
     "Microsoft.TestPlatform.ObjectModel/15.9.0": {
       "type": "package",
@@ -1242,13 +1201,6 @@
       "sha512": "sha512-c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
-    },
-    "StyleCop.Analyzers/1.1.118": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
-      "path": "stylecop.analyzers/1.1.118",
-      "hashPath": "stylecop.analyzers.1.1.118.nupkg.sha512"
     },
     "System.AppContext/4.1.0": {
       "type": "package",
@@ -1716,6 +1668,11 @@
       "sha512": ""
     },
     "StudentsCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TerceraEntrega/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

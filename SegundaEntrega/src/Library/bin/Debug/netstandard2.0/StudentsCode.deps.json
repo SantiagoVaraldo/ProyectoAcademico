@@ -11,7 +11,8 @@
         "dependencies": {
           "Common": "1.0.0",
           "Library": "1.0.0",
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "TerceraEntrega": "1.0.0"
         },
         "runtime": {
           "StudentsCode.dll": {}
@@ -31,6 +32,14 @@
       "Library/1.0.0": {
         "runtime": {
           "Library.dll": {}
+        }
+      },
+      "TerceraEntrega/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "runtime": {
+          "TerceraEntrega.dll": {}
         }
       }
     }
@@ -61,6 +70,11 @@
       "sha512": ""
     },
     "Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TerceraEntrega/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

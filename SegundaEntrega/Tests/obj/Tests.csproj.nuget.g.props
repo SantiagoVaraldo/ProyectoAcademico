@@ -22,11 +22,5 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\estudiante.fit\.nuget\packages\xunit.analyzers\0.10.0</Pkgxunit_analyzers>
-    <PkgStyleCop_Analyzers Condition=" '$(PkgStyleCop_Analyzers)' == '' ">C:\Users\estudiante.fit\.nuget\packages\stylecop.analyzers\1.1.118</PkgStyleCop_Analyzers>
-    <PkgMicrosoft_NetFramework_Analyzers Condition=" '$(PkgMicrosoft_NetFramework_Analyzers)' == '' ">C:\Users\estudiante.fit\.nuget\packages\microsoft.netframework.analyzers\2.9.3</PkgMicrosoft_NetFramework_Analyzers>
-    <PkgMicrosoft_NetCore_Analyzers Condition=" '$(PkgMicrosoft_NetCore_Analyzers)' == '' ">C:\Users\estudiante.fit\.nuget\packages\microsoft.netcore.analyzers\2.9.3</PkgMicrosoft_NetCore_Analyzers>
-    <PkgMicrosoft_CodeQuality_Analyzers Condition=" '$(PkgMicrosoft_CodeQuality_Analyzers)' == '' ">C:\Users\estudiante.fit\.nuget\packages\microsoft.codequality.analyzers\2.9.3</PkgMicrosoft_CodeQuality_Analyzers>
-    <PkgMicrosoft_CodeAnalysis_VersionCheckAnalyzer Condition=" '$(PkgMicrosoft_CodeAnalysis_VersionCheckAnalyzer)' == '' ">C:\Users\estudiante.fit\.nuget\packages\microsoft.codeanalysis.versioncheckanalyzer\2.9.3</PkgMicrosoft_CodeAnalysis_VersionCheckAnalyzer>
-    <PkgMicrosoft_CodeAnalysis_FxCopAnalyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_FxCopAnalyzers)' == '' ">C:\Users\estudiante.fit\.nuget\packages\microsoft.codeanalysis.fxcopanalyzers\2.9.3</PkgMicrosoft_CodeAnalysis_FxCopAnalyzers>
   </PropertyGroup>
 </Project>

@@ -40,10 +40,9 @@ namespace Library
         /// <summary>
         /// accion que realiza el boton de tipo Letter al hacerle click
         /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para realizar la accion </param>
-        public void Action(IMainViewAdapter adapter)
+        public void Action()
         {
-            //adapter.hacer_algo
+            SingletonAdapter.Adapter.Debug($"Button clicked!"); //hacer_algo
         }
 
         /// <summary>
@@ -52,7 +51,7 @@ namespace Library
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
         public override void Render(IMainViewAdapter adapter)
         {
-            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", null);
+            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
             //adapter.SetImage(buttonId, this.ImagePath);
         }
     }

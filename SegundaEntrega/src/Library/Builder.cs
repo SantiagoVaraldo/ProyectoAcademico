@@ -33,12 +33,14 @@ namespace Proyecto.StudentsCode
 
             this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
 
+            SingletonAdapter.Adapter = adapter;
+
             this.adapter.ToDoAfterBuild(this.AfterBuildShowFirstPage);
 
             this.firstPageName = this.adapter.AddPage();
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
-            string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", null);
+            string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
 
             Creator creator = new Creator();
             creator.Create();
