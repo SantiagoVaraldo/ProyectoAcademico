@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
     <ItemGroup>
     <ProjectReference Include="..\..\..\..\ClasesProfes\PII_Proyecto2019\Common\src\Common.csproj" />

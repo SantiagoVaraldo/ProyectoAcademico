@@ -1,0 +1,12 @@
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\netstandard2.0\TerceraEntrega.deps.json
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\netstandard2.0\TerceraEntrega.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\netstandard2.0\TerceraEntrega.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\netstandard2.0\Common.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.csprojAssemblyReference.cache
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.csproj.CoreCompileInputs.cache
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.AssemblyInfoInputs.cache
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.AssemblyInfo.cs
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.csproj.CopyComplete
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\netstandard2.0\TerceraEntrega.pdb

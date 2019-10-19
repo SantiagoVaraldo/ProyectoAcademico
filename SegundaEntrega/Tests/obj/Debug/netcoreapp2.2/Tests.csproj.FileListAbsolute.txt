@@ -1,32 +1,3 @@
-C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csprojAssemblyReference.cache
-C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CoreCompileInputs.cache
-C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfoInputs.cache
-C:\Users\FIT\programacion2\proyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfo.cs
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Tests.deps.json
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Tests.runtimeconfig.json
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Tests.runtimeconfig.dev.json
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Tests.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Tests.pdb
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Library.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Program.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Library.pdb
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Program.pdb
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csprojAssemblyReference.cache
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CoreCompileInputs.cache
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfoInputs.cache
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfo.cs
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CopyComplete
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.dll
-C:\Users\FIT\programacion2\ProyectoFinal2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.pdb
-C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csprojAssemblyReference.cache
-C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CoreCompileInputs.cache
-C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfoInputs.cache
-C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfo.cs
-C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.dll
-C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.pdb
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
@@ -37,8 +8,16 @@ c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Tests.pdb
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Common.dll
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Library.dll
-c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Program.dll
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\StudentsCode.dll
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\StudentsCode.pdb
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Library.pdb
-c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Program.pdb
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Common.pdb
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csprojAssemblyReference.cache
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CoreCompileInputs.cache
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfoInputs.cache
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfo.cs
 c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CopyComplete
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.dll
+c:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.pdb
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\TerceraEntrega.dll
+C:\Users\estudiante.fit\Desktop\P2\Proyecto 2\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\TerceraEntrega.pdb
