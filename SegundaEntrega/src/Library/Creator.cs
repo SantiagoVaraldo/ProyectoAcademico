@@ -34,14 +34,24 @@ namespace Library
             // creamos instancias de todos los filtros que nos interecen
             IFilterConditional filterworld = new FilterWorld();
             IFilterConditional filterlevel = new FilterLevel();
-            IFilterConditional filterscreen = new FilteScreen();
+            IFilterConditional filterscreen = new FilterScreen();
             IFilterConditional filterbuttonnextpage = new FilterButtonNextPage();
             IFilterConditional filterbuttonsound = new FilterButtonSound();
+            IFilterConditional filterbuttoncheck = new FilterButtonCheck();
             IFilterConditional filterimage = new FilterImage();
+            IFilterConditional filterletter = new FilterLetter();
+            IFilterConditional filterDragAndDropSource = new FilterDragAndDropSource();
+            IFilterConditional filterDragAndDropDestination = new FilterDragAndDropDestination();
+            IFilterConditional filterDragAndDropItem = new FilterDragAndDropItem();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
             //IPipe pipeserial7 = new PipeSerial(filtertwitter,pipenull);
-            IPipe pipe5 = new PipeConditional(filterimage, pipenull, pipenull);
+            IPipe pipe10 = new PipeConditional(filterimage, pipenull, pipenull);
+            IPipe pipe9 = new PipeConditional(filterDragAndDropItem, pipenull, pipe10);
+            IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipenull, pipe9);
+            IPipe pipe7 = new PipeConditional(filterDragAndDropSource, pipenull, pipe8);
+            IPipe pipe6 = new PipeConditional(filterletter, pipenull, pipe7);
+            IPipe pipe5 = new PipeConditional(filterbuttoncheck, pipenull, pipe6);
             IPipe pipe4 = new PipeConditional(filterbuttonsound, pipenull, pipe5);
             IPipe pipe3 = new PipeConditional(filterbuttonnextpage, pipenull, pipe4);
             IPipe pipe2 = new PipeConditional(filterscreen, pipenull, pipe3);

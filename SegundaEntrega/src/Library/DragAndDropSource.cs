@@ -34,7 +34,7 @@ namespace Library
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
         public override void Render(IMainViewAdapter adapter)
         {
-            string sourceCellImageId = adapter.CreateDragAndDropSource((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
+            string sourceCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(sourceCellImageId, this.ImagePath);
         }
     }

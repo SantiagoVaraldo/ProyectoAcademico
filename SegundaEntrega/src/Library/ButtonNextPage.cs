@@ -29,7 +29,7 @@ namespace Library
         /// <summary>
         /// accion que realiza el boton de tipo Letter al hacerle click
         /// </summary>
-        public void Action()
+        public void Action(string name)
         {
             SingletonAdapter.Adapter.Debug($"Button clicked!");//ShowPage(this.nextPageName); hay q pasarle la pagina q debe mostrar
         }
