@@ -34,10 +34,10 @@ namespace Library
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
         public override void Render(IMainViewAdapter adapter)
         {
-            string itemId = adapter.CreateDragAndDropItem((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
+            string itemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(itemId, this.ImagePath);
-            //this.adapter.AddItemToDragAndDropSource(sourceCellImageId, itemId);
-            adapter.SetImage(itemId, this.ImagePath);
+            adapter.MakeDraggable(itemId,true);
+            //adapter.SetImage(itemId, this.ImagePath);
         }
     }
 }

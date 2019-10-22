@@ -14,7 +14,7 @@ namespace Library
 {
     public class CreatorHelper
     {
-        public CreatorHelper(String FileName)
+        public CreatorHelper(string FileName)
         {
             this.FileName = FileName;
         }

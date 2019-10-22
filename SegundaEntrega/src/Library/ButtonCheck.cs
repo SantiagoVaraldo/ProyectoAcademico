@@ -62,7 +62,7 @@ namespace Library
         /// <summary>
         /// accion que realiza el boton de tipo ButtonCheck al hacerle click
         /// </summary>
-        public void Action()
+        public void Action(string name)
         {        
             SingletonAdapter.Adapter.Debug($"Button clicked!");//algo
         }

@@ -45,7 +45,7 @@ namespace Library
         /// <summary>
         /// accion que realiza el boton de tipo ButtonSound al hacerle click
         /// </summary>
-        public void Action()
+        public void Action(string name)
         {
             SingletonAdapter.Adapter.Debug($"Button clicked!");//PlayAudio("Speech Off.wav"); hay q pasarle el audio a reproducir
         }

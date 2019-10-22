@@ -2,13 +2,14 @@ using System;
 using ExerciseOne;
 using System.Collections.Generic;
 using Attribute = ExerciseOne.Attribute;
+using System.IO;
 
 /// <summary>
-/// NOMBRE: FilterScreen.
+/// NOMBRE: FilterButtonCheck.
 /// 
-/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Screen.
+/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ButtonCheck.
 /// 
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Screen en caso
+/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ButtonCheck en caso
 /// de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
 /// 
 /// PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
@@ -27,7 +28,7 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-    public class FilterScreen : IFilterConditional
+    public class FilterButtonCheck : IFilterConditional
     {
         private bool result;
         public bool Result
@@ -37,23 +38,34 @@ namespace Library
         }
 
         /// <summary>
-        /// filtra un tag recibido por parametros
+        /// filtra el Tag recibido
         /// </summary>
         /// <param name="tag">Tag a filtrar</param>
-        /// <returns>Tag</returns>
+        /// <returns>retorna el Tag</returns>
         public Tag Filter(Tag tag)
         {
-            if (tag.Name == "Screen")
+            if (tag.Name == "ButtonCheck")
             {
                 this.Result = true;
 
                 string name = tag.ListaAtributos["Name"].Valor;
+                int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+
 
                 int lastLevelId = Creator.world.ListaLevel.Count - 1;
                 Level level = Creator.world.ListaLevel[lastLevelId];
+                int lastScreenId = level.ListaScreen.Count - 1;
+                Screen screen = level.ListaScreen[lastScreenId];
+                
 
-                IXML screen = new Screen(name, level);
-                level.Add(screen);
+                
+                string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
+
+                IXML button = new ButtonNextPage(name, positionY, positionX, length, width, screen, imagePath);
+                screen.Add(button);
             }
             else
             {
