@@ -15,6 +15,8 @@ namespace Tests
             Attribute attribute = new Attribute("pedro", "15");
             Attribute attribute2 = new Attribute("marcos", "13");
             List<Tag> ListaTags = new List<Tag>();
+            listaAtributos.Add(attribute.Clave,attribute);
+            listaAtributos.Add(attribute2.Clave,attribute2);
             ListaTags.Add(new Tag("personas", listaAtributos));
             List<string> listaFormated = format.Format(ListaTags);
             List<string> ListaExpected = new List<string> { "personas", "pedro=15", "marcos=13" };
