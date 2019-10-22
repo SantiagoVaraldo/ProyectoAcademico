@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\ClasesProfes\PII_Proyecto2019\Common\src\Common.csproj" />
+    <ProjectReference Include="..\..\SegundaEntrega\src\Library\StudentsCode.csproj" />
   </ItemGroup>
 
 </Project>
