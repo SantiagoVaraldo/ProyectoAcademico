@@ -9,6 +9,6 @@ namespace Library
 {
     public interface IButton
     {
-        void Action();
+        void Action(string name);
     }
 }

@@ -35,7 +35,7 @@ namespace Proyecto.StudentsCode
 
             SingletonAdapter.Adapter = adapter;
 
-            this.adapter.ToDoAfterBuild(this.AfterBuildShowFirstPage);
+            this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
 
             this.firstPageName = this.adapter.AddPage();
 
@@ -79,7 +79,7 @@ namespace Proyecto.StudentsCode
             //this.adapter.PlayAudio("Speech On.wav");
         }
 
-        private void GoToNextPage()
+        private void GoToNextPage(string name)
         {
             this.adapter.ShowPage(this.nextPageName);
             //this.adapter.PlayAudio("Speech Off.wav");
