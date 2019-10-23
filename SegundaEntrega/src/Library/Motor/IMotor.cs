@@ -5,6 +5,5 @@ namespace Library
 {
     public interface IMotor 
     {
-        List<string> listPages {get;set;}
     }
 }

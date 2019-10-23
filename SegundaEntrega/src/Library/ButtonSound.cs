@@ -25,6 +25,19 @@ namespace Library
         : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.SoundPath = SoundPath;
+            this.state = false;
+        }
+        private bool state;
+        public bool State
+        {
+            get 
+            {
+                return this.state;
+            }
+            set 
+            {
+                this.state = value;        
+            }
         }
         private string soundPath;
         public string SoundPath

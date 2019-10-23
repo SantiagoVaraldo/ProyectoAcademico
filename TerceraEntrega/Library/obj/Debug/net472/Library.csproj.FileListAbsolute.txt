@@ -1,8 +1,0 @@
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\net472\Library.csprojAssemblyReference.cache
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\net472\Library.csproj.CoreCompileInputs.cache
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\net472\Library.AssemblyInfoInputs.cache
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\net472\Library.AssemblyInfo.cs
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\net472\Library.dll
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\bin\Debug\net472\Library.pdb
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\net472\Library.dll
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\TerceraEntrega\Library\obj\Debug\net472\Library.pdb
