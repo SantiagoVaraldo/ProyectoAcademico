@@ -36,10 +36,8 @@ namespace Library
             }
             set
             {
-                if (value == true)
-                {
-                    this.check = value;
-                }
+                this.check = value;
+
             }
         }
         private string imagepath2;
@@ -63,7 +61,7 @@ namespace Library
         /// accion que realiza el boton de tipo ButtonCheck al hacerle click
         /// </summary>
         public void Action(string name)
-        {        
+        {
             SingletonAdapter.Adapter.Debug($"Button clicked!");//algo
         }
 
