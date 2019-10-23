@@ -23,21 +23,35 @@ namespace Library
 {
     public class DragAndDropItem : Element
     {
-        public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
+        private DragAndDropSource source;
+        public DragAndDropSource Source
+        {
+            get
+            {
+                return this.source;
+            }
+            set
+            {
+                this.source = value;
+            }
+        }
+        private DragAndDropDestination destination;
+        public DragAndDropDestination Destination
+        {
+            get
+            {
+                return this.destination;
+            }
+            set
+            {
+                this.destination = value;
+            }
+        }
+        public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, DragAndDropDestination destination)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
-        }
-
-        /// <summary>
-        /// metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity
-        /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
-        public override void Render(IMainViewAdapter adapter)
-        {
-            string itemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(itemId, this.ImagePath);
-            adapter.MakeDraggable(itemId,true);
-            //adapter.SetImage(itemId, this.ImagePath);
+            this.Destination = destination;
+            this.Source = source;
         }
     }
 }
