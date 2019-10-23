@@ -1088,19 +1088,10 @@
       "StudentsCode/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
-          "Library": "1.0.0",
-          "TerceraEntrega": "1.0.0"
+          "Library": "1.0.0"
         },
         "runtime": {
           "StudentsCode.dll": {}
-        }
-      },
-      "TerceraEntrega/1.0.0": {
-        "dependencies": {
-          "Common": "1.0.0"
-        },
-        "runtime": {
-          "TerceraEntrega.dll": {}
         }
       }
     }
@@ -1668,11 +1659,6 @@
       "sha512": ""
     },
     "StudentsCode/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TerceraEntrega/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

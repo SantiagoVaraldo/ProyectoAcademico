@@ -6,6 +6,7 @@ namespace Library
 {
          public class MotorLvl3 : IMotor
          {
+             /*
                   public List<string> listPages { get; set; }
                   private IMainViewAdapter adapter;
                   public IMainViewAdapter Adapter
@@ -27,11 +28,11 @@ namespace Library
                   public void Check(ButtonCheck buttonCheck)
                   {
                            int Count;
-                           if (buttonCheck.Check && Count = 1)
+                           if (buttonCheck.Check & Count = 1)
                            {
                                     this.adapter.ShowPage(this.listPages[10]);
                            }
-                           else if (!buttonCheck.Check && Count = 1)
+                           else if (!buttonCheck.Check & Count = 1)
                            {
                                     this.adapter.Debug($"Esas no son las correctas, vuelve a intentar");
                                     Count = 0;
@@ -46,6 +47,6 @@ namespace Library
                   {
                       this.adapter.PlayAudio(buttonSound.SoundPath);
                   }
-
+*/
          }
 }

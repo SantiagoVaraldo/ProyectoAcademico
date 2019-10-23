@@ -1727,27 +1727,13 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Common": "1.0.0",
-          "Library": "1.0.0",
-          "TerceraEntrega": "1.0.0"
+          "Library": "1.0.0"
         },
         "compile": {
           "bin/placeholder/StudentsCode.dll": {}
         },
         "runtime": {
           "bin/placeholder/StudentsCode.dll": {}
-        }
-      },
-      "TerceraEntrega/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Common": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/TerceraEntrega.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TerceraEntrega.dll": {}
         }
       }
     }
@@ -6018,11 +6004,6 @@
       "type": "project",
       "path": "../src/Library/StudentsCode.csproj",
       "msbuildProject": "../src/Library/StudentsCode.csproj"
-    },
-    "TerceraEntrega/1.0.0": {
-      "type": "project",
-      "path": "../../TerceraEntrega/Library/TerceraEntrega.csproj",
-      "msbuildProject": "../../TerceraEntrega/Library/TerceraEntrega.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6043,11 +6024,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\obj\\",
+      "outputPath": "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6064,11 +6045,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj": {
-              "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj"
+            "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj": {
+              "projectPath": "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj"
             },
-            "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj": {
-              "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj"
+            "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj": {
+              "projectPath": "C:\\Users\\FIT\\Documents\\GitHub\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj"
             }
           }
         }

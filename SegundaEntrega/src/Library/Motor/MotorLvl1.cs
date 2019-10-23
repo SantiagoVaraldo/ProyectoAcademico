@@ -6,23 +6,15 @@ namespace Library
 {
          public class MotorLvl1 : IMotor
          {
-                  public List<string> listPages { get; set; }
-                  
-                  public MotorLvl1(List<string> listpages)
-                  {
-                           this.Adapter = adapter;
-                           this.listPages = listpages;
-                  }
                   public void Check(Letter letter)
                   {
                            if (letter.Right)
                            {
-                                   
-
+                               letter.Screen.levelCompleted();
                            }
                            else
                            {
-                                    Console.WriteLine($"Esa no es la letra correcta, vuelve a intentar");
+                               //mensaje de error que le erro.
                            }
                   }
                   public void Sound(ButtonSound buttonSound)
