@@ -23,6 +23,7 @@ namespace Library
 {
     public class DragAndDropDestination : Element
     {
+        public string destinationCellImageId;
         public DragAndDropDestination(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
@@ -34,7 +35,7 @@ namespace Library
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
         public override void Render(IMainViewAdapter adapter)
         {
-            string destinationCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
+            destinationCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(destinationCellImageId, this.ImagePath);
         }
     }

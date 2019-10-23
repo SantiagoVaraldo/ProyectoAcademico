@@ -58,8 +58,12 @@ namespace Library
                 int lastScreenId = level.ListaScreen.Count - 1;
                 Screen screen = level.ListaScreen[lastScreenId];
                 string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                int lastElementId = screen.ListaElement.Count-1;
+                DragAndDropDestination dragAndDropDestination = (DragAndDropDestination)screen.ListaElement[lastElementId];
+                int beforeLastElementId = screen.ListaElement.Count-2;
+                DragAndDropSource dragAndDropSource = (DragAndDropSource)screen.ListaElement[beforeLastElementId];
 
-                IXML dragAndDropItem = new DragAndDropItem(name, positionY, positionX, length, width, screen, imagePath);
+                IXML dragAndDropItem = new DragAndDropItem(name, positionY, positionX, length, width, screen, imagePath, dragAndDropSource, dragAndDropDestination);
                 screen.Add(dragAndDropItem);
             }
             else

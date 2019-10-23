@@ -4,10 +4,10 @@
 			<Image Name="ImageBanana" PositionY="-100" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="Banana.jpg"/>
 			<Image Name="ImageCamara" PositionY="-100" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="Camara.jpg"/>
 			<Image Name="ImageLampara" PositionY="-100" PositionX="150" Length="100" Width="100" Screen="Screen", ImagePath="Lampara.jpg"/>
-			<DragAndDropSource Name="ImageLapiz" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen", ImagePath="CuadradoBlanco.jpg"/>
-			<DragAndDropDestination Name="ImageManzana" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="CuadradoBlanco.jpg"/>
-			<DragAndDropItem Name="ImageOceano" PositionY="100" PositionX="150" Length="100" Width="100" Screen="Screen", ImagePath="Oceano.jpg"/>
-			<ButtonSound Name="Button2" PositionY="0" PositionX="100" Length="100" Width="100" Screen="Screen", ImagePath="", SoundPath=""/>
+			<DragAndDropSource Name="ImageLapiz" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="CuadradoBlanco.jpg"/>
+			<DragAndDropDestination Name="ImageManzana" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="CuadradoBlanco.jpg"/>
+			<Word Name="ImageOceano" PositionY="100" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="Camara.jpg" DragAndDropSource="ImageLapiz" DragAndDropDestination="ImageManzana"/>
+			<ButtonSound Name="Button2" PositionY="0" PositionX="100" Length="100" Width="100" Screen="Screen" ImagePath="" SoundPath=""/>
 		</Screen>
 	</Level>
 </World>

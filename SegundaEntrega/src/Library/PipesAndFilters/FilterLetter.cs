@@ -56,7 +56,8 @@ namespace Library
                 int lastLevelId = Creator.world.ListaLevel.Count - 1;
                 Level level = Creator.world.ListaLevel[lastLevelId];
                 int lastScreenId = level.ListaScreen.Count - 1;
-                Screen screen = level.ListaScreen[lastScreenId];                string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                Screen screen = level.ListaScreen[lastScreenId];               
+                string imagePath = tag.ListaAtributos["ImagePath"].Valor;
                 bool rigth = Convert.ToBoolean(tag.ListaAtributos["Right"].Valor); 
 
                 IXML letter = new Letter(name, positionY, positionX, length, width, screen, imagePath, rigth);
