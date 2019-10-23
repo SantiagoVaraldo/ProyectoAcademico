@@ -56,9 +56,14 @@ namespace Library
                 int lastLevelId = Creator.world.ListaLevel.Count - 1;
                 Level level = Creator.world.ListaLevel[lastLevelId];
                 int lastScreenId = level.ListaScreen.Count - 1;
-                Screen screen = level.ListaScreen[lastScreenId];                string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
+                Screen screen = level.ListaScreen[lastScreenId];                
+                string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
+                int lastElementId = screen.ListaElement.Count-1;
+                DragAndDropDestination dragAndDropDestination = (DragAndDropDestination)screen.ListaElement[lastElementId];
+                int beforeLastElementId = screen.ListaElement.Count-2;
+                DragAndDropSource dragAndDropSource = (DragAndDropSource)screen.ListaElement[beforeLastElementId];
 
-                IXML word = new Word(name, positionY, positionX, length, width, screen, imagePath);
+                IXML word = new Word(name, positionY, positionX, length, width, screen, imagePath, dragAndDropSource, dragAndDropDestination);
                 screen.Add(word);
             }
             else

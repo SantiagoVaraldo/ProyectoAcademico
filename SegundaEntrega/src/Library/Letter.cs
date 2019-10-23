@@ -24,6 +24,7 @@ namespace Library
         {
             this.Right = Right;
         }
+
         private bool right;
         public bool Right
         {

@@ -25,6 +25,19 @@ namespace Library
         {
             this.Name = Name;
             this.Level = Level;
+            this.State = false;
+        }
+        private bool state;
+        public bool State
+        {
+            get
+            {
+                return this.state;
+            }
+            set
+            {
+                this.state = value;
+            }
         }
         private string name;
         public string Name
@@ -79,6 +92,11 @@ namespace Library
             {
                 this.ListaElement.Add((Element)ixml);
             }
+        }
+
+        public void levelCompleted()
+        {
+            this.state = true;
         }
     }
 }

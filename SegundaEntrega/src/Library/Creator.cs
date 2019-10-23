@@ -42,12 +42,12 @@ namespace Library
             IFilterConditional filterletter = new FilterLetter();
             IFilterConditional filterDragAndDropSource = new FilterDragAndDropSource();
             IFilterConditional filterDragAndDropDestination = new FilterDragAndDropDestination();
-            IFilterConditional filterDragAndDropItem = new FilterDragAndDropItem();
+            IFilterConditional filterword = new FilterWord();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
             //IPipe pipeserial7 = new PipeSerial(filtertwitter,pipenull);
             IPipe pipe10 = new PipeConditional(filterimage, pipenull, pipenull);
-            IPipe pipe9 = new PipeConditional(filterDragAndDropItem, pipenull, pipe10);
+            IPipe pipe9 = new PipeConditional(filterword, pipenull, pipe10);
             IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipenull, pipe9);
             IPipe pipe7 = new PipeConditional(filterDragAndDropSource, pipenull, pipe8);
             IPipe pipe6 = new PipeConditional(filterletter, pipenull, pipe7);

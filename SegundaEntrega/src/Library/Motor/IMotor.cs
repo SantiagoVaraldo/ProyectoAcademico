@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public interface IController 
+    public interface IMotor 
     {
-        List<string> listPages {get;set;}
     }
 }

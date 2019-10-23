@@ -60,7 +60,7 @@ namespace Library
                 Screen screen = level.ListaScreen[lastScreenId];
                 string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                IXML dragAndDropdestination = new DragAndDropDestination(name, positionY, positionX, length, width, screen, imagePath);
+                DragAndDropDestination dragAndDropdestination = new DragAndDropDestination(name, positionY, positionX, length, width, screen, imagePath);
                 screen.Add(dragAndDropdestination);
             }
             else
