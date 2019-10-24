@@ -8,28 +8,37 @@ namespace Library
     {
         public void CheckWon(Screen screen)
         {
-            //consigue los 2 buttonchecks que tienen que estar selected
+            //consigue los 6 buttonchecks de la screen
             List<ButtonCheck> buttonList = new List<ButtonCheck>();
+            List<ButtonCheck> checkedList = new List<ButtonCheck>();
+
             foreach (Element e in screen.ListaElement)
             {
                 if (e is ButtonCheck)
                 {
-                    if ((ButtonCheck)e.Check)
-                    {
-                        buttonList.Add((ButtonCheck)e);
-                    }
-                    
+
+                    buttonList.Add((ButtonCheck)e);
+                
+                }
+            }
+            
+            //consigue los 2 button check que tienen que estar seleccionados
+            foreach (ButtonCheck btn in buttonList)
+            {
+                if (btn.Check)
+                {
+                    checkedList.Add(btn);
                 }
             }
 
             bool won = false;
             //si hay 2 seleccionados
-            if (buttonList.Count == 2)
+            if (checkedList.Count == 2)
             {
                 won = true;
 
-                foreach (ButtonCheck button in buttonList)
-                {   
+                foreach (ButtonCheck button in checkedList)
+                {
                     //si los 2 seleccionados no estan bien
                     if (!button.Check)
                     {
@@ -40,14 +49,14 @@ namespace Library
 
             if (won)
             {
-                button.Screen.levelCompleted();
+                screen.levelCompleted();
             }
             else
             {
                 //mensaje que le erro
 
                 foreach (ButtonCheck button in buttonList)
-                {   
+                {
                     button.Unselect();
                 }
             }
