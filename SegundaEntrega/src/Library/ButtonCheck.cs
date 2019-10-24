@@ -25,7 +25,21 @@ namespace Library
         : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.Check = Check;
+            this.State = false;
             this.ImagePath2 = ImagePath2;
+        }
+        private bool state;
+        public bool State
+        {
+            get
+            {
+                return this.state;
+            }
+            set
+            {
+                this.state = value;
+
+            }
         }
         private bool check;
         public bool Check
@@ -63,6 +77,9 @@ namespace Library
         public void Action(string name)
         {
             SingletonAdapter.Adapter.Debug($"Button clicked!");//algo
+            
+            //this.Check = true;
+            //MotorLvl3.CheckWon();
         }
 
         /// <summary>
