@@ -44,7 +44,7 @@ namespace Library
         /// <returns>retorna el Tag</returns>
         public Tag Filter(Tag tag)
         {
-            if (tag.Name == "DragAndDropDestination")
+            if (tag.Name == "BlanckSpace")
             {
                 this.Result = true;
 
@@ -60,8 +60,8 @@ namespace Library
                 Screen screen = level.ListaScreen[lastScreenId];
                 string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                DragAndDropDestination dragAndDropdestination = new DragAndDropDestination(name, positionY, positionX, length, width, screen, imagePath);
-                screen.Add(dragAndDropdestination);
+                BlanckSpace blanckSpace = new BlanckSpace(name, positionY, positionX, length, width, screen, imagePath);
+                screen.Add(blanckSpace);
             }
             else
             {

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class MotorLvl3 : IMotor
+    public class MotorLvl3 : IObservable
     {
-        public void CheckWon(Screen screen)
+        private List<IObserver> observers = new List<IObserver>();
+        public void Check(ButtonCheck buttonCheck, ButtonCheck buttonCheck2)
         {
             //consigue los 6 buttonchecks de la screen
             List<ButtonCheck> buttonList = new List<ButtonCheck>();
@@ -62,10 +63,20 @@ namespace Library
             }
 
         }
-
-        public void Sound(ButtonSound buttonSound)
+        public void Subscribe(IObserver observer)
         {
+            if (! observers.Contains(observer))
+            {
+                observers.Add(observer);
+            }
+        }
 
+        public void Unsubscribe(IObserver observer)
+        {
+            if (observers.Contains(observer))
+            {
+                this.observers.Remove(observer);
+            }
         }
 
     }
