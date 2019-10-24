@@ -24,7 +24,7 @@ namespace Library
             {
                 won = true;
 
-                foreach (ButtonCheck button in list)
+                foreach (ButtonCheck button in buttonList)
                 {   
                     //si los 2 seleccionados no estan bien
                     if (!button.Check)
