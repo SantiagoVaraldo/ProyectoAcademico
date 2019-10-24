@@ -81,6 +81,10 @@ namespace Library
             //this.Check = true;
             //MotorLvl3.CheckWon();
         }
+        public void Unselect()
+        {
+            this.State = false;
+        }
 
         /// <summary>
         /// metodo que permite al objeto de tipo ButtonCheck renderizarce a si mismo en Unity

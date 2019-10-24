@@ -12,9 +12,9 @@ namespace Library
             List<ButtonCheck> buttonList = new List<ButtonCheck>();
             foreach (Element e in screen.ListaElement)
             {
-                if (e is ButtonCheck & e.Check)
+                if (e is ButtonCheck & (ButtonCheck) e.Check)
                 {
-                    buttonList.Add(e);
+                    buttonList.Add((ButtonCheck)e);
                 }
             }
 
@@ -42,7 +42,7 @@ namespace Library
             {
                 //mensaje que le erro
 
-                foreach (ButtonCheck button in list)
+                foreach (ButtonCheck button in buttonList)
                 {   
                     button.Unselect();
                 }
