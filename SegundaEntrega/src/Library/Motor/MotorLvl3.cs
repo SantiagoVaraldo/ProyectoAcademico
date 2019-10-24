@@ -12,9 +12,13 @@ namespace Library
             List<ButtonCheck> buttonList = new List<ButtonCheck>();
             foreach (Element e in screen.ListaElement)
             {
-                if (e is ButtonCheck & (ButtonCheck) e.Check)
+                if (e is ButtonCheck)
                 {
-                    buttonList.Add((ButtonCheck)e);
+                    if ((ButtonCheck)e.Check)
+                    {
+                        buttonList.Add((ButtonCheck)e);
+                    }
+                    
                 }
             }
 
