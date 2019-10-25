@@ -9,11 +9,9 @@ C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Common.dll
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Library.dll
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\StudentsCode.dll
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\TerceraEntrega.dll
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\StudentsCode.pdb
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Library.pdb
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\Common.pdb
-C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\bin\Debug\netcoreapp2.2\TerceraEntrega.pdb
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csprojAssemblyReference.cache
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.csproj.CoreCompileInputs.cache
 C:\Users\FIT\programacion2\ProyectoFinal\pii_2019_2_equipo9\SegundaEntrega\Tests\obj\Debug\netcoreapp2.2\Tests.AssemblyInfoInputs.cache

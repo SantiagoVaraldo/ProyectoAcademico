@@ -77,10 +77,13 @@ namespace Library
         public void Action(string name)
         {
             SingletonAdapter.Adapter.Debug($"Button clicked!");//algo
-            
-            //this.Check = true;
+            //this.State = true;
             //MotorLvl3.CheckWon();
         }
+
+        /// <summary>
+        /// metodo que deselecciona el boton
+        /// </summary>
         public void Unselect()
         {
             this.State = false;
