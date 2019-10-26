@@ -20,6 +20,7 @@ namespace Library
     public class MotorLvl3 : IObservable
     {
         private List<ButtonCheck> correctList = new List<ButtonCheck>();
+        private List<ButtonCheck> selectedList = new List<ButtonCheck>();
         private int ClickNum;
         private List<IObserver> observers = new List<IObserver>();
 
@@ -30,6 +31,10 @@ namespace Library
         public void Check(ButtonCheck buttonCheck)
         {
             ClickNum += 1;
+
+            buttonCheck.Select();
+            selectedList.Add(buttonCheck);
+
             this.AddButtonCheck(buttonCheck);
             if ((ClickNum % 2) == 0)
             {
@@ -40,6 +45,12 @@ namespace Library
                 else
                 {
                     this.correctList.Clear();
+
+                    foreach (ButtonCheck button in selectedList)
+                    {
+                        button.Unselect();
+                    }
+
                 }
             }
         }

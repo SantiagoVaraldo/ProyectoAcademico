@@ -34,6 +34,7 @@ namespace Tests
             bool actualState = buttonCheck1.Screen.State;
             bool expectedState = false;
             Assert.Equal(actualState, expectedState);
+            
 
             motor.Check(buttonCheck2);
             bool actualState2 = buttonCheck2.Screen.State;
