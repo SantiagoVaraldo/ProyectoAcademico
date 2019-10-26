@@ -21,7 +21,7 @@ namespace Library
     public class Word : DragAndDropItem
     {
         string itemId; 
-        public Word(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlanckSpace destination)
+        public Word(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlankSpace destination)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath, source, destination)
         {
         }
