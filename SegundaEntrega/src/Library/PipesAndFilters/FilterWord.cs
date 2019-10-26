@@ -59,7 +59,7 @@ namespace Library
                 Screen screen = level.ListaScreen[lastScreenId];                
                 string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
                 int lastElementId = screen.ListaElement.Count-1;
-                BlankSpace Destination = (BlankSpace)screen.ListaElement[lastElementId];
+                BlanckSpace Destination = (BlanckSpace)screen.ListaElement[lastElementId];
                 int beforeLastElementId = screen.ListaElement.Count-2;
                 DragAndDropSource dragAndDropSource = (DragAndDropSource)screen.ListaElement[beforeLastElementId];
 

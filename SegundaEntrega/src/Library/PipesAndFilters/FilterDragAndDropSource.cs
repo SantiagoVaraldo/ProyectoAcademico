@@ -5,11 +5,11 @@ using Attribute = ExerciseOne.Attribute;
 using System.IO;
 
 /// <summary>
-/// NOMBRE: FilterBox
+/// NOMBRE: FilterDragAndDropSource
 /// 
-/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Box.
+/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto DragAndDropSource.
 /// 
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Box en caso
+/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto DragAndDropSource en caso
 /// de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
 /// 
 /// PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
@@ -28,7 +28,7 @@ using System.IO;
 
 namespace Library
 {
-    public class FilterBox : IFilterConditional
+    public class FilterDragAndDropSource : IFilterConditional
     {
         private bool result;
         public bool Result
@@ -44,7 +44,7 @@ namespace Library
         /// <returns>retorna el Tag</returns>
         public Tag Filter(Tag tag)
         {
-            if (tag.Name == "Box")
+            if (tag.Name == "DragAndDropSource")
             {
                 this.Result = true;
 
@@ -59,8 +59,8 @@ namespace Library
                 Screen screen = level.ListaScreen[lastScreenId];
                 string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                Box box = new Box(name, positionY, positionX, length, width, screen, imagePath);
-                screen.Add(box);
+                DragAndDropSource dragAndDropSource = new DragAndDropSource(name, positionY, positionX, length, width, screen, imagePath);
+                screen.Add(dragAndDropSource);
             }
             else
             {

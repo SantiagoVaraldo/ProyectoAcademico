@@ -21,7 +21,7 @@ namespace Library
     {
         private List<Word> listWords = new List<Word>();
         private List<IObserver> observers = new List<IObserver>();
-        //private int CantDestination;
+        private int CantDestination;
 
         /// <summary>
         /// verifica que se haya superado el nivel
@@ -47,7 +47,7 @@ namespace Library
          {
                   foreach(Element element in word.Screen.ListaElement)
                   {
-                           if(element is BlankSpace)
+                           if(element is BlanckSpace)
                            {
                                     this.CantDestination += 1;
                            }
