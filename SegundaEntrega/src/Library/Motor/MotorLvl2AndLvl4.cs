@@ -21,7 +21,7 @@ namespace Library
          {
                   private List<Word> listWords = new List<Word>();
                   private List<IObserver> observers = new List<IObserver>();
-                  private int CantDestination;
+                  // private int CantDestination;
 
                   /// <summary>
                   /// verifica que se haya superado el nivel
@@ -116,41 +116,7 @@ namespace Library
                            }
                   }
 
-                  /// <summary>
-                  /// metodo que elimina un objeto Word de la lista si no tiene la misma posicion que su destination
-                  /// </summary>
-                  /// <param name="word"> Word a eliminar </param>
-                  public void RemoveWord(Word word)
-                  {
-                           if (word.PositionY != word.Destination.PositionY || word.PositionX != word.Destination.PositionX)
-                           {
-                                    this.listWords.Remove(word);
-                           }
-                  }
 
-                  /// <summary>
-                  /// metodo que agrega un IObserver a la lista de Observers
-                  /// </summary>
-                  /// <param name="observer"> observer para agregar </param>
-                  public void Subscribe(IObserver observer)
-                  {
-                           if (!this.observers.Contains(observer))
-                           {
-                                    this.observers.Add(observer);
-                           }
-                  }
-
-                  /// <summary>
-                  /// metodo que elimina un IObserver de la lista de Observers
-                  /// </summary>
-                  /// <param name="observer"> observer a eliminar </param>
-                  public void Unsubscribe(IObserver observer)
-                  {
-                           if (this.observers.Contains(observer))
-                           {
-                                    this.observers.Remove(observer);
-                           }
-                  }
 
          }
 }
