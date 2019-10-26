@@ -47,13 +47,27 @@ namespace Library
             if (tag.Name == "World")
             {
                 this.Result = true;
-    
-                string name = tag.ListaAtributos["Name"].Valor;
-                int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
 
-                World world = new World(name, length, width);
-                Creator.world = world;
+                string name;
+                int length, width;
+                World world;
+
+                try
+                {
+
+                    name = tag.ListaAtributos["Name"].Valor;
+                    length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                    width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+
+                    world = new World(name, length, width);
+                    Creator.world = world;
+
+                }
+                catch (NotFoundOnXML)
+                {
+                    //Mostrar en pantalla que no se encontro lo deseado en xml
+                }
+
             }
             else
             {
