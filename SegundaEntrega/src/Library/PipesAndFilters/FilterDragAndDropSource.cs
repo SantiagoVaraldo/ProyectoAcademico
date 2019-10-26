@@ -2,13 +2,14 @@ using System;
 using ExerciseOne;
 using System.Collections.Generic;
 using Attribute = ExerciseOne.Attribute;
+using System.IO;
 
 /// <summary>
-/// NOMBRE: FilterScreen.
+/// NOMBRE: FilterDragAndDropSource
 /// 
-/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Screen.
+/// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto DragAndDropSource.
 /// 
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Screen en caso
+/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto DragAndDropSource en caso
 /// de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
 /// 
 /// PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
@@ -27,7 +28,7 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-    public class FilterScreen : IFilterConditional
+    public class FilterDragAndDropSource : IFilterConditional
     {
         private bool result;
         public bool Result
@@ -37,32 +38,42 @@ namespace Library
         }
 
         /// <summary>
-        /// filtra un tag recibido por parametros
+        /// filtra el Tag recibido
         /// </summary>
         /// <param name="tag">Tag a filtrar</param>
-        /// <returns>Tag</returns>
+        /// <returns>retorna el Tag</returns>
         public Tag Filter(Tag tag)
         {
-            if (tag.Name == "Screen")
+            if (tag.Name == "DragAndDropSource")
             {
                 this.Result = true;
 
                 string name;
-                int lastLevelId;
+                int positionY, positionX;
+                int length, width;
+                int lastLevelId, lastScreenId;
+                string imagePath;
                 Level level;
+                Screen screen;
 
                 try
                 {
 
                     name = tag.ListaAtributos["Name"].Valor;
+                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                    length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                    width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
                     lastLevelId = Creator.world.ListaLevel.Count - 1;
                     level = Creator.world.ListaLevel[lastLevelId];
+                    lastScreenId = level.ListaScreen.Count - 1;
+                    screen = level.ListaScreen[lastScreenId];
+                    imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                    IXML screen = new Screen(name, level);
-                    level.Add(screen);
-
+                    DragAndDropSource dragAndDropSource = new DragAndDropSource(name, positionY, positionX, length, width, screen, imagePath);
+                    screen.Add(dragAndDropSource);
                 }
-                catch (System.Exception)
+                catch (NotFoundOnXML)
                 {
                     //Mostrar en pantalla que no se encontro lo deseado en xml
                 }

@@ -35,8 +35,8 @@ namespace Library
                 this.source = value;
             }
         }
-        private BlankSpace destination;
-        public BlankSpace Destination
+        private BlanckSpace destination;
+        public BlanckSpace Destination
         {
             get
             {
@@ -47,7 +47,7 @@ namespace Library
                 this.destination = value;
             }
         }
-        public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlankSpace destination)
+        public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlanckSpace destination)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.Destination = destination;
