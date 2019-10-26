@@ -17,32 +17,43 @@ using System.Collections.Generic;
 
 namespace Library
 {
-         public class MotorLvl3 : IObservable
-         {
-                  private List<ButtonCheck> correctList = new List<ButtonCheck>();
-                  private int ClickNum;
-                  private List<IObserver> observers = new List<IObserver>();
+    public class MotorLvl3 : IObservable
+    {
+        private List<ButtonCheck> correctList = new List<ButtonCheck>();
+        private List<ButtonCheck> selectedList = new List<ButtonCheck>();
+        private int ClickNum;
+        private List<IObserver> observers = new List<IObserver>();
 
-                  /// <summary>
-                  /// verifica que se haya superado el nivel
-                  /// </summary>
-                  /// <param name="buttonCheck"> boton clickeado </param>
-                  public void Check(ButtonCheck buttonCheck)
-                  {
-                           ClickNum += 1;
-                           this.AddButtonCheck(buttonCheck);
-                           if ((ClickNum % 2) == 0)
-                           {
-                                    if (this.correctList.Count == 2)
-                                    {
-                                             this.NextLevel(buttonCheck);
-                                    }
-                                    else
-                                    {
-                                             this.correctList.Clear();
-                                    }
-                           }
-                  }
+        /// <summary>
+        /// verifica que se haya superado el nivel
+        /// </summary>
+        /// <param name="buttonCheck"> boton clickeado </param>
+        public void Check(ButtonCheck buttonCheck)
+        {
+            ClickNum += 1;
+
+            buttonCheck.Select();
+            selectedList.Add(buttonCheck);
+
+            this.AddButtonCheck(buttonCheck);
+            if ((ClickNum % 2) == 0)
+            {
+                if (this.correctList.Count == 2)
+                {
+                    this.NextLevel(buttonCheck);
+                }
+                else
+                {
+                    this.correctList.Clear();
+
+                    foreach (ButtonCheck button in selectedList)
+                    {
+                        button.Unselect();
+                    }
+
+                }
+            }
+        }
 
                   /// <summary>
                   /// metodo que establece que la pantalla fue superada y se lo notifica al Observer

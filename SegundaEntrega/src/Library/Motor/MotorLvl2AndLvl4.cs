@@ -21,39 +21,7 @@ namespace Library
          {
                   private List<Word> listWords = new List<Word>();
                   private List<IObserver> observers = new List<IObserver>();
-                  // private int CantDestination;
-
-                  /// <summary>
-                  /// verifica que se haya superado el nivel
-                  /// </summary>
-                  /// <param name="word"> Word clickeado </param>
-                  public void Check(Word word)
-                  {
-                           if (!this.listWords.Contains(word))
-                           {
-                                    this.AddWord(word);
-                           }
-                           else
-                           {
-                                    this.RemoveWord(word);
-                           }
-                           if (this.listWords.Count == 4)
-                           {
-                                    this.NextLevel(word);
-                           }
-                  }
-
-                  /* public void ObtainCantDestination(Word word)
-                   {
-                            foreach(Element element in word.Screen.ListaElement)
-                            {
-                                     if(element is BlanckSpace)
-                                     {
-                                              this.CantDestination += 1;
-                                     }
-                            }
-                   }
-                   */
+                  private int CantDestination;
 
                   /// <summary>
                   /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
@@ -78,6 +46,46 @@ namespace Library
                            {
                                     this.listWords.Add(word);
                            }
+                  }
+
+                  /// <summary>
+                  /// verifica que se haya superado el nivel
+                  /// </summary>
+                  /// <param name="word"> Word clickeado </param>
+                  public void Check(Word word)
+                  {
+                           //elementName == this.itemId && SingletonAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y)
+
+                           ObtainCantDestination(word);
+
+                           if (!this.listWords.Contains(word))
+                           {
+                                    this.AddWord(word);
+                           }
+                           else
+                           {
+                                    this.RemoveWord(word);
+                           }
+                           if (this.listWords.Count == 4)
+                           {
+                                    this.NextLevel(word);
+                           }
+                  }
+
+                  public void ObtainCantDestination(Word word)
+                  {
+                           foreach (Element element in word.Screen.ListaElement)
+                           {
+                                    if (element is BlanckSpace)
+                                    {
+                                             this.CantDestination += 1;
+                                    }
+                           }
+                  }
+
+                  public bool Contains(Word word, float x, float y)
+                  {
+                           return SingletonAdapter.Adapter.Contains(word.Destination.destinationCellImageId, x, y);
                   }
 
                   /// <summary>
@@ -115,8 +123,5 @@ namespace Library
                                     this.observers.Remove(observer);
                            }
                   }
-
-
-
          }
 }
