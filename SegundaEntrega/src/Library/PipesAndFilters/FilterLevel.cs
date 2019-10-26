@@ -46,11 +46,24 @@ namespace Library
             {
                 this.Result = true;
 
-                string name = tag.ListaAtributos["Name"].Valor;
-                World world = Creator.world;
+                string name;
+                World world;
+                
+                try
+                {
 
-                IXML level = new Level(name, world);
-                Creator.world.Add(level);
+                    name = tag.ListaAtributos["Name"].Valor;
+                    world = Creator.world;
+
+                    IXML level = new Level(name, world);
+                    Creator.world.Add(level);
+
+                }
+                catch (System.Exception)
+                {
+                    //Mostrar en pantalla que no se encontro lo deseado en xml
+                }
+
             }
             else
             {

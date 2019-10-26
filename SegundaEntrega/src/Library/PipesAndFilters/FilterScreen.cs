@@ -47,13 +47,26 @@ namespace Library
             {
                 this.Result = true;
 
-                string name = tag.ListaAtributos["Name"].Valor;
+                string name;
+                int lastLevelId;
+                Level level;
 
-                int lastLevelId = Creator.world.ListaLevel.Count - 1;
-                Level level = Creator.world.ListaLevel[lastLevelId];
+                try
+                {
 
-                IXML screen = new Screen(name, level);
-                level.Add(screen);
+                    name = tag.ListaAtributos["Name"].Valor;
+                    lastLevelId = Creator.world.ListaLevel.Count - 1;
+                    level = Creator.world.ListaLevel[lastLevelId];
+
+                    IXML screen = new Screen(name, level);
+                    level.Add(screen);
+
+                }
+                catch (System.Exception)
+                {
+                    //Mostrar en pantalla que no se encontro lo deseado en xml
+                }
+
             }
             else
             {
