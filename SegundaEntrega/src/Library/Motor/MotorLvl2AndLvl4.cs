@@ -29,8 +29,10 @@ namespace Library
         /// <param name="word"> Word clickeado </param>
         public void Check(Word word)
         {
+            //elementName == this.itemId && SingletonAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y)
+
             ObtainCantDestination(word);
-            
+
             if (!this.listWords.Contains(word))
             {
                 this.AddWord(word);
@@ -46,16 +48,20 @@ namespace Library
         }
 
         public void ObtainCantDestination(Word word)
-         {
-                  foreach(Element element in word.Screen.ListaElement)
-                  {
-                           if(element is BlanckSpace)
-                           {
-                                    this.CantDestination += 1;
-                           }
-                  }
-         }
-         
+        {
+            foreach (Element element in word.Screen.ListaElement)
+            {
+                if (element is BlanckSpace)
+                {
+                    this.CantDestination += 1;
+                }
+            }
+        }
+
+        public bool Contains(Word word, float x, float y)
+        {
+            return SingletonAdapter.Adapter.Contains(word.Destination.destinationCellImageId, x, y);
+        }
 
         /// <summary>
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
