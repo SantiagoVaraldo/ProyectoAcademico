@@ -40,16 +40,16 @@ namespace Library
             IFilterConditional filterbuttoncheck = new FilterButtonCheck();
             IFilterConditional filterimage = new FilterImage();
             IFilterConditional filterletter = new FilterLetter();
-            IFilterConditional filterDragAndDropSource = new FilterDragAndDropSource();
-            IFilterConditional filterDragAndDropDestination = new FilterDragAndDropDestination();
+            IFilterConditional filterBox = new FilterBox();
+            IFilterConditional FilterBlankSpace = new FilterBlankSpace();
             IFilterConditional filterword = new FilterWord();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
             //IPipe pipeserial7 = new PipeSerial(filtertwitter,pipenull);
             IPipe pipe10 = new PipeConditional(filterimage, pipenull, pipenull);
             IPipe pipe9 = new PipeConditional(filterword, pipenull, pipe10);
-            IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipenull, pipe9);
-            IPipe pipe7 = new PipeConditional(filterDragAndDropSource, pipenull, pipe8);
+            IPipe pipe8 = new PipeConditional(FilterBlankSpace, pipenull, pipe9);
+            IPipe pipe7 = new PipeConditional(filterBox, pipenull, pipe8);
             IPipe pipe6 = new PipeConditional(filterletter, pipenull, pipe7);
             IPipe pipe5 = new PipeConditional(filterbuttoncheck, pipenull, pipe6);
             IPipe pipe4 = new PipeConditional(filterbuttonsound, pipenull, pipe5);

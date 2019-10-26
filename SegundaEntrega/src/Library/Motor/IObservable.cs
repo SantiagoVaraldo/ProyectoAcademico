@@ -4,9 +4,9 @@
 
 namespace Library
 {
-         public interface IObservable
-         {
-                  void Subscribe(IObserver observer);
-                  void Unsubscribe(IObserver observer);
-         }
+    public interface IObservable
+    {
+        void Subscribe(IObserver observer);
+        void Unsubscribe(IObserver observer);
+    }
 }
