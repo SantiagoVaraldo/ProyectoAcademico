@@ -48,20 +48,29 @@ namespace Library
             {
                 this.Result = true;
 
-                string name = tag.ListaAtributos["Name"].Valor;
-                int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
-                int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
-                int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                
-                int lastLevelId = Creator.world.ListaLevel.Count - 1;
-                Level level = Creator.world.ListaLevel[lastLevelId];
-                int lastScreenId = level.ListaScreen.Count - 1;
-                Screen screen = level.ListaScreen[lastScreenId];
-                string imagePath = tag.ListaAtributos["ImagePath"].Valor; 
+                try
+                {
 
-                IXML image = new Image(name, positionY, positionX, length, width, screen, imagePath);
-                screen.Add(image);
+                    string name = tag.ListaAtributos["Name"].Valor;
+                    int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                    int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                    int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                    int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+
+                    int lastLevelId = Creator.world.ListaLevel.Count - 1;
+                    Level level = Creator.world.ListaLevel[lastLevelId];
+                    int lastScreenId = level.ListaScreen.Count - 1;
+                    Screen screen = level.ListaScreen[lastScreenId];
+                    string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+
+                    IXML image = new Image(name, positionY, positionX, length, width, screen, imagePath);
+                    screen.Add(image);
+
+                }
+                catch (NotFoundOnXML)
+                {
+                    //Mostrar en pantalla que no se encontro lo deseado en xml
+                }
             }
             else
             {

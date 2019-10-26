@@ -47,21 +47,41 @@ namespace Library
             if (tag.Name == "Letter")
             {
                 this.Result = true;
-                
-                string name = tag.ListaAtributos["Name"].Valor;
-                int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
-                int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
-                int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                int lastLevelId = Creator.world.ListaLevel.Count - 1;
-                Level level = Creator.world.ListaLevel[lastLevelId];
-                int lastScreenId = level.ListaScreen.Count - 1;
-                Screen screen = level.ListaScreen[lastScreenId];               
-                string imagePath = tag.ListaAtributos["ImagePath"].Valor;
-                bool rigth = Convert.ToBoolean(tag.ListaAtributos["Right"].Valor); 
 
-                IXML letter = new Letter(name, positionY, positionX, length, width, screen, imagePath, rigth);
-                screen.Add(letter);
+                string name;
+                int positionY, positionX;
+                int length, width;
+                int lastLevelId, lastScreenId;
+                string imagePath;
+                bool right;
+                Level level;
+                Screen screen;
+
+                try
+                {
+
+                    name = tag.ListaAtributos["Name"].Valor;
+                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                    length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                    width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+                    lastLevelId = Creator.world.ListaLevel.Count - 1;
+
+                    level = Creator.world.ListaLevel[lastLevelId];
+                    lastScreenId = level.ListaScreen.Count - 1;
+                    screen = level.ListaScreen[lastScreenId];
+                    imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                    right = Convert.ToBoolean(tag.ListaAtributos["Right"].Valor);
+
+                    IXML letter = new Letter(name, positionY, positionX, length, width, screen, imagePath, right);
+                    screen.Add(letter);
+
+                }
+                catch (NotFoundOnXML)
+                {
+                    //Mostrar en pantalla que no se encontro lo deseado en xml
+                }
+
             }
             else
             {
