@@ -29,6 +29,8 @@ namespace Library
         /// <param name="word"> Word clickeado </param>
         public void Check(Word word)
         {
+            ObtainCantDestination(word);
+            
             if (!this.listWords.Contains(word))
             {
                 this.AddWord(word);
@@ -43,7 +45,7 @@ namespace Library
             }
         }
 
-        /* public void ObtainCantDestination(Word word)
+        public void ObtainCantDestination(Word word)
          {
                   foreach(Element element in word.Screen.ListaElement)
                   {
@@ -53,7 +55,7 @@ namespace Library
                            }
                   }
          }
-         */
+         
 
         /// <summary>
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
