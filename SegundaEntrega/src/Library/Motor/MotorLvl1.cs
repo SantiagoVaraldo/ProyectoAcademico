@@ -17,62 +17,62 @@ using System.Collections.Generic;
 
 namespace Library
 {
-         public class MotorLvl1 : IObservable
-         {
-                  private List<IObserver> observers = new List<IObserver>();
+    public class MotorLvl1 : IObservable
+    {
+        private List<IObserver> observers = new List<IObserver>();
 
-                  /// <summary>
-                  /// checkea que sea la letra correcta
-                  /// </summary>
-                  /// <param name="letter"> letra la cual fue clickeada </param>
-                  public void Check(Letter letter)
-                  {
-                           if (letter.Right)
-                           {
-                                    this.NextLevel(letter);
-                           }
-                           else
-                           {
-                                    //mensaje de error que le erro.
-                           }
-                  }
+        /// <summary>
+        /// checkea que sea la letra correcta
+        /// </summary>
+        /// <param name="letter"> letra la cual fue clickeada </param>
+        public void Check(Letter letter)
+        {
+            if (letter.Right)
+            {
+                this.NextLevel(letter);
+            }
+            else
+            {
+                //mensaje de error que le erro.
+            }
+        }
 
-                  /// <summary>
-                  /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
-                  /// </summary>
-                  /// <param name="letter"> letra que fue clickeada </param>
-                  public void NextLevel(Letter letter)
-                  {
-                           letter.Screen.levelCompleted();
-                           foreach (IObserver observer in observers)
-                           {
-                                    observer.Update();
-                           }
-                  }
+        /// <summary>
+        /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
+        /// </summary>
+        /// <param name="letter"> letra que fue clickeada </param>
+        public void NextLevel(Letter letter)
+        {
+            letter.Screen.levelCompleted();
+            foreach (IObserver observer in observers)
+            {
+                observer.Update();
+            }
+        }
 
-                  /// <summary>
-                  /// metodo que agrega un IObserver a la lista de Observers
-                  /// </summary>
-                  /// <param name="observer"> observer a agregar </param>
-                  public void Subscribe(IObserver observer)
-                  {
-                           if (!observers.Contains(observer))
-                           {
-                                    observers.Add(observer);
-                           }
-                  }
+        /// <summary>
+        /// metodo que agrega un IObserver a la lista de Observers
+        /// </summary>
+        /// <param name="observer"> observer a agregar </param>
+        public void Subscribe(IObserver observer)
+        {
+            if (!observers.Contains(observer))
+            {
+                observers.Add(observer);
+            }
+        }
 
-                  /// <summary>
-                  /// metodo que elimina un IObserver de la lista de Observers
-                  /// </summary>
-                  /// <param name="observer"> observer a eliminar </param>
-                  public void Unsubscribe(IObserver observer)
-                  {
-                           if (observers.Contains(observer))
-                           {
-                                    this.observers.Remove(observer);
-                           }
-                  }
+        /// <summary>
+        /// metodo que elimina un IObserver de la lista de Observers
+        /// </summary>
+        /// <param name="observer"> observer a eliminar </param>
+        public void Unsubscribe(IObserver observer)
+        {
+            if (observers.Contains(observer))
+            {
+                this.observers.Remove(observer);
+            }
+        }
 
-         }
+    }
 }
