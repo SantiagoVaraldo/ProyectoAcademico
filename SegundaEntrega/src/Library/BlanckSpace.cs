@@ -20,12 +20,25 @@ namespace Library
 {
     public class BlanckSpace : DragAndDropDestination
     {
-        public string destinationCellImageId; 
+        public string destinationCellImageId;
         public BlanckSpace(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
+            this.Filled = false;
         }
 
+        private bool filled;
+        public bool Filled { get; set; }
+
+        public void Fill()
+        {
+            this.Filled = true;
+        }
+
+        public void Unfill()
+        {
+            this.Filled = false;
+        }
         /// <summary>
         /// metodo que permite al objeto de tipo BlanckSpace renderizarce a si mismo en Unity
         /// </summary>

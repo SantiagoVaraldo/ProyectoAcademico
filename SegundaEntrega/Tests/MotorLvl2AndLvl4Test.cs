@@ -14,6 +14,7 @@ namespace Tests
         MotorLvl2AndLvl4 motor;
         BlanckSpace destination1, destination2, destination3, destination4;
         DragAndDropSource source1, source2, source3, source4;
+        Word word1, word2, word3, word4;
         public void Create()
         {
             world = new World("world", 50, 50);
@@ -29,6 +30,11 @@ namespace Tests
             destination4 = new BlanckSpace("destination4", 40, 40, 50, 50, screen, "path");
             source4 = new DragAndDropSource("source4", 50, 50, 50, 50, screen, "path");
 
+            word1 = new Word("word1", 10, 10, 50, 50, screen, "path1", source1, destination1);
+            word2 = new Word("word2", 10, 10, 50, 50, screen, "path2", source2, destination2);
+            word3 = new Word("word3", 10, 10, 50, 50, screen, "path3", source3, destination3);
+            word4 = new Word("word4", 10, 10, 50, 50, screen, "path4", source4, destination4);
+
             motor = new MotorLvl2AndLvl4();
         }
 
@@ -36,31 +42,11 @@ namespace Tests
         public void PositiveTest()
         {
             Create();
-            //string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
-            Word word1 = new Word("word1", 10, 10, 50, 50, screen, "path1", source1, destination1);
-            Word word2 = new Word("word2", 20, 20, 50, 50, screen, "path2", source2, destination2);
-            Word word3 = new Word("word3", 30, 30, 50, 50, screen, "path3", source3, destination3);
-            Word word4 = new Word("word4", 40, 40, 50, 50, screen, "path4", source4, destination4);
-
-            motor.Check(word1);
-            bool actualState1 = word1.Screen.State;
-            bool expectedState1 = false;
-            Assert.Equal(actualState1, expectedState1);
-
-            motor.Check(word2);
-            bool actualState2 = word2.Screen.State;
-            bool expectedState2 = false;
-            Assert.Equal(actualState2, expectedState2);
-
-            motor.Check(word3);
-            bool actualState3 = word3.Screen.State;
-            bool expectedState3 = false;
-            Assert.Equal(actualState3, expectedState3);
-
-            motor.Check(word4);
-            bool actualState4 = word4.Screen.State;
-            bool expectedState4 = true;
-            Assert.Equal(actualState4, expectedState4);
+            
+            LevelPass(word1, destination1, true, false);
+            LevelPass(word2, destination2, true, false);
+            LevelPass(word3, destination3, true, false);
+            LevelPass(word4, destination4, true, true);
         }
 
         [Fact]
@@ -68,31 +54,28 @@ namespace Tests
         {
             Create();
 
-            //string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
-            Word word1 = new Word("word1", 20, 20, 50, 50, screen, "path1", source1, destination1);
-            Word word2 = new Word("word2", 20, 20, 50, 50, screen, "path2", source2, destination2);
-            Word word3 = new Word("word3", 30, 30, 50, 50, screen, "path3", source3, destination3);
-            Word word4 = new Word("word4", 40, 40, 50, 50, screen, "path4", source4, destination4);
+            LevelPass(word1, destination1, true, false);
+            LevelPass(word2, destination2, true, false);
+            LevelPass(word3, destination3, true, false);
+            LevelPass(word4, destination1, false, false);
+            
+        }
 
-            motor.Check(word1);
-            bool actualState1 = word1.Screen.State;
-            bool expectedState1 = false;
-            Assert.Equal(actualState1, expectedState1);
+        public void LevelPass(Word word, BlanckSpace destination, bool expectedFill, bool expectedState)
+        {
+            //Con esto simulamos que el objeto fue movido al objetivo.
+            word.PositionX = destination.PositionX;
+            word.PositionY = destination.PositionY;
 
-            motor.Check(word2);
-            bool actualState2 = word2.Screen.State;
-            bool expectedState2 = false;
-            Assert.Equal(actualState2, expectedState2);
+            motor.Check(word);
 
-            motor.Check(word3);
-            bool actualState3 = word3.Screen.State;
-            bool expectedState3 = false;
-            Assert.Equal(actualState3, expectedState3);
+            //nos fijamos si el destination tiene un objeto dentro
+            bool actualFill = word.Destination.Filled;
+            Assert.Equal(expectedFill, actualFill);
 
-            motor.Check(word4);
-            bool actualState4 = word4.Screen.State;
-            bool expectedState4 = false;
-            Assert.Equal(actualState4, expectedState4);
+            //nos fijamos si se paso de nivel
+            bool actualState = word.Screen.State;
+            Assert.Equal(actualState, expectedState);
         }
     }
 }
