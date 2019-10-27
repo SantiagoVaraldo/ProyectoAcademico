@@ -37,18 +37,6 @@ namespace Library
                   }
 
                   /// <summary>
-                  /// metodo que agrega un objeto Word a la lista si tiene la misma posicion que su destination
-                  /// </summary>
-                  /// <param name="word"> Word para agregar </param>
-                  public void AddWord(Word word)
-                  {
-                           if (word.PositionY == word.Destination.PositionY & word.PositionX == word.Destination.PositionX)
-                           {
-                                    this.listWords.Add(word);
-                           }
-                  }
-
-                  /// <summary>
                   /// verifica que se haya superado el nivel
                   /// </summary>
                   /// <param name="word"> Word clickeado </param>
@@ -83,22 +71,31 @@ namespace Library
                            }
                   }
 
-                  public bool Contains(Word word, float x, float y)
-                  {
-                           return SingletonAdapter.Adapter.Contains(word.Destination.destinationCellImageId, x, y);
-                  }
+        /// <summary>
+        /// metodo que agrega un objeto Word a la lista si tiene la misma posicion que su destination
+        /// </summary>
+        /// <param name="word"> Word para agregar </param>
+        public void AddWord(Word word)
+        {
+            if (word.PositionY == word.Destination.PositionY & word.PositionX == word.Destination.PositionX)
+            {
+                this.listWords.Add(word);
+                word.Destination.Fill();
+            }
+        }
 
-                  /// <summary>
-                  /// metodo que elimina un objeto Word de la lista si no tiene la misma posicion que su destination
-                  /// </summary>
-                  /// <param name="word"> Word a eliminar </param>
-                  public void RemoveWord(Word word)
-                  {
-                           if (word.PositionY != word.Destination.PositionY || word.PositionX != word.Destination.PositionX)
-                           {
-                                    this.listWords.Remove(word);
-                           }
-                  }
+        /// <summary>
+        /// metodo que elimina un objeto Word de la lista si no tiene la misma posicion que su destination
+        /// </summary>
+        /// <param name="word"> Word a eliminar </param>
+        public void RemoveWord(Word word)
+        {
+            if (word.PositionY != word.Destination.PositionY || word.PositionX != word.Destination.PositionX)
+            {
+                this.listWords.Remove(word);
+                word.Destination.Unfill();
+            }
+        }
 
                   /// <summary>
                   /// metodo que agrega un IObserver a la lista de Observers
