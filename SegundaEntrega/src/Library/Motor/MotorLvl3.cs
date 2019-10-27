@@ -55,54 +55,54 @@ namespace Library
             }
         }
 
-        /// <summary>
-        /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
-        /// </summary>
-        /// <param name="buttonCheck"> boton al que se le hizo click </param>
-        public void NextLevel(ButtonCheck buttonCheck)
-        {
-            buttonCheck.Screen.levelCompleted();
-            foreach (IObserver observer in this.observers)
-            {
-                observer.Update();
-            }
-        }
+                  /// <summary>
+                  /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
+                  /// </summary>
+                  /// <param name="buttonCheck"> boton al que se le hizo click </param>
+                  public void NextLevel(ButtonCheck buttonCheck)
+                  {
+                           buttonCheck.Screen.levelCompleted();
+                           foreach (IObserver observer in this.observers)
+                           {
+                                    observer.Update();
+                           }
+                  }
 
-        /// <summary>
-        /// agrega el boton a la lista correcta en el caso de que sea un boton correcto
-        /// </summary>
-        /// <param name="buttonCheck"> boton que fue clickeado </param>
-        public void AddButtonCheck(ButtonCheck buttonCheck)
-        {
-            if (buttonCheck.Check)
-            {
-                this.correctList.Add(buttonCheck);
-            }
-        }
+                  /// <summary>
+                  /// agrega el boton a la lista correcta en el caso de que sea un boton correcto
+                  /// </summary>
+                  /// <param name="buttonCheck"> boton que fue clickeado </param>
+                  public void AddButtonCheck(ButtonCheck buttonCheck)
+                  {
+                           if (buttonCheck.Check)
+                           {
+                                    this.correctList.Add(buttonCheck);
+                           }
+                  }
 
-        /// <summary>
-        /// metodo que agrega un IObserver a la lista de observers
-        /// </summary>
-        /// <param name="observer"> observer para agregar</param>
-        public void Subscribe(IObserver observer)
-        {
-            if (!observers.Contains(observer))
-            {
-                observers.Add(observer);
-            }
-        }
+                  /// <summary>
+                  /// metodo que agrega un IObserver a la lista de observers
+                  /// </summary>
+                  /// <param name="observer"> observer para agregar</param>
+                  public void Subscribe(IObserver observer)
+                  {
+                           if (!observers.Contains(observer))
+                           {
+                                    observers.Add(observer);
+                           }
+                  }
 
-        /// <summary>
-        /// metodo que elimina un IObserver de la lista de Observers
-        /// </summary>
-        /// <param name="observer"> observer a eliminar </param>
-        public void Unsubscribe(IObserver observer)
-        {
-            if (observers.Contains(observer))
-            {
-                this.observers.Remove(observer);
-            }
-        }
+                  /// <summary>
+                  /// metodo que elimina un IObserver de la lista de Observers
+                  /// </summary>
+                  /// <param name="observer"> observer a eliminar </param>
+                  public void Unsubscribe(IObserver observer)
+                  {
+                           if (observers.Contains(observer))
+                           {
+                                    this.observers.Remove(observer);
+                           }
+                  }
 
-    }
+         }
 }

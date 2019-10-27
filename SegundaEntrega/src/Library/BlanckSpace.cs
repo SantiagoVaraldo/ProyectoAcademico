@@ -28,7 +28,17 @@ namespace Library
         }
 
         private bool filled;
-        public bool Filled { get; set; }
+        public bool Filled 
+        {
+            get
+            {
+                return this.filled; 
+            }
+            set
+            {
+                this.filled = value;
+            }
+        }
 
         public void Fill()
         {

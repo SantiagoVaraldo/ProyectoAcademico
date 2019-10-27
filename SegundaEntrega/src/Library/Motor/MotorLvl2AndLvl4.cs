@@ -17,58 +17,59 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class MotorLvl2AndLvl4 : IObservable
-    {
-        private List<Word> listWords = new List<Word>();
-        private List<IObserver> observers = new List<IObserver>();
-        private int CantDestination;
-
-        /// <summary>
-        /// verifica que se haya superado el nivel
-        /// </summary>
-        /// <param name="word"> Word clickeado </param>
-        public void Check(Word word)
-        {
-            ObtainCantDestination(word);
-            
-            if (!this.listWords.Contains(word))
-            {
-                this.AddWord(word);
-            }
-            else
-            {
-                this.RemoveWord(word);
-            }
-            if (this.listWords.Count == 4)
-            {
-                this.NextLevel(word);
-            }
-        }
-
-        public void ObtainCantDestination(Word word)
+         public class MotorLvl2AndLvl4 : IObservable
          {
-                  foreach(Element element in word.Screen.ListaElement)
+                  private List<Word> listWords = new List<Word>();
+                  private List<IObserver> observers = new List<IObserver>();
+                  private int CantDestination;
+
+                  /// <summary>
+                  /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
+                  /// </summary>
+                  /// <param name="word"> Word que fue clickeado </param>
+                  public void NextLevel(Word word)
                   {
-                           if(element is BlanckSpace)
+                           word.Screen.levelCompleted();
+                           foreach (IObserver observer in observers)
                            {
-                                    this.CantDestination += 1;
+                                    observer.Update();
                            }
                   }
-         }
-         
 
-        /// <summary>
-        /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
-        /// </summary>
-        /// <param name="word"> Word que fue clickeado </param>
-        public void NextLevel(Word word)
-        {
-            word.Screen.levelCompleted();
-            foreach (IObserver observer in observers)
-            {
-                observer.Update();
-            }
-        }
+                  /// <summary>
+                  /// verifica que se haya superado el nivel
+                  /// </summary>
+                  /// <param name="word"> Word clickeado </param>
+                  public void Check(Word word)
+                  {
+                           //elementName == this.itemId && SingletonAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y)
+
+                           ObtainCantDestination(word);
+
+                           if (!this.listWords.Contains(word))
+                           {
+                                    this.AddWord(word);
+                           }
+                           else
+                           {
+                                    this.RemoveWord(word);
+                           }
+                           if (this.listWords.Count == 4)
+                           {
+                                    this.NextLevel(word);
+                           }
+                  }
+
+                  public void ObtainCantDestination(Word word)
+                  {
+                           foreach (Element element in word.Screen.ListaElement)
+                           {
+                                    if (element is BlanckSpace)
+                                    {
+                                             this.CantDestination += 1;
+                                    }
+                           }
+                  }
 
         /// <summary>
         /// metodo que agrega un objeto Word a la lista si tiene la misma posicion que su destination
@@ -96,29 +97,28 @@ namespace Library
             }
         }
 
-        /// <summary>
-        /// metodo que agrega un IObserver a la lista de Observers
-        /// </summary>
-        /// <param name="observer"> observer para agregar </param>
-        public void Subscribe(IObserver observer)
-        {
-            if (!this.observers.Contains(observer))
-            {
-                this.observers.Add(observer);
-            }
-        }
+                  /// <summary>
+                  /// metodo que agrega un IObserver a la lista de Observers
+                  /// </summary>
+                  /// <param name="observer"> observer para agregar </param>
+                  public void Subscribe(IObserver observer)
+                  {
+                           if (!this.observers.Contains(observer))
+                           {
+                                    this.observers.Add(observer);
+                           }
+                  }
 
-        /// <summary>
-        /// metodo que elimina un IObserver de la lista de Observers
-        /// </summary>
-        /// <param name="observer"> observer a eliminar </param>
-        public void Unsubscribe(IObserver observer)
-        {
-            if (this.observers.Contains(observer))
-            {
-                this.observers.Remove(observer);
-            }
-        }
-
-    }
+                  /// <summary>
+                  /// metodo que elimina un IObserver de la lista de Observers
+                  /// </summary>
+                  /// <param name="observer"> observer a eliminar </param>
+                  public void Unsubscribe(IObserver observer)
+                  {
+                           if (this.observers.Contains(observer))
+                           {
+                                    this.observers.Remove(observer);
+                           }
+                  }
+         }
 }

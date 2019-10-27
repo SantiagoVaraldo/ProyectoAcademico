@@ -5,8 +5,8 @@
 namespace Library
 
 {
-    public interface IObserver
-    {
-        void Update();
-    }
+         public interface IObserver
+         {
+                  void Update();
+         }
 }
