@@ -3,7 +3,7 @@ using Proyecto.Common;
 using System.Collections.Generic;
 
 /// <summary>
-/// NOMBRE: MotorLvl3
+/// NOMBRE: EngineLvl3
 /// 
 /// DESCRIPCION: Motor encargado de la logica del nivel 3
 /// 
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class MotorLvl3 : IObservable
+    public class EngineLvl3 : IObservable
     {
         private List<ButtonCheck> correctList = new List<ButtonCheck>();
         private List<ButtonCheck> selectedList = new List<ButtonCheck>();

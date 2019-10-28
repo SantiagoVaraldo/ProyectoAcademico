@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 namespace Tests
 {
-         public class MotorLvl2AndLvl4Test
+         public class EngineLvl2AndLvl4Test
          {
                   World world;
                   Level level;
                   Screen screen;
-                  MotorLvl2AndLvl4 motor;
+                  EngineLvl2AndLvl4 engine;
                   BlanckSpace destination1, destination2, destination3, destination4;
                   DragAndDropSource source1, source2, source3, source4;
                   Word word1, word2, word3, word4;
@@ -35,7 +35,7 @@ namespace Tests
                            word3 = new Word("word3", 10, 10, 50, 50, screen, "path3", source3, destination3);
                            word4 = new Word("word4", 10, 10, 50, 50, screen, "path4", source4, destination4);
 
-                           motor = new MotorLvl2AndLvl4();
+                           engine = new EngineLvl2AndLvl4();
                   }
 
                   [Fact]
@@ -67,7 +67,7 @@ namespace Tests
                            word.PositionX = destination.PositionX;
                            word.PositionY = destination.PositionY;
 
-                           motor.Check(word);
+                           engine.Check(word);
 
                            //nos fijamos si el destination tiene un objeto dentro
                            bool actualFill = word.Destination.Filled;

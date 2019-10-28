@@ -3,7 +3,7 @@ using Proyecto.Common;
 using System.Collections.Generic;
 
 /// <summary>
-/// NOMBRE: MotorLvl1
+/// NOMBRE: EngineLvl1
 /// 
 /// DESCRIPCION: Motor encargado de la logica del nivel 1
 /// 
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class MotorLvl1 : IObservable
+    public class EngineLvl1 : IObservable
     {
         private List<IObserver> observers = new List<IObserver>();
 

@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace Tests
 {
-    public class MotorLvl3Test
+    public class EngineLvl3Test
     {
         World world;
         Level level;
         Screen screen;
-        MotorLvl3 motor;
+        EngineLvl3 engine;
         ButtonCheck buttonCheck1, buttonCheck2, buttonCheck3, buttonCheck4, buttonCheck5;
         public void Create()
         {
             world = new World("world", 50, 50);
             level = new Level("level", world);
             screen = new Screen("screen", level);
-            motor = new MotorLvl3();
+            engine = new EngineLvl3();
             buttonCheck1 = new ButtonCheck("ButtonCheck1", 10, 10, 10, 10, screen, "path", "path2", true);
             buttonCheck2 = new ButtonCheck("ButtonCheck2", 20, 20, 20, 20, screen, "path", "path2", true);
             buttonCheck3 = new ButtonCheck("ButtonCheck3", 30, 30, 30, 30, screen, "path", "path2", true);
@@ -32,7 +32,7 @@ namespace Tests
             //creamos los objetos
             Create();
 
-            motor.Check(buttonCheck1);
+            engine.Check(buttonCheck1);
 
             //checkeamos que el boton fue seleccionado
             bool expectedSelectedButton = true;
@@ -44,7 +44,7 @@ namespace Tests
             bool expectedState = false;
             Assert.Equal(actualState, expectedState);
 
-            motor.Check(buttonCheck2);
+            engine.Check(buttonCheck2);
 
             //checkeamos que el boton fue seleccionado
             expectedSelectedButton = true;
@@ -63,7 +63,7 @@ namespace Tests
         public void TwoClicksIncorrectTest()
         {
             Create();
-            motor.Check(buttonCheck4);
+            engine.Check(buttonCheck4);
 
             bool expectedSelectedButton = true;
             bool actualSelectedButton = buttonCheck4.State;
@@ -73,7 +73,7 @@ namespace Tests
             bool expectedState = false;
             Assert.Equal(actualState, expectedState);
 
-            motor.Check(buttonCheck5);
+            engine.Check(buttonCheck5);
 
             expectedSelectedButton = false;
             actualSelectedButton = buttonCheck5.State;
@@ -87,7 +87,7 @@ namespace Tests
         public void FirstCorrectAndSecondIncorrectTest()
         {
             Create();
-            motor.Check(buttonCheck1);
+            engine.Check(buttonCheck1);
 
             //checkeamos que el boton fue seleccionado
             bool expectedSelectedButton = true;
@@ -98,7 +98,7 @@ namespace Tests
             bool expectedState = false;
             Assert.Equal(actualState, expectedState);
 
-            motor.Check(buttonCheck4);
+            engine.Check(buttonCheck4);
 
             //checkeamos que el boton fue seleccionado
             expectedSelectedButton = false;
@@ -113,7 +113,7 @@ namespace Tests
         public void ClickTwoThreeAndFourCorrect()
         {
             Create();
-            motor.Check(buttonCheck4);
+            engine.Check(buttonCheck4);
 
             //checkeamos que el boton fue seleccionado
             bool expectedSelectedButton = true;
@@ -124,7 +124,7 @@ namespace Tests
             bool expectedState = false;
             Assert.Equal(actualState, expectedState);
 
-            motor.Check(buttonCheck1);
+            engine.Check(buttonCheck1);
 
             expectedSelectedButton = false;
             actualSelectedButton = buttonCheck4.State;
@@ -134,7 +134,7 @@ namespace Tests
             bool expectedState2 = false;
             Assert.Equal(actualState2, expectedState2);
 
-            motor.Check(buttonCheck2);
+            engine.Check(buttonCheck2);
 
             expectedSelectedButton = true;
             actualSelectedButton = buttonCheck2.State;
@@ -144,7 +144,7 @@ namespace Tests
             bool expectedState3 = false;
             Assert.Equal(actualState3, expectedState3);
 
-            motor.Check(buttonCheck3);
+            engine.Check(buttonCheck3);
 
             expectedSelectedButton = true;
             actualSelectedButton = buttonCheck3.State;

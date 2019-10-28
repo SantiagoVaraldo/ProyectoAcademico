@@ -3,7 +3,7 @@ using Proyecto.Common;
 using System.Collections.Generic;
 
 /// <summary>
-/// NOMBRE: MotorLvl2AndLvl4
+/// NOMBRE: EngineLvl2AndLvl4
 /// 
 /// DESCRIPCION: Motor encargado de la logica del nivel 2 y 4
 /// 
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-         public class MotorLvl2AndLvl4 : IObservable
+         public class EngineLvl2AndLvl4 : IObservable
          {
                   private List<Word> listWords = new List<Word>();
                   private List<IObserver> observers = new List<IObserver>();
@@ -42,8 +42,6 @@ namespace Library
                   /// <param name="word"> Word clickeado </param>
                   public void Check(Word word)
                   {
-                           //elementName == this.itemId && SingletonAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y)
-
                            ObtainCantDestination(word);
 
                            if (!this.listWords.Contains(word))
