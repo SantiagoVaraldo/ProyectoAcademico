@@ -2,13 +2,13 @@ using System;
 using Proyecto.Common;
 
 /// <summary>
-/// NOMBRE: ButtonNextPage.
+/// NOMBRE: Exit.
 /// 
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los ButtonNextPage.
+/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Exit.
 /// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-/// pertinente para nuestros requisitos de crear objetos ButtonNextPage, conoce el nombre, tamaño, la posicion,
-/// la pantalla y la ruta del ButtonNextPage. 
+/// pertinente para nuestros requisitos de crear objetos Exit, conoce el nombre, tamaño, la posicion,
+/// la pantalla y la ruta del Exit. 
 /// 
 /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
 /// es un tipo de boton.
@@ -19,23 +19,23 @@ using Proyecto.Common;
 
 namespace Library
 {
-    public class ButtonNextPage : Element, IButton
+    public class Exit : Element, IButton
     {
-        public ButtonNextPage(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath)
+        public Exit(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
         }
 
         /// <summary>
-        /// accion que realiza el boton de tipo ButtonNextPage al hacerle click
+        /// accion que realiza el boton de tipo Exit al hacerle click
         /// </summary>
         public void Action(string name)
         {
-            SingletonAdapter.Adapter.Debug($"Button clicked!");//ShowPage(this.nextPageName); hay q pasarle la pagina q debe mostrar
+            SingletonAdapter.Adapter.Debug($"Button clicked!");// salir de la app.
         }
 
         /// <summary>
-        /// metodo que permite al objeto de tipo ButtonNextPage renderizarce a si mismo en Unity
+        /// metodo que permite al objeto de tipo Exit renderizarce a si mismo en Unity
         /// </summary>
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
         public override void Render(IMainViewAdapter adapter)

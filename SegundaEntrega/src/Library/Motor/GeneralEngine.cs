@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// NOMBRE: GeneralMotor
+/// NOMBRE: GeneralEngine
 /// 
 /// DESCRIPCION: Motor general del juego, es quien va a pasar a la siguiente pantalla cuando sea necesario
 /// 
@@ -16,7 +16,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-         public class GeneralMotor : IObserver
+         public class GeneralEngine : IObserver
          {
 
              /// <summary>

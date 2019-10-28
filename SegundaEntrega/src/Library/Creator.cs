@@ -36,6 +36,7 @@ namespace Library
             IFilterConditional filterlevel = new FilterLevel();
             IFilterConditional filterscreen = new FilterScreen();
             IFilterConditional filterbuttonnextpage = new FilterButtonNextPage();
+            // IFilterConditional filterExit = new FilterExit();
             IFilterConditional filterbuttonsound = new FilterButtonSound();
             IFilterConditional filterbuttoncheck = new FilterButtonCheck();
             IFilterConditional filterimage = new FilterImage();
@@ -45,7 +46,7 @@ namespace Library
             IFilterConditional filterword = new FilterWord();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
-            //IPipe pipeserial7 = new PipeSerial(filtertwitter,pipenull);
+            // IPipe pipe11 = new PipeConditional(filterExit, pipenull, pipenull);
             IPipe pipe10 = new PipeConditional(filterimage, pipenull, pipenull);
             IPipe pipe9 = new PipeConditional(filterword, pipenull, pipe10);
             IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipenull, pipe9);
