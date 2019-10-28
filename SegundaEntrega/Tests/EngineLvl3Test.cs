@@ -13,6 +13,7 @@ namespace Tests
         Screen screen;
         EngineLvl3 engine;
         ButtonCheck buttonCheck1, buttonCheck2, buttonCheck3, buttonCheck4, buttonCheck5;
+
         public void Create()
         {
             world = new World("world", 50, 50);
@@ -26,6 +27,17 @@ namespace Tests
             buttonCheck5 = new ButtonCheck("ButtonCheck5", 50, 50, 50, 50, screen, "path", "path2", false);
         }
 
+        public void Test(ButtonCheck buttonCheck, bool expectedSelectedButton, bool expectedState)
+        {
+            //checkeamos que el boton fue seleccionado
+            bool actualSelectedButton = buttonCheck.State;
+            Assert.Equal(expectedSelectedButton, actualSelectedButton);
+
+            //checkeamos que no se paso de nivel
+            bool actualState = buttonCheck.Screen.State;
+            Assert.Equal(expectedState, actualState);
+        }
+
         [Fact]
         public void PositiveTest()
         {
@@ -33,126 +45,54 @@ namespace Tests
             Create();
 
             engine.Check(buttonCheck1);
-
-            //checkeamos que el boton fue seleccionado
-            bool expectedSelectedButton = true;
-            bool actualSelectedButton = buttonCheck1.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            //checkeamos que no se paso de nivel
-            bool actualState = buttonCheck1.Screen.State;
-            bool expectedState = false;
-            Assert.Equal(actualState, expectedState);
+            Test(buttonCheck1, true, false);
 
             engine.Check(buttonCheck2);
+            Test(buttonCheck2, true, true);
 
-            //checkeamos que el boton fue seleccionado
-            expectedSelectedButton = true;
-            actualSelectedButton = buttonCheck2.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            //checheamos que se paso de nivel
-            bool actualState2 = buttonCheck2.Screen.State;
-            bool expectedState2 = true;
-            Assert.Equal(actualState2, expectedState2);
-            
-            
         }
 
         [Fact]
         public void TwoClicksIncorrectTest()
         {
+
             Create();
             engine.Check(buttonCheck4);
-
-            bool expectedSelectedButton = true;
-            bool actualSelectedButton = buttonCheck4.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState = buttonCheck4.Screen.State;
-            bool expectedState = false;
-            Assert.Equal(actualState, expectedState);
+            Test(buttonCheck4, true, false);
 
             engine.Check(buttonCheck5);
+            Test(buttonCheck5, false, false);
 
-            expectedSelectedButton = false;
-            actualSelectedButton = buttonCheck5.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState2 = buttonCheck5.Screen.State;
-            bool expectedState2 = false;
-            Assert.Equal(actualState2, expectedState2);
         }
+
         [Fact]
         public void FirstCorrectAndSecondIncorrectTest()
         {
             Create();
             engine.Check(buttonCheck1);
-
-            //checkeamos que el boton fue seleccionado
-            bool expectedSelectedButton = true;
-            bool actualSelectedButton = buttonCheck1.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState = buttonCheck1.Screen.State;
-            bool expectedState = false;
-            Assert.Equal(actualState, expectedState);
+            Test(buttonCheck1, true, false);
 
             engine.Check(buttonCheck4);
+            Test(buttonCheck4, false, false);
 
-            //checkeamos que el boton fue seleccionado
-            expectedSelectedButton = false;
-            actualSelectedButton = buttonCheck1.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState2 = buttonCheck4.Screen.State;
-            bool expectedState2 = false;
-            Assert.Equal(actualState2, expectedState2);
         }
         [Fact]
         public void ClickTwoThreeAndFourCorrect()
         {
+
             Create();
             engine.Check(buttonCheck4);
-
-            //checkeamos que el boton fue seleccionado
-            bool expectedSelectedButton = true;
-            bool actualSelectedButton = buttonCheck4.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState = buttonCheck4.Screen.State;
-            bool expectedState = false;
-            Assert.Equal(actualState, expectedState);
+            Test(buttonCheck4, true, false);
 
             engine.Check(buttonCheck1);
-
-            expectedSelectedButton = false;
-            actualSelectedButton = buttonCheck4.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState2 = buttonCheck1.Screen.State;
-            bool expectedState2 = false;
-            Assert.Equal(actualState2, expectedState2);
+            Test(buttonCheck1, false, false);
 
             engine.Check(buttonCheck2);
-
-            expectedSelectedButton = true;
-            actualSelectedButton = buttonCheck2.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState3 = buttonCheck2.Screen.State;
-            bool expectedState3 = false;
-            Assert.Equal(actualState3, expectedState3);
+            Test(buttonCheck2, true, false);
 
             engine.Check(buttonCheck3);
+            Test(buttonCheck3, true, true);
 
-            expectedSelectedButton = true;
-            actualSelectedButton = buttonCheck3.State;
-            Assert.Equal(expectedSelectedButton, actualSelectedButton);
-
-            bool actualState4 = buttonCheck3.Screen.State;
-            bool expectedState4 = true;
-            Assert.Equal(actualState4, expectedState4);
         }
 
     }
