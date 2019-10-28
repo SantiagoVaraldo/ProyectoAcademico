@@ -1,8 +1,8 @@
 /// <summary>
 /// NOMBRE: NotFoundOnXML
 /// 
-/// DESCRIPCION: la idea es implementar este tipo de exepcion para cuando buscamos elementos de un diccionario,
-/// la exepcion es para el caso de que no se encuentre la Key del diccionario.
+/// DESCRIPCION: la idea es implementar este tipo de exepcion para cuando buscamos en el XML,
+/// la exepcion es para el caso de que no se encuentre lo que se busca.
 /// </summary>
 
 namespace Library

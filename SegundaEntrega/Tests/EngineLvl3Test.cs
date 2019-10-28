@@ -55,7 +55,7 @@ namespace Tests
         [Fact]
         public void TwoClicksIncorrectTest()
         {
-
+            //creamos los objetos
             Create();
             engine.Check(buttonCheck4);
             Test(buttonCheck4, true, false);
@@ -68,6 +68,7 @@ namespace Tests
         [Fact]
         public void FirstCorrectAndSecondIncorrectTest()
         {
+            //creamos los objetos
             Create();
             engine.Check(buttonCheck1);
             Test(buttonCheck1, true, false);
@@ -79,7 +80,7 @@ namespace Tests
         [Fact]
         public void ClickTwoThreeAndFourCorrect()
         {
-
+            //creamos los objetos
             Create();
             engine.Check(buttonCheck4);
             Test(buttonCheck4, true, false);
