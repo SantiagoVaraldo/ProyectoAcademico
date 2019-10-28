@@ -1,3 +1,10 @@
+/// <summary>
+/// NOMBRE: NotFoundOnXML
+/// 
+/// DESCRIPCION: la idea es implementar este tipo de exepcion para cuando buscamos elementos de un diccionario,
+/// la exepcion es para el caso de que no se encuentre la Key del diccionario.
+/// </summary>
+
 namespace Library
 {
     public class NotFoundOnXML : System.Exception
