@@ -30,17 +30,28 @@ namespace Tests
                         if (resultTags[i].ListaAtributos.Count > 0 & expectedTags[i].ListaAtributos.Count > 0 &
                             resultTags[i].ListaAtributos.Count == expectedTags[i].ListaAtributos.Count)
                         {
-                            for (int j = 0; j < resultTags[i].ListaAtributos.Count; j++)
+                            foreach (KeyValuePair<string, Attribute> entry in resultTags[i].ListaAtributos)
                             {
-                                Assert.Equal(resultTags[i].ListaAtributos[j.ToString()].Clave, expectedTags[i].ListaAtributos[j.ToString()].Clave);
-                                Assert.Equal(resultTags[i].ListaAtributos[j.ToString()].Valor, expectedTags[i].ListaAtributos[j.ToString()].Valor);
+                                //entry.key
+                                //resultTags[i].ListaAtributos[entry.key]
+                                bool encontro;
+                                try
+                                {
+                                    Attribute attribute = expectedTags[i].ListaAtributos[entry.Key];
+                                    encontro = true;
+                                }
+                                catch (System.Exception)
+                                {
+                                    encontro = false;
+                                }
+                                Assert.True(encontro);
                             }
                         }
                     }
                 }
             }
         }
-        
+
         [Fact]
         public void PositiveTest()
         {
