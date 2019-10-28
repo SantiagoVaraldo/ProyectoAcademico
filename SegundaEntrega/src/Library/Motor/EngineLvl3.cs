@@ -10,6 +10,9 @@ using System.Collections.Generic;
 /// SRP: la unica responsabilidad de esta clase es hacer la logica del nivel 3, su unica razon de cambio es modificar
 /// la logica del nivel.
 /// 
+/// EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
+/// cuando se completa un nivel de tipo 3.
+/// 
 /// COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
 /// IObservable ya que es de tipo IObservable, Colabora con la clase ButtonCheck ya que es el elemento con el que va a 
 /// realizar la logica.
