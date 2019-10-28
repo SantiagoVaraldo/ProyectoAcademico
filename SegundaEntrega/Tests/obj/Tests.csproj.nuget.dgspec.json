@@ -1,0 +1,238 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj",
+        "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj",
+        "projectName": "Library",
+        "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj",
+        "projectName": "StudentsCode",
+        "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj",
+        "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj": {
+                "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj"
+              },
+              "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj": {
+                "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\FIT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\FIT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj": {
+                "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj"
+              },
+              "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj": {
+                "projectPath": "C:\\Users\\FIT\\programacion2\\ProyectoFinal\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.13.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

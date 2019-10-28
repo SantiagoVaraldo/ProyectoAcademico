@@ -217,11 +217,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj",
+      "projectUniqueName": "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj",
       "projectName": "StudentsCode",
-      "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj",
+      "projectPath": "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\StudentsCode.csproj",
       "packagesPath": "C:\\Users\\estudiante.fit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
+      "outputPath": "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -240,8 +240,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj": {
-              "projectPath": "C:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj"
+            "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj": {
+              "projectPath": "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\ClasesProfes\\PII_Proyecto2019\\Common\\src\\Common.csproj"
             },
             "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj": {
               "projectPath": "c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\PrimeraEntrega\\src\\Library\\Library.csproj"
@@ -272,5 +272,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché c:\\Users\\estudiante.fit\\Desktop\\P2\\Proyecto 2\\pii_2019_2_equipo9\\SegundaEntrega\\src\\Library\\obj\\StudentsCode.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

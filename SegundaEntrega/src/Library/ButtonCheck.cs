@@ -82,6 +82,14 @@ namespace Library
         }
 
         /// <summary>
+        /// metodo que selecciona el boton
+        /// </summary>
+        public void Select()
+        {
+            this.State = true;
+        }
+
+        /// <summary>
         /// metodo que deselecciona el boton
         /// </summary>
         public void Unselect()

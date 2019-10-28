@@ -27,7 +27,7 @@ namespace Library
         }
 
         /// <summary>
-        /// accion que realiza el boton de tipo Letter al hacerle click
+        /// accion que realiza el boton de tipo ButtonNextPage al hacerle click
         /// </summary>
         public void Action(string name)
         {
