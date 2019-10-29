@@ -22,6 +22,5 @@ namespace Library
             this.Tag = tag;
             return Tag;
         }
-
     }
 }

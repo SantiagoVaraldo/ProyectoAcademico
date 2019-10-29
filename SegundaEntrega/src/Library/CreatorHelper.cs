@@ -6,7 +6,6 @@ using ExerciseOne;
 
 /// <summary>
 /// NOMBRE: CreatorHelper
-/// 
 /// DESCRIPCION: Esta clase llama a los metodos de la clase Finder y Download de la primera entrega.
 /// </summary>
 
@@ -18,6 +17,7 @@ namespace Library
         {
             this.FileName = FileName;
         }
+
         private string fileName;
         public string FileName
         {
@@ -30,6 +30,7 @@ namespace Library
                 this.fileName = value;
             }
         }
+        
         List<Tag> listtags = new List<Tag>();
 
         /// <summary>

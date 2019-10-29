@@ -3,14 +3,10 @@ using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Letter.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los objetos de tipo Letter.
-/// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos Letter asi como la accion de dicho boton.
-/// 
 /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton.
-/// 
 /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
 /// y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
 /// </summary>
@@ -53,6 +49,7 @@ namespace Library
         public override void Render(IMainViewAdapter adapter)
         {
             string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
+
             //adapter.SetImage(buttonId, this.ImagePath);
         }
     }

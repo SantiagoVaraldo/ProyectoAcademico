@@ -3,15 +3,11 @@ using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Element.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos es de tipo IXML.
-/// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos Element.
-/// 
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de Element, su unica razon de cambio es modificar los datos que guardamos sobre el elemento.
-/// 
 /// COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
 /// </summary>
 
@@ -38,6 +34,7 @@ namespace Library
         {
 
         }
+
         private string name;
         public string Name
         {
@@ -53,6 +50,7 @@ namespace Library
                 }
             }
         }
+
         private int? positionY;
         public int? PositionY
         {
@@ -68,6 +66,7 @@ namespace Library
                 }
             }
         }
+
         private int? positionX;
         public int? PositionX
         {
@@ -83,6 +82,7 @@ namespace Library
                 }
             }
         }
+
         private int? length;
         public int? Length
         {
@@ -98,6 +98,7 @@ namespace Library
                 }
             }
         }
+
         private int? width;
         public int? Width
         {
@@ -114,6 +115,7 @@ namespace Library
 
             }
         }
+
         private Screen screen;
         public Screen Screen
         {
@@ -129,6 +131,7 @@ namespace Library
                 }
             }
         }
+        
         private string imagePath;
         public string ImagePath
         {
