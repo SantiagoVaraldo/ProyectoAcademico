@@ -1,18 +1,15 @@
+
 using System;
 using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: Word.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos Word,
 /// es de tipo DragAndDropItem.
-/// 
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de Word, su unica razon de cambio es modificar los datos que guardamos sobre word.
-/// 
 /// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
-/// 
-/// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen ya que un Word debe pertenecer a una Screen 
+/// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen ya que un Word debe pertenecer a una Screen
 /// y es de tipo DragAndDropItem.
 /// </summary>
 
@@ -20,9 +17,9 @@ namespace Library
 {
     public class Word : DragAndDropItem
     {
-        string itemId; 
+        string itemId;
         public Word(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlanckSpace destination)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath, source, destination)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath, source, destination)
         {
         }
 
@@ -37,11 +34,12 @@ namespace Library
             adapter.MakeDraggable(itemId,true);
             SingletonAdapter.Adapter.OnDrop += this.OnDrop;
             SingletonAdapter.Adapter.Center(this.itemId, this.Source.sourceCellImageId);
+
             //adapter.SetImage(itemId, this.ImagePath);
         }
 
         /// <summary>
-        /// metodo que mueve al elemento a la nueva posicion si esta es un source o un destination o lo deja en su 
+        /// metodo que mueve al elemento a la nueva posicion si esta es un source o un destination o lo deja en su
         /// posicion actual en caso contrario
         /// </summary>
         /// <param name="elementName"> nombre del elemento </param>

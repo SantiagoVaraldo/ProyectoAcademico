@@ -3,18 +3,13 @@ using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: DragAndDropItem.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos DragAndDropItem
 /// es de tipo Element.
-/// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos DragAndDropItem.
-/// 
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de DragAndDropItem, su unica razon de cambio es modificar los datos que guardamos sobre DragAndDropItem.
-/// 
 /// HERENCIA: Esta clase hereda de la clase ancestra Element
-/// 
 /// COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropItem debe pertenecer a una Screen 
 /// y es de tipo Element.
 /// </summary>
@@ -35,6 +30,7 @@ namespace Library
                 this.source = value;
             }
         }
+        
         private BlanckSpace destination;
         public BlanckSpace Destination
         {
@@ -47,6 +43,7 @@ namespace Library
                 this.destination = value;
             }
         }
+
         public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlanckSpace destination)
         :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {

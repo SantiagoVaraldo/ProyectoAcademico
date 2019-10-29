@@ -3,16 +3,12 @@ using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: ButtonCheck.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los ButtonCheck.
-/// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos ButtonCheck, conoce el nombre, tamaño, la posicion,
 /// la pantalla, las rutas y la variable check del ButtonCheck. 
-/// 
 /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
 /// es un tipo de boton.
-/// 
 /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
 /// y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
 /// </summary>
@@ -28,6 +24,7 @@ namespace Library
             this.State = false;
             this.ImagePath2 = ImagePath2;
         }
+        
         private bool state;
         public bool State
         {
@@ -41,6 +38,7 @@ namespace Library
 
             }
         }
+
         private bool check;
         public bool Check
         {
@@ -54,6 +52,7 @@ namespace Library
 
             }
         }
+
         private string imagepath2;
         public string ImagePath2
         {
@@ -68,7 +67,6 @@ namespace Library
                     this.imagepath2 = value;
                 }
             }
-
         }
 
         /// <summary>
@@ -106,7 +104,5 @@ namespace Library
             string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
             //adapter.SetImage(buttonId, this.ImagePath);
         }
-
-
     }
 }

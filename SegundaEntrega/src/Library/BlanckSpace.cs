@@ -3,15 +3,11 @@ using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: BlanckSpace.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos BlanckSpace,
 /// es de tipo DragAndDropDestination.
-/// 
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de BlanckSpace, su unica razon de cambio es modificar los datos que guardamos sobre BlanckSpace.
-/// 
 /// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropDestination
-/// 
 /// COLABORACIONES: Colabora con la clase DragAndDropDestination y Screen ya que un BlanckSpace debe pertenecer a una Screen 
 /// y es de tipo DragAndDropDestination.
 /// </summary>
@@ -49,6 +45,7 @@ namespace Library
         {
             this.Filled = false;
         }
+
         /// <summary>
         /// metodo que permite al objeto de tipo BlanckSpace renderizarce a si mismo en Unity
         /// </summary>
@@ -58,6 +55,5 @@ namespace Library
             destinationCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(destinationCellImageId, this.ImagePath);
         }
-
     }
 }

@@ -3,16 +3,12 @@ using Proyecto.Common;
 
 /// <summary>
 /// NOMBRE: ButtonSound.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los ButtonSound.
-/// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos ButtonSound, conoce el nombre, tamaño, la posicion,
 /// la pantalla y las rutas del ButtonSound. 
-/// 
 /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
 /// es un tipo de boton.
-/// 
 /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
 /// y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
 /// </summary>
@@ -27,6 +23,7 @@ namespace Library
             this.SoundPath = SoundPath;
             this.state = false;
         }
+
         private bool state;
         public bool State
         {
@@ -39,6 +36,7 @@ namespace Library
                 this.state = value;        
             }
         }
+
         private string soundPath;
         public string SoundPath
         {
@@ -72,6 +70,5 @@ namespace Library
             string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
             //adapter.SetImage(buttonId, this.ImagePath);
         }
-        
     }
 }

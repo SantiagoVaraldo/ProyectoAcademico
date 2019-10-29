@@ -9,6 +9,12 @@
     <ProjectReference Include="..\..\..\PrimeraEntrega\src\Library\Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <AdditionalFiles Include="..\..\.vscode\stylecop.json" />
+  </ItemGroup>
+
   <Target Name="CopyFiles" AfterTargets="Build">
     <ItemGroup>
       <AllLibraries Include="$(OutDir)\*.dll" />

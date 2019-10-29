@@ -4,15 +4,11 @@ using System.Collections.Generic;
 
 /// <summary>
 /// NOMBRE: EngineLvl3
-/// 
 /// DESCRIPCION: Motor encargado de la logica del nivel 3
-/// 
 /// SRP: la unica responsabilidad de esta clase es hacer la logica del nivel 3, su unica razon de cambio es modificar
 /// la logica del nivel.
-/// 
 /// EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
 /// cuando se completa un nivel de tipo 3.
-/// 
 /// COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
 /// IObservable ya que es de tipo IObservable, Colabora con la clase ButtonCheck ya que es el elemento con el que va a 
 /// realizar la logica.
@@ -20,43 +16,43 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class EngineLvl3 : IObservable
-    {
-        private List<ButtonCheck> correctList = new List<ButtonCheck>();
-        private List<ButtonCheck> selectedList = new List<ButtonCheck>();
-        private int ClickNum;
-        private List<IObserver> observers = new List<IObserver>();
+         public class EngineLvl3 : IObservable
+         {
+                  private List<ButtonCheck> correctList = new List<ButtonCheck>();
+                  private List<ButtonCheck> selectedList = new List<ButtonCheck>();
+                  private int ClickNum;
+                  private List<IObserver> observers = new List<IObserver>();
 
-        /// <summary>
-        /// verifica que se haya superado el nivel
-        /// </summary>
-        /// <param name="buttonCheck"> boton clickeado </param>
-        public void Check(ButtonCheck buttonCheck)
-        {
-            ClickNum += 1;
+                  /// <summary>
+                  /// verifica que se haya superado el nivel
+                  /// </summary>
+                  /// <param name="buttonCheck"> boton clickeado </param>
+                  public void Check(ButtonCheck buttonCheck)
+                  {
+                           ClickNum += 1;
 
-            buttonCheck.Select();
-            selectedList.Add(buttonCheck);
+                           buttonCheck.Select();
+                           selectedList.Add(buttonCheck);
 
-            this.AddButtonCheck(buttonCheck);
-            if ((ClickNum % 2) == 0)
-            {
-                if (this.correctList.Count == 2)
-                {
-                    this.NextLevel(buttonCheck);
-                }
-                else
-                {
-                    this.correctList.Clear();
+                           this.AddButtonCheck(buttonCheck);
+                           if ((ClickNum % 2) == 0)
+                           {
+                                    if (this.correctList.Count == 2)
+                                    {
+                                             this.NextLevel(buttonCheck);
+                                    }
+                                    else
+                                    {
+                                             this.correctList.Clear();
 
-                    foreach (ButtonCheck button in selectedList)
-                    {
-                        button.Unselect();
-                    }
+                                             foreach (ButtonCheck button in selectedList)
+                                             {
+                                                      button.Unselect();
+                                             }
 
-                }
-            }
-        }
+                                    }
+                           }
+                  }
 
                   /// <summary>
                   /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
@@ -106,6 +102,5 @@ namespace Library
                                     this.observers.Remove(observer);
                            }
                   }
-
          }
 }

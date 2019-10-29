@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 /// <summary>
 /// NOMBRE: World.
-/// 
 /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos, implementa la interfaz
 /// IContainer.
-/// 
 /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
 /// pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre, tamaño del World y una lista con
 /// los niveles pertinentes a ese World.
-/// 
 /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
 /// de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
-/// 
 /// COLABORACIONES: Colabora con Level ya que conoce una lista de Level y con la interfaz IContainer.
 /// </summary>
 
@@ -27,6 +23,7 @@ namespace Library
             this.Length = Length;
             this.Width = Width;
         }
+
         private string name;
         private int? length;
         private int? width;
@@ -45,6 +42,7 @@ namespace Library
                 }
             }
         }
+
         public int? Length
         {
             get
@@ -60,6 +58,7 @@ namespace Library
 
             }
         }
+
         public int? Width
         {
             get
@@ -87,6 +86,7 @@ namespace Library
                 this.listalevel = value;
             }
         }
+
         /// <summary>
         /// metodo de la interfaz IContainer donde agrega un elemento de tipo 
         /// IXML en este caso un level a la lista de niveles
@@ -99,7 +99,5 @@ namespace Library
                 this.ListaLevel.Add((Level)ixml);
             }
         }
-
-
     }
 }

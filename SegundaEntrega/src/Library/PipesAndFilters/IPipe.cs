@@ -14,6 +14,5 @@ namespace Library
                   /// </summary>
                   /// <param name="tag">el Tag a enviar</param>
                   Tag Send(Tag tag);
-
          }
 }
