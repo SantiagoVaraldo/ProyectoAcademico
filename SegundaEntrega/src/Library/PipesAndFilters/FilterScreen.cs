@@ -49,8 +49,8 @@ namespace Library
                 {
 
                     name = tag.ListaAtributos["Name"].Valor;
-                    lastLevelId = Creator.world.ListaLevel.Count - 1;
-                    level = Creator.world.ListaLevel[lastLevelId];
+                    lastLevelId = Creator.world.ListLevel.Count - 1;
+                    level = Creator.world.ListLevel[lastLevelId];
 
                     IXML screen = new Screen(name, level);
                     level.Add(screen);
