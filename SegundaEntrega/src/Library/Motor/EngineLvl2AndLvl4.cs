@@ -76,7 +76,7 @@ namespace Library
         /// <param name="word"> Word para agregar </param>
         public void AddWord(Word word)
         {
-            if (word.PositionY == word.Destination.PositionY & word.PositionX == word.Destination.PositionX)
+            if (word.CheckPosition()) //word.PositionY == word.Destination.PositionY & word.PositionX == word.Destination.PositionX
             {
                 this.listWords.Add(word);
                 word.Destination.Fill();

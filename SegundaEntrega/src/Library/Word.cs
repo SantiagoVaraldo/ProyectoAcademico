@@ -31,7 +31,7 @@ namespace Library
         {
             itemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(itemId, this.ImagePath);
-            adapter.MakeDraggable(itemId,true);
+            adapter.MakeDraggable(itemId, true);
             SingletonAdapter.Adapter.OnDrop += this.OnDrop;
             SingletonAdapter.Adapter.Center(this.itemId, this.Source.sourceCellImageId);
 
@@ -58,6 +58,11 @@ namespace Library
                 // Mueve el elemento arrastrado nuevamente al origen en caso contrario
                 SingletonAdapter.Adapter.Center(elementName, this.Source.sourceCellImageId);
             }
+        }
+
+        public bool CheckPosition()
+        {
+            return this.PositionY == this.Destination.PositionY & this.PositionX == this.Destination.PositionX;
         }
     }
 }
