@@ -49,7 +49,7 @@ namespace Library
                 string imagePath;
                 Level level;
                 Screen screen;
-                BlanckSpace Destination;
+                BlankSpace Destination;
                 DragAndDropSource dragAndDropSource;
 
                 try
@@ -66,7 +66,7 @@ namespace Library
                     screen = level.ListaScreen[lastScreenId];
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
                     lastElementId = screen.ListaElement.Count - 1;
-                    Destination = (BlanckSpace)screen.ListaElement[lastElementId];
+                    Destination = (BlankSpace)screen.ListaElement[lastElementId];
                     beforeLastElementId = screen.ListaElement.Count - 2;
                     dragAndDropSource = (DragAndDropSource)screen.ListaElement[beforeLastElementId];
 

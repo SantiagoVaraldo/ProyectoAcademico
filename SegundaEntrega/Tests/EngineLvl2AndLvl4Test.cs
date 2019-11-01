@@ -12,7 +12,7 @@ namespace Tests
                   Level level;
                   Screen screen;
                   EngineLvl2AndLvl4 engine;
-                  BlanckSpace destination1, destination2, destination3, destination4;
+                  BlankSpace destination1, destination2, destination3, destination4;
                   DragAndDropSource source1, source2, source3, source4;
                   Word word1, word2, word3, word4;
                   public void Create()
@@ -21,13 +21,13 @@ namespace Tests
                            level = new Level("level", world);
                            screen = new Screen("screen", level);
 
-                           destination1 = new BlanckSpace("destination1", 10, 10, 50, 50, screen, "path");
+                           destination1 = new BlankSpace("destination1", 10, 10, 50, 50, screen, "path");
                            source1 = new DragAndDropSource("source1", 50, 50, 50, 50, screen, "path");
-                           destination2 = new BlanckSpace("destination2", 20, 20, 50, 50, screen, "path");
+                           destination2 = new BlankSpace("destination2", 20, 20, 50, 50, screen, "path");
                            source2 = new DragAndDropSource("source2", 50, 50, 50, 50, screen, "path");
-                           destination3 = new BlanckSpace("destination3", 30, 30, 50, 50, screen, "path");
+                           destination3 = new BlankSpace("destination3", 30, 30, 50, 50, screen, "path");
                            source3 = new DragAndDropSource("source3", 50, 50, 50, 50, screen, "path");
-                           destination4 = new BlanckSpace("destination4", 40, 40, 50, 50, screen, "path");
+                           destination4 = new BlankSpace("destination4", 40, 40, 50, 50, screen, "path");
                            source4 = new DragAndDropSource("source4", 50, 50, 50, 50, screen, "path");
 
                            word1 = new Word("word1", 10, 10, 50, 50, screen, "path1", source1, destination1);
@@ -61,7 +61,7 @@ namespace Tests
 
                   }
 
-                  public void LevelPass(Word word, BlanckSpace destination, bool expectedFill, bool expectedState)
+                  public void LevelPass(Word word, BlankSpace destination, bool expectedFill, bool expectedState)
                   {
                            //Con esto simulamos que el objeto fue movido a alguna posicion.
                            word.PositionX = destination.PositionX;

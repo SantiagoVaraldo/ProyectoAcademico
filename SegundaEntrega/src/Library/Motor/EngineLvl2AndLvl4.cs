@@ -63,7 +63,7 @@ namespace Library
                   {
                            foreach (Element element in word.Screen.ListaElement)
                            {
-                                    if (element is BlanckSpace)
+                                    if (element is BlankSpace)
                                     {
                                              this.CantDestination += 1;
                                     }
