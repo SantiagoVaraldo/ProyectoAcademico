@@ -43,7 +43,7 @@ namespace Proyecto.StudentsCode
             creator.Create();
             World world = Creator.world;
 
-            foreach (Level level in world.ListaLevel)
+            foreach (Level level in world.ListLevel)
             {
                 foreach (Screen screen in level.ListaScreen)
                 {

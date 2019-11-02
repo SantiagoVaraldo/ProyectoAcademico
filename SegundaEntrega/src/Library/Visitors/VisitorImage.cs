@@ -19,8 +19,8 @@ namespace Library
                            }
                   }
 
-                  private int? positionY;
-                  public int? PositionY
+                  private int positionY;
+                  public int PositionY
                   {
                            get
                            {
@@ -32,8 +32,8 @@ namespace Library
                            }
                   }
 
-                  private int? positionX;
-                  public int? PositionX
+                  private int positionX;
+                  public int PositionX
                   {
                            get
                            {
@@ -45,8 +45,8 @@ namespace Library
                            }
                   }
 
-                  private int? length;
-                  public int? Length
+                  private int length;
+                  public int Length
                   {
                            get
                            {
@@ -58,8 +58,8 @@ namespace Library
                            }
                   }
 
-                  private int? width;
-                  public int? Width
+                  private int width;
+                  public int Width
                   {
                            get
                            {
@@ -84,7 +84,7 @@ namespace Library
                            }
                   }
 
-                  public VisitorScreen(string Name, int PositionY, int PositionY, int Length, int Width, string ImagePath)
+                  public VisitorImage(string Name, int PositionY, int PositionX, int Length, int Width, string ImagePath)
                   {
                            this.Name = Name;
                            this.PositionY = PositionY;
@@ -105,9 +105,9 @@ namespace Library
 
                   public override void Visit(Level level)
                   {
-                           if (level.ListScreen.Count >= 1)
+                           if (level.ListaScreen.Count >= 1)
                            {
-                                    this.lastScreen = level.ListScreen[level.ListScreen.Count - 1];
+                                    this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
                            }
 
                            Image image = new Image(name, positionY, positionX, length, width, this.lastScreen, imagePath);

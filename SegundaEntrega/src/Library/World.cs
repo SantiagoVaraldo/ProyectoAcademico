@@ -27,7 +27,7 @@ namespace Library
         private string name;
         private int? length;
         private int? width;
-        private List<Level> listalevel = new List<Level>();
+        private List<Level> listlevel = new List<Level>();
         public string Name
         {
             get
@@ -75,15 +75,15 @@ namespace Library
             }
         }
 
-        public List<Level> ListaLevel
+        public List<Level> ListLevel
         {
             get
             {
-                return this.listalevel;
+                return this.listlevel;
             }
             set
             {
-                this.listalevel = value;
+                this.listlevel = value;
             }
         }
 
@@ -96,7 +96,7 @@ namespace Library
         {
             if (ixml is Level)
             {
-                this.ListaLevel.Add((Level)ixml);
+                this.ListLevel.Add((Level)ixml);
             }
         }
 

@@ -16,23 +16,23 @@ namespace Library
 
                   public override void Visit(Level level)
                   {
-                           if (level.ListScreen.Count >= 1)
+                           if (level.ListaScreen.Count >= 1)
                            {
-                                    this.lastScreen = level.ListScreen[level.ListScreen.Count - 1];
+                                    this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
                                     this.lastScreen.Acept(this);
                            }
                   }
 
                   public override void Visit(Screen screen)
                   {
-                           if (screen.ListElement.Count >= 1)
+                           if (screen.ListaElement.Count >= 1)
                            {
-                                    this.lastElement = screen.ListElement[screen.ListElement.Count - 1];
+                                    this.lastElement = screen.ListaElement[screen.ListaElement.Count - 1];
                            }
 
-                           if (screen.ListsElement.Count >= 2)
+                           if (screen.ListaElement.Count >= 2)
                            {
-                                    this.beforeLastElement = screen.ListElement[screen.ListElement.Count - 2];
+                                    this.beforeLastElement = screen.ListaElement[screen.ListaElement.Count - 2];
                            }
                   }
          }

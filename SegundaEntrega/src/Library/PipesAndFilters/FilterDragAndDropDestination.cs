@@ -19,7 +19,6 @@ using System.IO;
 /// modificacion ya que no se debera modificar los pipes and filters ya creados.
 /// CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
 /// </summary>
-
 namespace Library
 {
     public class FilterDragAndDropDestination : IFilterConditional
@@ -38,7 +37,7 @@ namespace Library
         /// <returns>retorna el Tag</returns>
         public Tag Filter(Tag tag)
         {
-            if (tag.Name == "BlanckSpace")
+            if (tag.Name == "BlankSpace")
             {
                 this.Result = true;
 
@@ -60,13 +59,13 @@ namespace Library
                     
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                    BlanckSpace blanckSpace = new BlanckSpace(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
-                    visitor.lastScreen.Add(blanckSpace);
+                    BlankSpace blankSpace = new BlankSpace(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
+                    visitor.lastScreen.Add(blankSpace);
                 }
                 catch (NotFoundOnXML)
                 {
-                    
-                    //Mostrar en pantalla que no se encontro lo deseado en xml
+
+                    ////Mostrar en pantalla que no se encontro lo deseado en xml
                 }
             }
             else

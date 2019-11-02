@@ -60,7 +60,7 @@ namespace Library
                     
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                    IXML word = new Word(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, (DragAndDropSource)visitor.beforeLastElement, (BlanckSpace)visitor.lastElement);
+                    IXML word = new Word(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, (DragAndDropSource)visitor.beforeLastElement, (BlankSpace)visitor.lastElement);
                     visitor.lastScreen.Add(word);
                 }
                 catch (NotFoundOnXML)
