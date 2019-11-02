@@ -16,6 +16,7 @@ namespace Library
     public class Creator
     {
         public static World world;
+       // public static List<string> listPages = new List<string>(); // agregue esto
         private List<Tag> listtags = new List<Tag>();
 
         /// <summary>

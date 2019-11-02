@@ -45,33 +45,23 @@ namespace Library
                 string name;
                 int positionY, positionX;
                 int length, width;
-                int lastLevelId, lastScreenId, lastElementId, beforeLastElementId;
                 string imagePath;
-                Level level;
-                Screen screen;
-                BlanckSpace Destination;
-                DragAndDropSource dragAndDropSource;
 
                 try
                 {
+                    Visitor visitor = new VisitorWorld();
+                    visitor.Visit(Creator.world);
 
                     name = tag.ListaAtributos["Name"].Valor;
                     positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
                     positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
                     length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                     width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                    lastLevelId = Creator.world.ListaLevel.Count - 1;
-                    level = Creator.world.ListaLevel[lastLevelId];
-                    lastScreenId = level.ListaScreen.Count - 1;
-                    screen = level.ListaScreen[lastScreenId];
+                    
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
-                    lastElementId = screen.ListaElement.Count - 1;
-                    Destination = (BlanckSpace)screen.ListaElement[lastElementId];
-                    beforeLastElementId = screen.ListaElement.Count - 2;
-                    dragAndDropSource = (DragAndDropSource)screen.ListaElement[beforeLastElementId];
 
-                    IXML word = new Word(name, positionY, positionX, length, width, screen, imagePath, dragAndDropSource, Destination);
-                    screen.Add(word);
+                    IXML word = new Word(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, (DragAndDropSource)visitor.beforeLastElement, (BlanckSpace)visitor.lastElement);
+                    visitor.lastScreen.Add(word);
                 }
                 catch (NotFoundOnXML)
                 {

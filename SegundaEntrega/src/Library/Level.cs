@@ -81,5 +81,14 @@ namespace Library
                 this.ListaScreen.Add((Screen)ixml);
             }
         }
+
+        /// <summary>
+        /// metodo implementado para la utilizacion del patron Visitor
+        /// </summary>
+        /// <param name="visitor"> instancia de Visitor </param>
+        public void Acept(Visitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
