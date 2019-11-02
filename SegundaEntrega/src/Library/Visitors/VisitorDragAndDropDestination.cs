@@ -4,7 +4,7 @@ using ExerciseOne;
 
 namespace Library
 {
-         public class VisitorImage : Visitor
+         public class VisitorDragAndDropDestination : Visitor
          {
                   private Tag tag;
 
@@ -20,7 +20,7 @@ namespace Library
                            }
                   }
 
-                  public VisitorImage(Tag Tag)
+                  public VisitorDragAndDropDestination(Tag Tag)
                   {
                            this.Tag = Tag;
                   }
@@ -48,8 +48,8 @@ namespace Library
                            int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
                            string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                           Image image = new Image(name, positionY, positionX, length, width, this.lastScreen, imagePath);
-                           this.lastScreen.Add(image);
+                           BlankSpace blankSpace = new BlankSpace(name, positionY, positionX, length, width, this.lastScreen, imagePath);
+                           this.lastScreen.Add(blankSpace);
                   }
 
                   public override void Visit(Screen screen)

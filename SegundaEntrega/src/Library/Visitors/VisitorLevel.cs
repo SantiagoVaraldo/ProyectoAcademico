@@ -1,32 +1,34 @@
 using System;
 using Proyecto.Common;
+using ExerciseOne;
 
 namespace Library
 {
          public class VisitorLevel : Visitor
          {
-                  private string name;
+                  private Tag tag;
 
-                  public string Name
+                  public Tag Tag
                   {
                            get
                            {
-                                    return this.name;
+                                    return this.tag;
                            }
                            set
                            {
-                                    this.name = value;
+                                    this.tag = value;
                            }
                   }
 
-                  public VisitorLevel(string Name)
+                  public VisitorLevel(Tag Tag)
                   {
-                           this.Name = Name;
+                           this.Tag = Tag;
                   }
 
                   public override void Visit(World world)
                   {
-                           Level level = new Level(this.name,world);
+                           string name = tag.ListaAtributos["Name"].Valor;
+                           Level level = new Level(name,world);
                            world.Add(level);
                   }
 

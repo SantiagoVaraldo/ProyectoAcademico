@@ -4,7 +4,7 @@ using ExerciseOne;
 
 namespace Library
 {
-         public class VisitorScreen : Visitor
+         public class VisitorExit : Visitor
          {
                   private Tag tag;
 
@@ -20,7 +20,7 @@ namespace Library
                            }
                   }
 
-                  public VisitorScreen(Tag Tag)
+                  public VisitorExit(Tag Tag)
                   {
                            this.Tag = Tag;
                   }
@@ -30,16 +30,26 @@ namespace Library
                            if (world.ListLevel.Count >= 1)
                            {
                                     this.lastLevel = world.ListLevel[world.ListLevel.Count - 1];
+                                    this.lastLevel.Accept(this);
                            }
-
-                           string name = tag.ListaAtributos["Name"].Valor;
-                           
-                           Screen screen = new Screen(name, this.lastLevel);
-                           this.lastLevel.Add(screen);
                   }
 
                   public override void Visit(Level level)
                   {
+                           if (level.ListaScreen.Count >= 1)
+                           {
+                                    this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
+                           }
+
+                           string name = tag.ListaAtributos["Name"].Valor;
+                           int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                           int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                           int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                           int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+                           string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+
+                           IXML exit = new Exit(name, positionY, positionX, length, width, this.lastScreen, imagePath);
+                           this.lastScreen.Add(exit);
                   }
 
                   public override void Visit(Screen screen)

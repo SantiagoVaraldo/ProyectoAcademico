@@ -4,7 +4,7 @@ using ExerciseOne;
 
 namespace Library
 {
-         public class VisitorImage : Visitor
+         public class VisitorLetter : Visitor
          {
                   private Tag tag;
 
@@ -20,7 +20,7 @@ namespace Library
                            }
                   }
 
-                  public VisitorImage(Tag Tag)
+                  public VisitorLetter(Tag Tag)
                   {
                            this.Tag = Tag;
                   }
@@ -47,9 +47,10 @@ namespace Library
                            int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                            int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
                            string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                           bool right = Convert.ToBoolean(tag.ListaAtributos["Right"].Valor);
 
-                           Image image = new Image(name, positionY, positionX, length, width, this.lastScreen, imagePath);
-                           this.lastScreen.Add(image);
+                           IXML letter = new Letter(name, positionY, positionX, length, width, this.lastScreen, imagePath, right);
+                           this.lastScreen.Add(letter);
                   }
 
                   public override void Visit(Screen screen)

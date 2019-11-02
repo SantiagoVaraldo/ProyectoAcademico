@@ -4,7 +4,7 @@ using ExerciseOne;
 
 namespace Library
 {
-         public class VisitorImage : Visitor
+         public class VisitorWord : Visitor
          {
                   private Tag tag;
 
@@ -20,7 +20,7 @@ namespace Library
                            }
                   }
 
-                  public VisitorImage(Tag Tag)
+                  public VisitorWord(Tag Tag)
                   {
                            this.Tag = Tag;
                   }
@@ -40,6 +40,19 @@ namespace Library
                            {
                                     this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
                            }
+                  }
+
+                  public override void Visit(Screen screen)
+                  {
+                           if (screen.ListaElement.Count >= 1)
+                           {
+                                    this.lastElement = screen.ListaElement[screen.ListaElement.Count - 1];
+                           }
+
+                           if (screen.ListaElement.Count >= 2)
+                           {
+                                    this.beforeLastElement = screen.ListaElement[screen.ListaElement.Count - 2];
+                           }
 
                            string name = tag.ListaAtributos["Name"].Valor;
                            int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
@@ -48,12 +61,8 @@ namespace Library
                            int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
                            string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                           Image image = new Image(name, positionY, positionX, length, width, this.lastScreen, imagePath);
-                           this.lastScreen.Add(image);
-                  }
-
-                  public override void Visit(Screen screen)
-                  {
+                           IXML word = new Word(name, positionY, positionX, length, width, this.lastScreen, imagePath, (DragAndDropSource)this.beforeLastElement, (BlankSpace)this.lastElement);
+                           this.lastScreen.Add(word);
                   }
          }
 }

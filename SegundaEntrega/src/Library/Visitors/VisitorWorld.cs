@@ -10,7 +10,7 @@ namespace Library
                            if (world.ListLevel.Count >= 1)
                            {
                                     this.lastLevel = world.ListLevel[world.ListLevel.Count - 1];
-                                    this.lastLevel.Acept(this);
+                                    this.lastLevel.Accept(this);
                            }
                   }
 
@@ -19,7 +19,7 @@ namespace Library
                            if (level.ListaScreen.Count >= 1)
                            {
                                     this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
-                                    this.lastScreen.Acept(this);
+                                    this.lastScreen.Accept(this);
                            }
                   }
 

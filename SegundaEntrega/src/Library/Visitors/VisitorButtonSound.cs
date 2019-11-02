@@ -4,7 +4,7 @@ using ExerciseOne;
 
 namespace Library
 {
-         public class VisitorImage : Visitor
+         public class VisitorSound : Visitor
          {
                   private Tag tag;
 
@@ -20,7 +20,7 @@ namespace Library
                            }
                   }
 
-                  public VisitorImage(Tag Tag)
+                  public VisitorSound(Tag Tag)
                   {
                            this.Tag = Tag;
                   }
@@ -47,9 +47,10 @@ namespace Library
                            int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                            int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
                            string imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                           string soundPath = tag.ListaAtributos["SoundPath"].Valor;
 
-                           Image image = new Image(name, positionY, positionX, length, width, this.lastScreen, imagePath);
-                           this.lastScreen.Add(image);
+                           IXML button = new ButtonSound(name, positionY, positionX, length, width, this.lastScreen, imagePath, soundPath);
+                           this.lastScreen.Add(button);
                   }
 
                   public override void Visit(Screen screen)

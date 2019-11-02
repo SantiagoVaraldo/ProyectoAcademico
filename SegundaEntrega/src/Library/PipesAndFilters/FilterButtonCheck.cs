@@ -45,7 +45,8 @@ namespace Library
                 string name;
                 int positionY, positionX;
                 int length, width;
-                string imagePath;
+                string imagePath, imagePath2;
+                bool check;
 
                 try
                 {
@@ -57,10 +58,13 @@ namespace Library
                     positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
                     length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                     width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+                    check = Convert.ToBoolean(tag.ListaAtributos["Check"].Valor);
                     
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
+                    imagePath2 = tag.ListaAtributos["ImagePath2"].Valor;
+
                     
-                    IXML button = new ButtonNextPage(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
+                    IXML button = new ButtonCheck(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, imagePath2, check);
                     visitor.lastScreen.Add(button);
                 }
                 catch (NotFoundOnXML)
