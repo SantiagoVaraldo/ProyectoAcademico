@@ -50,8 +50,8 @@ namespace Library
                     int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                     int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
 
-                    int lastLevelId = Creator.world.ListaLevel.Count - 1;
-                    Level level = Creator.world.ListaLevel[lastLevelId];
+                    int lastLevelId = Creator.world.ListLevel.Count - 1;
+                    Level level = Creator.world.ListLevel[lastLevelId];
                     int lastScreenId = level.ListaScreen.Count - 1;
                     Screen screen = level.ListaScreen[lastScreenId];
                     string imagePath = tag.ListaAtributos["ImagePath"].Valor;

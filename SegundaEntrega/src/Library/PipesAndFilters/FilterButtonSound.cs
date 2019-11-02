@@ -60,8 +60,8 @@ namespace Library
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
                     soundPath = tag.ListaAtributos["SoundPath"].Valor;
 
-                    lastLevelId = Creator.world.ListaLevel.Count - 1;
-                    level = Creator.world.ListaLevel[lastLevelId];
+                    lastLevelId = Creator.world.ListLevel.Count - 1;
+                    level = Creator.world.ListLevel[lastLevelId];
                     lastScreenId = level.ListaScreen.Count - 1;
                     screen = level.ListaScreen[lastScreenId];
 
