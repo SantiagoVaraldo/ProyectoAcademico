@@ -30,7 +30,7 @@ namespace Library
                   /// <param name="word"> Word que fue clickeado </param>
                   public void NextLevel(Word word)
                   {
-                           if (this.listWords.Count == 4)
+                           if (this.listWords.Count == this.CantDestination)
                            {
                                     word.Screen.levelCompleted();
                                     foreach (IObserver observer in observers)
@@ -50,18 +50,6 @@ namespace Library
                            {
                                     ObtainCantDestination(word);
                            }
-
-                           if (!this.listWords.Contains(word))
-                           {
-                                    this.AddWord(word);
-                           }
-
-                           else
-                           {
-                                    this.RemoveWord(word);
-                           }
-
-                           this.NextLevel(word);
                   }
 
                   public void ObtainCantDestination(Word word)
@@ -83,11 +71,8 @@ namespace Library
                   /// <param name="word"> Word para agregar </param>
                   public void AddWord(Word word)
                   {
-                           if (word.CheckPosition()) //word.PositionY == word.Destination.PositionY & word.PositionX == word.Destination.PositionX
-                           {
-                                    this.listWords.Add(word);
-                                    word.Destination.Fill();
-                           }
+                           this.listWords.Add(word);
+                           word.Destination.Fill();
                   }
 
                   /// <summary>
@@ -96,7 +81,7 @@ namespace Library
                   /// <param name="word"> Word a eliminar </param>
                   public void RemoveWord(Word word)
                   {
-                           if (word.PositionY != word.Destination.PositionY || word.PositionX != word.Destination.PositionX)
+                           if (this.listWords.Contains(word))
                            {
                                     this.listWords.Remove(word);
                                     word.Destination.Unfill();

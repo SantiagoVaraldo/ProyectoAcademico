@@ -47,17 +47,25 @@ namespace Library
         /// <param name="y"> posicion y </param>
         private void OnDrop(string elementName, float x, float y)
         {
+            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+            EngineLvl2 engineLvl2 = Singleton<EngineLvl2>.Instance;
+            engineLvl2.Subscribe(generalEngine); 
+            engineLvl2.Check(this);
             OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
+
             if (elementName == this.itemId && OneAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y))
             {
                 // Mueve el elemento arrastrado al destino si se suelta arriba del destino
                 OneAdapter.Adapter.Center(elementName, this.Destination.destinationCellImageId);
+                engineLvl2.AddWord(this);
             }
             else if (elementName == this.itemId)
             {
                 // Mueve el elemento arrastrado nuevamente al origen en caso contrario
                 OneAdapter.Adapter.Center(elementName, this.Source.sourceCellImageId);
+                engineLvl2.RemoveWord(this);
             }
+            engineLvl2.NextLevel(this);
         }
 
         public bool CheckPosition()
