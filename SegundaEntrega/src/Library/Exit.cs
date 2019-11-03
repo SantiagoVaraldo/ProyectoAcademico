@@ -27,7 +27,7 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            SingletonAdapter.Adapter.Debug($"Button clicked!");// salir de la app.
+            OneAdapter.Adapter.Debug($"Button clicked!");// salir de la app.
         }
 
         /// <summary>

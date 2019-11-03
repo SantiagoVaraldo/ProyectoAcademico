@@ -74,7 +74,7 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            SingletonAdapter.Adapter.Debug($"Button clicked!");//algo
+            OneAdapter.Adapter.Debug($"Button clicked!");//algo
             //this.State = true;
             //MotorLvl3.CheckWon();
         }

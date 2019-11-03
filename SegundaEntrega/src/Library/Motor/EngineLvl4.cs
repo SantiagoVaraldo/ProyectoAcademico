@@ -22,7 +22,7 @@ namespace Library
          {
                   private List<Word> listWords = new List<Word>();
                   private List<IObserver> observers = new List<IObserver>();
-                  private int CantDestination;
+                  private int CantDestination = 0;
 
                   /// <summary>
                   /// metodo que establece que la pantalla fue superada y se lo notifica al Observer
@@ -30,10 +30,13 @@ namespace Library
                   /// <param name="word"> Word que fue clickeado </param>
                   public void NextLevel(Word word)
                   {
-                           word.Screen.levelCompleted();
-                           foreach (IObserver observer in observers)
+                           if (this.listWords.Count == 4)
                            {
-                                    observer.Update();
+                                    word.Screen.levelCompleted();
+                                    foreach (IObserver observer in observers)
+                                    {
+                                             observer.Update();
+                                    }
                            }
                   }
 
@@ -43,7 +46,10 @@ namespace Library
                   /// <param name="word"> Word clickeado </param>
                   public void Check(Word word)
                   {
-                           ObtainCantDestination(word);
+                           if (this.CantDestination == 0)
+                           {
+                                    ObtainCantDestination(word);
+                           }
 
                            if (!this.listWords.Contains(word))
                            {
@@ -53,21 +59,21 @@ namespace Library
                            {
                                     this.RemoveWord(word);
                            }
-                           if (this.listWords.Count == 4)
-                           {
-                                    this.NextLevel(word);
-                           }
+
+                           this.NextLevel(word);
                   }
 
                   public void ObtainCantDestination(Word word)
                   {
+                           int Num = 0;
                            foreach (Element element in word.Screen.ListaElement)
                            {
                                     if (element is BlankSpace)
                                     {
-                                             this.CantDestination += 1;
+                                             Num += 1;
                                     }
                            }
+                           this.CantDestination = Num;
                   }
 
                   /// <summary>
