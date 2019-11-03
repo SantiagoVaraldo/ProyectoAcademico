@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 namespace Tests
 {
-         public class EngineLvl2AndLvl4Test
+         public class EngineLvl2Test
          {
                   World world;
                   Level level;
                   Screen screen;
-                  EngineLvl2AndLvl4 engine;
+                  EngineLvl2 engine;
                   BlankSpace destination1, destination2, destination3, destination4;
                   DragAndDropSource source1, source2, source3, source4;
                   Word word1, word2, word3, word4;
@@ -35,7 +35,7 @@ namespace Tests
                            word3 = new Word("word3", 10, 10, 50, 50, screen, "path3", source3, destination3);
                            word4 = new Word("word4", 10, 10, 50, 50, screen, "path4", source4, destination4);
 
-                           engine = new EngineLvl2AndLvl4();
+                           engine = new EngineLvl2();
                   }
 
                   [Fact]
