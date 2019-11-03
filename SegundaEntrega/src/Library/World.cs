@@ -99,5 +99,14 @@ namespace Library
                 this.ListLevel.Add((Level)ixml);
             }
         }
+
+        /// <summary>
+        /// metodo implementado para la utilizacion del patron Visitor
+        /// </summary>
+        /// <param name="visitor"> instancia de Visitor </param>
+        public void Accept(Visitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

@@ -96,9 +96,21 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// cambia el estado del objeto a "nivel completado"
+        /// </summary>
         public void levelCompleted()
         {
             this.state = true;
+        }
+
+        /// <summary>
+        /// metodo implementado para la utilizacion del patron Visitor
+        /// </summary>
+        /// <param name="visitor"> instancia de Visitor </param>
+        public void Accept(Visitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }
