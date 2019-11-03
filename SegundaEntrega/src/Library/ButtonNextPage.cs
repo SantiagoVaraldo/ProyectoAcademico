@@ -27,9 +27,9 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            SingletonAdapter.Adapter.Debug($"Button clicked!");//ShowPage(this.nextPageName); hay q pasarle la pagina q debe mostrar
+            OneAdapter.Adapter.Debug($"Button clicked!");//ShowPage(this.nextPageName); hay q pasarle la pagina q debe mostrar
             //int ActualPage = 0;  // agregue esto
-            //SingletonAdapter.Adapter.ShowPage(Creator.listPages[ActualPage + 1]); // agregue esto
+            //OneAdapter.Adapter.ShowPage(Creator.listPages[ActualPage + 1]); // agregue esto
             //ActualPage += 1;
         }
 

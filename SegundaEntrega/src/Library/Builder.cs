@@ -30,7 +30,7 @@ namespace Proyecto.StudentsCode
 
             this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
 
-            SingletonAdapter.Adapter = adapter;
+            OneAdapter.Adapter = adapter;
 
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
 

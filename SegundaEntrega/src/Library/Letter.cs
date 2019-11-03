@@ -39,7 +39,7 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            SingletonAdapter.Adapter.Debug($"Button clicked!"); //hacer_algo
+            OneAdapter.Adapter.Debug($"Button clicked!"); //hacer_algo
         }
 
         /// <summary>

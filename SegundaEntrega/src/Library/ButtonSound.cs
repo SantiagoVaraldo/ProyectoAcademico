@@ -58,7 +58,7 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            SingletonAdapter.Adapter.Debug($"Button clicked!");//PlayAudio("Speech Off.wav"); hay q pasarle el audio a reproducir
+            OneAdapter.Adapter.Debug($"Button clicked!");//PlayAudio("Speech Off.wav"); hay q pasarle el audio a reproducir
         }
 
         /// <summary>

@@ -32,8 +32,8 @@ namespace Library
             itemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
             adapter.SetImage(itemId, this.ImagePath);
             adapter.MakeDraggable(itemId, true);
-            SingletonAdapter.Adapter.OnDrop += this.OnDrop;
-            SingletonAdapter.Adapter.Center(this.itemId, this.Source.sourceCellImageId);
+            OneAdapter.Adapter.OnDrop += this.OnDrop;
+            OneAdapter.Adapter.Center(this.itemId, this.Source.sourceCellImageId);
 
             //adapter.SetImage(itemId, this.ImagePath);
         }
@@ -47,16 +47,16 @@ namespace Library
         /// <param name="y"> posicion y </param>
         private void OnDrop(string elementName, float x, float y)
         {
-            SingletonAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
-            if (elementName == this.itemId && SingletonAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y))
+            OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
+            if (elementName == this.itemId && OneAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y))
             {
                 // Mueve el elemento arrastrado al destino si se suelta arriba del destino
-                SingletonAdapter.Adapter.Center(elementName, this.Destination.destinationCellImageId);
+                OneAdapter.Adapter.Center(elementName, this.Destination.destinationCellImageId);
             }
             else if (elementName == this.itemId)
             {
                 // Mueve el elemento arrastrado nuevamente al origen en caso contrario
-                SingletonAdapter.Adapter.Center(elementName, this.Source.sourceCellImageId);
+                OneAdapter.Adapter.Center(elementName, this.Source.sourceCellImageId);
             }
         }
 
