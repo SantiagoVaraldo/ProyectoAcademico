@@ -46,12 +46,12 @@ namespace Library
                   {
                            if (screen.ListaElement.Count >= 1)
                            {
-                                    this.lastElement = (BlankSpace)screen.ListaElement[screen.ListaElement.Count - 1];
+                                    this.lastElement = screen.ListaElement[screen.ListaElement.Count - 1];
                            }
 
                            if (screen.ListaElement.Count >= 2)
                            {
-                                    this.beforeLastElement = (DragAndDropSource)screen.ListaElement[screen.ListaElement.Count - 2];
+                                    this.beforeLastElement = screen.ListaElement[screen.ListaElement.Count - 2];
                            }
 
                            string name = tag.ListaAtributos["Name"].Valor;
@@ -61,7 +61,7 @@ namespace Library
                            int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
                            string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                           IXML word = new Word(name, positionY, positionX, length, width, this.lastScreen, imagePath, this.beforeLastElement, this.lastElement);
+                           IXML word = new Word(name, positionY, positionX, length, width, this.lastScreen, imagePath, (DragAndDropSource)this.beforeLastElement, (BlankSpace)this.lastElement);
                            this.lastScreen.Add(word);
                   }
          }

@@ -48,6 +48,7 @@ namespace Proyecto.StudentsCode
                 foreach (Screen screen in level.ListaScreen)
                 {
                     this.nextPageName = this.adapter.AddPage();
+                    //Creator.listPages.Add(this.nextPageName);  // agrego esto
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
                     //this.AfterBuildShowPage(this.nextPageName);   
 
@@ -79,7 +80,7 @@ namespace Proyecto.StudentsCode
 
         private void GoToNextPage(string name)
         {
-            this.adapter.ShowPage(this.nextPageName);
+            this.adapter.ShowPage(this.nextPageName); // cambiar a Creator.listPages
             //this.adapter.PlayAudio("Speech Off.wav");
         }
 
