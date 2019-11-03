@@ -15,12 +15,15 @@ namespace Library
 {
          public class GeneralEngine : IObserver
          {
+             private int actualPage = 0;
+             
              /// <summary>
              /// metodo que actualiza la pagina, pasa a la siguiente pantalla
              /// </summary>
              public void Update()
              {
-                 // pasar a la siguienet pagina
+                OneAdapter.Adapter.ShowPage(Creator.listPages[actualPage+1]);
+                this.actualPage += 1;
              }
          }
 }

@@ -74,9 +74,11 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            OneAdapter.Adapter.Debug($"Button clicked!");//algo
-            //this.State = true;
-            //MotorLvl3.CheckWon();
+            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+            EngineLvl3 engineLvl3 = Singleton<EngineLvl3>.Instance;
+            engineLvl3.Subscribe(generalEngine);
+            OneAdapter.Adapter.Debug($"Button clicked!"); 
+            engineLvl3.Check(this);
         }
 
         /// <summary>

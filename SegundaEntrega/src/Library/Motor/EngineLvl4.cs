@@ -30,7 +30,7 @@ namespace Library
                   /// <param name="word"> Word que fue clickeado </param>
                   public void NextLevel(Word word)
                   {
-                           if (this.listWords.Count == 4)
+                           if (this.listWords.Count == this.CantDestination)
                            {
                                     word.Screen.levelCompleted();
                                     foreach (IObserver observer in observers)

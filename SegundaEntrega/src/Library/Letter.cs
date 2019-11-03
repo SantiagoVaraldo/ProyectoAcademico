@@ -39,7 +39,11 @@ namespace Library
         /// </summary>
         public void Action(string name)
         {
-            OneAdapter.Adapter.Debug($"Button clicked!"); //hacer_algo
+            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+            EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
+            engineLvl1.Subscribe(generalEngine);
+            OneAdapter.Adapter.Debug($"Button clicked!"); 
+            engineLvl1.Check(this);
         }
 
         /// <summary>

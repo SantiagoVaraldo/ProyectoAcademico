@@ -28,9 +28,8 @@ namespace Library
         public void Action(string name)
         {
             OneAdapter.Adapter.Debug($"Button clicked!");//ShowPage(this.nextPageName); hay q pasarle la pagina q debe mostrar
-            //int ActualPage = 0;  // agregue esto
-            //OneAdapter.Adapter.ShowPage(Creator.listPages[ActualPage + 1]); // agregue esto
-            //ActualPage += 1;
+            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+            generalEngine.Update();
         }
 
         /// <summary>
