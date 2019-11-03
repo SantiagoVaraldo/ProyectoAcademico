@@ -27,12 +27,12 @@ namespace Library
                   {
                            if (screen.ListaElement.Count >= 1)
                            {
-                                    this.lastElement = screen.ListaElement[screen.ListaElement.Count - 1];
+                                    this.lastElement = (BlankSpace)screen.ListaElement[screen.ListaElement.Count - 1];
                            }
 
                            if (screen.ListaElement.Count >= 2)
                            {
-                                    this.beforeLastElement = screen.ListaElement[screen.ListaElement.Count - 2];
+                                    this.beforeLastElement = (DragAndDropSource)screen.ListaElement[screen.ListaElement.Count - 2];
                            }
                   }
          }

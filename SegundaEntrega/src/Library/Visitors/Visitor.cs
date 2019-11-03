@@ -8,8 +8,8 @@ namespace Library
                   public World world;
                   public Level lastLevel;
                   public Screen lastScreen;
-                  public Element lastElement;
-                  public Element beforeLastElement;
+                  public BlankSpace lastElement;
+                  public DragAndDropSource beforeLastElement;
                   public abstract void Visit(World world);
                   public abstract void Visit(Level level);
                   public abstract void Visit(Screen screen);

@@ -83,9 +83,9 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo implementado para la utilizacion del patron Visitor
+        /// metodo utilizado por el patron Visitor
         /// </summary>
-        /// <param name="visitor"> instancia de Visitor </param>
+        /// <param name="visitor"> instancia de visitor </param>
         public void Accept(Visitor visitor)
         {
             visitor.Visit(this);

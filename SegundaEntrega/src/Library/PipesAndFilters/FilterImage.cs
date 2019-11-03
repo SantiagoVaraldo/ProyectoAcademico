@@ -44,19 +44,20 @@ namespace Library
 
                 try
                 {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.world);
-
                     string name = tag.ListaAtributos["Name"].Valor;
                     int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
                     int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
                     int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                     int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                    
+
+                    int lastLevelId = Creator.world.ListLevel.Count - 1;
+                    Level level = Creator.world.ListLevel[lastLevelId];
+                    int lastScreenId = level.ListaScreen.Count - 1;
+                    Screen screen = level.ListaScreen[lastScreenId];
                     string imagePath = tag.ListaAtributos["ImagePath"].Valor;
 
-                    IXML image = new Image(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
-                    visitor.lastScreen.Add(image);
+                    IXML image = new Image(name, positionY, positionX, length, width, screen, imagePath);
+                    screen.Add(image);
                 }
                 catch (NotFoundOnXML)
                 {

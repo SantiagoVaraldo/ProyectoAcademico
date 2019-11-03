@@ -97,7 +97,7 @@ namespace Library
         }
 
         /// <summary>
-        /// cambia el estado del objeto a "nivel completado"
+        /// cambia el atributo para indicar que el nivel fue completado
         /// </summary>
         public void levelCompleted()
         {
@@ -105,9 +105,9 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo implementado para la utilizacion del patron Visitor
+        /// metodo utilizado por el patron Visitor
         /// </summary>
-        /// <param name="visitor"> instancia de Visitor </param>
+        /// <param name="visitor"> instancia de visitor </param>
         public void Accept(Visitor visitor)
         {
             visitor.Visit(this);

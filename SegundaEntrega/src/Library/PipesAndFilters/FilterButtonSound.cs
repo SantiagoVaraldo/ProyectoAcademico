@@ -45,24 +45,28 @@ namespace Library
                 string name;
                 int positionY, positionX;
                 int length, width;
+                int lastLevelId, lastScreenId;
                 string imagePath, soundPath;
+                Level level;
+                Screen screen;
 
                 try
                 {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.world);
-
                     name = tag.ListaAtributos["Name"].Valor;
                     positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
                     positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
                     length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
                     width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                    
                     imagePath = tag.ListaAtributos["ImagePath"].Valor;
                     soundPath = tag.ListaAtributos["SoundPath"].Valor;
 
-                    IXML button = new ButtonSound(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, soundPath);
-                    visitor.lastScreen.Add(button);
+                    lastLevelId = Creator.world.ListLevel.Count - 1;
+                    level = Creator.world.ListLevel[lastLevelId];
+                    lastScreenId = level.ListaScreen.Count - 1;
+                    screen = level.ListaScreen[lastScreenId];
+
+                    IXML button = new ButtonSound(name, positionY, positionX, length, width, screen, imagePath, soundPath);
+                    screen.Add(button);
                 }
                 catch (NotFoundOnXML)
                 {

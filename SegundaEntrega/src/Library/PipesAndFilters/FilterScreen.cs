@@ -42,15 +42,18 @@ namespace Library
                 this.Result = true;
 
                 string name;
+                int lastLevelId;
+                Level level;
 
                 try
                 {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.world);
-                    name = tag.ListaAtributos["Name"].Valor;
 
-                    IXML screen = new Screen(name, visitor.lastLevel);
-                    visitor.lastLevel.Add(screen);
+                    name = tag.ListaAtributos["Name"].Valor;
+                    lastLevelId = Creator.world.ListLevel.Count - 1;
+                    level = Creator.world.ListLevel[lastLevelId];
+
+                    IXML screen = new Screen(name, level);
+                    level.Add(screen);
                 }
                 catch (System.Exception)
                 {
