@@ -12,7 +12,7 @@ namespace Tests
         [Fact]
         public void FilterWorld()
         {
-            IPipe pipenull = new PipeNull();
+            IPipe pipeNull = new PipeNull();
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "world1");
@@ -23,8 +23,8 @@ namespace Tests
             attributeList.Add(attribute3.Key, attribute3);
             Tag tag = new Tag("World", attributeList);
 
-            IFilterConditional filterworld = new FilterWorld();
-            IPipe pipe0 = new PipeConditional(filterworld, pipenull, pipenull);
+            IFilterConditional filterWorld = new FilterWorld();
+            IPipe pipe0 = new PipeConditional(filterWorld, pipeNull, pipeNull);
             pipe0.Send(tag);
 
             string NameExpected = "world1";
@@ -38,7 +38,7 @@ namespace Tests
         [Fact]
         public void FilterLevelTest()
         {
-            IPipe pipenull = new PipeNull();
+            IPipe pipeNull = new PipeNull();
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "level1");
@@ -46,8 +46,8 @@ namespace Tests
             attributeList.Add(attribute.Key, attribute);
             Tag tag = new Tag("Level", attributeList);
 
-            IFilterConditional filterlevel = new FilterLevel();
-            IPipe pipe0 = new PipeConditional(filterlevel, pipenull, pipenull);
+            IFilterConditional filterLevel = new FilterLevel();
+            IPipe pipe0 = new PipeConditional(filterLevel, pipeNull, pipeNull);
             pipe0.Send(tag);
 
             string NameExpected = "level1";
@@ -59,27 +59,27 @@ namespace Tests
         [Fact]
         public void FilterScreen()
         {
-            IPipe pipenull = new PipeNull();
+            IPipe pipeNull = new PipeNull();
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "screen1");
             attributeList.Add(attribute.Key, attribute);
             Tag tag = new Tag("Screen", attributeList);
 
-            IFilterConditional filterscreen = new FilterScreen();
-            IPipe pipe0 = new PipeConditional(filterscreen, pipenull, pipenull);
+            IFilterConditional filterScreen = new FilterScreen();
+            IPipe pipe0 = new PipeConditional(filterScreen, pipeNull, pipeNull);
             pipe0.Send(tag);
 
             string NameExpected = "screen1";
             Level level = Creator.world.ListLevel[0];
 
-            Assert.Equal(level.ListaScreen[0].Name, NameExpected);
-            Assert.Equal(level.ListaScreen[0].Level, level);
+            Assert.Equal(level.ScreenList[0].Name, NameExpected);
+            Assert.Equal(level.ScreenList[0].Level, level);
         }
         [Fact]
         public void FilterElement()
         {
-            IPipe pipenull = new PipeNull();
+            IPipe pipeNull = new PipeNull();
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "image1");
@@ -97,25 +97,25 @@ namespace Tests
             Tag tag = new Tag("Image", attributeList);
 
             IFilterConditional filterImage = new FilterImage();
-            IPipe pipe0 = new PipeConditional(filterImage, pipenull, pipenull);
+            IPipe pipe0 = new PipeConditional(filterImage, pipeNull, pipeNull);
             pipe0.Send(tag);
 
             string NameExpected = "image1";
             Level level = Creator.world.ListLevel[0];
-            Screen screen = level.ListaScreen[0];
+            Screen screen = level.ScreenList[0];
             int LengthExpected = 100;
             int WidthExpected = 100;
             int PositionYExpected = 100;
             int PositionXExpected = 100;
             string ImagePathExpected = "Oceano.jpg";
 
-            Assert.Equal(screen.ListaElement[0].Name, NameExpected);
-            Assert.Equal(screen.ListaElement[0].Screen, screen);
-            Assert.Equal(screen.ListaElement[0].PositionY, PositionYExpected);
-            Assert.Equal(screen.ListaElement[0].PositionX, PositionXExpected);
-            Assert.Equal(screen.ListaElement[0].Length, LengthExpected);
-            Assert.Equal(screen.ListaElement[0].Width, WidthExpected);
-            Assert.Equal(screen.ListaElement[0].ImagePath, ImagePathExpected);
+            Assert.Equal(screen.ElementList[0].Name, NameExpected);
+            Assert.Equal(screen.ElementList[0].Screen, screen);
+            Assert.Equal(screen.ElementList[0].PositionY, PositionYExpected);
+            Assert.Equal(screen.ElementList[0].PositionX, PositionXExpected);
+            Assert.Equal(screen.ElementList[0].Length, LengthExpected);
+            Assert.Equal(screen.ElementList[0].Width, WidthExpected);
+            Assert.Equal(screen.ElementList[0].ImagePath, ImagePathExpected);
         }
     }
 }

@@ -15,8 +15,8 @@ namespace Library
 {
     public class Letter : Element, IButton
     {
-        public Letter(string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        public Letter(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, bool Right)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.Right = Right;
         }
@@ -24,13 +24,13 @@ namespace Library
         private bool right;
         public bool Right
         {
-            get 
+            get
             {
                 return this.right;
             }
-            set 
+            set
             {
-                this.right = value;        
+                this.right = value;
             }
         }
 
@@ -42,7 +42,7 @@ namespace Library
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
             EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
             engineLvl1.Subscribe(generalEngine);
-            OneAdapter.Adapter.Debug($"Button clicked!"); 
+            OneAdapter.Adapter.Debug($"Button clicked!");
             engineLvl1.Check(this);
         }
 

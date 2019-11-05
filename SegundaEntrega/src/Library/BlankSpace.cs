@@ -16,19 +16,19 @@ namespace Library
 {
     public class BlankSpace : DragAndDropDestination
     {
-        public string destinationCellImageId;
         public BlankSpace(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
         : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.Filled = false;
         }
+        public string destinationCellImageId;
 
         private bool filled;
-        public bool Filled 
+        public bool Filled
         {
             get
             {
-                return this.filled; 
+                return this.filled;
             }
             set
             {

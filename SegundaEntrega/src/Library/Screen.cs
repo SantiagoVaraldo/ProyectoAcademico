@@ -70,16 +70,16 @@ namespace Library
             }
         }
 
-        private List<Element> listaelement = new List<Element>();
-        public List<Element> ListaElement
+        private List<Element> elementList = new List<Element>();
+        public List<Element> ElementList
         {
             get
             {
-                return this.listaelement;
+                return this.elementList;
             }
             set
             {
-                this.listaelement = value;
+                this.elementList = value;
             }
         }
 
@@ -92,7 +92,7 @@ namespace Library
         {
             if (ixml is Element)
             {
-                this.ListaElement.Add((Element)ixml);
+                this.ElementList.Add((Element)ixml);
             }
         }
 

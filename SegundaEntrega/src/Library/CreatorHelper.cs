@@ -30,8 +30,8 @@ namespace Library
                 this.fileName = value;
             }
         }
-        
-        List<Tag> listtags = new List<Tag>();
+
+        List<Tag> listTags = new List<Tag>();
 
         /// <summary>
         /// llama a los metodos de la clase Finder
@@ -43,8 +43,8 @@ namespace Library
 
             //Busca las tags y sus correspondientes atributos
             Finder finder = new Finder();
-            this.listtags = finder.Find(content);
-            return this.listtags;
+            this.listTags = finder.Find(content);
+            return this.listTags;
         }
 
         /// <summary>

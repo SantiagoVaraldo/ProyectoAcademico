@@ -55,7 +55,7 @@ namespace Library
         public void ObtainCantDestination(Word word)
         {
             int num = 0;
-            foreach (Element element in word.Screen.ListaElement)
+            foreach (Element element in word.Screen.ElementList)
             {
                 if (element is BlankSpace)
                 {

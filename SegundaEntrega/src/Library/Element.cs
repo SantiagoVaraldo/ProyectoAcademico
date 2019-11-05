@@ -60,7 +60,7 @@ namespace Library
             }
             set
             {
-                if (value!=null)
+                if (value != null)
                 {
                     this.positionY = value;
                 }
@@ -76,7 +76,7 @@ namespace Library
             }
             set
             {
-                if (value != null) //Hay que revisar este set y el de PositionY.
+                if (value != null)
                 {
                     this.positionX = value;
                 }
@@ -121,7 +121,7 @@ namespace Library
         {
             get
             {
-                return this.screen; 
+                return this.screen;
             }
             set
             {
@@ -131,7 +131,7 @@ namespace Library
                 }
             }
         }
-        
+
         private string imagePath;
         public string ImagePath
         {
@@ -141,7 +141,7 @@ namespace Library
             }
             set
             {
-                if (value != "") 
+                if (value != "")
                 {
                     this.imagePath = value;
                 }

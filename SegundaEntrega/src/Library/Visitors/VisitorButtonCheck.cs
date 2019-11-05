@@ -36,9 +36,9 @@ namespace Library
 
                   public override void Visit(Level level)
                   {
-                           if (level.ListaScreen.Count >= 1)
+                           if (level.ScreenList.Count >= 1)
                            {
-                                    this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
+                                    this.lastScreen = level.ScreenList[level.ScreenList.Count - 1];
                            }
 
                            string name = tag.AttributeList["Name"].Value;

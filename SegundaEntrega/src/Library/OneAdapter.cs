@@ -7,8 +7,8 @@ using Proyecto.Common;
 /// </summary>
 namespace Library
 {
-         public class OneAdapter
-         {
-                  public static IMainViewAdapter Adapter { get; set; } 
-         }
+    public class OneAdapter
+    {
+        public static IMainViewAdapter Adapter { get; set; }
+    }
 }
