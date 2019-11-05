@@ -4,7 +4,7 @@ using Library;
 using System.Collections.Generic;
 using ExerciseOne;
 using Attribute = ExerciseOne.Attribute;
- /* 
+ /*
 namespace Tests
 {
          public class CreatorTests
@@ -42,10 +42,10 @@ namespace Tests
                            string NameScreenExpected = "Screen";
                            string NameElementExpected = "ImageBanana";
 
-                           Assert.Equal(Creator.world.Name, NameWorldExpected);
-                           Assert.Equal(Creator.world.ListLevel[0].Name, NameLevelExpected);
-                           Assert.Equal(Creator.world.ListLevel[0].ListaScreen[0].Name, NameScreenExpected);
-                           Assert.Equal(Creator.world.ListLevel[0].ListaScreen[0].ListaElement[0].Name, NameElementExpected);
+                           Assert.Equal(Creator.World.Name, NameWorldExpected);
+                           Assert.Equal(Creator.World.ListLevel[0].Name, NameLevelExpected);
+                           Assert.Equal(Creator.World.ListLevel[0].ListaScreen[0].Name, NameScreenExpected);
+                           Assert.Equal(Creator.World.ListLevel[0].ListaScreen[0].ListaElement[0].Name, NameElementExpected);
                   }
          }
 }

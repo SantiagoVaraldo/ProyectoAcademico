@@ -1,18 +1,24 @@
-using System;
-using Proyecto.Common;
-using Library;
-using System.Collections.Generic;
+//--------------------------------------------------------------------------------
+// <copyright file="Builder.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
 
-/// <summary>
-/// NOMBRE: Builder.
-/// DESCRIPCION: contiene un IMainvieadapter, contiene un metodo build que crea el mundo en unity a partir del World.
-/// POLIMORFISMO: cuando se recorre la lista de niveles del World, se hace element.Render(), en este momento se hace 
-/// uso del polimorfismo ya que no se sabe cual es el tipo de elemento, simplemente se renderiza el elemento de la 
-/// forma que corresponda sin preguntar por el tipo del elemento.
-/// COLABORACIONES: Colabora con la clase World y la interfaz IMainviewadapter y es de tipo IBuilder ya que debe conocer un objeto de tipo World.
-/// </summary>
+using System;
+using System.Collections.Generic;
+using Library;
+using Proyecto.Common;
+
 namespace Proyecto.StudentsCode
 {
+    /// <summary>
+    /// NOMBRE: Builder.
+    /// DESCRIPCION: contiene un IMainvieadapter, contiene un metodo build que crea el mundo en unity a partir del World.
+    /// POLIMORFISMO: cuando se recorre la lista de niveles del World, se hace element.Render(), en este momento se hace
+    /// uso del polimorfismo ya que no se sabe cual es el tipo de elemento, simplemente se renderiza el elemento de la
+    /// forma que corresponda sin preguntar por el tipo del elemento.
+    /// COLABORACIONES: Colabora con la clase World y la interfaz IMainviewadapter y es de tipo IBuilder ya que debe conocer un objeto de tipo World.
+    /// </summary>
     public class Builder : IBuilder
     {
         private IMainViewAdapter adapter;
@@ -21,16 +27,14 @@ namespace Proyecto.StudentsCode
         private string nextPageName;
 
         /// <summary>
-        /// metodo que crea el mundo en Unity
+        /// metodo que crea el mundo en Unity.
         /// </summary>
-        /// <param name="providedAdapter"> recibe un IMainViewAdapter para crear el mundo </param>
-
+        /// <param name="providedAdapter"> recibe un IMainViewAdapter para crear el mundo. </param>
         public void Build(IMainViewAdapter providedAdapter)
         {
-
             this.adapter = providedAdapter ?? throw new ArgumentNullException(nameof(providedAdapter));
 
-            OneAdapter.Adapter = adapter;
+            OneAdapter.Adapter = this.adapter;
 
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
 
@@ -41,23 +45,21 @@ namespace Proyecto.StudentsCode
 
             Creator creator = new Creator();
             creator.Create();
-            World world = Creator.world;
+            World world = Creator.World;
 
             foreach (Level level in world.ListLevel)
             {
                 foreach (Screen screen in level.ListaScreen)
                 {
                     this.nextPageName = this.adapter.AddPage();
-                    Creator.listPages.Add(this.nextPageName);  // agrego esto
+                    Creator.ListPages.Add(this.nextPageName);  // agrego esto
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
-                    //this.AfterBuildShowPage(this.nextPageName);   
 
+                    // this.AfterBuildShowPage(this.nextPageName);
                     foreach (Element element in screen.ListaElement)
                     {
                         element.Render(this.adapter);
                     }
-                    //this.nextPageName = this.adapter.AddPage();
-                    //this.adapter.ChangeLayout(Layout.Grid);
                 }
             }
         }
@@ -66,7 +68,7 @@ namespace Proyecto.StudentsCode
         {
             this.adapter.ShowPage(this.firstPageName);
         }
-        
+
         public void AfterBuildShowPage(string page)
         {
             this.adapter.ShowPage(page);
@@ -75,19 +77,22 @@ namespace Proyecto.StudentsCode
         private void GoToFirstPage()
         {
             this.adapter.ShowPage(this.firstPageName);
-            //this.adapter.PlayAudio("Speech On.wav");
+
+            // this.adapter.PlayAudio("Speech On.wav");
         }
 
         private void GoToNextPage(string name)
         {
-            this.adapter.ShowPage(Creator.listPages[0]); // cambiar a Creator.listPages
-            //this.adapter.PlayAudio("Speech Off.wav");
+            this.adapter.ShowPage(Creator.ListPages[0]);
+
+            // cambiar a Creator.ListPages
         }
 
         private void OnClick()
         {
             this.adapter.Debug($"Button clicked!");
-            //this.adapter.ShowPage("MainPage");
+
+            // this.adapter.ShowPage("MainPage");
         }
     }
 }

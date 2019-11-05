@@ -1,39 +1,46 @@
-﻿using System;
+﻿//--------------------------------------------------------------------------------
+// <copyright file="World.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
-/// <summary>
-/// NOMBRE: World.
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos, implementa la interfaz
-/// IContainer.
-/// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-/// pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre, tamaño del World y una lista con
-/// los niveles pertinentes a ese World.
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
-/// de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
-/// COLABORACIONES: Colabora con Level ya que conoce una lista de Level y con la interfaz IContainer.
-/// </summary>
 
 namespace Library
 {
-    // crear una clase singleton para aplicar el patron con World
+    /// <summary>
+    /// NOMBRE: World.
+    /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos, implementa la interfaz
+    /// IContainer.
+    /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
+    /// pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre, tamaño del World y una lista con
+    /// los niveles pertinentes a ese World.
+    /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+    /// de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
+    /// COLABORACIONES: Colabora con Level ya que conoce una lista de Level y con la interfaz IContainer.
+    /// </summary>
     public class World : IContainer
     {
-        public World(string Name, int Length, int Width)
-        {
-            this.Name = Name;
-            this.Length = Length;
-            this.Width = Width;
-        }
-
         private string name;
         private int? length;
         private int? width;
         private List<Level> listlevel = new List<Level>();
+
+        public World(string name, int length, int width)
+        {
+            this.Name = name;
+            this.Length = length;
+            this.Width = width;
+        }
+
         public string Name
         {
             get
             {
                 return this.name;
             }
+
             set
             {
                 if (!string.IsNullOrEmpty(value))
@@ -49,13 +56,13 @@ namespace Library
             {
                 return this.length;
             }
+
             set
             {
                 if (value > 0)
                 {
                     this.length = value;
                 }
-
             }
         }
 
@@ -65,13 +72,13 @@ namespace Library
             {
                 return this.width;
             }
+
             set
             {
                 if (value > 0)
                 {
                     this.width = value;
                 }
-
             }
         }
 
@@ -81,17 +88,13 @@ namespace Library
             {
                 return this.listlevel;
             }
-            set
-            {
-                this.listlevel = value;
-            }
         }
 
         /// <summary>
-        /// metodo de la interfaz IContainer donde agrega un elemento de tipo 
-        /// IXML en este caso un level a la lista de niveles
+        /// metodo de la interfaz IContainer donde agrega un elemento de tipo
+        /// IXML en este caso un level a la lista de niveles.
         /// </summary>
-        /// <param name="ixml"> recibe un IXML para agregar a la lista </param>
+        /// <param name="ixml"> recibe un IXML para agregar a la lista. </param>
         public void Add(IXML ixml)
         {
             if (ixml is Level)
@@ -101,9 +104,9 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo implementado para la utilizacion del patron Visitor
+        /// metodo implementado para la utilizacion del patron Visitor.
         /// </summary>
-        /// <param name="visitor"> instancia de Visitor </param>
+        /// <param name="visitor"> instancia de Visitor. </param>
         public void Accept(Visitor visitor)
         {
             visitor.Visit(this);

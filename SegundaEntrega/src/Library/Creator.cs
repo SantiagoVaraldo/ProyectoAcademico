@@ -1,26 +1,52 @@
+//--------------------------------------------------------------------------------
+// <copyright file="Creator.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Collections.Generic;
 using ExerciseOne;
-
-/// <summary>
-/// NOMBRE: Creator
-/// DESCRIPCION: Esta clase llama a los metodos de la clase CreatorHelper y crea la cadena de Pipes And Filters.
-/// PATRON CREATOR: el builder crea las instancias de los pipes and filters ya que es quien va a hacer uso de los mismos
-/// de forma cercana, cumple una de las condiciones necesarias para crear los objetos.
-/// </summary>
 
 namespace Library
 {
+    /// <summary>
+    /// NOMBRE: Creator
+    /// DESCRIPCION: Esta clase llama a los metodos de la clase CreatorHelper y crea la cadena de Pipes And Filters.
+    /// PATRON CREATOR: el builder crea las instancias de los pipes and filters ya que es quien va a hacer uso de los mismos
+    /// de forma cercana, cumple una de las condiciones necesarias para crear los objetos.
+    /// </summary>
     public class Creator
     {
-        public static World world;
-        public static List<string> listPages = new List<string>(); // agregue esto
+        private static World world;
+        private static List<string> listPages = new List<string>(); // agregue esto
         private List<Tag> listtags = new List<Tag>();
 
+        public static World World
+        {
+            get
+            {
+                return Creator.world;
+            }
+
+            set
+            {
+                Creator.world = value;
+            }
+        }
+
+        public static List<string> ListPages
+        {
+            get
+            {
+                return Creator.listPages;
+            }
+        }
+
         /// <summary>
-        /// crea la cadena de pipes and filters 
+        /// crea la cadena de pipes and filters.
         /// </summary>
         public void Create()
         {
@@ -35,7 +61,8 @@ namespace Library
             IFilterConditional filterlevel = new FilterLevel();
             IFilterConditional filterscreen = new FilterScreen();
             IFilterConditional filterbuttonnextpage = new FilterButtonNextPage();
-            // IFilterConditional filterExit = new FilterExit();
+
+            // IFilterConditional filterExitButton = new FilterExitButton();
             IFilterConditional filterbuttonsound = new FilterButtonSound();
             IFilterConditional filterbuttoncheck = new FilterButtonCheck();
             IFilterConditional filterimage = new FilterImage();
@@ -45,7 +72,7 @@ namespace Library
             IFilterConditional filterword = new FilterWord();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
-            // IPipe pipe11 = new PipeConditional(filterExit, pipenull, pipenull);
+            // IPipe pipe11 = new PipeConditional(filterExitButton, pipenull, pipenull);
             IPipe pipe10 = new PipeConditional(filterimage, pipenull, pipenull);
             IPipe pipe9 = new PipeConditional(filterword, pipenull, pipe10);
             IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipenull, pipe9);
@@ -58,7 +85,7 @@ namespace Library
             IPipe pipe1 = new PipeConditional(filterlevel, pipenull, pipe2);
             IPipe pipe0 = new PipeConditional(filterworld, pipenull, pipe1);
 
-            foreach (Tag tag in listtags)
+            foreach (Tag tag in this.listtags)
             {
                 pipe0.Send(tag);
             }

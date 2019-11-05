@@ -1,60 +1,89 @@
+//--------------------------------------------------------------------------------
+// <copyright file="VisitorButtonSound.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
-using Proyecto.Common;
 using ExerciseOne;
+using Proyecto.Common;
 
 namespace Library
 {
-         public class VisitorSound : Visitor
-         {
-                  private Tag tag;
+    /// <summary>
+    /// NOMBRE: VisitorButtonSound.
+    /// DESCRIPCION: obtiene el ultimo Level del World, la ultima Screen del Level y crea un objeto de tipo ButtonSound.
+    /// VISITOR: hereda de la clase Visitor, es parte de la implementacion del patron mencionado en Visitor.
+    /// SRP: esta clase implementa una unica responsabilidad, crear objetos de tipo ButtonSound, su unica razon de cambio
+    /// es modificar la manera de instanciar dichos objetos.
+    /// COLABORACIONES: colabora con la clase Visitor, ya que hereda de la misma, colabora con la clase Tag ya que conoce
+    /// un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
+    /// con ButtonSound ya que va a instanciar dichos objetos.
+    /// </summary>
+    public class VisitorButtonSound : Visitor
+    {
+        private Tag tag;
 
-                  public Tag Tag
-                  {
-                           get
-                           {
-                                    return this.tag;
-                           }
-                           set
-                           {
-                                    this.tag = value;
-                           }
-                  }
+        public VisitorButtonSound(Tag tag)
+        {
+            this.Tag = tag;
+        }
 
-                  public VisitorSound(Tag Tag)
-                  {
-                           this.Tag = Tag;
-                  }
+        public Tag Tag
+        {
+            get
+            {
+                return this.tag;
+            }
 
-                  public override void Visit(World world)
-                  {
-                           if (world.ListLevel.Count >= 1)
-                           {
-                                    this.lastLevel = world.ListLevel[world.ListLevel.Count - 1];
-                                    this.lastLevel.Accept(this);
-                           }
-                  }
+            set
+            {
+                this.tag = value;
+            }
+        }
 
-                  public override void Visit(Level level)
-                  {
-                           if (level.ListaScreen.Count >= 1)
-                           {
-                                    this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
-                           }
+        /// <summary>
+        /// metodo para acceder al world.
+        /// </summary>
+        /// <param name="world"> objeto world al que accede. </param>
+        public override void Visit(World world)
+        {
+            if (world.ListLevel.Count >= 1)
+            {
+                this.LastLevel = world.ListLevel[world.ListLevel.Count - 1];
+                this.LastLevel.Accept(this);
+            }
+        }
 
-                           string name = tag.ListaAtributos["Name"].Valor;
-                           int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
-                           int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
-                           int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                           int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                           string imagePath = tag.ListaAtributos["ImagePath"].Valor;
-                           string soundPath = tag.ListaAtributos["SoundPath"].Valor;
+        /// <summary>
+        /// metodo para acceder al level.
+        /// </summary>
+        /// <param name="level"> objeto level al que se accede. </param>
+        public override void Visit(Level level)
+        {
+            if (level.ListaScreen.Count >= 1)
+            {
+                this.LastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
+            }
 
-                           IXML button = new ButtonSound(name, positionY, positionX, length, width, this.lastScreen, imagePath, soundPath);
-                           this.lastScreen.Add(button);
-                  }
+            string name = this.tag.ListaAtributos["Name"].Valor;
+            int positionY = Int32.Parse(this.tag.ListaAtributos["PositionY"].Valor);
+            int positionX = Int32.Parse(this.tag.ListaAtributos["PositionX"].Valor);
+            int length = Int32.Parse(this.tag.ListaAtributos["Length"].Valor);
+            int width = Int32.Parse(this.tag.ListaAtributos["Width"].Valor);
+            string imagePath = this.tag.ListaAtributos["ImagePath"].Valor;
+            string soundPath = this.tag.ListaAtributos["SoundPath"].Valor;
 
-                  public override void Visit(Screen screen)
-                  {
-                  }
-         }
+            IXML button = new ButtonSound(name, positionY, positionX, length, width, this.LastScreen, imagePath, soundPath);
+            this.LastScreen.Add(button);
+        }
+
+        /// <summary>
+        /// metodo para acceder a la screen.
+        /// </summary>
+        /// <param name="screen"> objeto Screen a la que se accede. </param>
+        public override void Visit(Screen screen)
+        {
+        }
+    }
 }

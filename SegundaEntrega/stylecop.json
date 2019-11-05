@@ -6,8 +6,8 @@
       "copyrightText": "Copyright(c) Programación II. Derechos reservados.",
       "headerDecoration": "--------------------------------------------------------------------------",
       "documentationCulture": "es-MX",
-      "documentPrivateFields": true,
-      "documentPrivateElements":  true
+      "documentPrivateFields": false,
+      "documentPrivateElements":  false
     },
     "orderingRules": {
       "usingDirectivesPlacement":"outsideNamespace"

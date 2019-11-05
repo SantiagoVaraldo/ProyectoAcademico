@@ -1,20 +1,21 @@
 //--------------------------------------------------------------------------------
-// <copyright file="FilterLevel.cs" company="Universidad Católica del Uruguay">
+// <copyright file="FilterExitButton.cs" company="Universidad Católica del Uruguay">
 // Copyright (c) Programación II. Derechos reservados.
 // </copyright>
 //--------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using ExerciseOne;
 using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
     /// <summary>
-    /// NOMBRE: FilterLevel.
-    /// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Level.
-    /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Level en caso
+    /// NOMBRE: FilterExitButton.
+    /// DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ExitButton.
+    /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ExitButton en caso
     /// de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
     /// PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
     /// PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
@@ -26,7 +27,7 @@ namespace Library
     /// modificacion ya que no se debera modificar los pipes and filters ya creados.
     /// CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
     /// </summary>
-    public class FilterLevel : IFilterConditional
+    public class FilterExitButton : IFilterConditional
     {
         private bool result;
 
@@ -37,26 +38,36 @@ namespace Library
         }
 
         /// <summary>
-        /// filtra un Tag recibido.
+        /// filtra el Tag recibido.
         /// </summary>
-        /// <param name="tag">el Tag a filtrar.</param>
+        /// <param name="tag">Tag a filtrar.</param>
         /// <returns>retorna el Tag.</returns>
         public Tag Filter(Tag tag)
         {
-            if (tag.Name == "Level")
+            if (tag.Name == "ExitButton")
             {
                 this.Result = true;
 
                 string name;
-                World world;
+                int positionY, positionX;
+                int length, width;
+                string imagePath;
 
                 try
                 {
-                    name = tag.ListaAtributos["Name"].Valor;
-                    world = Creator.World;
+                    Visitor visitor = new VisitorWorld();
+                    visitor.Visit(Creator.World);
 
-                    IXML level = new Level(name, world);
-                    Creator.World.Add(level);
+                    name = tag.ListaAtributos["Name"].Valor;
+                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
+                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
+                    length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
+                    width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+
+                    imagePath = tag.ListaAtributos["ImagePath"].Valor;
+
+                    IXML button = new ExitButton(name, positionY, positionX, length, width, visitor.LastScreen, imagePath);
+                    visitor.LastScreen.Add(button);
                 }
                 catch (NotFoundOnXMLException)
                 {

@@ -31,9 +31,9 @@ namespace Tests
             int LengthExpected = 100;
             int WidthExpected = 100;
 
-            Assert.Equal(Creator.world.Name, NameExpected);
-            Assert.Equal(Creator.world.Length, LengthExpected);
-            Assert.Equal(Creator.world.Width, WidthExpected);
+            Assert.Equal(Creator.World.Name, NameExpected);
+            Assert.Equal(Creator.World.Length, LengthExpected);
+            Assert.Equal(Creator.World.Width, WidthExpected);
         }
         [Fact]
         public void FilterLevelTest()
@@ -51,10 +51,10 @@ namespace Tests
             pipe0.Send(tag);
 
             string NameExpected = "level1";
-            World world = Creator.world;
+            World world = Creator.World;
 
-            Assert.Equal(Creator.world.ListLevel[0].Name, NameExpected);
-            Assert.Equal(Creator.world.ListLevel[0].World, world);
+            Assert.Equal(Creator.World.ListLevel[0].Name, NameExpected);
+            Assert.Equal(Creator.World.ListLevel[0].World, world);
         }
         [Fact]
         public void FilterScreen()
@@ -71,7 +71,7 @@ namespace Tests
             pipe0.Send(tag);
 
             string NameExpected = "screen1";
-            Level level = Creator.world.ListLevel[0];
+            Level level = Creator.World.ListLevel[0];
 
             Assert.Equal(level.ListaScreen[0].Name, NameExpected);
             Assert.Equal(level.ListaScreen[0].Level, level);
@@ -101,7 +101,7 @@ namespace Tests
             pipe0.Send(tag);
 
             string NameExpected = "image1";
-            Level level = Creator.world.ListLevel[0];
+            Level level = Creator.World.ListLevel[0];
             Screen screen = level.ListaScreen[0];
             int LengthExpected = 100;
             int WidthExpected = 100;

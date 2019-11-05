@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------
-// <copyright file="VisitorDragAndDropDestination.cs" company="Universidad Católica del Uruguay">
+// <copyright file="VisitorExitButton.cs" company="Universidad Católica del Uruguay">
 // Copyright (c) Programación II. Derechos reservados.
 // </copyright>
 //--------------------------------------------------------------------------------
@@ -11,21 +11,21 @@ using Proyecto.Common;
 namespace Library
 {
     /// <summary>
-    /// NOMBRE: VisitorDragAndDropDestination.
+    /// NOMBRE: VisitorExitButton.
     /// DESCRIPCION: obtiene el ultimo Level del World, la ultima Screen del Level y crea un objeto de tipo
-    /// DragAndDropDestination.
+    /// ExitButton.
     /// VISITOR: hereda de la clase Visitor, es parte de la implementacion del patron mencionado en Visitor.
-    /// SRP: esta clase implementa una unica responsabilidad, crear objetos de tipo DragAndDropDestination,
+    /// SRP: esta clase implementa una unica responsabilidad, crear objetos de tipo ExitButton,
     /// su unica razon de cambio es modificar la manera de instanciar dichos objetos.
     /// COLABORACIONES: colabora con la clase Visitor, ya que hereda de la misma, colabora con la clase Tag ya que conoce
     /// un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
-    /// con DragAndDropDestination ya que va a instanciar dichos objetos.
+    /// con ExitButton ya que va a instanciar dichos objetos.
     /// </summary>
-    public class VisitorDragAndDropDestination : Visitor
+    public class VisitorExitButton : Visitor
     {
         private Tag tag;
 
-        public VisitorDragAndDropDestination(Tag tag)
+        public VisitorExitButton(Tag tag)
         {
             this.Tag = tag;
         }
@@ -74,8 +74,8 @@ namespace Library
             int width = Int32.Parse(this.tag.ListaAtributos["Width"].Valor);
             string imagePath = this.tag.ListaAtributos["ImagePath"].Valor;
 
-            BlankSpace blankSpace = new BlankSpace(name, positionY, positionX, length, width, this.LastScreen, imagePath);
-            this.LastScreen.Add(blankSpace);
+            IXML exitButton = new ExitButton(name, positionY, positionX, length, width, this.LastScreen, imagePath);
+            this.LastScreen.Add(exitButton);
         }
 
         /// <summary>
