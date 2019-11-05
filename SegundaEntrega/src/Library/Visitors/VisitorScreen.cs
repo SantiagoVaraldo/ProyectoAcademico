@@ -32,7 +32,7 @@ namespace Library
                                     this.lastLevel = world.ListLevel[world.ListLevel.Count - 1];
                            }
 
-                           string name = tag.ListaAtributos["Name"].Valor;
+                           string name = tag.AttributeList["Name"].Value;
                            
                            Screen screen = new Screen(name, this.lastLevel);
                            this.lastLevel.Add(screen);

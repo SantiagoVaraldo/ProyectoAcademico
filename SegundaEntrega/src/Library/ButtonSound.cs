@@ -21,19 +21,19 @@ namespace Library
         : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
             this.SoundPath = SoundPath;
-            this.state = false;
+            this.State = false;
         }
 
         private bool state;
         public bool State
         {
-            get 
+            get
             {
                 return this.state;
             }
-            set 
+            set
             {
-                this.state = value;        
+                this.state = value;
             }
         }
 

@@ -18,11 +18,12 @@ namespace Library
 {
     public class DragAndDropSource : Element
     {
-        public string sourceCellImageId;
         public DragAndDropSource(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
         {
         }
+
+        public string sourceCellImageId;
 
         /// <summary>
         /// metodo que permite al objeto de tipo DragAndDropSource renderizarce a si mismo en Unity

@@ -36,19 +36,19 @@ namespace Library
 
                   public override void Visit(Level level)
                   {
-                           if (level.ListaScreen.Count >= 1)
+                           if (level.ScreenList.Count >= 1)
                            {
-                                    this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
+                                    this.lastScreen = level.ScreenList[level.ScreenList.Count - 1];
                            }
 
-                           string name = tag.ListaAtributos["Name"].Valor;
-                           int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
-                           int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
-                           int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                           int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                           bool check = Convert.ToBoolean(tag.ListaAtributos["Check"].Valor);
-                           string imagePath = tag.ListaAtributos["ImagePath"].Valor;
-                           string imagePath2 = tag.ListaAtributos["ImagePath2"].Valor;
+                           string name = tag.AttributeList["Name"].Value;
+                           int positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
+                           int positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
+                           int length = Int32.Parse(tag.AttributeList["Length"].Value);
+                           int width = Int32.Parse(tag.AttributeList["Width"].Value);
+                           bool check = Convert.ToBoolean(tag.AttributeList["Check"].Value);
+                           string imagePath = tag.AttributeList["ImagePath"].Value;
+                           string imagePath2 = tag.AttributeList["ImagePath2"].Value;
 
                            IXML button = new ButtonCheck(name, positionY, positionX, length, width, this.lastScreen, imagePath, imagePath2, check);
                            this.lastScreen.Add(button);

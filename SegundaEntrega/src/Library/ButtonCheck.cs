@@ -24,7 +24,7 @@ namespace Library
             this.State = false;
             this.ImagePath2 = ImagePath2;
         }
-        
+
         private bool state;
         public bool State
         {
@@ -77,7 +77,7 @@ namespace Library
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
             EngineLvl3 engineLvl3 = Singleton<EngineLvl3>.Instance;
             engineLvl3.Subscribe(generalEngine);
-            OneAdapter.Adapter.Debug($"Button clicked!"); 
+            OneAdapter.Adapter.Debug($"Button clicked!");
             engineLvl3.Check(this);
         }
 

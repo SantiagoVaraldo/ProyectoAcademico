@@ -18,6 +18,13 @@ namespace Library
 {
     public class DragAndDropItem : Element
     {
+        public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlankSpace destination)
+        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        {
+            this.Destination = destination;
+            this.Source = source;
+        }
+
         private DragAndDropSource source;
         public DragAndDropSource Source
         {
@@ -30,7 +37,7 @@ namespace Library
                 this.source = value;
             }
         }
-        
+
         private BlankSpace destination;
         public BlankSpace Destination
         {
@@ -42,13 +49,6 @@ namespace Library
             {
                 this.destination = value;
             }
-        }
-
-        public DragAndDropItem(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlankSpace destination)
-        :base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
-        {
-            this.Destination = destination;
-            this.Source = source;
         }
     }
 }

@@ -49,9 +49,9 @@ namespace Library
                 try
                 {
 
-                    name = tag.ListaAtributos["Name"].Valor;
-                    length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                    width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
+                    name = tag.AttributeList["Name"].Value;
+                    length = Int32.Parse(tag.AttributeList["Length"].Value);
+                    width = Int32.Parse(tag.AttributeList["Width"].Value);
 
                     world = new World(name, length, width);
                     Creator.world = world;
@@ -59,7 +59,7 @@ namespace Library
                 }
                 catch (NotFoundOnXML)
                 {
-                    
+
                     //Mostrar en pantalla que no se encontro lo deseado en xml
                 }
             }

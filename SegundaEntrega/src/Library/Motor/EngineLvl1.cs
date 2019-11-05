@@ -42,7 +42,7 @@ namespace Library
         /// <param name="letter"> letra que fue clickeada </param>
         public void NextLevel(Letter letter)
         {
-            letter.Screen.levelCompleted();
+            letter.Screen.LevelCompleted();
             foreach (IObserver observer in observers)
             {
                 observer.Update();

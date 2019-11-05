@@ -47,14 +47,14 @@ namespace Library
                 {
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.world);
-                    name = tag.ListaAtributos["Name"].Valor;
+                    name = tag.AttributeList["Name"].Value;
 
                     IXML screen = new Screen(name, visitor.lastLevel);
                     visitor.lastLevel.Add(screen);
                 }
                 catch (System.Exception)
                 {
-                    
+
                     //Mostrar en pantalla que no se encontro lo deseado en xml
                 }
             }

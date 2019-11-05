@@ -42,10 +42,10 @@ namespace Library
 
                 string name;
                 World world;
-                
+
                 try
                 {
-                    name = tag.ListaAtributos["Name"].Valor;
+                    name = tag.AttributeList["Name"].Value;
                     world = Creator.world;
 
                     IXML level = new Level(name, world);
@@ -53,7 +53,7 @@ namespace Library
                 }
                 catch (System.Exception)
                 {
-                    
+
                     //Mostrar en pantalla que no se encontro lo deseado en xml
                 }
             }

@@ -13,17 +13,17 @@ using System.Collections.Generic;
 
 namespace Library
 {
-         public class GeneralEngine : IObserver
-         {
-             private int actualPage = 0;
-             
-             /// <summary>
-             /// metodo que actualiza la pagina, pasa a la siguiente pantalla
-             /// </summary>
-             public void Update()
-             {
-                OneAdapter.Adapter.ShowPage(Creator.listPages[actualPage+1]);
-                this.actualPage += 1;
-             }
-         }
+    public class GeneralEngine : IObserver
+    {
+        private int actualPage = 0;
+
+        /// <summary>
+        /// metodo que actualiza la pagina, pasa a la siguiente pantalla
+        /// </summary>
+        public void Update()
+        {
+            OneAdapter.Adapter.ShowPage(Creator.listPages[actualPage + 1]);
+            this.actualPage += 1;
+        }
+    }
 }

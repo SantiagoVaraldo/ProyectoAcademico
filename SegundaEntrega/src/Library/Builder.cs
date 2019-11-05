@@ -45,14 +45,14 @@ namespace Proyecto.StudentsCode
 
             foreach (Level level in world.ListLevel)
             {
-                foreach (Screen screen in level.ListaScreen)
+                foreach (Screen screen in level.ScreenList)
                 {
                     this.nextPageName = this.adapter.AddPage();
                     Creator.listPages.Add(this.nextPageName);  // agrego esto
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
                     //this.AfterBuildShowPage(this.nextPageName);   
 
-                    foreach (Element element in screen.ListaElement)
+                    foreach (Element element in screen.ElementList)
                     {
                         element.Render(this.adapter);
                     }
@@ -66,7 +66,7 @@ namespace Proyecto.StudentsCode
         {
             this.adapter.ShowPage(this.firstPageName);
         }
-        
+
         public void AfterBuildShowPage(string page)
         {
             this.adapter.ShowPage(page);

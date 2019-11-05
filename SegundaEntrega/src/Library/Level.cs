@@ -26,7 +26,7 @@ namespace Library
 
         private string name;
         private World world;
-        private List<Screen> listascreen = new List<Screen>();
+        private List<Screen> screenList = new List<Screen>();
         public string Name
         {
             get
@@ -57,18 +57,18 @@ namespace Library
             }
         }
 
-        public List<Screen> ListaScreen
+        public List<Screen> ScreenList
         {
             get
             {
-                return this.listascreen;
+                return this.screenList;
             }
             set
             {
-                this.listascreen = value;
+                this.screenList = value;
             }
         }
-        
+
         /// <summary>
         /// metodo de la interfaz IContainer donde agrega un elemento de tipo 
         /// IXML en este caso una Screen a la lista de Screen
@@ -78,7 +78,7 @@ namespace Library
         {
             if (ixml is Screen)
             {
-                this.ListaScreen.Add((Screen)ixml);
+                this.ScreenList.Add((Screen)ixml);
             }
         }
 

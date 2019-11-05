@@ -18,7 +18,7 @@ namespace ExerciseOne
     /// </summary>
     public class Formater
     {
-        public List<string> lista_formated = new List<string>();
+        public List<string> formatedList = new List<string>();
         /// <summary>
         /// metodo que crea una lista formateada para ser impresa.
         /// </summary>
@@ -28,18 +28,18 @@ namespace ExerciseOne
         {
             foreach (Tag t in tags)
             {
-                lista_formated.Add(t.Name);
-                if (t.ListaAtributos != null)
+                formatedList.Add(t.Name);
+                if (t.AttributeList != null)
                 {
-                    foreach (Attribute att in t.ListaAtributos.Values)
+                    foreach (Attribute att in t.AttributeList.Values)
                     {
-                        string attributeInfo = att.Clave + "=" + att.Valor;
-                        lista_formated.Add(attributeInfo);
+                        string attributeInfo = att.Key + "=" + att.Value;
+                        formatedList.Add(attributeInfo);
                     }
                 }
 
             }
-            return lista_formated;
+            return formatedList;
         }
     }
 }

@@ -49,7 +49,7 @@ namespace Library
         {
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
             EngineLvl2 engineLvl2 = Singleton<EngineLvl2>.Instance;
-            engineLvl2.Subscribe(generalEngine); 
+            engineLvl2.Subscribe(generalEngine);
             engineLvl2.Check(this);
             OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
 
@@ -71,6 +71,11 @@ namespace Library
         public bool CheckPosition()
         {
             return this.PositionY == this.Destination.PositionY & this.PositionX == this.Destination.PositionX;
+        }
+
+        public bool CheckPositionReversed()
+        {
+            return this.PositionY != this.Destination.PositionY || this.PositionX != this.Destination.PositionX;
         }
     }
 }
