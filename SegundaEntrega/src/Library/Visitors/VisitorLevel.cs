@@ -47,7 +47,7 @@ namespace Library
         /// <param name="world"> objeto world al que accede. </param>
         public override void Visit(World world)
         {
-            string name = this.tag.ListaAtributos["Name"].Valor;
+            string name = this.tag.AttributeList["Name"].Value;
             Level level = new Level(name, world);
             world.Add(level);
         }

@@ -62,17 +62,17 @@ namespace Library
         /// <param name="level"> objeto level al que se accede. </param>
         public override void Visit(Level level)
         {
-            if (level.ListaScreen.Count >= 1)
+            if (level.ScreenList.Count >= 1)
             {
-                this.LastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
+                this.LastScreen = level.ScreenList[level.ScreenList.Count - 1];
             }
 
-            string name = this.tag.ListaAtributos["Name"].Valor;
-            int positionY = Int32.Parse(this.tag.ListaAtributos["PositionY"].Valor);
-            int positionX = Int32.Parse(this.tag.ListaAtributos["PositionX"].Valor);
-            int length = Int32.Parse(this.tag.ListaAtributos["Length"].Valor);
-            int width = Int32.Parse(this.tag.ListaAtributos["Width"].Valor);
-            string imagePath = this.tag.ListaAtributos["ImagePath"].Valor;
+            string name = this.tag.AttributeList["Name"].Value;
+            int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
+            int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
+            int length = Int32.Parse(this.tag.AttributeList["Length"].Value);
+            int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
+            string imagePath = this.tag.AttributeList["ImagePath"].Value;
 
             Image image = new Image(name, positionY, positionX, length, width, this.LastScreen, imagePath);
             this.LastScreen.Add(image);

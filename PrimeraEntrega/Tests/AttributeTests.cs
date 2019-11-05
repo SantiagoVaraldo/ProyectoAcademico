@@ -10,18 +10,18 @@ namespace Tests
         public void InvalidKey()
         {
             string expected = null;
-            string valor = "nombre";
-            Attribute attribute = new Attribute("", valor);
-            Assert.Equal(attribute.Clave, expected);
+            string value = "nombre";
+            Attribute attribute = new Attribute("", value);
+            Assert.Equal(attribute.Key, expected);
         }
 
         [Fact]
         public void InvalidValue()
         {
             string expected = null;
-            string clave = "clave";
-            Attribute attribute = new Attribute(clave, "");
-            Assert.Equal(attribute.Valor, expected);
+            string key = "key";
+            Attribute attribute = new Attribute(key, "");
+            Assert.Equal(attribute.Value, expected);
         }
         [Fact]
         public void ValidValueAndkey()
@@ -29,8 +29,8 @@ namespace Tests
             string ClaveExpected = "color";
             string ValorExpected = "rojo";
             Attribute attribute = new Attribute("color", "rojo");
-            Assert.Equal(attribute.Valor, ValorExpected);
-            Assert.Equal(attribute.Clave, ClaveExpected);
+            Assert.Equal(attribute.Value, ValorExpected);
+            Assert.Equal(attribute.Key, ClaveExpected);
         }
         [Fact]
         public void InvalidKeyAndValue()
@@ -38,8 +38,8 @@ namespace Tests
             string ClaveExpected = null;
             string ValorExpected = null;
             Attribute attribute = new Attribute("", "");
-            Assert.Equal(attribute.Valor, ValorExpected);
-            Assert.Equal(attribute.Clave, ClaveExpected);
+            Assert.Equal(attribute.Value, ValorExpected);
+            Assert.Equal(attribute.Key, ClaveExpected);
         }
     }
 }

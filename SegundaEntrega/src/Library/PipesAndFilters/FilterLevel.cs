@@ -52,7 +52,7 @@ namespace Library
 
                 try
                 {
-                    name = tag.ListaAtributos["Name"].Valor;
+                    name = tag.AttributeList["Name"].Value;
                     world = Creator.World;
 
                     IXML level = new Level(name, world);

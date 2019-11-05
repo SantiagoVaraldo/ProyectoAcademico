@@ -53,7 +53,7 @@ namespace Library
                 {
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.World);
-                    name = tag.ListaAtributos["Name"].Valor;
+                    name = tag.AttributeList["Name"].Value;
 
                     IXML screen = new Screen(name, visitor.LastLevel);
                     visitor.LastLevel.Add(screen);

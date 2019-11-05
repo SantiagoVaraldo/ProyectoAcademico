@@ -12,7 +12,7 @@ namespace Tests
         Level level;
         Screen screen;
         EngineLvl1 engine;
-        public void Create()
+        public EngineLvl1Test()
         {
             world = new World("world", 50, 50);
             level = new Level("level", world);
@@ -23,7 +23,6 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            Create();
             //string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
             Letter letter = new Letter("letter", 10, 10, 10, 10, screen, "path", true);
             engine.Check(letter);
@@ -37,7 +36,6 @@ namespace Tests
         [Fact]
         public void NegativeTest()
         {
-            Create();
             //string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
             Letter letter = new Letter("letter", 10, 10, 10, 10, screen, "path", false);
             engine.Check(letter);

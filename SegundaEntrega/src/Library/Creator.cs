@@ -22,7 +22,7 @@ namespace Library
     {
         private static World world;
         private static List<string> listPages = new List<string>(); // agregue esto
-        private List<Tag> listtags = new List<Tag>();
+        private List<Tag> listTags = new List<Tag>();
 
         public static World World
         {
@@ -50,42 +50,42 @@ namespace Library
         /// </summary>
         public void Create()
         {
-            CreatorHelper creatorhelper = new CreatorHelper(@"test.xml");
-            this.listtags = creatorhelper.GetListTags();
+            CreatorHelper creatorHelper = new CreatorHelper(@"test.xml");
+            this.listTags = creatorHelper.GetListTags();
 
             // creamos un pipeNull
-            IPipe pipenull = new PipeNull();
+            IPipe pipeNull = new PipeNull();
 
             // creamos instancias de todos los filtros que nos interecen
-            IFilterConditional filterworld = new FilterWorld();
-            IFilterConditional filterlevel = new FilterLevel();
-            IFilterConditional filterscreen = new FilterScreen();
-            IFilterConditional filterbuttonnextpage = new FilterButtonNextPage();
+            IFilterConditional filterWorld = new FilterWorld();
+            IFilterConditional filterLevel = new FilterLevel();
+            IFilterConditional filterScreen = new FilterScreen();
+            IFilterConditional filterButtonNextPage = new FilterButtonNextPage();
 
-            // IFilterConditional filterExitButton = new FilterExitButton();
-            IFilterConditional filterbuttonsound = new FilterButtonSound();
-            IFilterConditional filterbuttoncheck = new FilterButtonCheck();
-            IFilterConditional filterimage = new FilterImage();
-            IFilterConditional filterletter = new FilterLetter();
+            // IFilterConditional filterExit = new FilterExit();
+            IFilterConditional filterButtonSound = new FilterButtonSound();
+            IFilterConditional filterButtonCheck = new FilterButtonCheck();
+            IFilterConditional filterImage = new FilterImage();
+            IFilterConditional filterLetter = new FilterLetter();
             IFilterConditional filterDragAndDropSource = new FilterDragAndDropSource();
             IFilterConditional filterDragAndDropDestination = new FilterDragAndDropDestination();
-            IFilterConditional filterword = new FilterWord();
+            IFilterConditional filterWord = new FilterWord();
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
-            // IPipe pipe11 = new PipeConditional(filterExitButton, pipenull, pipenull);
-            IPipe pipe10 = new PipeConditional(filterimage, pipenull, pipenull);
-            IPipe pipe9 = new PipeConditional(filterword, pipenull, pipe10);
-            IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipenull, pipe9);
-            IPipe pipe7 = new PipeConditional(filterDragAndDropSource, pipenull, pipe8);
-            IPipe pipe6 = new PipeConditional(filterletter, pipenull, pipe7);
-            IPipe pipe5 = new PipeConditional(filterbuttoncheck, pipenull, pipe6);
-            IPipe pipe4 = new PipeConditional(filterbuttonsound, pipenull, pipe5);
-            IPipe pipe3 = new PipeConditional(filterbuttonnextpage, pipenull, pipe4);
-            IPipe pipe2 = new PipeConditional(filterscreen, pipenull, pipe3);
-            IPipe pipe1 = new PipeConditional(filterlevel, pipenull, pipe2);
-            IPipe pipe0 = new PipeConditional(filterworld, pipenull, pipe1);
+            // IPipe pipe11 = new PipeConditional(filterExit, pipeNull, pipeNull);
+            IPipe pipe10 = new PipeConditional(filterImage, pipeNull, pipeNull);
+            IPipe pipe9 = new PipeConditional(filterWord, pipeNull, pipe10);
+            IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipeNull, pipe9);
+            IPipe pipe7 = new PipeConditional(filterDragAndDropSource, pipeNull, pipe8);
+            IPipe pipe6 = new PipeConditional(filterLetter, pipeNull, pipe7);
+            IPipe pipe5 = new PipeConditional(filterButtonCheck, pipeNull, pipe6);
+            IPipe pipe4 = new PipeConditional(filterButtonSound, pipeNull, pipe5);
+            IPipe pipe3 = new PipeConditional(filterButtonNextPage, pipeNull, pipe4);
+            IPipe pipe2 = new PipeConditional(filterScreen, pipeNull, pipe3);
+            IPipe pipe1 = new PipeConditional(filterLevel, pipeNull, pipe2);
+            IPipe pipe0 = new PipeConditional(filterWorld, pipeNull, pipe1);
 
-            foreach (Tag tag in this.listtags)
+            foreach (Tag tag in this.listTags)
             {
                 pipe0.Send(tag);
             }

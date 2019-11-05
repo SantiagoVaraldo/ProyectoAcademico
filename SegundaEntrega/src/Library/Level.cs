@@ -25,7 +25,7 @@ namespace Library
     {
         private string name;
         private World world;
-        private List<Screen> listascreen = new List<Screen>();
+        private List<Screen> screenList = new List<Screen>();
 
         public Level(string name, World world)
         {
@@ -65,11 +65,11 @@ namespace Library
             }
         }
 
-        public List<Screen> ListaScreen
+        public List<Screen> ScreenList
         {
             get
             {
-                return this.listascreen;
+                return this.screenList;
             }
         }
 
@@ -82,7 +82,7 @@ namespace Library
         {
             if (ixml is Screen)
             {
-                this.ListaScreen.Add((Screen)ixml);
+                this.ScreenList.Add((Screen)ixml);
             }
         }
 

@@ -14,9 +14,9 @@ namespace Tests
         {
             World world1 = new World("world1", 50, 50);
             Level level = new Level("level1", world1);
-            string NameExpected = "level1";
+            string nameExpected = "level1";
             World WorldExpected = world1;
-            Assert.Equal(level.Name, NameExpected);
+            Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
 
 
@@ -26,9 +26,9 @@ namespace Tests
         {
             World world1 = new World("world1", 50, 50);
             Level level = new Level(null, world1);
-            string NameExpected = null;
+            string nameExpected = null;
             World WorldExpected = world1;
-            Assert.Equal(level.Name, NameExpected);
+            Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
         }
         [Fact]
@@ -36,9 +36,9 @@ namespace Tests
         {
             World world1 = new World("world1", 50, 50);
             Level level = new Level("level1", null);
-            string NameExpected = "level1";
+            string nameExpected = "level1";
             World WorldExpected = null;
-            Assert.Equal(level.Name, NameExpected);
+            Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
 
         }
@@ -48,9 +48,9 @@ namespace Tests
         {
             World world1 = new World("world1", 50, 50);
             Level level = new Level(null, null);
-            string NameExpected = null;
+            string nameExpected = null;
             World WorldExpected = null;
-            Assert.Equal(level.Name, NameExpected);
+            Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
 
         }

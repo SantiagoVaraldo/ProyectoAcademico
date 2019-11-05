@@ -23,21 +23,21 @@ namespace Tests
                 {
                     Assert.Equal(resultTags[i].Name, expectedTags[i].Name);
 
-                    if (resultTags[i].ListaAtributos != null & expectedTags[i].ListaAtributos != null)
+                    if (resultTags[i].AttributeList != null & expectedTags[i].AttributeList != null)
                     {
-                        Assert.Equal(resultTags[i].ListaAtributos.Count, expectedTags[i].ListaAtributos.Count);
+                        Assert.Equal(resultTags[i].AttributeList.Count, expectedTags[i].AttributeList.Count);
 
-                        if (resultTags[i].ListaAtributos.Count > 0 & expectedTags[i].ListaAtributos.Count > 0 &
-                            resultTags[i].ListaAtributos.Count == expectedTags[i].ListaAtributos.Count)
+                        if (resultTags[i].AttributeList.Count > 0 & expectedTags[i].AttributeList.Count > 0 &
+                            resultTags[i].AttributeList.Count == expectedTags[i].AttributeList.Count)
                         {
-                            foreach (KeyValuePair<string, Attribute> entry in resultTags[i].ListaAtributos)
+                            foreach (KeyValuePair<string, Attribute> entry in resultTags[i].AttributeList)
                             {
                                 //entry.key
-                                //resultTags[i].ListaAtributos[entry.key]
+                                //resultTags[i].AttributeList[entry.key]
                                 bool encontro;
                                 try
                                 {
-                                    Attribute attribute = expectedTags[i].ListaAtributos[entry.Key];
+                                    Attribute attribute = expectedTags[i].AttributeList[entry.Key];
                                     encontro = true;
                                 }
                                 catch (System.Exception)
@@ -79,24 +79,24 @@ namespace Tests
             Dictionary<string, Attribute> fontAttributes1 = new Dictionary<string, Attribute>();
             Attribute attribute1 = new Attribute("color", "blue");
             Attribute attribute2 = new Attribute("size", "3");
-            fontAttributes1.Add(attribute1.Clave, attribute1);
-            fontAttributes1.Add(attribute2.Clave, attribute2);
+            fontAttributes1.Add(attribute1.Key, attribute1);
+            fontAttributes1.Add(attribute2.Key, attribute2);
             expectedTags.Add(new Tag("font", fontAttributes1));
 
             Dictionary<string, Attribute> inputAttributes = new Dictionary<string, Attribute>();
             Attribute attribute3 = new Attribute("type", "text");
             Attribute attribute4 = new Attribute("name", "nombre");
             Attribute attribute5 = new Attribute("maxlength", "8");
-            inputAttributes.Add(attribute3.Clave, attribute3);
-            inputAttributes.Add(attribute4.Clave, attribute4);
-            inputAttributes.Add(attribute5.Clave, attribute5);
+            inputAttributes.Add(attribute3.Key, attribute3);
+            inputAttributes.Add(attribute4.Key, attribute4);
+            inputAttributes.Add(attribute5.Key, attribute5);
             expectedTags.Add(new Tag("input", inputAttributes));
 
             expectedTags.Add(new Tag("br"));
 
             Dictionary<string, Attribute> fontAttributes2 = new Dictionary<string, Attribute>();
             Attribute attribute6 = new Attribute("size", "2");
-            fontAttributes2.Add(attribute6.Clave, attribute6);
+            fontAttributes2.Add(attribute6.Key, attribute6);
             expectedTags.Add(new Tag("font", fontAttributes2));
             FinderTests.ComparatorMethod(input, expectedTags);
         }
@@ -118,24 +118,24 @@ namespace Tests
             Dictionary<string, Attribute> fontAttributes1 = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("color", "blue");
             Attribute attribute1 = new Attribute("size", "3");
-            fontAttributes1.Add(attribute.Clave, attribute);
-            fontAttributes1.Add(attribute1.Clave, attribute1);
+            fontAttributes1.Add(attribute.Key, attribute);
+            fontAttributes1.Add(attribute1.Key, attribute1);
             expectedTags.Add(new Tag("font", fontAttributes1));
 
             Dictionary<string, Attribute> inputAttributes = new Dictionary<string, Attribute>();
             Attribute attribute2 = new Attribute("type", "text");
             Attribute attribute3 = new Attribute("name", "nombre");
             Attribute attribute4 = new Attribute("maxlength", "8");
-            inputAttributes.Add(attribute2.Clave, attribute2);
-            inputAttributes.Add(attribute3.Clave, attribute3);
-            inputAttributes.Add(attribute4.Clave, attribute4);
+            inputAttributes.Add(attribute2.Key, attribute2);
+            inputAttributes.Add(attribute3.Key, attribute3);
+            inputAttributes.Add(attribute4.Key, attribute4);
             expectedTags.Add(new Tag("input", inputAttributes));
 
             expectedTags.Add(new Tag("br"));
 
             Dictionary<string, Attribute> fontAttributes2 = new Dictionary<string, Attribute>();
             Attribute attribute5 = new Attribute("type", "text");
-            fontAttributes2.Add(attribute5.Clave, attribute5);
+            fontAttributes2.Add(attribute5.Key, attribute5);
             expectedTags.Add(new Tag("font", fontAttributes2));
             FinderTests.ComparatorMethod(input, expectedTags);
         }

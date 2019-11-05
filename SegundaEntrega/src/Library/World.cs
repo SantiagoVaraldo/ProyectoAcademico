@@ -25,7 +25,7 @@ namespace Library
         private string name;
         private int? length;
         private int? width;
-        private List<Level> listlevel = new List<Level>();
+        private List<Level> listLevel = new List<Level>();
 
         public World(string name, int length, int width)
         {
@@ -86,7 +86,7 @@ namespace Library
         {
             get
             {
-                return this.listlevel;
+                return this.listLevel;
             }
         }
 

@@ -25,7 +25,7 @@ namespace Library
         private bool state;
         private string name;
         private Level level;
-        private List<Element> listaelement = new List<Element>();
+        private List<Element> elementList = new List<Element>();
 
         public Screen(string name, Level level)
         {
@@ -79,11 +79,11 @@ namespace Library
             }
         }
 
-        public List<Element> ListaElement
+        public List<Element> ElementList
         {
             get
             {
-                return this.listaelement;
+                return this.elementList;
             }
         }
 
@@ -96,7 +96,7 @@ namespace Library
         {
             if (ixml is Element)
             {
-                this.ListaElement.Add((Element)ixml);
+                this.ElementList.Add((Element)ixml);
             }
         }
 

@@ -14,7 +14,7 @@ namespace Tests
         EngineLvl3 engine;
         ButtonCheck buttonCheck1, buttonCheck2, buttonCheck3, buttonCheck4, buttonCheck5;
 
-        public void Create()
+        public EngineLvl3Test()
         {
             world = new World("world", 50, 50);
             level = new Level("level", world);
@@ -41,9 +41,6 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            //creamos los objetos
-            Create();
-
             engine.Check(buttonCheck1);
             Test(buttonCheck1, true, false);
 
@@ -55,8 +52,6 @@ namespace Tests
         [Fact]
         public void TwoClicksIncorrectTest()
         {
-            //creamos los objetos
-            Create();
             engine.Check(buttonCheck4);
             Test(buttonCheck4, true, false);
 
@@ -68,8 +63,6 @@ namespace Tests
         [Fact]
         public void FirstCorrectAndSecondIncorrectTest()
         {
-            //creamos los objetos
-            Create();
             engine.Check(buttonCheck1);
             Test(buttonCheck1, true, false);
 
@@ -80,8 +73,6 @@ namespace Tests
         [Fact]
         public void ClickTwoThreeAndFourCorrect()
         {
-            //creamos los objetos
-            Create();
             engine.Check(buttonCheck4);
             Test(buttonCheck4, true, false);
 

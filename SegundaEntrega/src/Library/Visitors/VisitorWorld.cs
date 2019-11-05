@@ -38,9 +38,9 @@ namespace Library
         /// <param name="level"> objeto level al que se accede. </param>
         public override void Visit(Level level)
         {
-            if (level.ListaScreen.Count >= 1)
+            if (level.ScreenList.Count >= 1)
             {
-                this.LastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
+                this.LastScreen = level.ScreenList[level.ScreenList.Count - 1];
                 this.LastScreen.Accept(this);
             }
         }
@@ -51,14 +51,14 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
-            if (screen.ListaElement.Count >= 1)
+            if (screen.ElementList.Count >= 1)
             {
-                this.LastElement = screen.ListaElement[screen.ListaElement.Count - 1];
+                this.LastElement = screen.ElementList[screen.ElementList.Count - 1];
             }
 
-            if (screen.ListaElement.Count >= 2)
+            if (screen.ElementList.Count >= 2)
             {
-                this.BeforeLastElement = screen.ListaElement[screen.ListaElement.Count - 2];
+                this.BeforeLastElement = screen.ElementList[screen.ElementList.Count - 2];
             }
         }
     }

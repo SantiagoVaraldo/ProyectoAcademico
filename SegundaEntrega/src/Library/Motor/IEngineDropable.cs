@@ -10,14 +10,14 @@ using Proyecto.Common;
 
 namespace Library
 {
-         public interface IEngineDropable
-         {
-                  void Check(Word word);
+    public interface IEngineDropable
+    {
+        void Check(Word word);
 
-                  void AddWord(Word word);
+        void AddWord(Word word);
 
-                  void RemoveWord(Word word);
+        void RemoveWord(Word word);
 
-                  void ObtainCantDestination(Word word);
-         }
+        void ObtainCantDestination(Word word);
+    }
 }

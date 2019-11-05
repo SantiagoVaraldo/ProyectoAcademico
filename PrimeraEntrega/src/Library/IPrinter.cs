@@ -16,7 +16,7 @@ namespace ExerciseOne
         /// permitiendo que puedan printear el contenido de la lista de la manera correspondiente a 
         /// sus requisitos.
         /// </summary>
-        /// <param name="lista">Recibe un elemento de tipo List<string> como parametro</param>
-        void Print(List<string> lista);
+        /// <param name="list">Recibe un elemento de tipo List<string> como parametro</param>
+        void Print(List<string> list);
     }
 }

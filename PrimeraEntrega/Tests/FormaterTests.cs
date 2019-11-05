@@ -11,13 +11,13 @@ namespace Tests
         public void ListFormatedCorrectly()
         {
             Formater format = new Formater();
-            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("pedro", "15");
             Attribute attribute2 = new Attribute("marcos", "13");
             List<Tag> ListaTags = new List<Tag>();
-            listaAtributos.Add(attribute.Clave,attribute);
-            listaAtributos.Add(attribute2.Clave,attribute2);
-            ListaTags.Add(new Tag("personas", listaAtributos));
+            attributeList.Add(attribute.Key,attribute);
+            attributeList.Add(attribute2.Key,attribute2);
+            ListaTags.Add(new Tag("personas", attributeList));
             List<string> listaFormated = format.Format(ListaTags);
             List<string> ListaExpected = new List<string> { "personas", "pedro=15", "marcos=13" };
             for (int i = 0; i < ListaExpected.Count; i++)
