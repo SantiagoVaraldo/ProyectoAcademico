@@ -18,12 +18,12 @@ namespace ExerciseOne
         /// <summary>
         /// recorre los elementos de una lista de tipo List<string> e imprime sus elementos uno por linea
         /// </summary>
-        /// <param name="lista">recibe un elemento de tipo List<string> brindado por la clase Formater para ser impreso</param>
-        public void Print(List<string> lista)
+        /// <param name="list">recibe un elemento de tipo List<string> brindado por la clase Formater para ser impreso</param>
+        public void Print(List<string> list)
         {
-            foreach (var elemento in lista)
+            foreach (var element in list)
             {
-                Console.WriteLine(elemento);
+                Console.WriteLine(element);
             }
         }
     }

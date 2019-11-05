@@ -14,14 +14,14 @@ namespace Tests
         {
             IPipe pipenull = new PipeNull();
 
-            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "world1");
             Attribute attribute2 = new Attribute("Length", "100");
             Attribute attribute3 = new Attribute("Width", "100");
-            listaAtributos.Add(attribute.Key, attribute);
-            listaAtributos.Add(attribute2.Key, attribute2);
-            listaAtributos.Add(attribute3.Key, attribute3);
-            Tag tag = new Tag("World", listaAtributos);
+            attributeList.Add(attribute.Key, attribute);
+            attributeList.Add(attribute2.Key, attribute2);
+            attributeList.Add(attribute3.Key, attribute3);
+            Tag tag = new Tag("World", attributeList);
 
             IFilterConditional filterworld = new FilterWorld();
             IPipe pipe0 = new PipeConditional(filterworld, pipenull, pipenull);
@@ -40,11 +40,11 @@ namespace Tests
         {
             IPipe pipenull = new PipeNull();
 
-            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "level1");
 
-            listaAtributos.Add(attribute.Key, attribute);
-            Tag tag = new Tag("Level", listaAtributos);
+            attributeList.Add(attribute.Key, attribute);
+            Tag tag = new Tag("Level", attributeList);
 
             IFilterConditional filterlevel = new FilterLevel();
             IPipe pipe0 = new PipeConditional(filterlevel, pipenull, pipenull);
@@ -61,10 +61,10 @@ namespace Tests
         {
             IPipe pipenull = new PipeNull();
 
-            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "screen1");
-            listaAtributos.Add(attribute.Key, attribute);
-            Tag tag = new Tag("Screen", listaAtributos);
+            attributeList.Add(attribute.Key, attribute);
+            Tag tag = new Tag("Screen", attributeList);
 
             IFilterConditional filterscreen = new FilterScreen();
             IPipe pipe0 = new PipeConditional(filterscreen, pipenull, pipenull);
@@ -81,20 +81,20 @@ namespace Tests
         {
             IPipe pipenull = new PipeNull();
 
-            Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
+            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "image1");
             Attribute attribute2 = new Attribute("PositionY", "100");
             Attribute attribute3 = new Attribute("PositionX", "100");
             Attribute attribute4 = new Attribute("Length", "100");
             Attribute attribute5 = new Attribute("Width", "100");
             Attribute attribute6 = new Attribute("ImagePath", "Oceano.jpg");
-            listaAtributos.Add(attribute.Key, attribute);
-            listaAtributos.Add(attribute2.Key, attribute2);
-            listaAtributos.Add(attribute3.Key, attribute3);
-            listaAtributos.Add(attribute4.Key, attribute4);
-            listaAtributos.Add(attribute5.Key, attribute5);
-            listaAtributos.Add(attribute6.Key, attribute6);
-            Tag tag = new Tag("Image", listaAtributos);
+            attributeList.Add(attribute.Key, attribute);
+            attributeList.Add(attribute2.Key, attribute2);
+            attributeList.Add(attribute3.Key, attribute3);
+            attributeList.Add(attribute4.Key, attribute4);
+            attributeList.Add(attribute5.Key, attribute5);
+            attributeList.Add(attribute6.Key, attribute6);
+            Tag tag = new Tag("Image", attributeList);
 
             IFilterConditional filterImage = new FilterImage();
             IPipe pipe0 = new PipeConditional(filterImage, pipenull, pipenull);

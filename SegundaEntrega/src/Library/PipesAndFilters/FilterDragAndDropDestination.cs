@@ -51,13 +51,13 @@ namespace Library
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.world);
 
-                    name = tag.ListaAtributos["Name"].Value;
-                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Value);
-                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Value);
-                    length = Int32.Parse(tag.ListaAtributos["Length"].Value);
-                    width = Int32.Parse(tag.ListaAtributos["Width"].Value);
+                    name = tag.AttributeList["Name"].Value;
+                    positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
+                    positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
+                    length = Int32.Parse(tag.AttributeList["Length"].Value);
+                    width = Int32.Parse(tag.AttributeList["Width"].Value);
                     
-                    imagePath = tag.ListaAtributos["ImagePath"].Value;
+                    imagePath = tag.AttributeList["ImagePath"].Value;
 
                     BlankSpace blankSpace = new BlankSpace(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
                     visitor.lastScreen.Add(blankSpace);

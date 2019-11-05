@@ -52,14 +52,14 @@ namespace Library
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.world);
 
-                    name = tag.ListaAtributos["Name"].Value;
-                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Value);
-                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Value);
-                    length = Int32.Parse(tag.ListaAtributos["Length"].Value);
-                    width = Int32.Parse(tag.ListaAtributos["Width"].Value);
+                    name = tag.AttributeList["Name"].Value;
+                    positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
+                    positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
+                    length = Int32.Parse(tag.AttributeList["Length"].Value);
+                    width = Int32.Parse(tag.AttributeList["Width"].Value);
                     
-                    imagePath = tag.ListaAtributos["ImagePath"].Value;
-                    soundPath = tag.ListaAtributos["SoundPath"].Value;
+                    imagePath = tag.AttributeList["ImagePath"].Value;
+                    soundPath = tag.AttributeList["SoundPath"].Value;
 
                     IXML button = new ButtonSound(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, soundPath);
                     visitor.lastScreen.Add(button);

@@ -49,9 +49,9 @@ namespace Library
                 try
                 {
 
-                    name = tag.ListaAtributos["Name"].Value;
-                    length = Int32.Parse(tag.ListaAtributos["Length"].Value);
-                    width = Int32.Parse(tag.ListaAtributos["Width"].Value);
+                    name = tag.AttributeList["Name"].Value;
+                    length = Int32.Parse(tag.AttributeList["Length"].Value);
+                    width = Int32.Parse(tag.AttributeList["Width"].Value);
 
                     world = new World(name, length, width);
                     Creator.world = world;

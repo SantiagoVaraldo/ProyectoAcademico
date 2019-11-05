@@ -23,21 +23,21 @@ namespace Tests
                 {
                     Assert.Equal(resultTags[i].Name, expectedTags[i].Name);
 
-                    if (resultTags[i].ListaAtributos != null & expectedTags[i].ListaAtributos != null)
+                    if (resultTags[i].AttributeList != null & expectedTags[i].AttributeList != null)
                     {
-                        Assert.Equal(resultTags[i].ListaAtributos.Count, expectedTags[i].ListaAtributos.Count);
+                        Assert.Equal(resultTags[i].AttributeList.Count, expectedTags[i].AttributeList.Count);
 
-                        if (resultTags[i].ListaAtributos.Count > 0 & expectedTags[i].ListaAtributos.Count > 0 &
-                            resultTags[i].ListaAtributos.Count == expectedTags[i].ListaAtributos.Count)
+                        if (resultTags[i].AttributeList.Count > 0 & expectedTags[i].AttributeList.Count > 0 &
+                            resultTags[i].AttributeList.Count == expectedTags[i].AttributeList.Count)
                         {
-                            foreach (KeyValuePair<string, Attribute> entry in resultTags[i].ListaAtributos)
+                            foreach (KeyValuePair<string, Attribute> entry in resultTags[i].AttributeList)
                             {
                                 //entry.key
-                                //resultTags[i].ListaAtributos[entry.key]
+                                //resultTags[i].AttributeList[entry.key]
                                 bool encontro;
                                 try
                                 {
-                                    Attribute attribute = expectedTags[i].ListaAtributos[entry.Key];
+                                    Attribute attribute = expectedTags[i].AttributeList[entry.Key];
                                     encontro = true;
                                 }
                                 catch (System.Exception)

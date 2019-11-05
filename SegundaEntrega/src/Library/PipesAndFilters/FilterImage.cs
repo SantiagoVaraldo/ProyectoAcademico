@@ -47,13 +47,13 @@ namespace Library
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.world);
 
-                    string name = tag.ListaAtributos["Name"].Value;
-                    int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Value);
-                    int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Value);
-                    int length = Int32.Parse(tag.ListaAtributos["Length"].Value);
-                    int width = Int32.Parse(tag.ListaAtributos["Width"].Value);
+                    string name = tag.AttributeList["Name"].Value;
+                    int positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
+                    int positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
+                    int length = Int32.Parse(tag.AttributeList["Length"].Value);
+                    int width = Int32.Parse(tag.AttributeList["Width"].Value);
                     
-                    string imagePath = tag.ListaAtributos["ImagePath"].Value;
+                    string imagePath = tag.AttributeList["ImagePath"].Value;
 
                     IXML image = new Image(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
                     visitor.lastScreen.Add(image);

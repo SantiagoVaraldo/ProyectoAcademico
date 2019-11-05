@@ -75,13 +75,13 @@ namespace ExerciseOne
                                 string value = atributeElements[1].Trim('"');
                                 //crea el atributo y lo guarda en attributes
                                 Attribute atr = new Attribute(name, value);
-                               // attributes.Add(name,atr);
-                               t.AddAttribute(atr);
+                                // attributes.Add(name,atr);
+                                t.AddAttribute(atr);
                             }
 
 
                         }
-                        //t.ListaAtributos = attributes;
+                        //t.AttributeList = attributes;
                         tags.Add(t);
                     }
                 }
