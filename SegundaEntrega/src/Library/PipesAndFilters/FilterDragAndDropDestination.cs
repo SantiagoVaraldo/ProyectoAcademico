@@ -56,7 +56,7 @@ namespace Library
                     positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
                     length = Int32.Parse(tag.AttributeList["Length"].Value);
                     width = Int32.Parse(tag.AttributeList["Width"].Value);
-                    
+
                     imagePath = tag.AttributeList["ImagePath"].Value;
 
                     BlankSpace blankSpace = new BlankSpace(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);

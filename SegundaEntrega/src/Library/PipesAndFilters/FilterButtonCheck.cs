@@ -59,17 +59,16 @@ namespace Library
                     length = Int32.Parse(tag.AttributeList["Length"].Value);
                     width = Int32.Parse(tag.AttributeList["Width"].Value);
                     check = Convert.ToBoolean(tag.AttributeList["Check"].Value);
-                    
+
                     imagePath = tag.AttributeList["ImagePath"].Value;
                     imagePath2 = tag.AttributeList["ImagePath2"].Value;
 
-                    
                     IXML button = new ButtonCheck(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, imagePath2, check);
                     visitor.lastScreen.Add(button);
                 }
                 catch (NotFoundOnXML)
                 {
-                    
+
                     //Mostrar en pantalla que no se encontro lo deseado en xml
                 }
             }

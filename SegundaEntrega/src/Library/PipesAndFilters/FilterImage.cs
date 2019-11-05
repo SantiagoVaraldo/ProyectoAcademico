@@ -52,7 +52,7 @@ namespace Library
                     int positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
                     int length = Int32.Parse(tag.AttributeList["Length"].Value);
                     int width = Int32.Parse(tag.AttributeList["Width"].Value);
-                    
+
                     string imagePath = tag.AttributeList["ImagePath"].Value;
 
                     IXML image = new Image(name, positionY, positionX, length, width, visitor.lastScreen, imagePath);
@@ -60,7 +60,7 @@ namespace Library
                 }
                 catch (NotFoundOnXML)
                 {
-                    
+
                     //Mostrar en pantalla que no se encontro lo deseado en xml
                 }
             }
