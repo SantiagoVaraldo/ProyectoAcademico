@@ -45,7 +45,7 @@ namespace Library
                 
                 try
                 {
-                    name = tag.ListaAtributos["Name"].Valor;
+                    name = tag.ListaAtributos["Name"].Value;
                     world = Creator.world;
 
                     IXML level = new Level(name, world);

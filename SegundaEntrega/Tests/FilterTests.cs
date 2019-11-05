@@ -18,9 +18,9 @@ namespace Tests
             Attribute attribute = new Attribute("Name", "world1");
             Attribute attribute2 = new Attribute("Length", "100");
             Attribute attribute3 = new Attribute("Width", "100");
-            listaAtributos.Add(attribute.Clave, attribute);
-            listaAtributos.Add(attribute2.Clave, attribute2);
-            listaAtributos.Add(attribute3.Clave, attribute3);
+            listaAtributos.Add(attribute.Key, attribute);
+            listaAtributos.Add(attribute2.Key, attribute2);
+            listaAtributos.Add(attribute3.Key, attribute3);
             Tag tag = new Tag("World", listaAtributos);
 
             IFilterConditional filterworld = new FilterWorld();
@@ -43,7 +43,7 @@ namespace Tests
             Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "level1");
 
-            listaAtributos.Add(attribute.Clave, attribute);
+            listaAtributos.Add(attribute.Key, attribute);
             Tag tag = new Tag("Level", listaAtributos);
 
             IFilterConditional filterlevel = new FilterLevel();
@@ -63,7 +63,7 @@ namespace Tests
 
             Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("Name", "screen1");
-            listaAtributos.Add(attribute.Clave, attribute);
+            listaAtributos.Add(attribute.Key, attribute);
             Tag tag = new Tag("Screen", listaAtributos);
 
             IFilterConditional filterscreen = new FilterScreen();
@@ -88,12 +88,12 @@ namespace Tests
             Attribute attribute4 = new Attribute("Length", "100");
             Attribute attribute5 = new Attribute("Width", "100");
             Attribute attribute6 = new Attribute("ImagePath", "Oceano.jpg");
-            listaAtributos.Add(attribute.Clave, attribute);
-            listaAtributos.Add(attribute2.Clave, attribute2);
-            listaAtributos.Add(attribute3.Clave, attribute3);
-            listaAtributos.Add(attribute4.Clave, attribute4);
-            listaAtributos.Add(attribute5.Clave, attribute5);
-            listaAtributos.Add(attribute6.Clave, attribute6);
+            listaAtributos.Add(attribute.Key, attribute);
+            listaAtributos.Add(attribute2.Key, attribute2);
+            listaAtributos.Add(attribute3.Key, attribute3);
+            listaAtributos.Add(attribute4.Key, attribute4);
+            listaAtributos.Add(attribute5.Key, attribute5);
+            listaAtributos.Add(attribute6.Key, attribute6);
             Tag tag = new Tag("Image", listaAtributos);
 
             IFilterConditional filterImage = new FilterImage();

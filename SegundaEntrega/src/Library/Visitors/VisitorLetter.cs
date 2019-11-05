@@ -41,13 +41,13 @@ namespace Library
                                     this.lastScreen = level.ListaScreen[level.ListaScreen.Count - 1];
                            }
 
-                           string name = tag.ListaAtributos["Name"].Valor;
-                           int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
-                           int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
-                           int length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                           int width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                           string imagePath = tag.ListaAtributos["ImagePath"].Valor;
-                           bool right = Convert.ToBoolean(tag.ListaAtributos["Right"].Valor);
+                           string name = tag.ListaAtributos["Name"].Value;
+                           int positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Value);
+                           int positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Value);
+                           int length = Int32.Parse(tag.ListaAtributos["Length"].Value);
+                           int width = Int32.Parse(tag.ListaAtributos["Width"].Value);
+                           string imagePath = tag.ListaAtributos["ImagePath"].Value;
+                           bool right = Convert.ToBoolean(tag.ListaAtributos["Right"].Value);
 
                            IXML letter = new Letter(name, positionY, positionX, length, width, this.lastScreen, imagePath, right);
                            this.lastScreen.Add(letter);

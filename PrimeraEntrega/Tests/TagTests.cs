@@ -15,8 +15,8 @@ namespace Tests
             Dictionary<string, Attribute> listaAtributos = new Dictionary<string, Attribute>();
             Attribute attribute = new Attribute("pedro", "15");
             Attribute attribute2 = new Attribute("marcos", "13");
-            listaAtributos.Add(attribute.Clave, attribute);
-            listaAtributos.Add(attribute2.Clave, attribute2);
+            listaAtributos.Add(attribute.Key, attribute);
+            listaAtributos.Add(attribute2.Key, attribute2);
             Tag tag = new Tag("personas", listaAtributos);
             string NameExpected = "personas";
             Dictionary<string, Attribute> ListaAtributosExpected = listaAtributos;

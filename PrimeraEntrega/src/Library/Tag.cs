@@ -49,7 +49,7 @@ namespace ExerciseOne
             {
                 this.listaAtributos = new Dictionary<string, Attribute>();
             }
-            this.listaAtributos.Add(attribute.Clave, attribute);
+            this.listaAtributos.Add(attribute.Key, attribute);
         }
     }
 }

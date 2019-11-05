@@ -53,15 +53,15 @@ namespace Library
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.world);
 
-                    name = tag.ListaAtributos["Name"].Valor;
-                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Valor);
-                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Valor);
-                    length = Int32.Parse(tag.ListaAtributos["Length"].Valor);
-                    width = Int32.Parse(tag.ListaAtributos["Width"].Valor);
-                    check = Convert.ToBoolean(tag.ListaAtributos["Check"].Valor);
+                    name = tag.ListaAtributos["Name"].Value;
+                    positionY = Int32.Parse(tag.ListaAtributos["PositionY"].Value);
+                    positionX = Int32.Parse(tag.ListaAtributos["PositionX"].Value);
+                    length = Int32.Parse(tag.ListaAtributos["Length"].Value);
+                    width = Int32.Parse(tag.ListaAtributos["Width"].Value);
+                    check = Convert.ToBoolean(tag.ListaAtributos["Check"].Value);
                     
-                    imagePath = tag.ListaAtributos["ImagePath"].Valor;
-                    imagePath2 = tag.ListaAtributos["ImagePath2"].Valor;
+                    imagePath = tag.ListaAtributos["ImagePath"].Value;
+                    imagePath2 = tag.ListaAtributos["ImagePath2"].Value;
 
                     
                     IXML button = new ButtonCheck(name, positionY, positionX, length, width, visitor.lastScreen, imagePath, imagePath2, check);

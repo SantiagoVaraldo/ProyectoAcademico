@@ -27,7 +27,7 @@ namespace Library
 
                   public override void Visit(World world)
                   {
-                           string name = tag.ListaAtributos["Name"].Valor;
+                           string name = tag.ListaAtributos["Name"].Value;
                            Level level = new Level(name,world);
                            world.Add(level);
                   }

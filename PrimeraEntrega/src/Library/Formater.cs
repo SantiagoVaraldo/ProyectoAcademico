@@ -33,7 +33,7 @@ namespace ExerciseOne
                 {
                     foreach (Attribute att in t.ListaAtributos.Values)
                     {
-                        string attributeInfo = att.Clave + "=" + att.Valor;
+                        string attributeInfo = att.Key + "=" + att.Value;
                         lista_formated.Add(attributeInfo);
                     }
                 }

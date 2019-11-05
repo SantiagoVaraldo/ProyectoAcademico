@@ -47,7 +47,7 @@ namespace Library
                 {
                     Visitor visitor = new VisitorWorld();
                     visitor.Visit(Creator.world);
-                    name = tag.ListaAtributos["Name"].Valor;
+                    name = tag.ListaAtributos["Name"].Value;
 
                     IXML screen = new Screen(name, visitor.lastLevel);
                     visitor.lastLevel.Add(screen);
