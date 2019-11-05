@@ -99,7 +99,7 @@ namespace Library
         /// <summary>
         /// cambia el estado del objeto a "nivel completado"
         /// </summary>
-        public void levelCompleted()
+        public void LevelCompleted()
         {
             this.state = true;
         }
