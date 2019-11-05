@@ -1,65 +1,72 @@
+//--------------------------------------------------------------------------------
+// <copyright file="ButtonCheck.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Proyecto.Common;
 
-/// <summary>
-/// NOMBRE: ButtonCheck.
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los ButtonCheck.
-/// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-/// pertinente para nuestros requisitos de crear objetos ButtonCheck, conoce el nombre, tamaño, la posicion,
-/// la pantalla, las rutas y la variable check del ButtonCheck. 
-/// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
-/// es un tipo de boton.
-/// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
-/// y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
-/// </summary>
-
 namespace Library
 {
+    /// <summary>
+    /// NOMBRE: ButtonCheck.
+    /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los ButtonCheck.
+    /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
+    /// pertinente para nuestros requisitos de crear objetos ButtonCheck, conoce el nombre, tamaño, la posicion,
+    /// la pantalla, las rutas y la variable check del ButtonCheck.
+    /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
+    /// es un tipo de boton.
+    /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
+    /// y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+    /// </summary>
     public class ButtonCheck : Element, IButton
     {
-        public ButtonCheck(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, string ImagePath2, bool Check)
-        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath)
+        private bool state;
+        private bool check;
+        private string imagepath2;
+
+        public ButtonCheck(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, string imagePath2, bool check)
+        : base(name, positionY, positionX, length, width, screen, imagePath)
         {
-            this.Check = Check;
+            this.Check = check;
             this.State = false;
-            this.ImagePath2 = ImagePath2;
+            this.ImagePath2 = imagePath2;
         }
 
-        private bool state;
         public bool State
         {
             get
             {
                 return this.state;
             }
+
             set
             {
                 this.state = value;
-
             }
         }
 
-        private bool check;
         public bool Check
         {
             get
             {
                 return this.check;
             }
+
             set
             {
                 this.check = value;
-
             }
         }
 
-        private string imagepath2;
         public string ImagePath2
         {
             get
             {
                 return this.imagepath2;
             }
+
             set
             {
                 if (value != null)
@@ -70,8 +77,9 @@ namespace Library
         }
 
         /// <summary>
-        /// accion que realiza el boton de tipo ButtonCheck al hacerle click
+        /// accion que realiza el boton de tipo ButtonCheck al hacerle click.
         /// </summary>
+        /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
@@ -82,7 +90,7 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo que selecciona el boton
+        /// metodo que selecciona el boton.
         /// </summary>
         public void Select()
         {
@@ -90,7 +98,7 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo que deselecciona el boton
+        /// metodo que deselecciona el boton.
         /// </summary>
         public void Unselect()
         {
@@ -98,13 +106,14 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo que permite al objeto de tipo ButtonCheck renderizarce a si mismo en Unity
+        /// metodo que permite al objeto de tipo ButtonCheck renderizarce a si mismo en Unity.
         /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
+        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
         public override void Render(IMainViewAdapter adapter)
         {
             string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
-            //adapter.SetImage(buttonId, this.ImagePath);
+
+            // adapter.SetImage(buttonId, this.ImagePath);
         }
     }
 }

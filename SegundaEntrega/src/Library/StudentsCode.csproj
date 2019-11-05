@@ -4,7 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
   </PropertyGroup>
-    <ItemGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\ruleset.xml</CodeAnalysisRuleSet>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\ClasesProfes\PII_Proyecto2019\Common\src\Common.csproj" />
     <ProjectReference Include="..\..\..\PrimeraEntrega\src\Library\Library.csproj" />
   </ItemGroup>
@@ -12,7 +18,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
-    <AdditionalFiles Include="..\..\.vscode\stylecop.json" />
+    <AdditionalFiles Include="..\..\stylecop.json" />
   </ItemGroup>
 
   <Target Name="CopyFiles" AfterTargets="Build">
@@ -23,6 +29,6 @@
     <Message Text="Copying output file: @(AllLibraries) to: ..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" Importance="High" />
     <Copy SourceFiles="@(AllLibraries)" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" />
     <Copy SourceFiles="test.xml" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" />
-  </Target> 
+  </Target>
 
 </Project>

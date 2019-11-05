@@ -1,26 +1,31 @@
-using Library;
-using ExerciseOne;
+//--------------------------------------------------------------------------------
+// <copyright file="PipeNull.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
 
-/// <summary>
-/// Pipe al que se envia el Tag en caso de que sea filtrado con exito, es de tipo IPipe.
-/// No es necesario tener un PipeNull pero decidimos deguir la estructura de Pipes que hemos visto.
-/// </summary>
+using ExerciseOne;
+using Library;
 
 namespace Library
 {
+    /// <summary>
+    /// Pipe al que se envia el Tag en caso de que sea filtrado con ExitButtono, es de tipo IPipe.
+    /// No es necesario tener un PipeNull pero decidimos deguir la estructura de Pipes que hemos visto.
+    /// </summary>
     public class PipeNull : IPipe
     {
-        Tag Tag;
+        private Tag tag;
 
         /// <summary>
         ///  Recibe un tag, lo guarda en una variable Tag y la retorna.
         /// </summary>
-        /// <param name="tag">Tag a recibir</param>
-        /// <returns>el mismo Tag</returns>
+        /// <param name="tag">Tag a recibir.</param>
+        /// <returns>el mismo Tag.</returns>
         public Tag Send(Tag tag)
         {
-            this.Tag = tag;
-            return Tag;
+            this.tag = tag;
+            return tag;
         }
     }
 }

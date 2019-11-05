@@ -15,7 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
-    <AdditionalFiles Include="..\.vscode\stylecop.json" />
+    <AdditionalFiles Include="..\stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +23,6 @@
     <ProjectReference Include="..\src\Program\Program.csproj" />
     <ProjectReference Include="..\..\PrimeraEntrega\src\Library\Library.csproj" />
   </ItemGroup>
-  
+
 
 </Project>

@@ -1,16 +1,24 @@
-using System.Collections.Generic;
+//--------------------------------------------------------------------------------
+// <copyright file="Singleton.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
 
-/// <summary>
-/// NOMBRE: Singleton<T>
-/// SINGLETON: clase implementada para aplicar el patron singleton, esta clase crea una instancia del objeto T, en caso
-/// de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores
-/// </summary>
+using System.Collections.Generic;
 
 namespace Library
 {
-    public class Singleton<T> where T : new()
+    /// <summary>
+    /// NOMBRE: Singleton
+    /// SINGLETON: clase implementada para aplicar el patron singleton, esta clase crea una instancia del objeto T, en caso
+    /// de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores.
+    /// </summary>
+    /// <typeparam name="T"> tipo generico. </typeparam>
+    public static class Singleton<T>
+    where T : new()
     {
         private static T instance;
+
         public static T Instance
         {
             get

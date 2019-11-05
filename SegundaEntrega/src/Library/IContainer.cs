@@ -1,17 +1,22 @@
-using System;
-using ExerciseOne;
-using System.Collections.Generic;
-using Attribute = ExerciseOne.Attribute;
+//--------------------------------------------------------------------------------
+// <copyright file="IContainer.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
 
-/// <summary> 
-/// esta interfaz es de tipo IXML, contiene la firma Add la cual hace que todas las clases que implementan esta
-/// interfaz, deban tener un metodo Add.
-/// </summary>
+using System;
+using System.Collections.Generic;
+using ExerciseOne;
+using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-    public interface IContainer : IXML 
-    {
-        void Add(IXML ixml);
-    }
+         /// <summary>
+         /// esta interfaz es de tipo IXML, contiene la firma Add la cual hace que todas las clases que implementan esta
+         /// interfaz, deban tener un metodo Add.
+         /// </summary>
+         public interface IContainer : IXML
+         {
+                  void Add(IXML ixml);
+         }
 }

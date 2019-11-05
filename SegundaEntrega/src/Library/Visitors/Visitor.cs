@@ -1,17 +1,97 @@
+//--------------------------------------------------------------------------------
+// <copyright file="Visitor.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Proyecto.Common;
 
 namespace Library
 {
-         public abstract class Visitor
-         {
-                  public World world;
-                  public Level lastLevel;
-                  public Screen lastScreen;
-                  public Element lastElement;
-                  public Element beforeLastElement;
-                  public abstract void Visit(World world);
-                  public abstract void Visit(Level level);
-                  public abstract void Visit(Screen screen);
-         }
+    /// <summary>
+    /// NOMBRE: Visitor.
+    /// DESCRIPCION: clase abstracta para implementar el patron Visitor.
+    /// VISITOR: decidimos utilizar este patron para poder acceder a un objeto de tipo World, un objeto Level y un objeto
+    /// Screen para poder acceder a algunas de sus propiedades sin la necesidad de romper con la ley de Demeter.
+    /// </summary>
+    public abstract class Visitor
+    {
+        private World world;
+        private Level lastLevel;
+        private Screen lastScreen;
+        private Element lastElement;
+        private Element beforeLastElement;
+
+        public World World
+        {
+            get
+            {
+                return this.world;
+            }
+
+            set
+            {
+                this.world = value;
+            }
+        }
+
+        public Level LastLevel
+        {
+            get
+            {
+                return this.lastLevel;
+            }
+
+            set
+            {
+                this.lastLevel = value;
+            }
+        }
+
+        public Screen LastScreen
+        {
+            get
+            {
+                return this.lastScreen;
+            }
+
+            set
+            {
+                this.lastScreen = value;
+            }
+        }
+
+        public Element LastElement
+        {
+            get
+            {
+                return this.lastElement;
+            }
+
+            set
+            {
+                this.lastElement = value;
+            }
+        }
+
+        public Element BeforeLastElement
+        {
+            get
+            {
+                return this.beforeLastElement;
+            }
+
+            set
+            {
+                this.beforeLastElement = value;
+            }
+        }
+
+        public abstract void Visit(World world);
+
+        public abstract void Visit(Level level);
+
+        public abstract void Visit(Screen screen);
+    }
 }

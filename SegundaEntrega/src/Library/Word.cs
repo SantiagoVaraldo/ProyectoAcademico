@@ -1,50 +1,55 @@
+//--------------------------------------------------------------------------------
+// <copyright file="Word.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
 
 using System;
 using Proyecto.Common;
 
-/// <summary>
-/// NOMBRE: Word.
-/// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos Word,
-/// es de tipo DragAndDropItem.
-/// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
-/// de Word, su unica razon de cambio es modificar los datos que guardamos sobre word.
-/// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
-/// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen ya que un Word debe pertenecer a una Screen
-/// y es de tipo DragAndDropItem.
-/// </summary>
-
 namespace Library
 {
+    /// <summary>
+    /// NOMBRE: Word.
+    /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los elementos Word,
+    /// es de tipo DragAndDropItem.
+    /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+    /// de Word, su unica razon de cambio es modificar los datos que guardamos sobre word.
+    /// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
+    /// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen ya que un Word debe pertenecer a una Screen
+    /// y es de tipo DragAndDropItem.
+    /// </summary>
     public class Word : DragAndDropItem
     {
-        string itemId;
-        public Word(string Name, int PositionY, int PositionX, int Length, int Width, Screen Screen, string ImagePath, DragAndDropSource source, BlankSpace destination)
-        : base(Name, PositionY, PositionX, Length, Width, Screen, ImagePath, source, destination)
+        public Word(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, DragAndDropSource source, BlankSpace destination)
+        : base(name, positionY, positionX, length, width, screen, imagePath, source, destination)
         {
         }
 
+        public string ItemId { get; set; }
+
         /// <summary>
-        /// metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity
+        /// metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity.
         /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce </param>
+        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
         public override void Render(IMainViewAdapter adapter)
         {
-            itemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(itemId, this.ImagePath);
-            adapter.MakeDraggable(itemId, true);
+            this.ItemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
+            adapter.SetImage(this.ItemId, this.ImagePath);
+            adapter.MakeDraggable(this.ItemId, true);
             OneAdapter.Adapter.OnDrop += this.OnDrop;
-            OneAdapter.Adapter.Center(this.itemId, this.Source.sourceCellImageId);
+            OneAdapter.Adapter.Center(this.ItemId, this.Source.SourceCellImageId);
 
-            //adapter.SetImage(itemId, this.ImagePath);
+            // adapter.SetImage(ItemId, this.ImagePath);
         }
 
         /// <summary>
         /// metodo que mueve al elemento a la nueva posicion si esta es un source o un destination o lo deja en su
-        /// posicion actual en caso contrario
+        /// posicion actual en caso contrario.
         /// </summary>
-        /// <param name="elementName"> nombre del elemento </param>
-        /// <param name="x"> posicion x </param>
-        /// <param name="y"> posicion y </param>
+        /// <param name="elementName"> nombre del elemento. </param>
+        /// <param name="x"> posicion x. </param>
+        /// <param name="y"> posicion y. </param>
         private void OnDrop(string elementName, float x, float y)
         {
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
@@ -53,29 +58,20 @@ namespace Library
             engineLvl2.Check(this);
             OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
 
-            if (elementName == this.itemId && OneAdapter.Adapter.Contains(this.Destination.destinationCellImageId, x, y))
+            if (elementName == this.ItemId && OneAdapter.Adapter.Contains(this.Destination.DestinationCellImageId, x, y))
             {
                 // Mueve el elemento arrastrado al destino si se suelta arriba del destino
-                OneAdapter.Adapter.Center(elementName, this.Destination.destinationCellImageId);
+                OneAdapter.Adapter.Center(elementName, this.Destination.DestinationCellImageId);
                 engineLvl2.AddWord(this);
             }
-            else if (elementName == this.itemId)
+            else if (elementName == this.ItemId)
             {
                 // Mueve el elemento arrastrado nuevamente al origen en caso contrario
-                OneAdapter.Adapter.Center(elementName, this.Source.sourceCellImageId);
+                OneAdapter.Adapter.Center(elementName, this.Source.SourceCellImageId);
                 engineLvl2.RemoveWord(this);
             }
+
             engineLvl2.NextLevel(this);
-        }
-
-        public bool CheckPosition()
-        {
-            return this.PositionY == this.Destination.PositionY & this.PositionX == this.Destination.PositionX;
-        }
-
-        public bool CheckPositionReversed()
-        {
-            return this.PositionY != this.Destination.PositionY || this.PositionX != this.Destination.PositionX;
         }
     }
 }
