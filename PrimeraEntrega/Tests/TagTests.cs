@@ -18,27 +18,27 @@ namespace Tests
             attributeList.Add(attribute.Key, attribute);
             attributeList.Add(attribute2.Key, attribute2);
             Tag tag = new Tag("personas", attributeList);
-            string NameExpected = "personas";
+            string nameExpected = "personas";
             Dictionary<string, Attribute> ListaAtributosExpected = attributeList;
-            Assert.Equal(NameExpected, tag.Name);
+            Assert.Equal(nameExpected, tag.Name);
             Assert.Equal(ListaAtributosExpected, tag.AttributeList);
         }
         [Fact]
         public void TagWithout_ListAttributes()
         {
             Tag tag = new Tag("personas", null);
-            string NameExpected = "personas";
+            string nameExpected = "personas";
             Dictionary<string, Attribute> ListaAtributosExpected = null;
-            Assert.Equal(NameExpected, tag.Name);
+            Assert.Equal(nameExpected, tag.Name);
             Assert.Equal(ListaAtributosExpected, tag.AttributeList);
         }
         [Fact]
         public void TagWithName_And_ListAttributesNull()
         {
             Tag tag = new Tag("personas", null);
-            string NameExpected = "personas";
+            string nameExpected = "personas";
             Dictionary<string, Attribute> ListaAtributosExpected = null;
-            Assert.Equal(NameExpected, tag.Name);
+            Assert.Equal(nameExpected, tag.Name);
             Assert.Equal(ListaAtributosExpected, tag.AttributeList);
         }
     }

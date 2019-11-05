@@ -75,7 +75,7 @@ namespace Library
 
         public bool CheckPositionReversed()
         {
-            return word.PositionY != word.Destination.PositionY || word.PositionX != word.Destination.PositionX;
+            return this.PositionY != this.Destination.PositionY || this.PositionX != this.Destination.PositionX;
         }
     }
 }
