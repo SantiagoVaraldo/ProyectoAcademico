@@ -41,34 +41,19 @@ namespace Library
         /// </summary>
         /// <param name="tag">Tag a filtrar.</param>
         /// <returns>Tag.</returns>
-        public Tag Filter(Tag tag)
+        public Visitor Filter(Tag tag)
         {
             if (tag.Name == "Screen")
             {
                 this.Result = true;
-
-                string name;
-
-                try
-                {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.World);
-                    name = tag.AttributeList["Name"].Value;
-
-                    IXML screen = new Screen(name, visitor.LastLevel);
-                    visitor.LastLevel.Add(screen);
-                }
-                catch (NotFoundOnXMLException)
-                {
-                    // Mostrar en pantalla que no se encontro lo deseado en xml
-                }
+                Visitor visitorScreen = new VisitorScreen(tag);
+                return visitorScreen;
             }
             else
             {
                 this.Result = false;
+                return null;
             }
-
-            return tag;
         }
     }
 }

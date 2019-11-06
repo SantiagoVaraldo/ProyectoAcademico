@@ -42,36 +42,24 @@ namespace Library
         /// </summary>
         /// <param name="tag"> Tag a filtrar. </param>
         /// <returns> retorna un Tag. </returns>
-        public Tag Filter(Tag tag)
+        public Visitor Filter(Tag tag)
         {
             if (tag.Name == "World")
             {
                 this.Result = true;
+                string name = tag.AttributeList["Name"].Value;
+                int length = Int32.Parse(tag.AttributeList["Length"].Value);
+                int width = Int32.Parse(tag.AttributeList["Width"].Value);
+                World world = new World(name, length, width);
+                Creator.World = world;
 
-                string name;
-                int length, width;
-                World world;
-
-                try
-                {
-                    name = tag.AttributeList["Name"].Value;
-                    length = Int32.Parse(tag.AttributeList["Length"].Value);
-                    width = Int32.Parse(tag.AttributeList["Width"].Value);
-
-                    world = new World(name, length, width);
-                    Creator.World = world;
-                }
-                catch (NotFoundOnXMLException)
-                {
-                    // Mostrar en pantalla que no se encontro lo deseado en xml
-                }
+                return null;
             }
             else
             {
                 this.Result = false;
+                return null;
             }
-
-            return tag;
         }
     }
 }

@@ -41,34 +41,19 @@ namespace Library
         /// </summary>
         /// <param name="tag">el Tag a filtrar.</param>
         /// <returns>retorna el Tag.</returns>
-        public Tag Filter(Tag tag)
+        public Visitor Filter(Tag tag)
         {
             if (tag.Name == "Level")
             {
                 this.Result = true;
-
-                string name;
-                World world;
-
-                try
-                {
-                    name = tag.AttributeList["Name"].Value;
-                    world = Creator.World;
-
-                    IXML level = new Level(name, world);
-                    Creator.World.Add(level);
-                }
-                catch (NotFoundOnXMLException)
-                {
-                    // Mostrar en pantalla que no se encontro lo deseado en xml
-                }
+                Visitor visitorLevel = new VisitorLevel(tag);
+                return visitorLevel;
             }
             else
             {
                 this.Result = false;
+                return null;
             }
-
-            return tag;
         }
     }
 }

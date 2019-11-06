@@ -44,20 +44,20 @@ namespace Library
         /// </summary>
         /// <param name="tag"> tag que se envia al siguiente pipe. </param>
         /// <returns> devuelve el Tag. </returns>
-        public Tag Send(Tag tag)
+        public Visitor Send(Tag tag)
         {
-            Tag filteredTag = this.filter.Filter(tag);
-            Tag resultTag;
+            Visitor filteredVisitor = this.filter.Filter(tag);
+            Visitor resultVisitor;
             if (this.filter.Result)
             {
-                resultTag = this.truePipe.Send(filteredTag);
+                resultVisitor = this.truePipe.Send(tag);
             }
             else
             {
-                resultTag = this.falsePipe.Send(tag);
+                resultVisitor = this.falsePipe.Send(tag);
             }
 
-            return resultTag;
+            return filteredVisitor;
         }
     }
 }

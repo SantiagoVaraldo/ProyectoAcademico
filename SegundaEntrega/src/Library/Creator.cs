@@ -87,7 +87,11 @@ namespace Library
 
             foreach (Tag tag in this.listTags)
             {
-                pipe0.Send(tag);
+                Visitor visitor = pipe0.Send(tag);
+                if (visitor != null)
+                {
+                    visitor.Visit(Creator.World);
+                }
             }
         }
     }
