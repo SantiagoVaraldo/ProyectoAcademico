@@ -51,13 +51,13 @@ namespace Library
             if (this.filter.Result)
             {
                 resultVisitor = this.truePipe.Send(tag);
+                return filteredVisitor;
             }
             else
             {
                 resultVisitor = this.falsePipe.Send(tag);
+                return resultVisitor;
             }
-
-            return filteredVisitor;
         }
     }
 }
