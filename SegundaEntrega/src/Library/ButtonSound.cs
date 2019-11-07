@@ -68,11 +68,7 @@ namespace Library
         public void Action(string name)
         {
             OneAdapter.Adapter.Debug($"Button clicked!");
-<<<<<<< HEAD
-            OneAdapter.Adapter.PlayAudio(this.soundPath);
-=======
             OneAdapter.Adapter.PlayAudio(this.SoundPath);
->>>>>>> master
         }
 
         /// <summary>
@@ -81,11 +77,7 @@ namespace Library
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
         public override void Render(IMainViewAdapter adapter)
         {
-<<<<<<< HEAD
-            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#FFFFFFFF", this.Action);
-=======
             string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
->>>>>>> master
             adapter.SetImage(buttonId, this.ImagePath);
         }
     }
