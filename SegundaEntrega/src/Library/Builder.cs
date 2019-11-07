@@ -39,6 +39,7 @@ namespace Proyecto.StudentsCode
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
 
             this.firstPageName = this.adapter.AddPage();
+            Creator.ListPages.Add(this.firstPageName);
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
             string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
@@ -82,7 +83,7 @@ namespace Proyecto.StudentsCode
 
         private void GoToNextPage(string name)
         {
-            this.adapter.ShowPage(Creator.ListPages[0]);
+            this.adapter.ShowPage(Creator.ListPages[1]);
 
             // cambiar a Creator.ListPages
         }

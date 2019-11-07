@@ -42,6 +42,8 @@ namespace Library
                 {
                     observer.Update();
                 }
+
+                this.listWords.Clear();
             }
         }
 

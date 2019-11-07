@@ -69,6 +69,9 @@ namespace Library
             {
                 observer.Update();
             }
+
+            this.correctList.Clear();
+            this.selectedList.Clear();
         }
 
         /// <summary>

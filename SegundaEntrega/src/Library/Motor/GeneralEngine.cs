@@ -20,15 +20,23 @@ namespace Library
     /// </summary>
     public class GeneralEngine : IObserver
     {
-        private int actualPage = 0;
+        private int actualPage = 1;
 
         /// <summary>
         /// metodo que actualiza la pagina, pasa a la siguiente pantalla.
         /// </summary>
         public void Update()
         {
-            OneAdapter.Adapter.ShowPage(Creator.ListPages[this.actualPage + 1]);
-            this.actualPage += 1;
+            if (this.actualPage < Creator.ListPages.Count - 1)
+            {
+                OneAdapter.Adapter.ShowPage(Creator.ListPages[this.actualPage + 1]);
+                this.actualPage += 1;
+            }
+            else
+            {
+                OneAdapter.Adapter.ShowPage(Creator.ListPages[0]);
+                this.actualPage = 0;
+            }
         }
     }
 }
