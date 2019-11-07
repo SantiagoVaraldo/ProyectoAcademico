@@ -358,6 +358,7 @@
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
             </summary>
             <param name="letter"> letra que fue clickeada. </param>
+            <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
         </member>
         <member name="M:Library.EngineLvl1.Subscribe(Library.IObserver)">
             <summary>
@@ -390,7 +391,8 @@
             <summary>
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
             </summary>
-            <param name="word"> Word que fue clickeado. </param>
+            <param name="word"> word que fue arrastrado. </param>
+            <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
         </member>
         <member name="M:Library.EngineLvl2.Check(Library.Word)">
             <summary>
@@ -445,7 +447,8 @@
             <summary>
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
             </summary>
-            <param name="buttonCheck"> boton al que se le hizo click. </param>
+            <param name="buttonCheck"> boton que fue clickeado. </param>
+            <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
         </member>
         <member name="M:Library.EngineLvl3.AddButtonCheck(Library.ButtonCheck)">
             <summary>
