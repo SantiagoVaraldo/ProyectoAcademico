@@ -42,43 +42,19 @@ namespace Library
         /// </summary>
         /// <param name="tag">Tag a filtrar.</param>
         /// <returns>retorna el Tag.</returns>
-        public Tag Filter(Tag tag)
+        public Visitor Filter(Tag tag)
         {
             if (tag.Name == "DragAndDropSource")
             {
                 this.Result = true;
-
-                string name;
-                int positionY, positionX;
-                int length, width;
-                string imagePath;
-                try
-                {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.World);
-
-                    name = tag.AttributeList["Name"].Value;
-                    positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
-                    positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
-                    length = Int32.Parse(tag.AttributeList["Length"].Value);
-                    width = Int32.Parse(tag.AttributeList["Width"].Value);
-
-                    imagePath = tag.AttributeList["ImagePath"].Value;
-
-                    DragAndDropSource dragAndDropSource = new DragAndDropSource(name, positionY, positionX, length, width, visitor.LastScreen, imagePath);
-                    visitor.LastScreen.Add(dragAndDropSource);
-                }
-                catch (NotFoundOnXMLException)
-                {
-                    // Mostrar en pantalla que no se encontro lo deseado en xml
-                }
+                Visitor visitorDragAndDropSource = new VisitorDragAndDropSource(tag);
+                return visitorDragAndDropSource;
             }
             else
             {
                 this.Result = false;
+                return null;
             }
-
-            return tag;
         }
     }
 }

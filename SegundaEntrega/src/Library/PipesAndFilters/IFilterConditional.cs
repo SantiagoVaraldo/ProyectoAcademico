@@ -24,6 +24,6 @@ namespace Library
         /// </summary>
         /// <param name="tag">El Tag a procesar.</param>
         /// <returns>El mismo Tag.</returns>
-        Tag Filter(Tag tag);
+        Visitor Filter(Tag tag);
     }
 }

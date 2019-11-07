@@ -22,10 +22,10 @@ namespace Library
         /// </summary>
         /// <param name="tag">Tag a recibir.</param>
         /// <returns>el mismo Tag.</returns>
-        public Tag Send(Tag tag)
+        public Visitor Send(Tag tag)
         {
             this.tag = tag;
-            return tag;
+            return null;
         }
     }
 }

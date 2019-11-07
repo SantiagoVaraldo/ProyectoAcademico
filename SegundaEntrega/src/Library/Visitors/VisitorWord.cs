@@ -65,6 +65,7 @@ namespace Library
             if (level.ScreenList.Count >= 1)
             {
                 this.LastScreen = level.ScreenList[level.ScreenList.Count - 1];
+                this.LastScreen.Accept(this);
             }
         }
 

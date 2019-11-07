@@ -18,6 +18,6 @@ namespace Library
         /// </summary>
         /// <param name="tag"> enviar el tag a traves de la cañeria. </param>
         /// <returns> Tag. </returns>
-        Tag Send(Tag tag);
+        Visitor Send(Tag tag);
     }
 }
