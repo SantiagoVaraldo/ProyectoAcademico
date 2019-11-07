@@ -10,6 +10,7 @@
 			<Letter Name="Letter7" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="N.jpg" Right="false"/>
 			<Letter Name="Letter8" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="M.jpg" Right="false"/>
 			<Letter Name="Letter9" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="L.jpg" Right="false"/>
+			<ButtonSound Name="Audio" PositionY="0" PositionX="-270" Length="100" Width="100" Screen="Screen" ImagePath="Audio.jpg" SoundPath="Audio.wav"/>
 		</Screen>
 		<Screen Name="Screen2" level="Level">
 			<Letter Name="Letter1" PositionY="-110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="S.jpg" Right="true"/>
@@ -21,6 +22,7 @@
 			<Letter Name="Letter7" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="U.jpg" Right="false"/>
 			<Letter Name="Letter8" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="I.jpg" Right="false"/>
 			<Letter Name="Letter9" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="T.jpg" Right="false"/>
+			<ButtonSound Name="Audio" PositionY="0" PositionX="-270" Length="100" Width="100" Screen="Screen" ImagePath="Audio.jpg" SoundPath="Audio.wav"/>
 		</Screen>
 		<Screen Name="Screen2" level="Level">
 			<Letter Name="Letter1" PositionY="-110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="L.jpg" Right="true"/>
@@ -32,6 +34,7 @@
 			<Letter Name="Letter7" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="S.jpg" Right="false"/>
 			<Letter Name="Letter8" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="R.jpg" Right="false"/>
 			<Letter Name="Letter9" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="V.jpg" Right="false"/>
+			<ButtonSound Name="Audio" PositionY="0" PositionX="-270" Length="100" Width="100" Screen="Screen" ImagePath="Audio.jpg" SoundPath="Audio.wav"/>
 		</Screen>
 		<Screen Name="Screen4" level="Level">
 			<DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen4" ImagePath="CuadradoBlanco.jpg"/>
