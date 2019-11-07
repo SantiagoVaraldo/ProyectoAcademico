@@ -42,39 +42,19 @@ namespace Library
         /// </summary>
         /// <param name="tag">Tag a filtrar.</param>
         /// <returns>retorna el mismo Tag.</returns>
-        public Tag Filter(Tag tag)
+        public Visitor Filter(Tag tag)
         {
             if (tag.Name == "Image")
             {
                 this.Result = true;
-
-                try
-                {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.World);
-
-                    string name = tag.AttributeList["Name"].Value;
-                    int positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
-                    int positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
-                    int length = Int32.Parse(tag.AttributeList["Length"].Value);
-                    int width = Int32.Parse(tag.AttributeList["Width"].Value);
-
-                    string imagePath = tag.AttributeList["ImagePath"].Value;
-
-                    IXML image = new Image(name, positionY, positionX, length, width, visitor.LastScreen, imagePath);
-                    visitor.LastScreen.Add(image);
-                }
-                catch (NotFoundOnXMLException)
-                {
-                    // Mostrar en pantalla que no se encontro lo deseado en xml
-                }
+                Visitor visitorImage = new VisitorImage(tag);
+                return visitorImage;
             }
             else
             {
                 this.Result = false;
+                return null;
             }
-
-            return tag;
         }
     }
 }

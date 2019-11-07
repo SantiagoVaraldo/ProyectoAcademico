@@ -42,47 +42,19 @@ namespace Library
         /// </summary>
         /// <param name="tag">Tag a filtrar.</param>
         /// <returns>retorna el Tag.</returns>
-        public Tag Filter(Tag tag)
+        public Visitor Filter(Tag tag)
         {
             if (tag.Name == "ButtonCheck")
             {
                 this.Result = true;
-
-                string name;
-                int positionY, positionX;
-                int length, width;
-                string imagePath, imagePath2;
-                bool check;
-
-                try
-                {
-                    Visitor visitor = new VisitorWorld();
-                    visitor.Visit(Creator.World);
-
-                    name = tag.AttributeList["Name"].Value;
-                    positionY = Int32.Parse(tag.AttributeList["PositionY"].Value);
-                    positionX = Int32.Parse(tag.AttributeList["PositionX"].Value);
-                    length = Int32.Parse(tag.AttributeList["Length"].Value);
-                    width = Int32.Parse(tag.AttributeList["Width"].Value);
-                    check = Convert.ToBoolean(tag.AttributeList["Check"].Value);
-
-                    imagePath = tag.AttributeList["ImagePath"].Value;
-                    imagePath2 = tag.AttributeList["ImagePath2"].Value;
-
-                    IXML button = new ButtonCheck(name, positionY, positionX, length, width, visitor.LastScreen, imagePath, imagePath2, check);
-                    visitor.LastScreen.Add(button);
-                }
-                catch (NotFoundOnXMLException)
-                {
-                    // Mostrar en pantalla que no se encontro lo deseado en xml
-                }
+                Visitor visitorButtonCheck = new VisitorButtonCheck(tag);
+                return visitorButtonCheck;
             }
             else
             {
                 this.Result = false;
+                return null;
             }
-
-            return tag;
         }
     }
 }
