@@ -68,8 +68,7 @@ namespace Library
         public void Action(string name)
         {
             OneAdapter.Adapter.Debug($"Button clicked!");
-
-            // PlayAudio("Speech Off.wav"); hay q pasarle el audio a reproducir
+            OneAdapter.Adapter.PlayAudio(this.SoundPath);
         }
 
         /// <summary>
@@ -79,8 +78,7 @@ namespace Library
         public override void Render(IMainViewAdapter adapter)
         {
             string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
-
-            // adapter.SetImage(buttonId, this.ImagePath);
+            adapter.SetImage(buttonId, this.ImagePath);
         }
     }
 }
