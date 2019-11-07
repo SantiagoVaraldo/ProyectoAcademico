@@ -22,6 +22,8 @@ namespace Library
     {
         private int actualPage = 1;
 
+        // private int actualLevel = 1;
+
         /// <summary>
         /// metodo que actualiza la pagina, pasa a la siguiente pantalla.
         /// </summary>

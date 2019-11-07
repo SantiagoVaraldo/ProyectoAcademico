@@ -32,8 +32,9 @@ namespace Library
         /// <summary>
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer.
         /// </summary>
-        /// <param name="word"> Word que fue clickeado. </param>
-        public void NextLevel(Word word)
+        /// <param name="word"> word que fue arrastrado. </param>
+        /// <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        public bool NextLevel(Word word)
         {
             if (this.listWords.Count == this.cantDestination)
             {
@@ -44,7 +45,10 @@ namespace Library
                 }
 
                 this.listWords.Clear();
+                return true;
             }
+
+            return false;
         }
 
         /// <summary>
@@ -79,8 +83,11 @@ namespace Library
         /// <param name="word"> Word para agregar. </param>
         public void AddWord(Word word)
         {
-            this.listWords.Add(word);
-            word.Destination.Fill();
+            if (!this.listWords.Contains(word))
+            {
+                this.listWords.Add(word);
+                word.Destination.Fill();
+            }
         }
 
         /// <summary>

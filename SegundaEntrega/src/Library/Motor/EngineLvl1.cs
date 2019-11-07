@@ -45,13 +45,16 @@ namespace Library
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer.
         /// </summary>
         /// <param name="letter"> letra que fue clickeada. </param>
-        public void NextLevel(Letter letter)
+        /// <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        public bool NextLevel(Letter letter)
         {
             letter.Screen.LevelCompleted();
             foreach (IObserver observer in this.observers)
             {
                 observer.Update();
             }
+
+            return true;
         }
 
         /// <summary>

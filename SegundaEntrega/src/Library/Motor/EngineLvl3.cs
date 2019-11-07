@@ -61,8 +61,9 @@ namespace Library
         /// <summary>
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer.
         /// </summary>
-        /// <param name="buttonCheck"> boton al que se le hizo click. </param>
-        public void NextLevel(ButtonCheck buttonCheck)
+        /// <param name="buttonCheck"> boton que fue clickeado. </param>
+        /// <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        public bool NextLevel(ButtonCheck buttonCheck)
         {
             buttonCheck.Screen.LevelCompleted();
             foreach (IObserver observer in this.observers)
@@ -72,6 +73,7 @@ namespace Library
 
             this.correctList.Clear();
             this.selectedList.Clear();
+            return true;
         }
 
         /// <summary>
@@ -80,7 +82,7 @@ namespace Library
         /// <param name="buttonCheck"> boton que fue clickeado. </param>
         public void AddButtonCheck(ButtonCheck buttonCheck)
         {
-            if (buttonCheck.Check)
+            if (buttonCheck.Check & !this.correctList.Contains(buttonCheck))
             {
                 this.correctList.Add(buttonCheck);
             }
