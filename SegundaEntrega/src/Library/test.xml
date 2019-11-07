@@ -71,7 +71,7 @@
 		</Screen>
 		<Screen Name="Screen8" level="Level">
 			<Letter Name="ImageBanana4" PositionY="-100" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="Banana.jpg" Right="true"/>
-			<Letter Name="ImageCamara4" PositionY="-100" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="Camara.jpg" Right="true"/>
+			<Letter Name="ImageCamara4" PositionY="-100" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="Camara.jpg" Right="false"/>
 		</Screen>
 	</Level>
 </World>
