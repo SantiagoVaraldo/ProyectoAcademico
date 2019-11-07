@@ -111,9 +111,8 @@ namespace Library
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
         public override void Render(IMainViewAdapter adapter)
         {
-            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#BC2FA864", this.Action);
-
-            // adapter.SetImage(buttonId, this.ImagePath);
+            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#FFFFFFFF", this.Action);
+            adapter.SetImage(buttonId, this.ImagePath);
         }
     }
 }
