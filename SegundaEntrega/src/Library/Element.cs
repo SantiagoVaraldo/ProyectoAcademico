@@ -155,7 +155,7 @@ namespace Library
         /// metodo virtual el cual es remplazado por los metodos Render particulares de las clases que heredan de Element.
         /// </summary>
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public virtual void Render(IMainViewAdapter adapter)
+        public virtual void Render(Renderer renderer)
         {
         }
     }
