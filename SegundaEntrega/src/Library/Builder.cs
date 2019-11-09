@@ -58,7 +58,8 @@ namespace Proyecto.StudentsCode
 
                     foreach (Element element in screen.ElementList)
                     {
-                        element.Render(this.adapter);
+                        Renderer renderer = new Renderer();
+                        element.Render(renderer);
                     }
                 }
             }

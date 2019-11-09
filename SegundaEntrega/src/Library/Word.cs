@@ -45,7 +45,7 @@ namespace Library
         /// <param name="elementName"> nombre del elemento. </param>
         /// <param name="x"> posicion x. </param>
         /// <param name="y"> posicion y. </param>
-        private void OnDrop(string elementName, float x, float y)
+        public void OnDrop(string elementName, float x, float y)
         {
             if (elementName == this.ItemId)
             {
