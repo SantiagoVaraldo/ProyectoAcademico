@@ -74,7 +74,7 @@ namespace Library
             int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
             string imagePath = this.tag.AttributeList["ImagePath"].Value;
 
-            DragAndDropSource dragAndDropSource = new DragAndDropSource(name, positionY, positionX, length, width, this.LastScreen, imagePath);
+            IXML dragAndDropSource = new DragAndDropSource(name, positionY, positionX, length, width, this.LastScreen, imagePath);
             this.LastScreen.Add(dragAndDropSource);
         }
 
