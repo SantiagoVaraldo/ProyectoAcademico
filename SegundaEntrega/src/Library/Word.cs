@@ -32,14 +32,9 @@ namespace Library
         /// metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity.
         /// </summary>
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        public override void Render(Renderer renderer)
         {
-            this.ItemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(this.ItemId, this.ImagePath);
-            adapter.MakeDraggable(this.ItemId, true);
-            OneAdapter.Adapter.OnDrop += this.OnDrop;
-            OneAdapter.Adapter.Center(this.ItemId, this.Source.SourceCellImageId);
-
+            renderer.RenderWord(this);
             // adapter.SetImage(ItemId, this.ImagePath);
         }
 

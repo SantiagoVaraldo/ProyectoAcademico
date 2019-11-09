@@ -34,10 +34,9 @@ namespace Library
         /// metodo que permite al objeto de tipo DragAndDropSource renderizarce a si mismo en Unity.
         /// </summary>
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        public override void Render(Renderer renderer)
         {
-            this.SourceCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(this.SourceCellImageId, this.ImagePath);
+            renderer.RenderDragAndDropSource(this);
         }
     }
 }
