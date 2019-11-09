@@ -52,26 +52,29 @@ namespace Library
         /// <param name="y"> posicion y. </param>
         private void OnDrop(string elementName, float x, float y)
         {
-            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
-            EngineLvl2 engineLvl2 = Singleton<EngineLvl2>.Instance;
-            engineLvl2.Subscribe(generalEngine);
-            engineLvl2.Check(this);
-            OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
-
-            if (elementName == this.ItemId && OneAdapter.Adapter.Contains(this.Destination.DestinationCellImageId, x, y))
+            if (elementName == this.ItemId)
             {
-                // Mueve el elemento arrastrado al destino si se suelta arriba del destino
-                OneAdapter.Adapter.Center(elementName, this.Destination.DestinationCellImageId);
-                engineLvl2.AddWord(this);
-            }
-            else if (elementName == this.ItemId)
-            {
-                // Mueve el elemento arrastrado nuevamente al origen en caso contrario
-                OneAdapter.Adapter.Center(elementName, this.Source.SourceCellImageId);
-                engineLvl2.RemoveWord(this);
-            }
+                IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+                EngineLvl2 engineLvl2 = Singleton<EngineLvl2>.Instance;
+                engineLvl2.Subscribe(generalEngine);
+                engineLvl2.Check(this);
+                OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
 
-            engineLvl2.NextLevel(this);
+                if (OneAdapter.Adapter.Contains(this.Destination.DestinationCellImageId, x, y))
+                {
+                    // Mueve el elemento arrastrado al destino si se suelta arriba del destino
+                    OneAdapter.Adapter.Center(elementName, this.Destination.DestinationCellImageId);
+                    engineLvl2.AddWord(this);
+                }
+                else
+                {
+                    // Mueve el elemento arrastrado nuevamente al origen en caso contrario
+                    OneAdapter.Adapter.Center(elementName, this.Source.SourceCellImageId);
+                    engineLvl2.RemoveWord(this);
+                }
+
+                engineLvl2.NextLevel(this);
+            }
         }
     }
 }
