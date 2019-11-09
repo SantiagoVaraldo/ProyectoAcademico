@@ -22,7 +22,6 @@ namespace Library
     public class BlankSpace : DragAndDropDestination
     {
         private bool filled;
-
         public BlankSpace(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {
