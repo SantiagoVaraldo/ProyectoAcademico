@@ -48,7 +48,7 @@ namespace Library
         public override void Visit(World world)
         {
             string name = this.tag.AttributeList["Name"].Value;
-            Level level = new Level(name, world);
+            IXML level = new Level(name, world);
             world.Add(level);
         }
 

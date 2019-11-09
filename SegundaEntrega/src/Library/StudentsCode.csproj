@@ -24,10 +24,12 @@
   <Target Name="CopyFiles" AfterTargets="Build">
     <ItemGroup>
       <AllLibraries Include="$(OutDir)\*.dll" />
+      <AllPdbs Include="$(OutDir)\*.pdb" />
     </ItemGroup>
 
     <Message Text="Copying output file: @(AllLibraries) to: ..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" Importance="High" />
     <Copy SourceFiles="@(AllLibraries)" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" />
+    <Copy SourceFiles="@(AllPdbs)" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" />
     <Copy SourceFiles="test.xml" DestinationFolder="..\..\..\..\ClasesProfes\PII_Proyecto2019\Unity\Assets" />
   </Target>
 

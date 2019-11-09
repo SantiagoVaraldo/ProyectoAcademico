@@ -15,5 +15,7 @@ namespace Library
     public static class OneAdapter
     {
         public static IMainViewAdapter Adapter { get; set; }
+
+        public static IMainViewAdapter FalseAdapter { get; set; }
     }
 }

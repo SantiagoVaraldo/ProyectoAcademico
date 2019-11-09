@@ -45,6 +45,7 @@ namespace Library
                 }
 
                 this.listWords.Clear();
+                this.cantDestination = 0;
                 return true;
             }
 
