@@ -18,8 +18,6 @@ namespace Tests
             World WorldExpected = world1;
             Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
-
-
         }
         [Fact]
         public void LevelWithoutName()

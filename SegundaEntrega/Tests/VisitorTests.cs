@@ -7,11 +7,12 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Tests
 {
-    public class FilterTests
+    public class VisitorTests
     {
         [Fact]
         public void FilterLevelTest()
         {
+            Tag tag = new Tag(); 
             IPipe pipeNull = new PipeNull();
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
@@ -23,6 +24,7 @@ namespace Tests
             IFilterConditional filterLevel = new FilterLevel();
             IPipe pipe0 = new PipeConditional(filterLevel, pipeNull, pipeNull);
             
+
             Assert.True(pipe0.Send(tag) is VisitorLevel);
 
             // string NameExpected = "level1";
