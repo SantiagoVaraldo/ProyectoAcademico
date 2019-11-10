@@ -1,68 +1,120 @@
+//--------------------------------------------------------------------------------
+// <copyright file="Renderer.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Proyecto.Common;
 
 namespace Library
 {
+    /// <summary>
+    /// NOMBRE: Renderer.
+    /// DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
+    /// EXPERT: Esta clase es quien conoce el IMainViewAdapter, por lo que decidimos que sea responsable de contener
+    /// los metodos de renderizacion ejecutados utilizando dicho IMainViewAdapter.
+    /// COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
+    /// de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
+    /// </summary>
     public class Renderer
     {
         private IMainViewAdapter adapter;
+
         public Renderer()
         {
             this.adapter = OneAdapter.Adapter;
         }
+
+        /// <summary>
+        /// metodo que dibuja un BlankSpace en Unity.
+        /// </summary>
+        /// <param name="blankSpace"> BlankSpace a dibujar. </param>
         public void RenderBlankSpace(BlankSpace blankSpace)
         {
-            blankSpace.DestinationCellImageId = adapter.CreateImage((int)blankSpace.PositionX, (int)blankSpace.PositionY, (int)blankSpace.Width, (int)blankSpace.Length);
-            adapter.SetImage(blankSpace.DestinationCellImageId, blankSpace.ImagePath);
+            blankSpace.DestinationCellImageId = this.adapter.CreateImage((int)blankSpace.PositionX, (int)blankSpace.PositionY, (int)blankSpace.Width, (int)blankSpace.Length);
+            this.adapter.SetImage(blankSpace.DestinationCellImageId, blankSpace.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja un ButtonCheck en Unity.
+        /// </summary>
+        /// <param name="buttonCheck"> ButtonCheck a dibujar. </param>
         public void RenderButtonCheck(ButtonCheck buttonCheck)
         {
-            string buttonId = adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
-            adapter.SetImage(buttonId, buttonCheck.ImagePath);
+            string buttonId = this.adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
+            this.adapter.SetImage(buttonId, buttonCheck.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja un ButtonNextPage en Unity.
+        /// </summary>
+        /// <param name="buttonNextPage"> ButtonNextPage a dibujar. </param>
         public void RenderButtonNextPage(ButtonNextPage buttonNextPage)
         {
-            string buttonId = adapter.CreateButton((int)buttonNextPage.PositionX, (int)buttonNextPage.PositionY, (int)buttonNextPage.Width, (int)buttonNextPage.Length, "#FFFFFFFF", buttonNextPage.Action);
-            adapter.SetImage(buttonId, buttonNextPage.ImagePath);
+            string buttonId = this.adapter.CreateButton((int)buttonNextPage.PositionX, (int)buttonNextPage.PositionY, (int)buttonNextPage.Width, (int)buttonNextPage.Length, "#FFFFFFFF", buttonNextPage.Action);
+            this.adapter.SetImage(buttonId, buttonNextPage.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja un ButtonSound en Unity.
+        /// </summary>
+        /// <param name="buttonSound"> ButtonSound a dibujar. </param>
         public void RenderButtonSound(ButtonSound buttonSound)
         {
-            string buttonId = adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
-            adapter.SetImage(buttonId, buttonSound.ImagePath);
+            string buttonId = this.adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
+            this.adapter.SetImage(buttonId, buttonSound.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja un DragAndDropSource en Unity.
+        /// </summary>
+        /// <param name="dragAndDropSource"> DragAndDropSource a dibujar. </param>
         public void RenderDragAndDropSource(DragAndDropSource dragAndDropSource)
         {
-            dragAndDropSource.SourceCellImageId = adapter.CreateImage((int)dragAndDropSource.PositionX, (int)dragAndDropSource.PositionY, (int)dragAndDropSource.Width, (int)dragAndDropSource.Length);
-            adapter.SetImage(dragAndDropSource.SourceCellImageId, dragAndDropSource.ImagePath);
+            dragAndDropSource.SourceCellImageId = this.adapter.CreateImage((int)dragAndDropSource.PositionX, (int)dragAndDropSource.PositionY, (int)dragAndDropSource.Width, (int)dragAndDropSource.Length);
+            this.adapter.SetImage(dragAndDropSource.SourceCellImageId, dragAndDropSource.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja un ExitButton en Unity.
+        /// </summary>
+        /// <param name="exitButton"> ExitButton a dibujar. </param>
         public void RenderExitButton(ExitButton exitButton)
         {
-            string buttonId = adapter.CreateButton((int)exitButton.PositionX, (int)exitButton.PositionY, (int)exitButton.Width, (int)exitButton.Length, "#BC2FA864", exitButton.Action);
-            adapter.SetImage(buttonId, exitButton.ImagePath);
+            string buttonId = this.adapter.CreateButton((int)exitButton.PositionX, (int)exitButton.PositionY, (int)exitButton.Width, (int)exitButton.Length, "#BC2FA864", exitButton.Action);
+            this.adapter.SetImage(buttonId, exitButton.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja una Image en Unity.
+        /// </summary>
+        /// <param name="image"> Image a dibujar. </param>
         public void RenderImage(Image image)
         {
-            string imageId = adapter.CreateImage((int)image.PositionX, (int)image.PositionY, (int)image.Width, (int)image.Length);
-            adapter.SetImage(imageId, image.ImagePath);
+            string imageId = this.adapter.CreateImage((int)image.PositionX, (int)image.PositionY, (int)image.Width, (int)image.Length);
+            this.adapter.SetImage(imageId, image.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja una Letter en Unity.
+        /// </summary>
+        /// <param name="letter"> Letter a dibujar. </param>
         public void RenderLetter(Letter letter)
         {
-            string buttonId = adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
-            adapter.SetImage(buttonId, letter.ImagePath);
+            string buttonId = this.adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
+            this.adapter.SetImage(buttonId, letter.ImagePath);
         }
 
+        /// <summary>
+        /// metodo que dibuja una Word en Unity.
+        /// </summary>
+        /// <param name="word"> Word a dibujar. </param>
         public void RenderWord(Word word)
         {
-            word.ItemId = adapter.CreateImage((int)word.PositionX, (int)word.PositionY, (int)word.Width, (int)word.Length);
-            adapter.SetImage(word.ItemId, word.ImagePath);
-            adapter.MakeDraggable(word.ItemId, true);
+            word.ItemId = this.adapter.CreateImage((int)word.PositionX, (int)word.PositionY, (int)word.Width, (int)word.Length);
+            this.adapter.SetImage(word.ItemId, word.ImagePath);
+            this.adapter.MakeDraggable(word.ItemId, true);
             OneAdapter.Adapter.OnDrop += word.OnDrop;
             OneAdapter.Adapter.Center(word.ItemId, word.Source.SourceCellImageId);
         }
