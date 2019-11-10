@@ -815,30 +815,6 @@
             <param name="tag">Tag a filtrar.</param>
             <returns>retorna el Tag.</returns>
         </member>
-        <member name="T:Library.FilterWorld">
-            <summary>
-            NOMBRE: FilterWorld
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto World.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto World en caso
-            de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
-            PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
-            PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
-            simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
-            modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
-            </summary>
-        </member>
-        <member name="M:Library.FilterWorld.Filter(ExerciseOne.Tag)">
-            <summary>
-            filtra el Tag recibido por parametros.
-            </summary>
-            <param name="tag"> Tag a filtrar. </param>
-            <returns> retorna un Tag. </returns>
-        </member>
         <member name="T:Library.IFilterConditional">
             <summary>
             Un filtro con condicion.
@@ -1350,34 +1326,6 @@
             <param name="level"> objeto level al que se accede. </param>
         </member>
         <member name="M:Library.VisitorWord.Visit(Library.Screen)">
-            <summary>
-            metodo para acceder a la screen.
-            </summary>
-            <param name="screen"> objeto Screen a la que se accede. </param>
-        </member>
-        <member name="T:Library.VisitorWorld">
-            <summary>
-            NOMBRE: VisitorWorld.
-            DESCRIPCION: .
-            ExitButton: .
-            VISITOR: .
-            SRP: .
-            COLABORACIONES: .
-            </summary>
-        </member>
-        <member name="M:Library.VisitorWorld.Visit(Library.World)">
-            <summary>
-            metodo para acceder al world.
-            </summary>
-            <param name="world"> objeto world al que accede. </param>
-        </member>
-        <member name="M:Library.VisitorWorld.Visit(Library.Level)">
-            <summary>
-            metodo para acceder al level.
-            </summary>
-            <param name="level"> objeto level al que se accede. </param>
-        </member>
-        <member name="M:Library.VisitorWorld.Visit(Library.Screen)">
             <summary>
             metodo para acceder a la screen.
             </summary>
