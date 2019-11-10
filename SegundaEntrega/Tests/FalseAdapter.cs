@@ -13,14 +13,22 @@ namespace Library
     /// NOMBRE: Adapter.
     /// DESCRIPCION: Conoce un IMainViewAdapter que estaremos usando en nuestro programa.
     /// </summary>
-    public class FalseAdapter : IMainViewAdapter
+    
+
+    public class FalseAdapterContains : IMainViewAdapter
     {
+        private bool contain;
+        public FalseAdapterContains(bool contain)
+        {
+            this.Contain = contain;
+        }
 
         public BeginDrawEvent OnBeginDraw { get; set; }
         public EndDrawEvent OnEndDraw { get; set; }
         public DrawingEvent OnDrawing { get; set; }
         public DropEvent OnDrop { get; set; }
-
+        public bool Contain{get;set;}
+        
         
         public void ToDoAfterBuild(Action action)
         {
@@ -161,7 +169,7 @@ namespace Library
         }
         public bool Contains(string elementName, float x, float y)
         {
-            throw new Exception();
+            return this.Contain; 
         }
         public string GetWorkingFolder(bool readWrite = false)
         {

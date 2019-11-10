@@ -247,12 +247,6 @@
             </summary>
             <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
         </member>
-        <member name="T:Library.FalseAdapter">
-            <summary>
-            NOMBRE: Adapter.
-            DESCRIPCION: Conoce un IMainViewAdapter que estaremos usando en nuestro programa.
-            </summary>
-        </member>
         <member name="T:Library.IButton">
             <summary>
             interfaz IButton con la firma Action(se utiliza para que cada tipo de boton tenga una accion particular).
