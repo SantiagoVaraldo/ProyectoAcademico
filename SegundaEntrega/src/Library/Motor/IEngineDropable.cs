@@ -18,6 +18,6 @@ namespace Library
 
         void RemoveWord(Word word);
 
-        void ObtainCantDestination(Word word);
+        void ObtainCantDestination(Screen screen);
     }
 }

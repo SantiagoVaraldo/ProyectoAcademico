@@ -44,12 +44,29 @@ namespace Library
                     observer.Update();
                 }
 
-                this.listWords.Clear();
-                this.cantDestination = 0;
+                this.Reset(word.Screen);
                 return true;
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// metodo que resetea el estado del nivel, coloca los elementos de la pantalla en su estado de origen.
+        /// </summary>
+        /// <param name="screen"> Screen reseteada. </param>
+        public void Reset(Screen screen)
+        {
+            this.listWords.Clear();
+            this.cantDestination = 0;
+            foreach (Element element in screen.ElementList)
+            {
+                if (element is Word)
+                {
+                    ((Word)element).Destination.Unfill();
+                    OneAdapter.Adapter.Center(((Word)element).ItemId, ((Word)element).Source.SourceCellImageId);
+                }
+            }
         }
 
         /// <summary>
@@ -60,14 +77,18 @@ namespace Library
         {
             if (this.cantDestination == 0)
             {
-                this.ObtainCantDestination(word);
+                this.ObtainCantDestination(word.Screen);
             }
         }
 
-        public void ObtainCantDestination(Word word)
+        /// <summary>
+        /// obtiene la cantidad de elementos de tipo BlankSpace que hay en la pantalla.
+        /// </summary>
+        /// <param name="screen"> Screen en la que se calcula. </param>
+        public void ObtainCantDestination(Screen screen)
         {
             int num = 0;
-            foreach (Element element in word.Screen.ElementList)
+            foreach (Element element in screen.ElementList)
             {
                 if (element is BlankSpace)
                 {

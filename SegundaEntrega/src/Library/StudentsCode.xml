@@ -394,11 +394,23 @@
             <param name="word"> word que fue arrastrado. </param>
             <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
         </member>
+        <member name="M:Library.EngineLvl2.Reset(Library.Screen)">
+            <summary>
+            metodo que resetea el estado del nivel, coloca los elementos de la pantalla en su estado de origen.
+            </summary>
+            <param name="screen"> Screen reseteada. </param>
+        </member>
         <member name="M:Library.EngineLvl2.Check(Library.Word)">
             <summary>
             verifica que se haya superado el nivel.
             </summary>
             <param name="word"> Word clickeado. </param>
+        </member>
+        <member name="M:Library.EngineLvl2.ObtainCantDestination(Library.Screen)">
+            <summary>
+            obtiene la cantidad de elementos de tipo BlankSpace que hay en la pantalla.
+            </summary>
+            <param name="screen"> Screen en la que se calcula. </param>
         </member>
         <member name="M:Library.EngineLvl2.AddWord(Library.Word)">
             <summary>
@@ -449,6 +461,12 @@
             </summary>
             <param name="buttonCheck"> boton que fue clickeado. </param>
             <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        </member>
+        <member name="M:Library.EngineLvl3.Reset(Library.Screen)">
+            <summary>
+            metodo que reinicia el estado del juego y los elementos del nivel.
+            </summary>
+            <param name="screen"> Screen reiniciada. </param>
         </member>
         <member name="M:Library.EngineLvl3.AddButtonCheck(Library.ButtonCheck)">
             <summary>

@@ -71,9 +71,25 @@ namespace Library
                 observer.Update();
             }
 
+            this.Reset(buttonCheck.Screen);
+            return true;
+        }
+
+        /// <summary>
+        /// metodo que reinicia el estado del juego y los elementos del nivel.
+        /// </summary>
+        /// <param name="screen"> Screen reiniciada. </param>
+        public void Reset(Screen screen)
+        {
             this.correctList.Clear();
             this.selectedList.Clear();
-            return true;
+            foreach (Element element in screen.ElementList)
+            {
+                if (element is ButtonCheck)
+                {
+                    ((ButtonCheck)element).Unselect();
+                }
+            }
         }
 
         /// <summary>
