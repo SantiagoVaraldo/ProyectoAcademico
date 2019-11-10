@@ -53,14 +53,14 @@ namespace Library
         {
             if (this.cantDestination == 0)
             {
-                this.ObtainCantDestination(word);
+                this.ObtainCantDestination(word.Screen);
             }
         }
 
-        public void ObtainCantDestination(Word word)
+        public void ObtainCantDestination(Screen screen)
         {
             int num = 0;
-            foreach (Element element in word.Screen.ElementList)
+            foreach (Element element in screen.ElementList)
             {
                 if (element is BlankSpace)
                 {
