@@ -46,7 +46,6 @@ namespace Tests
             IPipe pipe0 = new PipeConditional(filterScreen, pipeNull, pipeNull);
             
             Assert.True(pipe0.Send(tag) is VisitorScreen);
-            
 
             // string nameExpected = "screen1";
             // Level level = Singleton<World>.Instance.ListLevel[0];

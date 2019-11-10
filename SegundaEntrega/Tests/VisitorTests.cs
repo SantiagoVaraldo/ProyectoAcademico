@@ -12,93 +12,101 @@ namespace Tests
         [Fact]
         public void FilterLevelTest()
         {
-            Tag tag = new Tag(); 
-            IPipe pipeNull = new PipeNull();
-
+            World world = Singleton<World>.Instance;
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
-            Attribute attribute = new Attribute("Name", "level1");
+            String levelName = "level1";
+            Attribute attribute = new Attribute("Name", levelName);
 
             attributeList.Add(attribute.Key, attribute);
             Tag tag = new Tag("Level", attributeList);
 
-            IFilterConditional filterLevel = new FilterLevel();
-            IPipe pipe0 = new PipeConditional(filterLevel, pipeNull, pipeNull);
-            
+            VisitorLevel visitor = new VisitorLevel(tag);
+            visitor.Visit(world);
 
-            Assert.True(pipe0.Send(tag) is VisitorLevel);
+            Level expectedLevel = new Level(levelName, world);
 
-            // string NameExpected = "level1";
-            // World world = Singleton<World>.Instance;
-            // VisitorLevel visitorLevel = new VisitorLevel();
-
-            // Assert.Equal(world.ListLevel[0].Name, NameExpected);
-            // Assert.Equal(world.ListLevel[0].World, world);
+            Assert.Equal(world.ListLevel.Count, 1);
+            Assert.True(world.ListLevel[0] is Level);
+            Assert.Equal(world.ListLevel[0].Name, levelName);
         }
         [Fact]
         public void FilterScreen()
         {
-            IPipe pipeNull = new PipeNull();
+            String screenName = "screen1";
+            String levelName = "level1";
+
+            World world = Singleton<World>.Instance;
+            Level level = new Level(levelName, world);
+            world.Add(level);
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
-            Attribute attribute = new Attribute("Name", "screen1");
-            attributeList.Add(attribute.Key, attribute);
+            
+            Attribute attributeName = new Attribute("Name", screenName);
+            Attribute attributeLevel = new Attribute("Level", levelName);
+
+            attributeList.Add(attributeName.Key, attributeName);
+            attributeList.Add(attributeLevel.Key, attributeLevel);
+
             Tag tag = new Tag("Screen", attributeList);
 
-            IFilterConditional filterScreen = new FilterScreen();
-            IPipe pipe0 = new PipeConditional(filterScreen, pipeNull, pipeNull);
-            
-            Assert.True(pipe0.Send(tag) is VisitorScreen);
-            
+            VisitorScreen visitor = new VisitorScreen(tag);
+            visitor.Visit(world);
 
-            // string nameExpected = "screen1";
-            // Level level = Singleton<World>.Instance.ListLevel[0];
+            Screen expectedScreen = new Screen(screenName, world.ListLevel[1]);
 
-            // Assert.Equal(level.ScreenList[0].Name, nameExpected);
-            // Assert.Equal(level.ScreenList[0].Level, level);
+            Assert.Equal(world.ListLevel[1].ScreenList.Count, 1);
+            Assert.True(world.ListLevel[1].ScreenList[0] is Screen);
+            Assert.Equal(world.ListLevel[1].ScreenList[0].Name, screenName);
         }
         [Fact]
         public void FilterElement()
         {
-            IPipe pipeNull = new PipeNull();
+            String screenName = "screen1";
+            String levelName = "level1";
+            String elementName = "element1";
+
+            World world = Singleton<World>.Instance;
+            Level level = new Level(levelName, world);
+            Screen screen = new Screen(screenName, level);
+            level.Add(screen);
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
-            Attribute attribute = new Attribute("Name", "image1");
-            Attribute attribute2 = new Attribute("PositionY", "100");
-            Attribute attribute3 = new Attribute("PositionX", "100");
-            Attribute attribute4 = new Attribute("Length", "100");
-            Attribute attribute5 = new Attribute("Width", "100");
-            Attribute attribute6 = new Attribute("ImagePath", "Oceano.jpg");
-            attributeList.Add(attribute.Key, attribute);
-            attributeList.Add(attribute2.Key, attribute2);
-            attributeList.Add(attribute3.Key, attribute3);
-            attributeList.Add(attribute4.Key, attribute4);
-            attributeList.Add(attribute5.Key, attribute5);
-            attributeList.Add(attribute6.Key, attribute6);
+
+            string name = "image1";
+            string length = "100";
+            string width = "100";
+            string positionY = "100";
+            string positionX = "100";
+            string imagePath = "Oceano.jpg";
+            
+            //<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
+
+            Attribute attributeName = new Attribute("Name", name);
+            Attribute attributeScreen = new Attribute("Screen", screenName);
+            Attribute attributeLenght = new Attribute("Lenght", length);
+            Attribute attributeWidth = new Attribute("Width", width);
+            Attribute attributePositionY = new Attribute("positionY", positionY);
+            Attribute attributePositionX = new Attribute("positionX", positionX);
+            Attribute attributeImagePath = new Attribute("ImagePath", imagePath);
+
+            attributeList.Add(attributeName.Key, attributeName);
+            attributeList.Add(attributeScreen.Key, attributeScreen);
+            attributeList.Add(attributeLenght.Key, attributeLenght);
+            attributeList.Add(attributeWidth.Key, attributeWidth);
+            attributeList.Add(attributePositionY.Key, attributePositionY);
+            attributeList.Add(attributePositionX.Key, attributePositionX);
+            attributeList.Add(attributeImagePath.Key, attributeImagePath);
+
             Tag tag = new Tag("Image", attributeList);
 
-            IFilterConditional filterImage = new FilterImage();
-            IPipe pipe0 = new PipeConditional(filterImage, pipeNull, pipeNull);
+            VisitorScreen visitor = new VisitorScreen(tag);
+            visitor.Visit(world);
 
-            Assert.True(pipe0.Send(tag) is VisitorImage);
+            Image expectedImage = new Image(name, Int32.Parse(positionY), Int32.Parse(positionX), Int32.Parse(length), Int32.Parse(width), screen, imagePath);
 
-            // pipe0.Send(tag);
-
-            // string nameExpected = "image1";
-            // Level level = Singleton<World>.Instance.ListLevel[0];
-            // Screen screen = level.ScreenList[0];
-            // int lengthExpected = 100;
-            // int widthExpected = 100;
-            // int positionYExpected = 100;
-            // int positionXExpected = 100;
-            // string imagePathExpected = "Oceano.jpg";
-
-            // Assert.Equal(screen.ElementList[0].Name, nameExpected);
-            // Assert.Equal(screen.ElementList[0].Screen, screen);
-            // Assert.Equal(screen.ElementList[0].PositionY, positionYExpected);
-            // Assert.Equal(screen.ElementList[0].PositionX, positionXExpected);
-            // Assert.Equal(screen.ElementList[0].Length, lengthExpected);
-            // Assert.Equal(screen.ElementList[0].Width, widthExpected);
-            // Assert.Equal(screen.ElementList[0].ImagePath, imagePathExpected);
+            Assert.True(world.ListLevel[2].ScreenList[0].ElementList[0] is Image);
+            Assert.Equal(world.ListLevel[2].ScreenList[0].ElementList[0].Name, elementName);
         }
     }
 }
