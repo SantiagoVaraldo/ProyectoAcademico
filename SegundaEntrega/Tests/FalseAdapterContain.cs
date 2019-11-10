@@ -135,9 +135,9 @@ namespace Library
         {
 
         }
-        public string GetFileContents(string value)
+        public string GetFileContents(string fileName)
         {
-
+            throw new Exception();
         }
         public string GetText(string elementName)
         {

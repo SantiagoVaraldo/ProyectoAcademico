@@ -12,7 +12,7 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            World world1 = new World("world1", 50, 50);
+            World world1 = Singleton<World>.Instance;
             Level level = new Level("level1", world1);
             Screen screen = new Screen("screen1", level);
             string nameExpected = "screen1";
@@ -23,7 +23,7 @@ namespace Tests
         [Fact]
         public void ScreenWithoutName()
         {
-            World world1 = new World("world1", 50, 50);
+            World world1 = Singleton<World>.Instance;
             Level level = new Level("level1", world1);
             Screen screen = new Screen(null, level);
             string nameExpected = null;
@@ -34,7 +34,7 @@ namespace Tests
         [Fact]
         public void ScreenWithoutLevel()
         {
-            World world1 = new World("world1", 50, 50);
+            World world1 = Singleton<World>.Instance;
             Level level = new Level("level1", world1);
             Screen screen = new Screen("screen1", null);
             string nameExpected = "screen1";
@@ -46,7 +46,7 @@ namespace Tests
         [Fact]
         public void ScreenWithoutLevelAndWithoutName()
         {
-            World world1 = new World("world1", 50, 50);
+            World world1 = Singleton<World>.Instance;
             Level level = new Level("level1", world1);
             Screen screen = new Screen(null, null);
             string nameExpected = null;

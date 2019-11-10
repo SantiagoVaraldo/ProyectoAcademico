@@ -10,32 +10,6 @@ namespace Tests
     public class FilterTests
     {
         [Fact]
-        public void FilterWorld()
-        {
-            IPipe pipeNull = new PipeNull();
-
-            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
-            Attribute attribute = new Attribute("Name", "world1");
-            Attribute attribute2 = new Attribute("Length", "100");
-            Attribute attribute3 = new Attribute("Width", "100");
-            attributeList.Add(attribute.Key, attribute);
-            attributeList.Add(attribute2.Key, attribute2);
-            attributeList.Add(attribute3.Key, attribute3);
-            Tag tag = new Tag("World", attributeList);
-
-            IFilterConditional filterWorld = new FilterWorld();
-            IPipe pipe0 = new PipeConditional(filterWorld, pipeNull, pipeNull);
-            pipe0.Send(tag);
-
-            string nameExpected = "world1";
-            int lengthExpected = 100;
-            int widthExpected = 100;
-
-            Assert.Equal(Singleton<World>.Instance.Name, nameExpected);
-            Assert.Equal(Singleton<World>.Instance.Length, lengthExpected);
-            Assert.Equal(Singleton<World>.Instance.Width, widthExpected);
-        }
-        [Fact]
         public void FilterLevelTest()
         {
             IPipe pipeNull = new PipeNull();

@@ -14,7 +14,7 @@ namespace Tests
         Screen screen;
         public ElementTests()
         {
-            world1 = new World("world1", 50, 50);
+            world1 = Singleton<World>.Instance;
             level = new Level("level1", world1);
             screen = new Screen("screen1", level);
         }
