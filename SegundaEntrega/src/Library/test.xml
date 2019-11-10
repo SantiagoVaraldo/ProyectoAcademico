@@ -370,8 +370,6 @@
 			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Torta3.jpg" ImagePath2="Caramelo.jpg" Check="false"/>
 		</Screen>
 	</Level>
-</World>
-
 		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Lechuga.jpg"/>
 	</Screen>
 	<Screen Name="Screen41" Level="Level">
