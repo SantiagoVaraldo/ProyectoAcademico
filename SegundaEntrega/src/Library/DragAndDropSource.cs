@@ -31,13 +31,12 @@ namespace Library
         public string SourceCellImageId { get; set; }
 
         /// <summary>
-        /// metodo que permite al objeto de tipo DragAndDropSource renderizarce a si mismo en Unity.
+        /// metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
         /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        /// <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+        public override void Render(Renderer renderer)
         {
-            this.SourceCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(this.SourceCellImageId, this.ImagePath);
+            renderer.RenderDragAndDropSource(this);
         }
     }
 }

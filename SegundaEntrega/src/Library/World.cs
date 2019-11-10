@@ -23,15 +23,11 @@ namespace Library
     public class World : IContainer
     {
         private string name;
-        private int? length;
-        private int? width;
         private List<Level> listLevel = new List<Level>();
 
-        public World(string name, int length, int width)
+        public World()
         {
-            this.Name = name;
-            this.Length = length;
-            this.Width = width;
+            this.Name = "TheWorld";
         }
 
         public string Name
@@ -43,42 +39,7 @@ namespace Library
 
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.name = value;
-                }
-            }
-        }
-
-        public int? Length
-        {
-            get
-            {
-                return this.length;
-            }
-
-            set
-            {
-                if (value > 0)
-                {
-                    this.length = value;
-                }
-            }
-        }
-
-        public int? Width
-        {
-            get
-            {
-                return this.width;
-            }
-
-            set
-            {
-                if (value > 0)
-                {
-                    this.width = value;
-                }
+                this.name = value;
             }
         }
 

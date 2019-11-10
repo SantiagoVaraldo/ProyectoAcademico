@@ -29,18 +29,12 @@ namespace Library
         public string ItemId { get; set; }
 
         /// <summary>
-        /// metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity.
+        /// metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
         /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        /// <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+        public override void Render(Renderer renderer)
         {
-            this.ItemId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(this.ItemId, this.ImagePath);
-            adapter.MakeDraggable(this.ItemId, true);
-            OneAdapter.Adapter.OnDrop += this.OnDrop;
-            OneAdapter.Adapter.Center(this.ItemId, this.Source.SourceCellImageId);
-
-            // adapter.SetImage(ItemId, this.ImagePath);
+            renderer.RenderWord(this);
         }
 
         /// <summary>
@@ -50,7 +44,7 @@ namespace Library
         /// <param name="elementName"> nombre del elemento. </param>
         /// <param name="x"> posicion x. </param>
         /// <param name="y"> posicion y. </param>
-        private void OnDrop(string elementName, float x, float y)
+        public void OnDrop(string elementName, float x, float y)
         {
             if (elementName == this.ItemId)
             {

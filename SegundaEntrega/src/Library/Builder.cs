@@ -46,19 +46,20 @@ namespace Proyecto.StudentsCode
 
             Creator creator = new Creator();
             creator.Create();
-            World world = Creator.World;
+            World world = Singleton<World>.Instance;
 
             foreach (Level level in world.ListLevel)
             {
                 foreach (Screen screen in level.ScreenList)
                 {
                     this.nextPageName = this.adapter.AddPage();
-                    Creator.ListPages.Add(this.nextPageName);  // agrego esto
+                    Creator.ListPages.Add(this.nextPageName);
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
 
                     foreach (Element element in screen.ElementList)
                     {
-                        element.Render(this.adapter);
+                        Renderer renderer = new Renderer();
+                        element.Render(renderer);
                     }
                 }
             }

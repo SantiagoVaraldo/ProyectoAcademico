@@ -30,13 +30,12 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo que permite al objeto de tipo Image renderizarce a si mismo en Unity.
+        /// metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
         /// </summary>
-        /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        /// <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+        public override void Render(Renderer renderer)
         {
-            string imageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(imageId, this.ImagePath);
+            renderer.RenderImage(this);
         }
     }
 }

@@ -20,22 +20,8 @@ namespace Library
     /// </summary>
     public class Creator
     {
-        private static World world;
-        private static List<string> listPages = new List<string>(); // agregue esto
+        private static List<string> listPages = new List<string>();
         private List<Tag> listTags = new List<Tag>();
-
-        public static World World
-        {
-            get
-            {
-                return Creator.world;
-            }
-
-            set
-            {
-                Creator.world = value;
-            }
-        }
 
         public static List<string> ListPages
         {
@@ -57,7 +43,6 @@ namespace Library
             IPipe pipeNull = new PipeNull();
 
             // creamos instancias de todos los filtros que nos interecen
-            IFilterConditional filterWorld = new FilterWorld();
             IFilterConditional filterLevel = new FilterLevel();
             IFilterConditional filterScreen = new FilterScreen();
             IFilterConditional filterButtonNextPage = new FilterButtonNextPage();
@@ -83,14 +68,13 @@ namespace Library
             IPipe pipe3 = new PipeConditional(filterButtonNextPage, pipeNull, pipe4);
             IPipe pipe2 = new PipeConditional(filterScreen, pipeNull, pipe3);
             IPipe pipe1 = new PipeConditional(filterLevel, pipeNull, pipe2);
-            IPipe pipe0 = new PipeConditional(filterWorld, pipeNull, pipe1);
 
             foreach (Tag tag in this.listTags)
             {
-                Visitor visitor = pipe0.Send(tag);
+                Visitor visitor = pipe1.Send(tag);
                 if (visitor != null)
                 {
-                    visitor.Visit(Creator.World);
+                    visitor.Visit(Singleton<World>.Instance);
                 }
             }
         }
