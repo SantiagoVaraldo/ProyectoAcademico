@@ -26,7 +26,7 @@
             cambia atributo Filled a false.
             </summary>
         </member>
-        <member name="M:Library.BlankSpace.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.BlankSpace.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo BlankSpace renderizarce a si mismo en Unity.
             </summary>
@@ -61,7 +61,7 @@
             metodo que deselecciona el boton.
             </summary>
         </member>
-        <member name="M:Library.ButtonCheck.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.ButtonCheck.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo ButtonCheck renderizarce a si mismo en Unity.
             </summary>
@@ -86,7 +86,7 @@
             </summary>
             <param name="name"> nombre del boton. </param>
         </member>
-        <member name="M:Library.ButtonNextPage.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.ButtonNextPage.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo ButtonNextPage renderizarce a si mismo en Unity.
             </summary>
@@ -111,7 +111,7 @@
             </summary>
             <param name="name"> nombre del boton. </param>
         </member>
-        <member name="M:Library.ButtonSound.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.ButtonSound.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo ButtonSound renderizarce a si mismo en Unity.
             </summary>
@@ -191,7 +191,7 @@
             y es de tipo Element.
             </summary>
         </member>
-        <member name="M:Library.DragAndDropSource.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.DragAndDropSource.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo DragAndDropSource renderizarce a si mismo en Unity.
             </summary>
@@ -208,7 +208,7 @@
             COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
             </summary>
         </member>
-        <member name="M:Library.Element.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.Element.Render(Library.Renderer)">
             <summary>
             metodo virtual el cual es remplazado por los metodos Render particulares de las clases que heredan de Element.
             </summary>
@@ -241,7 +241,7 @@
             </summary>
             <param name="name"> nombre del boton. </param>
         </member>
-        <member name="M:Library.ExitButton.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.ExitButton.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo ExitButton renderizarce a si mismo en Unity.
             </summary>
@@ -273,7 +273,7 @@
             es de tipo Element.
             </summary>
         </member>
-        <member name="M:Library.Image.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.Image.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo Image renderizarce a si mismo en Unity.
             </summary>
@@ -301,7 +301,7 @@
             </summary>
             <param name="name"> nombre de la Letter. </param>
         </member>
-        <member name="M:Library.Letter.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.Letter.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo Letter renderizarce a si mismo en Unity.
             </summary>
@@ -1326,7 +1326,7 @@
             y es de tipo DragAndDropItem.
             </summary>
         </member>
-        <member name="M:Library.Word.Render(Proyecto.Common.IMainViewAdapter)">
+        <member name="M:Library.Word.Render(Library.Renderer)">
             <summary>
             metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity.
             </summary>

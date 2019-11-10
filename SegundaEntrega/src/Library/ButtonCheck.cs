@@ -109,10 +109,9 @@ namespace Library
         /// metodo que permite al objeto de tipo ButtonCheck renderizarce a si mismo en Unity.
         /// </summary>
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        public override void Render(Renderer renderer)
         {
-            string buttonId = adapter.CreateButton((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length, "#FFFFFFFF", this.Action);
-            adapter.SetImage(buttonId, this.ImagePath);
+            renderer.RenderButtonCheck(this);
         }
     }
 }

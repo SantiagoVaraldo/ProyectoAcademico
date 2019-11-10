@@ -64,10 +64,9 @@ namespace Library
         /// metodo que permite al objeto de tipo BlankSpace renderizarce a si mismo en Unity.
         /// </summary>
         /// <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
-        public override void Render(IMainViewAdapter adapter)
+        public override void Render(Renderer renderer)
         {
-            this.DestinationCellImageId = adapter.CreateImage((int)this.PositionX, (int)this.PositionY, (int)this.Width, (int)this.Length);
-            adapter.SetImage(this.DestinationCellImageId, this.ImagePath);
+            renderer.RenderBlankSpace(this);
         }
     }
 }
