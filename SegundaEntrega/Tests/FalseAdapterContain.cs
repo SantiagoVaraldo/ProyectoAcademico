@@ -15,10 +15,10 @@ namespace Library
     /// </summary>
     
 
-    public class FalseAdapterContains : IMainViewAdapter
+    public class FalseAdapterContain : IMainViewAdapter
     {
         private bool contain;
-        public FalseAdapterContains(bool contain)
+        public FalseAdapterContain(bool contain)
         {
             this.Contain = contain;
         }
