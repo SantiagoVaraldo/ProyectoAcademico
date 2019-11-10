@@ -127,7 +127,15 @@ namespace Library
         {
 
         }
+        public void SetActive(string elementName, bool boolean)
+        {
+
+        }
         public void SetImage(string elementName, string resourceName)
+        {
+
+        }
+        public string GetFileContents(string value)
         {
 
         }
@@ -136,6 +144,10 @@ namespace Library
             throw new Exception();
         }
         public void SetText(string elementName, string value)
+        {
+
+        }
+         public void SetText(string elementName, string value, bool boolean)
         {
 
         }
