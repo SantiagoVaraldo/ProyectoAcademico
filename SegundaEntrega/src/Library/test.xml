@@ -131,6 +131,81 @@
 		<Image Name="Personaje" PositionY="-50" PositionX="-220" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
 		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
 	</Screen>
+	<Screen Name="Screen10" Level="Level">
+		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
+		<DragAndDropSource Name="Source" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-300" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga1" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="La.jpg" DragAndDropSource="Source" BlankSpace="BlankSpace"/>
+
+		<DragAndDropSource Name="Source2" PositionY="100" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace2" PositionY="-100" PositionX="-100" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga2" PositionY="100" PositionX="150" Length="100" Width="150" Screen="Screen10" ImagePath="LechugaTxt.jpg" DragAndDropSource="Source2" BlankSpace="BlankSpace2"/>
+
+		<DragAndDropSource Name="Source3" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace3" PositionY="-100" PositionX="100" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga3" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="Es.jpg" DragAndDropSource="Source3" BlankSpace="BlankSpace3"/>
+
+		<DragAndDropSource Name="Source4" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace4" PositionY="-100" PositionX="300" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga4" PositionY="0" PositionX="150" Length="100" Width="150" Screen="Screen10" ImagePath="Verde.jpg" DragAndDropSource="Source4" BlankSpace="BlankSpace4"/>
+
+		<Image Name="Letter8" PositionY="100" PositionX="-300" Length="150" Width="150" Screen="Screen10" ImagePath="Lechuga.jpg"/>
+	</Screen>
+	<Screen Name="Screen10" Level="Level">
+		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
+		<DragAndDropSource Name="Source" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-300" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga1" PositionY="100" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="Me.jpg" DragAndDropSource="Source" BlankSpace="BlankSpace"/>
+
+		<DragAndDropSource Name="Source2" PositionY="100" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace2" PositionY="-100" PositionX="-100" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga2" PositionY="100" PositionX="150" Length="100" Width="150" Screen="Screen10" ImagePath="Gustan.jpg" DragAndDropSource="Source2" BlankSpace="BlankSpace2"/>
+
+		<DragAndDropSource Name="Source3" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace3" PositionY="-100" PositionX="100" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga3" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen10" ImagePath="Los.jpg" DragAndDropSource="Source3" BlankSpace="BlankSpace3"/>
+
+		<DragAndDropSource Name="Source4" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace4" PositionY="-100" PositionX="300" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga4" PositionY="0" PositionX="150" Length="100" Width="150" Screen="Screen10" ImagePath="Postres.jpg" DragAndDropSource="Source4" BlankSpace="BlankSpace4"/>
+
+		<Image Name="Letter8" PositionY="100" PositionX="-300" Length="150" Width="150" Screen="Screen10" ImagePath="Torta3.jpg"/>
+	</Screen>
+		<Screen Name="Screen10" Level="Level">
+		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
+		<DragAndDropSource Name="Source" PositionY="100" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-350" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga1" PositionY="100" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="La.jpg" DragAndDropSource="Source" BlankSpace="BlankSpace"/>
+
+		<DragAndDropSource Name="Source2" PositionY="100" PositionX="200" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace2" PositionY="-100" PositionX="-235" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga2" PositionY="100" PositionX="200" Length="100" Width="130" Screen="Screen10" ImagePath="ManzanaTxt.jpg" DragAndDropSource="Source2" BlankSpace="BlankSpace2"/>
+
+		<DragAndDropSource Name="Source3" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace3" PositionY="-100" PositionX="-120" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga2" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen10" ImagePath="YRojo.jpg" DragAndDropSource="Source3" BlankSpace="BlankSpace3"/>
+
+		<DragAndDropSource Name="Source4" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace4" PositionY="-100" PositionX="0" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga2" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="La.jpg" DragAndDropSource="Source4" BlankSpace="BlankSpace4"/>
+
+		<DragAndDropSource Name="Source5" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace5" PositionY="-100" PositionX="125" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga3" PositionY="0" PositionX="0" Length="100" Width="120" Screen="Screen10" ImagePath="BananaTxt.jpg" DragAndDropSource="Source5" BlankSpace="BlankSpace5"/>
+
+		<DragAndDropSource Name="Source6" PositionY="0" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace6" PositionY="-100" PositionX="250" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga4" PositionY="0" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="Son.jpg" DragAndDropSource="Source6" BlankSpace="BlankSpace6"/>
+
+		<DragAndDropSource Name="Source7" PositionY="0" PositionX="270" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<BlankSpace Name="BlankSpace7" PositionY="-100" PositionX="370" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
+		<Word Name="lechuga4" PositionY="0" PositionX="270" Length="100" Width="120" Screen="Screen10" ImagePath="Frutas.jpg" DragAndDropSource="Source7" BlankSpace="BlankSpace7"/>
+
+		<Image Name="Letter8" PositionY="100" PositionX="-300" Length="150" Width="150" Screen="Screen10" ImagePath="Manzana.jpg"/>
+	</Screen>
 </Level>
 <Level Name="Level2" World="TheWorld">
 	<Screen Name="Screen40" Level="Level">
