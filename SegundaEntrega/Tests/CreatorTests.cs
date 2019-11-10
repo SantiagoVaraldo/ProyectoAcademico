@@ -42,10 +42,10 @@ namespace Tests
                           string NameScreenExpected = "Screen";
                           string NameElementExpected = "ImageBanana";
 
-                           Assert.Equal(Creator.World.Name, NameWorldExpected);
-                           Assert.Equal(Creator.World.ListLevel[0].Name, NameLevelExpected);
-                           Assert.Equal(Creator.World.ListLevel[0].ListaScreen[0].Name, NameScreenExpected);
-                           Assert.Equal(Creator.World.ListLevel[0].ListaScreen[0].ListaElement[0].Name, NameElementExpected);
+                           Assert.Equal(Singleton<World>.Instance.Name, NameWorldExpected);
+                           Assert.Equal(Singleton<World>.Instance.ListLevel[0].Name, NameLevelExpected);
+                           Assert.Equal(Singleton<World>.Instance.ListLevel[0].ListaScreen[0].Name, NameScreenExpected);
+                           Assert.Equal(Singleton<World>.Instance.ListLevel[0].ListaScreen[0].ListaElement[0].Name, NameElementExpected);
                   }
          }
 }

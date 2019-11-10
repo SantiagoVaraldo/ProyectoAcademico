@@ -28,9 +28,9 @@
         </member>
         <member name="M:Library.BlankSpace.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo BlankSpace renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.ButtonCheck">
             <summary>
@@ -63,9 +63,9 @@
         </member>
         <member name="M:Library.ButtonCheck.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo ButtonCheck renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.ButtonNextPage">
             <summary>
@@ -88,9 +88,9 @@
         </member>
         <member name="M:Library.ButtonNextPage.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo ButtonNextPage renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.ButtonSound">
             <summary>
@@ -113,9 +113,9 @@
         </member>
         <member name="M:Library.ButtonSound.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo ButtonSound renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.Creator">
             <summary>
@@ -193,9 +193,9 @@
         </member>
         <member name="M:Library.DragAndDropSource.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo DragAndDropSource renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.Element">
             <summary>
@@ -212,7 +212,7 @@
             <summary>
             metodo virtual el cual es remplazado por los metodos Render particulares de las clases que heredan de Element.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.NotFoundOnXMLException">
              <summary>
@@ -243,9 +243,9 @@
         </member>
         <member name="M:Library.ExitButton.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo ExitButton renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.IButton">
             <summary>
@@ -275,9 +275,9 @@
         </member>
         <member name="M:Library.Image.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo Image renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.IXML">
             <summary>
@@ -303,9 +303,9 @@
         </member>
         <member name="M:Library.Letter.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo Letter renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.Level">
             <summary>
@@ -815,30 +815,6 @@
             <param name="tag">Tag a filtrar.</param>
             <returns>retorna el Tag.</returns>
         </member>
-        <member name="T:Library.FilterWorld">
-            <summary>
-            NOMBRE: FilterWorld
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto World.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto World en caso
-            de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
-            PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
-            PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
-            simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
-            modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
-            </summary>
-        </member>
-        <member name="M:Library.FilterWorld.Filter(ExerciseOne.Tag)">
-            <summary>
-            filtra el Tag recibido por parametros.
-            </summary>
-            <param name="tag"> Tag a filtrar. </param>
-            <returns> retorna un Tag. </returns>
-        </member>
         <member name="T:Library.IFilterConditional">
             <summary>
             Un filtro con condicion.
@@ -905,6 +881,70 @@
             <param name="tag">Tag a recibir.</param>
             <returns>el mismo Tag.</returns>
         </member>
+        <member name="T:Library.Renderer">
+            <summary>
+            NOMBRE: Renderer.
+            DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
+            EXPERT: Esta clase es quien conoce el IMainViewAdapter, por lo que decidimos que sea responsable de contener
+            los metodos de renderizacion ejecutados utilizando dicho IMainViewAdapter.
+            COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
+            de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
+            </summary>
+        </member>
+        <member name="M:Library.Renderer.RenderBlankSpace(Library.BlankSpace)">
+            <summary>
+            metodo que dibuja un BlankSpace en Unity.
+            </summary>
+            <param name="blankSpace"> BlankSpace a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderButtonCheck(Library.ButtonCheck)">
+            <summary>
+            metodo que dibuja un ButtonCheck en Unity.
+            </summary>
+            <param name="buttonCheck"> ButtonCheck a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderButtonNextPage(Library.ButtonNextPage)">
+            <summary>
+            metodo que dibuja un ButtonNextPage en Unity.
+            </summary>
+            <param name="buttonNextPage"> ButtonNextPage a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderButtonSound(Library.ButtonSound)">
+            <summary>
+            metodo que dibuja un ButtonSound en Unity.
+            </summary>
+            <param name="buttonSound"> ButtonSound a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderDragAndDropSource(Library.DragAndDropSource)">
+            <summary>
+            metodo que dibuja un DragAndDropSource en Unity.
+            </summary>
+            <param name="dragAndDropSource"> DragAndDropSource a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderExitButton(Library.ExitButton)">
+            <summary>
+            metodo que dibuja un ExitButton en Unity.
+            </summary>
+            <param name="exitButton"> ExitButton a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderImage(Library.Image)">
+            <summary>
+            metodo que dibuja una Image en Unity.
+            </summary>
+            <param name="image"> Image a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderLetter(Library.Letter)">
+            <summary>
+            metodo que dibuja una Letter en Unity.
+            </summary>
+            <param name="letter"> Letter a dibujar. </param>
+        </member>
+        <member name="M:Library.Renderer.RenderWord(Library.Word)">
+            <summary>
+            metodo que dibuja una Word en Unity.
+            </summary>
+            <param name="word"> Word a dibujar. </param>
+        </member>
         <member name="T:Library.Screen">
             <summary>
             NOMBRE: Screen.
@@ -928,6 +968,11 @@
         <member name="M:Library.Screen.LevelCompleted">
             <summary>
             cambia el estado del objeto a "nivel completado".
+            </summary>
+        </member>
+        <member name="M:Library.Screen.LevelUncompleted">
+            <summary>
+            cambia el estado del objeto a "nivel incompleto".
             </summary>
         </member>
         <member name="M:Library.Screen.Accept(Library.Visitor)">
@@ -1286,34 +1331,6 @@
             </summary>
             <param name="screen"> objeto Screen a la que se accede. </param>
         </member>
-        <member name="T:Library.VisitorWorld">
-            <summary>
-            NOMBRE: VisitorWorld.
-            DESCRIPCION: .
-            ExitButton: .
-            VISITOR: .
-            SRP: .
-            COLABORACIONES: .
-            </summary>
-        </member>
-        <member name="M:Library.VisitorWorld.Visit(Library.World)">
-            <summary>
-            metodo para acceder al world.
-            </summary>
-            <param name="world"> objeto world al que accede. </param>
-        </member>
-        <member name="M:Library.VisitorWorld.Visit(Library.Level)">
-            <summary>
-            metodo para acceder al level.
-            </summary>
-            <param name="level"> objeto level al que se accede. </param>
-        </member>
-        <member name="M:Library.VisitorWorld.Visit(Library.Screen)">
-            <summary>
-            metodo para acceder a la screen.
-            </summary>
-            <param name="screen"> objeto Screen a la que se accede. </param>
-        </member>
         <member name="T:Library.Word">
             <summary>
             NOMBRE: Word.
@@ -1328,9 +1345,9 @@
         </member>
         <member name="M:Library.Word.Render(Library.Renderer)">
             <summary>
-            metodo que permite al objeto de tipo DragAndDropItem renderizarce a si mismo en Unity.
+            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
-            <param name="adapter"> recibe un IMainViewAdapter para renderizarce. </param>
+            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="M:Library.Word.OnDrop(System.String,System.Single,System.Single)">
             <summary>
