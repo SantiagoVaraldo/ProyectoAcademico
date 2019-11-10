@@ -1,3 +1,4 @@
+
 <Level Name="Level" World="TheWorld">
 	<Screen Name="Screen40" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="337" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -53,6 +54,7 @@
 	<Screen Name="Screen4" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="337" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 
+
 		<DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen4" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-70" Length="30" Width="100" Screen="Screen4" ImagePath="Linea.jpg"/>
 		<Word Name="vaca1" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen4" ImagePath="Va.jpg" DragAndDropSource="Source" BlankSpace="BlankSpace"/>
@@ -61,13 +63,12 @@
 		<BlankSpace Name="BlankSpace2" PositionY="-100" PositionX="70" Length="30" Width="100" Screen="Screen4" ImagePath="Linea.jpg"/>
 		<Word Name="vaca2" PositionY="100" PositionX="100" Length="100" Width="100" Screen="Screen4" ImagePath="Cas.jpg" DragAndDropSource="Source2" BlankSpace="BlankSpace2"/>
 
+			<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen4" ImagePath="Vacas.jpg"/>
+		</Screen>
+		<Screen Name="Screen5" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 
-		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen4" ImagePath="Vacas.jpg"/>
-	</Screen>
-	<Screen Name="Screen5" level="Level">
-		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="337" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
-
-		<DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
+    <DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="null" PositionY="-100" PositionX="-100" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
 		<Word Name="pinguino1" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="Pin.jpg" DragAndDropSource="Source" BlankSpace="BlankSpace"/>
 
@@ -79,12 +80,13 @@
 		<BlankSpace Name="BlankSpace3" PositionY="-100" PositionX="0" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
 		<Word Name="pinguino3" PositionY="100" PositionX="100" Length="100" Width="100" Screen="Screen5" ImagePath="Gui.jpg" DragAndDropSource="Source3" BlankSpace="BlankSpace3"/>
 
-		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Pinguinos.jpg"/>
-	</Screen>
-	<Screen Name="Screen5" level="Level">
-		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="337" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 
-		<DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Pinguinos.jpg"/>
+		</Screen>
+		<Screen Name="Screen5" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
+    <DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-100" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
 		<Word Name="mariposa1" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="Ma.jpg" DragAndDropSource="Source" BlankSpace="BlankSpace"/>
 
@@ -99,6 +101,102 @@
 		<DragAndDropSource Name="Source4" PositionY="100" PositionX="200" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="BlankSpace4" PositionY="-100" PositionX="200" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
 		<Word Name="mariposa4" PositionY="100" PositionX="200" Length="100" Width="100" Screen="Screen5" ImagePath="Sa.jpg" DragAndDropSource="Source4" BlankSpace="BlankSpace4"/>
+			<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Mariposa.jpg"/>
+		</Screen>
+		<Screen Name="Screen41" Level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
+			<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto3.jpg"/>
+			<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		</Screen>
+		<Screen Name="Screen6" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Abeja.jpg" ImagePath2="Banana.jpg" Check="true"/>
+			<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="Camara.jpg" ImagePath2="Camara.jpg" Check="false"/>
+			<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Paragua.jpg" ImagePath2="Lampara.jpg" Check="false"/>
+			<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Mariposa.jpg" ImagePath2="Lapiz.jpg" Check="false"/>
+			<ButtonCheck Name="Manzana" PositionY="80" PositionX="0" Length="150" Width="150" Screen="Screen" ImagePath="Miel.jpg" ImagePath2="Lapiz.jpg" Check="true"/>
+			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Guitarra.jpg" ImagePath2="Oceano.jpg" Check="false"/>
+		</Screen>
+		<Screen Name="Screen7" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Pez.jpg" ImagePath2="Pez.jpg" Check="true"/>
+			<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="Portada.jpg" ImagePath2="Portada.jpg" Check="false"/>
+			<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Oceano.jpg" ImagePath2="Oceano.jpg" Check="true"/>
+			<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Gato.jpg" ImagePath2="Gato.jpg" Check="false"/>
+			<ButtonCheck Name="Manzana" PositionY="80" PositionX="0" Length="150" Width="150" Screen="Screen" ImagePath="MorronVerde.jpg" ImagePath2="MorronVerde.jpg" Check="false"/>
+			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Camara.jpg" ImagePath2="Camara.jpg" Check="false"/>
+		</Screen>
+		<Screen Name="Screen8" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Pajaro.jpg" ImagePath2="Pajaro.jpg" Check="true"/>
+			<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="Pizza.jpg" ImagePath2="pizza.jpg" Check="false"/>
+			<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Celular.jpg" ImagePath2="Celular.jpg" Check="false"/>
+			<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Arbol.jpg" ImagePath2="Arbol.jpg" Check="false"/>
+			<ButtonCheck Name="Manzana" PositionY="80" PositionX="0" Length="150" Width="150" Screen="Screen" ImagePath="Tiburon.jpg" ImagePath2="Tiburon.jpg" Check="true"/>
+			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Caramelo.jpg" ImagePath2="Caramelo.jpg" Check="false"/>
+		</Screen>
+		<Screen Name="Screen40" Level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Texto" PositionY="75" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Texto4.jpg"/>
+			<Image Name="Personaje" PositionY="-50" PositionX="-220" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
+			<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		</Screen>
+	</Level>
+	<Level Name="Level2" World="TheWorld">
+		<Screen Name="Screen40" Level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Personaje" PositionY="-50" PositionX="-200" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
+			<Image Name="Texto" PositionY="75" PositionX="0" Length="200" Width="200" Screen="Screen40" ImagePath="Texto.jpg"/>
+			<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		</Screen>
+		<Screen Name="Screen" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Letter Name="Letter1" PositionY="-110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="E.jpg" Right="true"/>
+			<Letter Name="Letter2" PositionY="-110" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="K.jpg" Right="false"/>
+			<Letter Name="Letter3" PositionY="-110" PositionX="150" Length="100" Width="100" Screen="Screen", ImagePath="O.jpg" Right="false"/>
+			<Letter Name="Letter4" PositionY="110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="L.jpg" Right="false"/>
+			<Letter Name="Letter5" PositionY="110" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="S.jpg" Right="false"/>
+			<Letter Name="Letter6" PositionY="110" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="W.jpg" Right="false"/>
+			<Letter Name="Letter7" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="Z.jpg" Right="false"/>
+			<Letter Name="Letter8" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="G.jpg" Right="false"/>
+			<Letter Name="Letter9" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="B.jpg" Right="false"/>
+			<ButtonSound Name="Audio" PositionY="0" PositionX="-270" Length="100" Width="100" Screen="Screen" ImagePath="Audio_Azul.jpg" SoundPath="Audio_E.wav"/>
+		</Screen>
+		<Screen Name="Screen2" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Letter Name="Letter1" PositionY="-110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="A.jpg" Right="false"/>
+			<Letter Name="Letter2" PositionY="-110" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="H.jpg" Right="false"/>
+			<Letter Name="Letter3" PositionY="-110" PositionX="150" Length="100" Width="100" Screen="Screen", ImagePath="U.jpg" Right="false"/>
+			<Letter Name="Letter4" PositionY="110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="X.jpg" Right="false"/>
+			<Letter Name="Letter5" PositionY="110" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="R.jpg" Right="false"/>
+			<Letter Name="Letter6" PositionY="110" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="C.jpg" Right="false"/>
+			<Letter Name="Letter7" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="M.jpg" Right="true"/>
+			<Letter Name="Letter8" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="P.jpg" Right="false"/>
+			<Letter Name="Letter9" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="Y_Naranja.jpg" Right="false"/>
+			<ButtonSound Name="Audio" PositionY="0" PositionX="-270" Length="100" Width="100" Screen="Screen" ImagePath="Audio_Naranja.jpg" SoundPath="Audio_M.wav"/>
+		</Screen>
+		<Screen Name="Screen2" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Letter Name="Letter1" PositionY="-110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="D.jpg" Right="false"/>
+			<Letter Name="Letter2" PositionY="-110" PositionX="0" Length="100" Width="100" Screen="Screen", ImagePath="T.jpg" Right="false"/>
+			<Letter Name="Letter3" PositionY="-110" PositionX="150" Length="100" Width="100" Screen="Screen", ImagePath="F.jpg" Right="false"/>
+			<Letter Name="Letter4" PositionY="110" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="J.jpg" Right="true"/>
+			<Letter Name="Letter5" PositionY="110" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="I.jpg" Right="false"/>
+			<Letter Name="Letter6" PositionY="110" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="Q.jpg" Right="false"/>
+			<Letter Name="Letter7" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen" ImagePath="N.jpg" Right="false"/>
+			<Letter Name="Letter8" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen" ImagePath="R_Amarillo.jpg" Right="false"/>
+			<Letter Name="Letter9" PositionY="0" PositionX="-150" Length="100" Width="100" Screen="Screen" ImagePath="V.jpg" Right="false"/>
+			<ButtonSound Name="Audio" PositionY="0" PositionX="-270" Length="100" Width="100" Screen="Screen" ImagePath="Audio_Amarillo.jpg" SoundPath="Audio_J.wav"/>
+		</Screen>
+		<Screen Name="Screen41" Level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
+			<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto2.jpg"/>
+			<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		</Screen>
+		<Screen Name="Screen4" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 
 		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Mariposa.jpg"/>
 	</Screen>
@@ -199,10 +297,11 @@
 		<BlankSpace Name="BlankSpace2" PositionY="-100" PositionX="70" Length="30" Width="100" Screen="Screen4" ImagePath="Linea.jpg"/>
 		<Word Name="huevo2" PositionY="100" PositionX="100" Length="100" Width="100" Screen="Screen4" ImagePath="Vo.jpg" DragAndDropSource="Source2" BlankSpace="BlankSpace2"/>
 
-		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen4" ImagePath="Huevo.jpg"/>
-	</Screen>
-	<Screen Name="Screen5" level="Level">
-		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="337" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen4" ImagePath="Huevo.jpg"/>
+		</Screen>
+		<Screen Name="Screen5" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
 
 		<DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-100" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
@@ -216,10 +315,11 @@
 		<BlankSpace Name="BlankSpace3" PositionY="-100" PositionX="0" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
 		<Word Name="naranja3" PositionY="100" PositionX="100" Length="100" Width="100" Screen="Screen5" ImagePath="Ran.jpg" DragAndDropSource="Source3" BlankSpace="BlankSpace3"/>
 
-		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Naranja.jpg"/>
-	</Screen>
-	<Screen Name="Screen5" level="Level">
-		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="337" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+
+			<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Naranja.jpg"/>
+		</Screen>
+		<Screen Name="Screen5" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 
 		<DragAndDropSource Name="Source" PositionY="100" PositionX="-100" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="BlankSpace" PositionY="-100" PositionX="-100" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
@@ -232,6 +332,45 @@
 		<DragAndDropSource Name="Source3" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen5" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="BlankSpace3" PositionY="-100" PositionX="0" Length="30" Width="100" Screen="Screen5" ImagePath="Linea.jpg"/>
 		<Word Name="lechuga3" PositionY="100" PositionX="100" Length="100" Width="100" Screen="Screen5" ImagePath="Chu.jpg" DragAndDropSource="Source3" BlankSpace="BlankSpace3"/>
+
+
+			<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Lechuga.jpg"/>
+		</Screen>
+		<Screen Name="Screen41" Level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
+			<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto3.jpg"/>
+			<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		</Screen>
+		<Screen Name="Screen6" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Tostadas.jpg" ImagePath2="Banana.jpg" Check="true"/>
+			<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="MorronVerde.jpg" ImagePath2="Camara.jpg" Check="true"/>
+			<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Nueces.jpg" ImagePath2="Lampara.jpg" Check="false"/>
+			<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Torta.jpg" ImagePath2="Lapiz.jpg" Check="false"/>
+			<ButtonCheck Name="Manzana" PositionY="80" PositionX="0" Length="150" Width="150" Screen="Screen" ImagePath="Masas.jpg" ImagePath2="Lapiz.jpg" Check="false"/>
+			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Lechuga.jpg" ImagePath2="Oceano.jpg" Check="true"/>
+		</Screen>
+		<Screen Name="Screen7" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Masas.jpg" ImagePath2="Pez.jpg" Check="false"/>
+			<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="Mesa.jpg" ImagePath2="Portada.jpg" Check="false"/>
+			<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Torta2.jpg" ImagePath2="Oceano.jpg" Check="true"/>
+			<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Tomate.jpg" ImagePath2="Gato.jpg" Check="false"/>
+			<ButtonCheck Name="Manzana" PositionY="80" PositionX="0" Length="150" Width="150" Screen="Screen" ImagePath="Celular.jpg" ImagePath2="MorronVerde.jpg" Check="false"/>
+			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Torta3.jpg" ImagePath2="Camara.jpg" Check="true"/>
+		</Screen>
+		<Screen Name="Screen8" level="Level">
+			<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+			<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Camara.jpg" ImagePath2="Pajaro.jpg" Check="false"/>
+			<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="Banana.jpg" ImagePath2="pizza.jpg" Check="true"/>
+			<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Oceano.jpg" ImagePath2="Celular.jpg" Check="false"/>
+			<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Caramelo.jpg" ImagePath2="Arbol.jpg" Check="false"/>
+			<ButtonCheck Name="Manzana" PositionY="80" PositionX="0" Length="150" Width="150" Screen="Screen" ImagePath="Manzana.jpg" ImagePath2="Tiburon.jpg" Check="true"/>
+			<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Torta3.jpg" ImagePath2="Caramelo.jpg" Check="false"/>
+		</Screen>
+	</Level>
+</World>
 
 		<Image Name="Letter8" PositionY="0" PositionX="-230" Length="150" Width="150" Screen="Screen5" ImagePath="Lechuga.jpg"/>
 	</Screen>
@@ -269,3 +408,4 @@
 		<ButtonCheck Name="Oceano" PositionY="80" PositionX="170" Length="150" Width="150" Screen="Screen" ImagePath="Torta3.jpg" ImagePath2="Caramelo.jpg" Check="false"/>
 	</Screen>
 </Level>
+
