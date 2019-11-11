@@ -27,7 +27,7 @@
             cambia atributo Filled a false.
             </summary>
         </member>
-        <member name="M:Library.BlankSpace.Render(Library.Renderer)">
+        <member name="M:Library.BlankSpace.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -63,7 +63,7 @@
             metodo que deselecciona el boton.
             </summary>
         </member>
-        <member name="M:Library.ButtonCheck.Render(Library.Renderer)">
+        <member name="M:Library.ButtonCheck.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -89,7 +89,7 @@
             </summary>
             <param name="name"> nombre del boton. </param>
         </member>
-        <member name="M:Library.ButtonNextPage.Render(Library.Renderer)">
+        <member name="M:Library.ButtonNextPage.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -115,7 +115,7 @@
             </summary>
             <param name="name"> nombre del boton. </param>
         </member>
-        <member name="M:Library.ButtonSound.Render(Library.Renderer)">
+        <member name="M:Library.ButtonSound.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -197,7 +197,7 @@
             DragAndDropSource en Unity.
             </summary>
         </member>
-        <member name="M:Library.DragAndDropSource.Render(Library.Renderer)">
+        <member name="M:Library.DragAndDropSource.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -216,7 +216,7 @@
             que sera sobrescrito por los metodos Render de cada elemento particular.
             </summary>
         </member>
-        <member name="M:Library.Element.Render(Library.Renderer)">
+        <member name="M:Library.Element.Render(Library.IRenderer)">
             <summary>
             metodo virtual el cual es remplazado por los metodos Render particulares de las clases que heredan de Element.
             </summary>
@@ -250,7 +250,7 @@
             </summary>
             <param name="name"> nombre del boton. </param>
         </member>
-        <member name="M:Library.ExitButton.Render(Library.Renderer)">
+        <member name="M:Library.ExitButton.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -283,11 +283,19 @@
             objeto de tipo Image en Unity.
             </summary>
         </member>
-        <member name="M:Library.Image.Render(Library.Renderer)">
+        <member name="M:Library.Image.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
             <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+        </member>
+        <member name="T:Library.IRenderer">
+            <summary>
+            NOMBRE: IRenderer.
+            DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
+            COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
+            de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
+            </summary>
         </member>
         <member name="T:Library.IXML">
             <summary>
@@ -313,7 +321,7 @@
             </summary>
             <param name="name"> nombre de la Letter. </param>
         </member>
-        <member name="M:Library.Letter.Render(Library.Renderer)">
+        <member name="M:Library.Letter.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>
@@ -1367,7 +1375,7 @@
             objeto de tipo Word en Unity.
             </summary>
         </member>
-        <member name="M:Library.Word.Render(Library.Renderer)">
+        <member name="M:Library.Word.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
             </summary>

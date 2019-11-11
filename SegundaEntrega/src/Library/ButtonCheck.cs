@@ -19,7 +19,7 @@ namespace Library
     /// es un tipo de boton.
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
     /// y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
-    /// Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonCheck en Unity.
+    /// Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
     /// </summary>
     public class ButtonCheck : Element, IButton
     {
@@ -123,10 +123,10 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+        /// metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
         /// </summary>
-        /// <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
-        public override void Render(Renderer renderer)
+        /// <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
+        public override void Render(IRenderer renderer)
         {
             renderer.RenderButtonCheck(this);
         }

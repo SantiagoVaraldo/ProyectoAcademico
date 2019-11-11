@@ -15,7 +15,7 @@ namespace Library
     /// COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
     /// de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
     /// </summary>
-    public class Renderer
+    public class Renderer: IRenderer
     {
         private IMainViewAdapter adapter;
 

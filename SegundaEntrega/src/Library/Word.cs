@@ -18,8 +18,7 @@ namespace Library
     /// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
     /// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen, debe pertenecer a una Screen
     /// y es de tipo DragAndDropItem, ademas colabora con DragAndDropSource y BlankSpace ya que un item debe
-    /// conocer un Source y un Destination. Tambien colabora con la clase Renderer ya que es quien dibuja un
-    /// objeto de tipo Word en Unity.
+    /// conocer un Source y un Destination. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
     /// </summary>
     public class Word : DragAndDropItem
     {
@@ -31,10 +30,10 @@ namespace Library
         public string ItemId { get; set; }
 
         /// <summary>
-        /// metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+        /// metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
         /// </summary>
-        /// <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
-        public override void Render(Renderer renderer)
+        /// <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
+        public override void Render(IRenderer renderer)
         {
             renderer.RenderWord(this);
         }
