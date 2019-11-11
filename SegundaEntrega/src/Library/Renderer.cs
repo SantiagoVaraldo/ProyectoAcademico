@@ -40,9 +40,9 @@ namespace Library
         /// <param name="buttonCheck"> ButtonCheck a dibujar. </param>
         public void RenderButtonCheck(ButtonCheck buttonCheck)
         {
-            string buttonId = this.adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
-            this.adapter.SetImage(buttonId, buttonCheck.ImagePath);
-            this.adapter.SetText(buttonId, string.Empty);
+            buttonCheck.ButtonId = this.adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
+            this.adapter.SetImage(buttonCheck.ButtonId, buttonCheck.ImagePath);
+            this.adapter.SetText(buttonCheck.ButtonId, string.Empty);
         }
 
         /// <summary>
@@ -103,9 +103,9 @@ namespace Library
         /// <param name="letter"> Letter a dibujar. </param>
         public void RenderLetter(Letter letter)
         {
-            string buttonId = this.adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
-            this.adapter.SetImage(buttonId, letter.ImagePath);
-            this.adapter.SetText(buttonId, string.Empty);
+            letter.ButtonId = this.adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
+            this.adapter.SetImage(letter.ButtonId, letter.ImagePath);
+            this.adapter.SetText(letter.ButtonId, string.Empty);
         }
 
         /// <summary>

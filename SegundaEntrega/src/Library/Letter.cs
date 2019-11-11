@@ -23,6 +23,7 @@ namespace Library
     public class Letter : Element, IButton
     {
         private bool right;
+        private string buttonId;
 
         public Letter(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, bool right)
         : base(name, positionY, positionX, length, width, screen, imagePath)
@@ -43,16 +44,32 @@ namespace Library
             }
         }
 
+        public string ButtonId
+        {
+            get
+            {
+                return this.buttonId;
+            }
+
+            set
+            {
+                this.buttonId = value;
+            }
+        }
+
         /// <summary>
         /// accion que realiza el boton de tipo Letter al hacerle click.
         /// </summary>
         /// <param name="name"> nombre de la Letter. </param>
         public void Action(string name)
         {
-            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
-            EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
-            engineLvl1.Subscribe(generalEngine);
-            engineLvl1.Check(this);
+            if (name == this.ButtonId)
+            {
+                IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+                EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
+                engineLvl1.Subscribe(generalEngine);
+                engineLvl1.Check(this);
+            }
         }
 
         /// <summary>

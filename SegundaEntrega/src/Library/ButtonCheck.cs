@@ -26,6 +26,7 @@ namespace Library
         private bool state;
         private bool check;
         private string imagepath2;
+        private string buttonId;
 
         public ButtonCheck(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, string imagePath2, bool check)
         : base(name, positionY, positionX, length, width, screen, imagePath)
@@ -33,6 +34,19 @@ namespace Library
             this.Check = check;
             this.State = false;
             this.ImagePath2 = imagePath2;
+        }
+
+        public string ButtonId
+        {
+            get
+            {
+                return this.buttonId;
+            }
+
+            set
+            {
+                this.buttonId = value;
+            }
         }
 
         public bool State
@@ -83,10 +97,13 @@ namespace Library
         /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
-            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
-            EngineLvl3 engineLvl3 = Singleton<EngineLvl3>.Instance;
-            engineLvl3.Subscribe(generalEngine);
-            engineLvl3.Check(this);
+            if (name == this.ButtonId)
+            {
+                IObserver generalEngine = Singleton<GeneralEngine>.Instance;
+                EngineLvl3 engineLvl3 = Singleton<EngineLvl3>.Instance;
+                engineLvl3.Subscribe(generalEngine);
+                engineLvl3.Check(this);
+            }
         }
 
         /// <summary>
