@@ -20,7 +20,8 @@ namespace Library
     /// y no agrega comportamiento ni atributos extras.(optamos pr herencia en lugar de composicion ya que necesitabamos
     /// todo los datos de Element y no ibamos a crear comportamiento)
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que una imagen debe pertenecer a una Screen y ademas
-    /// es de tipo Element.
+    /// es de tipo Element. Tambien colabora con la clase Renderer ya que es quien dibuja un
+    /// objeto de tipo Image en Unity.
     /// </summary>
     public class Image : Element
     {

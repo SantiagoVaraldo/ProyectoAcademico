@@ -13,7 +13,8 @@
             de BlankSpace, su unica razon de cambio es modificar los datos que guardamos sobre BlankSpace.
             HERENCIA: Esta clase hereda de la clase ancestra DragAndDropDestination
             COLABORACIONES: Colabora con la clase DragAndDropDestination y Screen ya que un BlankSpace debe pertenecer a una Screen
-            y es de tipo DragAndDropDestination.
+            y es de tipo DragAndDropDestination. Tambien colabora con la clase Renderer ya que es quien dibuja
+            un objeto de tipo BlankSpace en Unity.
             </summary>
         </member>
         <member name="M:Library.BlankSpace.Fill">
@@ -42,7 +43,8 @@
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
-            y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+            y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
+            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonCheck en Unity.
             </summary>
         </member>
         <member name="M:Library.ButtonCheck.Action(System.String)">
@@ -78,6 +80,7 @@
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonNextPage en Unity.
             </summary>
         </member>
         <member name="M:Library.ButtonNextPage.Action(System.String)">
@@ -102,7 +105,8 @@
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
-            y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+            y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
+            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonSound en Unity.
             </summary>
         </member>
         <member name="M:Library.ButtonSound.Action(System.String)">
@@ -122,7 +126,7 @@
             NOMBRE: Creator
             DESCRIPCION: Esta clase llama a los metodos de la clase CreatorHelper y crea la cadena de Pipes And Filters.
             PATRON CREATOR: el builder crea las instancias de los pipes and filters ya que es quien va a hacer uso de los mismos
-            de forma cercana, cumple una de las condiciones necesarias para crear los objetos.
+            de forma cercana, cumple una de las condiciones necesarias para ser quien crea los objetos.
             </summary>
         </member>
         <member name="M:Library.Creator.Create">
@@ -174,7 +178,8 @@
             de DragAndDropItem, su unica razon de cambio es modificar los datos que guardamos sobre DragAndDropItem.
             HERENCIA: Esta clase hereda de la clase ancestra Element
             COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropItem debe pertenecer a una Screen
-            y es de tipo Element.
+            y es de tipo Element. Tambien colabora con DragAndDropSource y BlankSpace ya que un item debe conocer
+            un source y un destination.
             </summary>
         </member>
         <member name="T:Library.DragAndDropSource">
@@ -188,7 +193,8 @@
             de DragAndDropSource, su unica razon de cambio es modificar los datos que guardamos sobre DragAndDropSource.
             HERENCIA: Esta clase hereda de la clase ancestra Element
             COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropSource debe pertenecer a una Screen
-            y es de tipo Element.
+            y es de tipo Element. Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo
+            DragAndDropSource en Unity.
             </summary>
         </member>
         <member name="M:Library.DragAndDropSource.Render(Library.Renderer)">
@@ -206,6 +212,8 @@
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
             de Element, su unica razon de cambio es modificar los datos que guardamos sobre el elemento.
             COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
+            Tambien colabora con la clase Renderer ya que tiene un metodo virtual para dibujar elementos en Unity
+            que sera sobrescrito por los metodos Render de cada elemento particular.
             </summary>
         </member>
         <member name="M:Library.Element.Render(Library.Renderer)">
@@ -233,6 +241,7 @@
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ExitButton en Unity.
             </summary>
         </member>
         <member name="M:Library.ExitButton.Action(System.String)">
@@ -270,7 +279,8 @@
             y no agrega comportamiento ni atributos extras.(optamos pr herencia en lugar de composicion ya que necesitabamos
             todo los datos de Element y no ibamos a crear comportamiento)
             COLABORACIONES: Colabora con la clase Element y Screen ya que una imagen debe pertenecer a una Screen y ademas
-            es de tipo Element.
+            es de tipo Element. Tambien colabora con la clase Renderer ya que es quien dibuja un
+            objeto de tipo Image en Unity.
             </summary>
         </member>
         <member name="M:Library.Image.Render(Library.Renderer)">
@@ -294,7 +304,7 @@
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
             Tambien colabora con la clase Renderer ya que es quien dibuja un
-            objeto de tipo Word en Unity.
+            objeto de tipo Letter en Unity.
             </summary>
         </member>
         <member name="M:Library.Letter.Action(System.String)">
@@ -333,7 +343,7 @@
         </member>
         <member name="M:Library.Level.Accept(Library.Visitor)">
             <summary>
-            metodo implementado para la utilizacion del patron Visitor.
+            metodo que forma parte de la implementacion del patron Visitor.
             </summary>
             <param name="visitor"> instancia de Visitor. </param>
         </member>
@@ -344,10 +354,10 @@
             SRP: la unica responsabilidad de esta clase es hacer la logica del nivel 1, su unica razon de cambio es modificar
             la logica del nivel.
             EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
-            cuando se completa un nivel de tipo 1.
+            cuando se completa el nivel 1.
             COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
             IObservable ya que es de tipo IObservable, Colabora con la clase Letter ya que es el elemento con el que va a
-            realizar la logica.
+            realizar la logica. Ademas colabora con la clase OneAdapter.
             </summary>
         </member>
         <member name="M:Library.EngineLvl1.Check(Library.Letter)">
@@ -385,9 +395,8 @@
             cuando se completa el nivel 2.
             COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
             IObservable ya que es de tipo IObservable,colabora con IEngineDropable ya que tambien es de ese tipo,
-            colabora con la clase Word ya que es el elemento con el que va a realizar la logica.
-            COMENTARIOS: buscamos la manera de hacer un poco mas generico el metodo check de este motor, la idea era
-            cambiar el numero fijo "4" en la linea 61, por el atributo de tipo int "CantDestination", no logramos hacerlo funcionar.
+            colabora con la clase Word ya que es el elemento con el que va a realizar la logica. Ademas colabora
+            con la clase OneAdapter.
             </summary>
         </member>
         <member name="M:Library.EngineLvl2.NextLevel(Library.Word)">
@@ -446,10 +455,10 @@
             SRP: la unica responsabilidad de esta clase es hacer la logica del nivel 3, su unica razon de cambio es modificar
             la logica del nivel.
             EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
-            cuando se completa un nivel de tipo 3.
+            cuando se completa el nivel 3.
             COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
             IObservable ya que es de tipo IObservable, Colabora con la clase ButtonCheck ya que es el elemento con el que va a
-            realizar la logica.
+            realizar la logica. Ademas colabora con la clase OneAdapter.
             </summary>
         </member>
         <member name="M:Library.EngineLvl3.Check(Library.ButtonCheck)">
@@ -499,22 +508,34 @@
             cuando se completa el nivel 4.
             COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
             IObservable ya que es de tipo IObservable,colabora con IEngineDropable ya que tambien es de ese tipo,
-            colabora con la clase Word ya que es el elemento con el que va a realizar la logica.
-            COMENTARIOS: buscamos la manera de hacer un poco mas generico el metodo check de este motor, la idea era
-            cambiar el numero fijo "4" en la linea 61, por el atributo de tipo int "CantDestination", no logramos hacerlo funcionar.
+            colabora con la clase Word ya que es el elemento con el que va a realizar la logica. Ademas colabora
+            con la clase OneAdapter.
             </summary>
         </member>
         <member name="M:Library.EngineLvl4.NextLevel(Library.Word)">
             <summary>
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
             </summary>
-            <param name="word"> Word que fue clickeado. </param>
+            <param name="word"> word que fue arrastrado. </param>
+            <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        </member>
+        <member name="M:Library.EngineLvl4.Reset(Library.Screen)">
+            <summary>
+            metodo que resetea el estado del nivel, coloca los elementos de la pantalla en su estado de origen.
+            </summary>
+            <param name="screen"> Screen reseteada. </param>
         </member>
         <member name="M:Library.EngineLvl4.Check(Library.Word)">
             <summary>
             verifica que se haya superado el nivel.
             </summary>
             <param name="word"> Word clickeado. </param>
+        </member>
+        <member name="M:Library.EngineLvl4.ObtainCantDestination(Library.Screen)">
+            <summary>
+            obtiene la cantidad de elementos de tipo BlankSpace que hay en la pantalla.
+            </summary>
+            <param name="screen"> Screen en la que se calcula. </param>
         </member>
         <member name="M:Library.EngineLvl4.AddWord(Library.Word)">
             <summary>
@@ -542,8 +563,9 @@
         </member>
         <member name="T:Library.GeneralEngine">
             <summary>
-            NOMBRE: GeneralEngine
+            NOMBRE: GeneralEngine.
             DESCRIPCION: Motor general del juego, es quien va a pasar a la siguiente pantalla cuando sea necesario
+            o al siguiente nivel.
             SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
             se quiere ir.
             OBSERVER: decidimos aplicar este patron para que el motor general no necesite estar preguntandole a los motores
@@ -554,6 +576,11 @@
         <member name="M:Library.GeneralEngine.Update">
             <summary>
             metodo que actualiza la pagina, pasa a la siguiente pantalla.
+            </summary>
+        </member>
+        <member name="T:Library.IEngineDropable">
+            <summary>
+            Interfaz utilizada por los motores del nivel 2 y 4.
             </summary>
         </member>
         <member name="T:Library.IObservable">
@@ -576,18 +603,14 @@
         <member name="T:Library.FilterButtonCheck">
             <summary>
             NOMBRE: FilterButtonCheck.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ButtonCheck.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ButtonCheck en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorButtonCheck.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorButtonCheck en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterButtonCheck.Filter(ExerciseOne.Tag)">
@@ -595,23 +618,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterButtonNextPage">
             <summary>
             NOMBRE: FilterButtonNextPage.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ButtonNextPage.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ButtonNextPage en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorButtonNextPage.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorButtonNextPage en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterButtonNextPage.Filter(ExerciseOne.Tag)">
@@ -619,23 +638,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterButtonSound">
             <summary>
             NOMBRE: FilterButtonSound.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ButtonSound.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ButtonSound en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorButtonSound.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorButtonSound en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterButtonSound.Filter(ExerciseOne.Tag)">
@@ -643,23 +658,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterDragAndDropDestination">
             <summary>
-            NOMBRE: FilterDragAndDropDestination
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto DragAndDropDestination.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto DragAndDropDestination en caso
+            NOMBRE: FilterDragAndDropDestination.
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorDragAndDropDestination.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorDragAndDropDestination en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterDragAndDropDestination.Filter(ExerciseOne.Tag)">
@@ -667,23 +678,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterDragAndDropSource">
             <summary>
-            NOMBRE: FilterDragAndDropSource
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto DragAndDropSource.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto DragAndDropSource en caso
+            NOMBRE: FilterDragAndDropSource.
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorDragAndDropSource.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorDragAndDropSource en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterDragAndDropSource.Filter(ExerciseOne.Tag)">
@@ -691,23 +698,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterExitButton">
             <summary>
             NOMBRE: FilterExitButton.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto ExitButton.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto ExitButton en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorExitButton.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorExitButton en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterExitButton.Filter(ExerciseOne.Tag)">
@@ -715,23 +718,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterImage">
             <summary>
             NOMBRE: FilterImage.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Image.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Image en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorImage.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorImage en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterImage.Filter(ExerciseOne.Tag)">
@@ -739,19 +738,15 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el mismo Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterLetter">
             <summary>
-            NOMBRE: FilterLetter
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Letter.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Letter en caso
+            NOMBRE: FilterLetter.
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto VisitorLetter.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorLetter en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
@@ -763,23 +758,19 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterLevel">
             <summary>
             NOMBRE: FilterLevel.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Level.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Level en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorLevel.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorLevel en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterLevel.Filter(ExerciseOne.Tag)">
@@ -787,23 +778,19 @@
             filtra un Tag recibido.
             </summary>
             <param name="tag">el Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>Visitor correspondiente con el Tag.</returns>
         </member>
         <member name="T:Library.FilterScreen">
             <summary>
             NOMBRE: FilterScreen.
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Screen.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Screen en caso
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorScreen.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorScreen en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterScreen.Filter(ExerciseOne.Tag)">
@@ -811,23 +798,19 @@
             filtra un tag recibido por parametros.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>Tag.</returns>
+            <returns>Visitor correspondiente.</returns>
         </member>
         <member name="T:Library.FilterWord">
             <summary>
-            NOMBRE: FilterWord
-            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un objeto Word.
-            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto Word en caso
+            NOMBRE: FilterWord.
+            DESCRIPCION: este filtro se encarga de tomar un Tag y filtrarlo para saber si debe crear un VisitorWord.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es Crear un objeto VisitorWord en caso
             de que el nombre del Tag sea el correspondiente, su unica razon de cambio es modificar como se debe filtrar.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y el resultado de aplicar ese filtro.
-            PATRON CREATOR: los objetos son creados en el filtro, el filtro no es el experto en conocer todo lo necesario para
-            crear dicho objeto, sin embargo al intentar cumplir con el patron aparecian otras dificultades mayores
-            (cuando llamamos al metodo Add del IContainer, es ahi donde deberia instanciarse el objeto ya que el contenedor
-            si conoce los datos necesarios)
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
-            CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
+            CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
         <member name="M:Library.FilterWord.Filter(ExerciseOne.Tag)">
@@ -835,14 +818,14 @@
             filtra el Tag recibido.
             </summary>
             <param name="tag">Tag a filtrar.</param>
-            <returns>retorna el Tag.</returns>
+            <returns>retorna el Visitor correspondiente.</returns>
         </member>
         <member name="T:Library.IFilterConditional">
             <summary>
             Un filtro con condicion.
             </summary>
             <remarks>
-            Un filtro procesa un Tag, creando un objeto en caso que corresponda.
+            Un filtro procesa un Tag, creando un Visitor en caso que corresponda.
             </remarks>
         </member>
         <member name="M:Library.IFilterConditional.Filter(ExerciseOne.Tag)">
@@ -850,7 +833,7 @@
             Procesa el Tag pasado por parametro y crea un objeto en caso correcto.
             </summary>
             <param name="tag">El Tag a procesar.</param>
-            <returns>El mismo Tag.</returns>
+            <returns>El Visitor que corresponda con el Tag.</returns>
         </member>
         <member name="T:Library.IPipe">
             <summary>
@@ -862,7 +845,7 @@
             Envia el Tag a traves de la caneria.
             </summary>
             <param name="tag"> enviar el tag a traves de la cañeria. </param>
-            <returns> Tag. </returns>
+            <returns> el Visitor correspondiente al Tag. </returns>
         </member>
         <member name="T:Library.PipeConditional">
             <summary>
@@ -870,30 +853,33 @@
             DESCRIPCION: Esta clase se encarga de conocer un filtro y dos pipes siguientes.
             PATRON EXPERT: Conoce el filtro que se va a aplicar y conoce el pipe siguiente por lo que le asignamos el metodo Send
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es aplicarle el filtro al tag
-            y enviarlo al siguiente pipe, su unica razon de cambio es modificar la logica del metodo send, es decir modificar
-            en que nos basamos para enviar el tag por un pipe o por otro.
-            CHAIN RESPONSiBILITY: decidimos solucionar el problema de crear objetos a partir de una lista de tags utilizando
+            y enviarlo al siguiente pipe, su unica razon de cambio es modificar la logica del metodo send.
+            CHAIN OF RESPONSiBILITY: decidimos solucionar el problema de crear objetos a partir de una lista de tags utilizando
             este patron, para eso creamos una secuencia de Pipes And Filters donde mandamos cada tag por la cañeria.
+            en caso de que el Tag sea filtrado correctamente se devuelve una instancia del Visitor correspondiente.
             PRINCIPIO OCP: la creacion de pipes and filters cumple con el principio de OCP, si tenemos un nuevo elemento
             simplemente agregamos un nuevo filtro y un pipe extra. El codigo queda abierto a la extencion pero cerrado a la
             modificacion ya que no se debera modificar los pipes and filters ya creados.
             COLABORACIONES: Colabora con la interfaz IFilterConditional y con la interfaz IPipe, conoce un filtro de tipo
-            IFilterConditional y el pipe es de tipo IPipe.
-            COMENTARIO: a efectos de lo que buscamos con los pipes and filters podria no ser necesario utilizar pipes, solo encadenando
-            filtros seria suficiente, sin embargo decidimos hacerlo de esta manera para aplicar el patron tal y como lo vimos en clase.
+            IFilterConditional y el pipe es de tipo IPipe. Tambien colabora con Visitor ya que va a devolver
+            un objeto de ese tipo.
+            COMENTARIO: a efectos de lo que buscamos con los pipes and filters podria no ser necesario utilizar PipesConditionals, podriamos
+            utilizar unicamente PipesSerial y seria suficiente, sin embargo decidimos dejarlo de esta manera
+            para mantener la logica que hemos venido haciendo ya que este cambio no tiene efectos negativos
+            sobre nuestro programa.
             </summary>
         </member>
         <member name="M:Library.PipeConditional.Send(ExerciseOne.Tag)">
             <summary>
             metodo de la interfaz IPipe, envia un Tag a otro pipe.
             </summary>
-            <param name="tag"> tag que se envia al siguiente pipe. </param>
-            <returns> devuelve el Tag. </returns>
+            <param name="tag"> tag que se envia a otro pipe. </param>
+            <returns> devuelve un objeto de tipo Visitor. </returns>
         </member>
         <member name="T:Library.PipeNull">
             <summary>
-            Pipe al que se envia el Tag en caso de que sea filtrado con ExitButtono, es de tipo IPipe.
-            No es necesario tener un PipeNull pero decidimos deguir la estructura de Pipes que hemos visto.
+            Pipe al que se envia el Tag en caso de que sea filtrado con Exito, es de tipo IPipe.
+            No es necesario tener un PipeNull pero decidimos seguir la estructura de Pipes que hemos venido haciendo.
             </summary>
         </member>
         <member name="M:Library.PipeNull.Send(ExerciseOne.Tag)">
@@ -998,7 +984,7 @@
         </member>
         <member name="M:Library.Screen.Accept(Library.Visitor)">
             <summary>
-            metodo implementado para la utilizacion del patron Visitor.
+            metodo que forma parte de la implementacion del patron Visitor.
             </summary>
             <param name="visitor"> instancia de Visitor. </param>
         </member>
@@ -1016,6 +1002,9 @@
             DESCRIPCION: clase abstracta para implementar el patron Visitor.
             VISITOR: decidimos utilizar este patron para poder acceder a un objeto de tipo World, un objeto Level y un objeto
             Screen para poder acceder a algunas de sus propiedades sin la necesidad de romper con la ley de Demeter.
+            primero lo que hacemos es visitar el World, tomamos el ultimo Level de su lista y lo visitamos, tomamos
+            la ultima Screen de su lista y la visitamos, por ultimo visitamos esa Screen para encontrar algunos de
+            sus elementos.
             </summary>
         </member>
         <member name="T:Library.VisitorButtonCheck">
@@ -1295,7 +1284,7 @@
         <member name="T:Library.VisitorScreen">
             <summary>
             NOMBRE: VisitorScreen.
-            DESCRIPCION: crea un objeto de tipo Screen.
+            DESCRIPCION: obtiene el ultimo nivel de la lista de niveles del World y crea un objeto de tipo Screen.
             VISITOR: hereda de la clase Visitor, es parte de la implementacion del patron mencionado en Visitor.
             SRP: esta clase implementa una unica responsabilidad, crear objetos de tipo Screen,
             su unica razon de cambio es modificar la manera de instanciar dichos objetos.
@@ -1405,7 +1394,7 @@
         </member>
         <member name="M:Library.World.Accept(Library.Visitor)">
             <summary>
-            metodo implementado para la utilizacion del patron Visitor.
+            metodo que forma parte de la implementacion del patron Visitor.
             </summary>
             <param name="visitor"> instancia de Visitor. </param>
         </member>

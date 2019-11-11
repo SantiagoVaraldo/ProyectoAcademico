@@ -13,7 +13,7 @@ namespace Library
     /// Un filtro con condicion.
     /// </summary>
     /// <remarks>
-    /// Un filtro procesa un Tag, creando un objeto en caso que corresponda.
+    /// Un filtro procesa un Tag, creando un Visitor en caso que corresponda.
     /// </remarks>
     public interface IFilterConditional
     {
@@ -23,7 +23,7 @@ namespace Library
         /// Procesa el Tag pasado por parametro y crea un objeto en caso correcto.
         /// </summary>
         /// <param name="tag">El Tag a procesar.</param>
-        /// <returns>El mismo Tag.</returns>
+        /// <returns>El Visitor que corresponda con el Tag.</returns>
         Visitor Filter(Tag tag);
     }
 }

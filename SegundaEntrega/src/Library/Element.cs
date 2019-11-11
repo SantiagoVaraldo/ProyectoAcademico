@@ -17,6 +17,8 @@ namespace Library
     /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
     /// de Element, su unica razon de cambio es modificar los datos que guardamos sobre el elemento.
     /// COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
+    /// Tambien colabora con la clase Renderer ya que tiene un metodo virtual para dibujar elementos en Unity
+    /// que sera sobrescrito por los metodos Render de cada elemento particular.
     /// </summary>
     public class Element : IXML
     {

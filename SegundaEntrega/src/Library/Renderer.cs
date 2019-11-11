@@ -42,7 +42,7 @@ namespace Library
         {
             string buttonId = this.adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
             this.adapter.SetImage(buttonId, buttonCheck.ImagePath);
-            this.adapter.SetText(buttonId, "");
+            this.adapter.SetText(buttonId, string.Empty);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Library
         {
             string buttonId = this.adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
             this.adapter.SetImage(buttonId, buttonSound.ImagePath);
-            this.adapter.SetText(buttonId, "");
+            this.adapter.SetText(buttonId, string.Empty);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Library
         {
             string buttonId = this.adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
             this.adapter.SetImage(buttonId, letter.ImagePath);
-            this.adapter.SetText(buttonId, "");
+            this.adapter.SetText(buttonId, string.Empty);
         }
 
         /// <summary>

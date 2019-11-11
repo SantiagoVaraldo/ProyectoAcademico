@@ -19,7 +19,8 @@ namespace Library
     /// de DragAndDropSource, su unica razon de cambio es modificar los datos que guardamos sobre DragAndDropSource.
     /// HERENCIA: Esta clase hereda de la clase ancestra Element
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropSource debe pertenecer a una Screen
-    /// y es de tipo Element.
+    /// y es de tipo Element. Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo
+    /// DragAndDropSource en Unity.
     /// </summary>
     public class DragAndDropSource : Element
     {

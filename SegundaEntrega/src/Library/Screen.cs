@@ -118,7 +118,7 @@ namespace Library
         }
 
         /// <summary>
-        /// metodo implementado para la utilizacion del patron Visitor.
+        /// metodo que forma parte de la implementacion del patron Visitor.
         /// </summary>
         /// <param name="visitor"> instancia de Visitor. </param>
         public void Accept(Visitor visitor)

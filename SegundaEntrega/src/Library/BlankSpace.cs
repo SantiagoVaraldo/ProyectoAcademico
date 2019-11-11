@@ -17,11 +17,13 @@ namespace Library
     /// de BlankSpace, su unica razon de cambio es modificar los datos que guardamos sobre BlankSpace.
     /// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropDestination
     /// COLABORACIONES: Colabora con la clase DragAndDropDestination y Screen ya que un BlankSpace debe pertenecer a una Screen
-    /// y es de tipo DragAndDropDestination.
+    /// y es de tipo DragAndDropDestination. Tambien colabora con la clase Renderer ya que es quien dibuja
+    /// un objeto de tipo BlankSpace en Unity.
     /// </summary>
     public class BlankSpace : DragAndDropDestination
     {
         private bool filled;
+
         public BlankSpace(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {

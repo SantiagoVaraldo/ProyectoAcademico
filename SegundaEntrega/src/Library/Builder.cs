@@ -78,22 +78,16 @@ namespace Proyecto.StudentsCode
         private void GoToFirstPage()
         {
             this.adapter.ShowPage(this.firstPageName);
-
-            // this.adapter.PlayAudio("Speech On.wav");
         }
 
         private void GoToNextPage(string name)
         {
             this.adapter.ShowPage(Creator.ListPages[1]);
-
-            // cambiar a Creator.ListPages
         }
 
         private void OnClick()
         {
             this.adapter.Debug($"Button clicked!");
-
-            // this.adapter.ShowPage("MainPage");
         }
     }
 }

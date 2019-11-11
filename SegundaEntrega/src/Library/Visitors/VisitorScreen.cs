@@ -12,7 +12,7 @@ namespace Library
 {
     /// <summary>
     /// NOMBRE: VisitorScreen.
-    /// DESCRIPCION: crea un objeto de tipo Screen.
+    /// DESCRIPCION: obtiene el ultimo nivel de la lista de niveles del World y crea un objeto de tipo Screen.
     /// VISITOR: hereda de la clase Visitor, es parte de la implementacion del patron mencionado en Visitor.
     /// SRP: esta clase implementa una unica responsabilidad, crear objetos de tipo Screen,
     /// su unica razon de cambio es modificar la manera de instanciar dichos objetos.
@@ -64,6 +64,7 @@ namespace Library
         /// <param name="level"> objeto level al que se accede. </param>
         public override void Visit(Level level)
         {
+            // linea en blanco intencionalmente
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
+            // linea en blanco intencionalmente
         }
     }
 }

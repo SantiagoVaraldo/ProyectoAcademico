@@ -19,6 +19,7 @@ namespace Library
     /// es un tipo de boton.
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
     /// y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+    /// Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ExitButton en Unity.
     /// </summary>
     public class ExitButton : Element, IButton
     {
@@ -33,7 +34,7 @@ namespace Library
         /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
-            OneAdapter.Adapter.Debug($"Button clicked!");
+            // aun no existe un metodo para salir de la app, esa era la idea de este boton
         }
 
         /// <summary>

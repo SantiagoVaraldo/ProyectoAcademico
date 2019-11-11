@@ -16,10 +16,10 @@ namespace Library
     /// SRP: la unica responsabilidad de esta clase es hacer la logica del nivel 1, su unica razon de cambio es modificar
     /// la logica del nivel.
     /// EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
-    /// cuando se completa un nivel de tipo 1.
+    /// cuando se completa el nivel 1.
     /// COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
     /// IObservable ya que es de tipo IObservable, Colabora con la clase Letter ya que es el elemento con el que va a
-    /// realizar la logica.
+    /// realizar la logica. Ademas colabora con la clase OneAdapter.
     /// </summary>
     public class EngineLvl1 : IObservable
     {
@@ -31,13 +31,15 @@ namespace Library
         /// <param name="letter"> letra la cual fue clickeada. </param>
         public void Check(Letter letter)
         {
+            OneAdapter.Adapter.Debug($"Button clicked!");
+
             if (letter.Right)
             {
                 this.NextLevel(letter);
             }
             else
             {
-                // mensaje de error que le erro.
+                OneAdapter.Adapter.Debug($"Esa no es la letra correcta, intentemos de nuevo!");
             }
         }
 
@@ -55,6 +57,12 @@ namespace Library
             }
 
             return true;
+        }
+
+        public void Sound(ButtonSound buttonSound)
+        {
+            OneAdapter.Adapter.Debug($"Button clicked!");
+            OneAdapter.Adapter.PlayAudio(buttonSound.SoundPath);
         }
 
         /// <summary>

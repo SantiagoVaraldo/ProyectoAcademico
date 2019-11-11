@@ -18,7 +18,7 @@ namespace Library
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
     /// y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
     /// Tambien colabora con la clase Renderer ya que es quien dibuja un
-    /// objeto de tipo Word en Unity.
+    /// objeto de tipo Letter en Unity.
     /// </summary>
     public class Letter : Element, IButton
     {
@@ -52,7 +52,6 @@ namespace Library
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
             EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
             engineLvl1.Subscribe(generalEngine);
-            OneAdapter.Adapter.Debug($"Button clicked!");
             engineLvl1.Check(this);
         }
 

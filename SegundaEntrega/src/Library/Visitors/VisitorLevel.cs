@@ -58,6 +58,7 @@ namespace Library
         /// <param name="level"> objeto level al que se accede. </param>
         public override void Visit(Level level)
         {
+            // linea en blanco intencionalmente
         }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
+            // linea en blanco intencionalmente
         }
     }
 }

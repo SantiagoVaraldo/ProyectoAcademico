@@ -19,9 +19,8 @@ namespace Library
     /// cuando se completa el nivel 2.
     /// COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
     /// IObservable ya que es de tipo IObservable,colabora con IEngineDropable ya que tambien es de ese tipo,
-    /// colabora con la clase Word ya que es el elemento con el que va a realizar la logica.
-    /// COMENTARIOS: buscamos la manera de hacer un poco mas generico el metodo check de este motor, la idea era
-    /// cambiar el numero fijo "4" en la linea 61, por el atributo de tipo int "CantDestination", no logramos hacerlo funcionar.
+    /// colabora con la clase Word ya que es el elemento con el que va a realizar la logica. Ademas colabora
+    /// con la clase OneAdapter.
     /// </summary>
     public class EngineLvl2 : IObservable, IEngineDropable
     {
