@@ -12,12 +12,10 @@ namespace Library
     /// <summary>
     /// NOMBRE: Renderer.
     /// DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
-    /// EXPERT: Esta clase es quien conoce el IMainViewAdapter, por lo que decidimos que sea responsable de contener
-    /// los metodos de renderizacion ejecutados utilizando dicho IMainViewAdapter.
     /// COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
     /// de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
     /// </summary>
-    public class Renderer
+    public class Renderer: IRenderer
     {
         private IMainViewAdapter adapter;
 
@@ -42,8 +40,9 @@ namespace Library
         /// <param name="buttonCheck"> ButtonCheck a dibujar. </param>
         public void RenderButtonCheck(ButtonCheck buttonCheck)
         {
-            string buttonId = this.adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
-            this.adapter.SetImage(buttonId, buttonCheck.ImagePath);
+            buttonCheck.ButtonId = this.adapter.CreateButton((int)buttonCheck.PositionX, (int)buttonCheck.PositionY, (int)buttonCheck.Width, (int)buttonCheck.Length, "#FFFFFFFF", buttonCheck.Action);
+            this.adapter.SetImage(buttonCheck.ButtonId, buttonCheck.ImagePath);
+            this.adapter.SetText(buttonCheck.ButtonId, string.Empty);
         }
 
         /// <summary>
@@ -54,6 +53,7 @@ namespace Library
         {
             string buttonId = this.adapter.CreateButton((int)buttonNextPage.PositionX, (int)buttonNextPage.PositionY, (int)buttonNextPage.Width, (int)buttonNextPage.Length, "#FFFFFFFF", buttonNextPage.Action);
             this.adapter.SetImage(buttonId, buttonNextPage.ImagePath);
+            this.adapter.SetText(buttonId, "Next");
         }
 
         /// <summary>
@@ -62,8 +62,9 @@ namespace Library
         /// <param name="buttonSound"> ButtonSound a dibujar. </param>
         public void RenderButtonSound(ButtonSound buttonSound)
         {
-            string buttonId = this.adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
-            this.adapter.SetImage(buttonId, buttonSound.ImagePath);
+            buttonSound.ButtonId = this.adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
+            this.adapter.SetImage(buttonSound.ButtonId, buttonSound.ImagePath);
+            this.adapter.SetText(buttonSound.ButtonId, string.Empty);
         }
 
         /// <summary>
@@ -102,8 +103,9 @@ namespace Library
         /// <param name="letter"> Letter a dibujar. </param>
         public void RenderLetter(Letter letter)
         {
-            string buttonId = this.adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
-            this.adapter.SetImage(buttonId, letter.ImagePath);
+            letter.ButtonId = this.adapter.CreateButton((int)letter.PositionX, (int)letter.PositionY, (int)letter.Width, (int)letter.Length, "#FFFFFFFF", letter.Action);
+            this.adapter.SetImage(letter.ButtonId, letter.ImagePath);
+            this.adapter.SetText(letter.ButtonId, string.Empty);
         }
 
         /// <summary>

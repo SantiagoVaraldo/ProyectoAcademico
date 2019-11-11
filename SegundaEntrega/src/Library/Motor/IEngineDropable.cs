@@ -10,6 +10,9 @@ using Proyecto.Common;
 
 namespace Library
 {
+    /// <summary>
+    /// Interfaz utilizada por los motores del nivel 2 y 4.
+    /// </summary>
     public interface IEngineDropable
     {
         void Check(Word word);

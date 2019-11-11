@@ -19,6 +19,7 @@ namespace Library
     /// es un tipo de boton.
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
     /// y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
+    /// Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
     /// </summary>
     public class ButtonNextPage : Element, IButton
     {
@@ -33,16 +34,15 @@ namespace Library
         /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
-            OneAdapter.Adapter.Debug($"Button clicked!");
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
             generalEngine.Update();
         }
 
         /// <summary>
-        /// metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+        /// metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
         /// </summary>
-        /// <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
-        public override void Render(Renderer renderer)
+        /// <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
+        public override void Render(IRenderer renderer)
         {
             renderer.RenderButtonNextPage(this);
         }

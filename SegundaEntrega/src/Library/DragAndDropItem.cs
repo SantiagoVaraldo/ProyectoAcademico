@@ -19,7 +19,8 @@ namespace Library
     /// de DragAndDropItem, su unica razon de cambio es modificar los datos que guardamos sobre DragAndDropItem.
     /// HERENCIA: Esta clase hereda de la clase ancestra Element
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropItem debe pertenecer a una Screen
-    /// y es de tipo Element.
+    /// y es de tipo Element. Tambien colabora con DragAndDropSource y BlankSpace ya que un item debe conocer
+    /// un source y un destination.
     /// </summary>
     public class DragAndDropItem : Element
     {

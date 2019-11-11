@@ -10,8 +10,9 @@ using System.Collections.Generic;
 namespace Library
 {
     /// <summary>
-    /// NOMBRE: GeneralEngine
+    /// NOMBRE: GeneralEngine.
     /// DESCRIPCION: Motor general del juego, es quien va a pasar a la siguiente pantalla cuando sea necesario
+    /// o al siguiente nivel.
     /// SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
     /// se quiere ir.
     /// OBSERVER: decidimos aplicar este patron para que el motor general no necesite estar preguntandole a los motores

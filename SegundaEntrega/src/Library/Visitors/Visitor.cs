@@ -14,6 +14,9 @@ namespace Library
     /// DESCRIPCION: clase abstracta para implementar el patron Visitor.
     /// VISITOR: decidimos utilizar este patron para poder acceder a un objeto de tipo World, un objeto Level y un objeto
     /// Screen para poder acceder a algunas de sus propiedades sin la necesidad de romper con la ley de Demeter.
+    /// primero lo que hacemos es visitar el World, tomamos el ultimo Level de su lista y lo visitamos, tomamos
+    /// la ultima Screen de su lista y la visitamos, por ultimo visitamos esa Screen para encontrar algunos de
+    /// sus elementos.
     /// </summary>
     public abstract class Visitor
     {

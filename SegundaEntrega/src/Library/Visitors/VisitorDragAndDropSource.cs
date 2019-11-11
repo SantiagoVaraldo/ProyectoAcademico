@@ -84,6 +84,7 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
+            // linea en blanco intencionalmente
         }
     }
 }
