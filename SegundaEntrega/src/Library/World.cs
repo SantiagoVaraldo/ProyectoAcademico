@@ -14,11 +14,13 @@ namespace Library
     /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos, implementa la interfaz
     /// IContainer.
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-    /// pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre, tamaño del World y una lista con
+    /// pertinente para nuestros requisitos de crear objetos World, conoce nombre del World y una lista con
     /// los niveles pertinentes a ese World.
     /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
     /// de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
-    /// COLABORACIONES: Colabora con Level ya que conoce una lista de Level y con la interfaz IContainer.
+    /// COLABORACIONES: Colabora con Level ya que conoce una lista de Level, con la interfaz IContainer ya
+    /// que es un tipo de contenedor y con la clase Visitor, ya que implementa el patron mediante el metodo
+    /// Accept.
     /// </summary>
     public class World : IContainer
     {

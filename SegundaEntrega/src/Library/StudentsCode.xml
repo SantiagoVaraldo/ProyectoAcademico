@@ -289,10 +289,12 @@
             NOMBRE: Letter.
             DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los objetos de tipo Letter.
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-            pertinente para nuestros requisitos de crear objetos Letter asi como la accion de dicho boton.
+            pertinente para nuestros requisitos de crear objetos Letter.
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
+            Tambien colabora con la clase Renderer ya que es quien dibuja un
+            objeto de tipo Word en Unity.
             </summary>
         </member>
         <member name="M:Library.Letter.Action(System.String)">
@@ -310,15 +312,16 @@
         <member name="T:Library.Level">
             <summary>
             NOMBRE: Level.
-            DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los niveles es de tipo IContainer al
-            igual que World, conoce una lista de Screen donde se almacenan todas las pantallas correspondientes al nivel.
+            DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los niveles es de tipo IContainer,
+            conoce una lista de Screen donde se almacenan todas las pantallas correspondientes al nivel.
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
             pertinente para nuestros requisitos de crear objetos Levels, conoce nombre y un objeto World al que
             pertenece el Level.
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
             de Level, su unica razon de cambio es modificar los datos que guardamos sobre el nivel.
             COLABORACIONES: Colabora con la clase World y Screen ya que debe conocer un objeto de tipo World y una lista de Screen
-            y ademas con la interfaz IContainer.
+            y ademas con la interfaz IContainer. Tambien colabora con Visitor ya que es parte de la implemetacion de
+            dicho patron por medio del metodo Accept.
             </summary>
         </member>
         <member name="M:Library.Level.Add(Library.IXML)">
@@ -566,7 +569,8 @@
         <member name="T:Library.OneAdapter">
             <summary>
             NOMBRE: Adapter.
-            DESCRIPCION: Conoce un IMainViewAdapter que estaremos usando en nuestro programa.
+            DESCRIPCION: Conoce un IMainViewAdapter que estaremos usando en nuestro programa asi como tambien
+            un FalseAdapterContains que se usara para los tests.
             </summary>
         </member>
         <member name="T:Library.FilterButtonCheck">
@@ -903,8 +907,6 @@
             <summary>
             NOMBRE: Renderer.
             DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
-            EXPERT: Esta clase es quien conoce el IMainViewAdapter, por lo que decidimos que sea responsable de contener
-            los metodos de renderizacion ejecutados utilizando dicho IMainViewAdapter.
             COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
             de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
             </summary>
@@ -966,14 +968,15 @@
         <member name="T:Library.Screen">
             <summary>
             NOMBRE: Screen.
-            DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a las pantallas.
+            DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a las Screen.
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-            pertinente para nuestros requisitos de crear objetos Screen, conoce el nombre y un Level
-            al que pertenece la Screen.
+            pertinente para nuestros requisitos de crear objetos Screen, conoce el nombre, un Level
+            al que pertenece la Screen y un estado que se vuelve true si la pantalla fue completada.
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
             de Screen, su unica razon de cambio es modificar los datos que guardamos sobre la pantalla.
             COLABORACIONES: Colabora con la clase Level y Element ya que debe conocer un objeto de tipo Level al que pertenece
-            y una lista de objetos Element que pertenezcan a dicha pantalla, tambien colabora con la interfaz IContainer.
+            y una lista de objetos Element que pertenezcan a dicha pantalla, tambien colabora con la interfaz IContainer
+            y con la clase Visitor ya que es parte de la implemetacion de dicho patron por medio del metodo Accept.
             </summary>
         </member>
         <member name="M:Library.Screen.Add(Library.IXML)">
@@ -1003,7 +1006,7 @@
             <summary>
             NOMBRE: Singleton
             SINGLETON: clase implementada para aplicar el patron singleton, esta clase crea una instancia del objeto T, en caso
-            de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores.
+            de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores y para World.
             </summary>
             <typeparam name="T"> tipo generico. </typeparam>
         </member>
@@ -1357,8 +1360,10 @@
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
             de Word, su unica razon de cambio es modificar los datos que guardamos sobre word.
             HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
-            COLABORACIONES: Colabora con la clase DragAndDropItem y Screen ya que un Word debe pertenecer a una Screen
-            y es de tipo DragAndDropItem.
+            COLABORACIONES: Colabora con la clase DragAndDropItem y Screen, debe pertenecer a una Screen
+            y es de tipo DragAndDropItem, ademas colabora con DragAndDropSource y BlankSpace ya que un item debe
+            conocer un Source y un Destination. Tambien colabora con la clase Renderer ya que es quien dibuja un
+            objeto de tipo Word en Unity.
             </summary>
         </member>
         <member name="M:Library.Word.Render(Library.Renderer)">
@@ -1382,11 +1387,13 @@
             DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los Mundos, implementa la interfaz
             IContainer.
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-            pertinente para nuestros requisitos de crear objetos Worlds, conoce nombre, tamaño del World y una lista con
+            pertinente para nuestros requisitos de crear objetos World, conoce nombre del World y una lista con
             los niveles pertinentes a ese World.
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
             de World, su unica razon de cambio es modificar los datos que guardamos sobre el mundo.
-            COLABORACIONES: Colabora con Level ya que conoce una lista de Level y con la interfaz IContainer.
+            COLABORACIONES: Colabora con Level ya que conoce una lista de Level, con la interfaz IContainer ya
+            que es un tipo de contenedor y con la clase Visitor, ya que implementa el patron mediante el metodo
+            Accept.
             </summary>
         </member>
         <member name="M:Library.World.Add(Library.IXML)">

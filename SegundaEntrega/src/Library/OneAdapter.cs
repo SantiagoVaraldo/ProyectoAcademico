@@ -10,7 +10,8 @@ namespace Library
 {
     /// <summary>
     /// NOMBRE: Adapter.
-    /// DESCRIPCION: Conoce un IMainViewAdapter que estaremos usando en nuestro programa.
+    /// DESCRIPCION: Conoce un IMainViewAdapter que estaremos usando en nuestro programa asi como tambien
+    /// un FalseAdapterContains que se usara para los tests.
     /// </summary>
     public static class OneAdapter
     {

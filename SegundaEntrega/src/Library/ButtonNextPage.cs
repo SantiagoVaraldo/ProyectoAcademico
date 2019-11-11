@@ -33,7 +33,6 @@ namespace Library
         /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
-            OneAdapter.Adapter.Debug($"Button clicked!");
             IObserver generalEngine = Singleton<GeneralEngine>.Instance;
             generalEngine.Update();
         }

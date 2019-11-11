@@ -11,14 +11,15 @@ namespace Library
 {
     /// <summary>
     /// NOMBRE: Screen.
-    /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a las pantallas.
+    /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a las Screen.
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
-    /// pertinente para nuestros requisitos de crear objetos Screen, conoce el nombre y un Level
-    /// al que pertenece la Screen.
+    /// pertinente para nuestros requisitos de crear objetos Screen, conoce el nombre, un Level
+    /// al que pertenece la Screen y un estado que se vuelve true si la pantalla fue completada.
     /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
     /// de Screen, su unica razon de cambio es modificar los datos que guardamos sobre la pantalla.
     /// COLABORACIONES: Colabora con la clase Level y Element ya que debe conocer un objeto de tipo Level al que pertenece
-    /// y una lista de objetos Element que pertenezcan a dicha pantalla, tambien colabora con la interfaz IContainer.
+    /// y una lista de objetos Element que pertenezcan a dicha pantalla, tambien colabora con la interfaz IContainer
+    /// y con la clase Visitor ya que es parte de la implemetacion de dicho patron por medio del metodo Accept.
     /// </summary>
     public class Screen : IContainer
     {

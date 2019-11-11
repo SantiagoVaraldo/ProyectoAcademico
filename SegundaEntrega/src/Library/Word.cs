@@ -16,8 +16,10 @@ namespace Library
     /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
     /// de Word, su unica razon de cambio es modificar los datos que guardamos sobre word.
     /// HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
-    /// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen ya que un Word debe pertenecer a una Screen
-    /// y es de tipo DragAndDropItem.
+    /// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen, debe pertenecer a una Screen
+    /// y es de tipo DragAndDropItem, ademas colabora con DragAndDropSource y BlankSpace ya que un item debe
+    /// conocer un Source y un Destination. Tambien colabora con la clase Renderer ya que es quien dibuja un
+    /// objeto de tipo Word en Unity.
     /// </summary>
     public class Word : DragAndDropItem
     {
