@@ -65,6 +65,8 @@ namespace Library
                     ((Word)element).Destination.Unfill();
                     OneAdapter.Adapter.Center(((Word)element).ItemId, ((Word)element).Source.SourceCellImageId);
                 }
+
+                screen.LevelUncompleted();
             }
         }
 

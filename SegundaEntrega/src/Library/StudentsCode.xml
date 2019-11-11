@@ -373,6 +373,12 @@
             <param name="letter"> letra que fue clickeada. </param>
             <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
         </member>
+        <member name="M:Library.EngineLvl1.Reset(Library.Screen)">
+            <summary>
+            resetea el estado del nivel.
+            </summary>
+            <param name="screen">screen reseteada.</param>
+        </member>
         <member name="M:Library.EngineLvl1.Subscribe(Library.IObserver)">
             <summary>
             metodo que agrega un IObserver a la lista de Observers.
@@ -467,6 +473,12 @@
             </summary>
             <param name="buttonCheck"> boton clickeado. </param>
         </member>
+        <member name="M:Library.EngineLvl3.AddButtonSelected(Library.ButtonCheck)">
+            <summary>
+            añade el boton a la lista de botones seleccionados.
+            </summary>
+            <param name="buttonCheck">boton seleccionado.</param>
+        </member>
         <member name="M:Library.EngineLvl3.NextLevel(Library.ButtonCheck)">
             <summary>
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
@@ -480,7 +492,7 @@
             </summary>
             <param name="screen"> Screen reiniciada. </param>
         </member>
-        <member name="M:Library.EngineLvl3.AddButtonCheck(Library.ButtonCheck)">
+        <member name="M:Library.EngineLvl3.AddCorrectButton(Library.ButtonCheck)">
             <summary>
             agrega el boton a la lista correcta en el caso de que sea un boton correcto.
             </summary>
@@ -1402,7 +1414,7 @@
             <summary>
             NOMBRE: Builder.
             DESCRIPCION: contiene un IMainvieadapter, contiene un metodo build que crea el mundo en unity a partir del World.
-            POLIMORFISMO: cuando se recorre la lista de niveles del World, se hace element.Render(), en este momento se hace
+            POLIMORFISMO: cuando se recorre la lista de niveles del World, se hace element.Render(renderer), en este momento se hace
             uso del polimorfismo ya que no se sabe cual es el tipo de elemento, simplemente se renderiza el elemento de la
             forma que corresponda sin preguntar por el tipo del elemento.
             COLABORACIONES: Colabora con la clase World y la interfaz IMainviewadapter y es de tipo IBuilder ya que debe conocer un objeto de tipo World.

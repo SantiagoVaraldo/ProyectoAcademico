@@ -25,6 +25,7 @@ namespace Library
     {
         private bool state;
         private string soundPath;
+        private string buttonId;
 
         public ButtonSound(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, string soundPath)
         : base(name, positionY, positionX, length, width, screen, imagePath)
@@ -62,14 +63,30 @@ namespace Library
             }
         }
 
+        public string ButtonId
+        {
+            get
+            {
+                return this.buttonId;
+            }
+
+            set
+            {
+                this.buttonId = value;
+            }
+        }
+
         /// <summary>
         /// accion que realiza el boton de tipo ButtonSound al hacerle click.
         /// </summary>
         /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
-            EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
-            engineLvl1.Sound(this);
+            if (name == this.ButtonId)
+            {
+                EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
+                engineLvl1.Sound(this);
+            }
         }
 
         /// <summary>

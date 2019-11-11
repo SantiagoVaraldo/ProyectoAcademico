@@ -62,9 +62,9 @@ namespace Library
         /// <param name="buttonSound"> ButtonSound a dibujar. </param>
         public void RenderButtonSound(ButtonSound buttonSound)
         {
-            string buttonId = this.adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
-            this.adapter.SetImage(buttonId, buttonSound.ImagePath);
-            this.adapter.SetText(buttonId, string.Empty);
+            buttonSound.ButtonId = this.adapter.CreateButton((int)buttonSound.PositionX, (int)buttonSound.PositionY, (int)buttonSound.Width, (int)buttonSound.Length, "#FFFFFFFF", buttonSound.Action);
+            this.adapter.SetImage(buttonSound.ButtonId, buttonSound.ImagePath);
+            this.adapter.SetText(buttonSound.ButtonId, string.Empty);
         }
 
         /// <summary>

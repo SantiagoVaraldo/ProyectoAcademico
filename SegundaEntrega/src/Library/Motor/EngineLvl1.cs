@@ -31,8 +31,6 @@ namespace Library
         /// <param name="letter"> letra la cual fue clickeada. </param>
         public void Check(Letter letter)
         {
-            OneAdapter.Adapter.Debug($"Button clicked!");
-
             if (letter.Right)
             {
                 this.NextLevel(letter);
@@ -56,7 +54,17 @@ namespace Library
                 observer.Update();
             }
 
+            this.Reset(letter.Screen);
             return true;
+        }
+
+        /// <summary>
+        /// resetea el estado del nivel.
+        /// </summary>
+        /// <param name="screen">screen reseteada.</param>
+        public void Reset(Screen screen)
+        {
+            screen.LevelUncompleted();
         }
 
         public void Sound(ButtonSound buttonSound)
