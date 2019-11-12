@@ -13,8 +13,7 @@ namespace Tests
         Level level;
         Screen screen;
         public ElementTests()
-        {
-            world1 = new World("world1", 50, 50);
+        { 
             level = new Level("level1", world1);
             screen = new Screen("screen1", level);
         }
