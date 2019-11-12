@@ -52,10 +52,18 @@ namespace Library
                 this.LastLevel = world.ListLevel[world.ListLevel.Count - 1];
             }
 
-            string name = this.tag.AttributeList["Name"].Value;
+            try
+            {
+                string name = this.tag.AttributeList["Name"].Value;
 
-            IXML screen = new Screen(name, this.LastLevel);
-            this.LastLevel.Add(screen);
+                IXML screen = new Screen(name, this.LastLevel);
+                this.LastLevel.Add(screen);
+            }
+            catch (Exception)
+            {
+                string message = "there was an error while fetching data from the XML file";
+                throw new NotFoundOnXMLException(message);
+            }
         }
 
         /// <summary>

@@ -67,15 +67,23 @@ namespace Library
                 this.LastScreen = level.ScreenList[level.ScreenList.Count - 1];
             }
 
-            string name = this.tag.AttributeList["Name"].Value;
-            int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
-            int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
-            int length = Int32.Parse(this.tag.AttributeList["Length"].Value);
-            int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
-            string imagePath = this.tag.AttributeList["ImagePath"].Value;
+            try
+            {
+                string name = this.tag.AttributeList["Name"].Value;
+                int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
+                int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
+                int length = Int32.Parse(this.tag.AttributeList["Length"].Value);
+                int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
+                string imagePath = this.tag.AttributeList["ImagePath"].Value;
 
-            IXML image = new Image(name, positionY, positionX, length, width, this.LastScreen, imagePath);
-            this.LastScreen.Add(image);
+                IXML image = new Image(name, positionY, positionX, length, width, this.LastScreen, imagePath);
+                this.LastScreen.Add(image);
+            }
+            catch (Exception)
+            {
+                string message = "there was an error while fetching data from the XML file";
+                throw new NotFoundOnXMLException(message);
+            }
         }
 
         /// <summary>

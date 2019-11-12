@@ -75,28 +75,36 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
-            string name = this.tag.AttributeList["Name"].Value;
-            int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
-            int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
-            int length = Int32.Parse(this.tag.AttributeList["Length"].Value);
-            int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
-            string imagePath = this.tag.AttributeList["ImagePath"].Value;
-
-            foreach (Element element in screen.ElementList)
+            try
             {
-                if (element is BlankSpace && element.Name == name)
+                string name = this.tag.AttributeList["Name"].Value;
+                int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
+                int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
+                int length = Int32.Parse(this.tag.AttributeList["Length"].Value);
+                int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
+                string imagePath = this.tag.AttributeList["ImagePath"].Value;
+
+                foreach (Element element in screen.ElementList)
                 {
-                    this.WordDestination = element;
+                    if (element is BlankSpace && element.Name == name)
+                    {
+                        this.WordDestination = element;
+                    }
+
+                    else if (element is DragAndDropSource && element.Name == name)
+                    {
+                        this.WordSource = element;
+                    }
                 }
 
-                else if (element is DragAndDropSource && element.Name == name)
-                {
-                    this.WordSource = element;
-                }
+                IXML word = new Word(name, positionY, positionX, length, width, this.LastScreen, imagePath, (DragAndDropSource)this.WordSource, (BlankSpace)this.WordDestination);
+                this.LastScreen.Add(word);
             }
-
-            IXML word = new Word(name, positionY, positionX, length, width, this.LastScreen, imagePath, (DragAndDropSource)this.WordSource, (BlankSpace)this.WordDestination);
-            this.LastScreen.Add(word);
+            catch (Exception)
+            {
+                string message = "there was an error while fetching data from the XML file";
+                throw new NotFoundOnXMLException(message);
+            }
         }
     }
 }
