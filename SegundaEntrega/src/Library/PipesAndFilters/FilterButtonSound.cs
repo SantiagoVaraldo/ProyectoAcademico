@@ -27,11 +27,7 @@ namespace Library
     {
         private bool result;
 
-        public bool Result
-        {
-            get { return this.result; }
-            set { this.result = value; }
-        }
+        public bool Result { get; set; }
 
         /// <summary>
         /// filtra el Tag recibido.
