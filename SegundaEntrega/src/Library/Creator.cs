@@ -63,7 +63,7 @@ namespace Library
             IPipe pipeFilterDragAndDropDestination = new PipeConditional(filterDragAndDropDestination, pipeNull, pipeFilterWorld);
             IPipe pipeFilterDragAndDropSource = new PipeConditional(filterDragAndDropSource, pipeNull, pipeFilterDragAndDropDestination);
             IPipe pipeFilterLetter = new PipeConditional(filterLetter, pipeNull, pipeFilterDragAndDropSource);
-            IPipe pipeFilterButtonCheck = new PipeConditional(filterButtonCheck, pipeNull, pipe6);
+            IPipe pipeFilterButtonCheck = new PipeConditional(filterButtonCheck, pipeNull, pipeFilterLetter);
             IPipe pipeFilterButtonSound = new PipeConditional(filterButtonSound, pipeNull, pipeFilterButtonCheck);
             IPipe pipeFilterButtonNextPage = new PipeConditional(filterButtonNextPage, pipeNull, pipeFilterButtonSound);
             IPipe pipeFilterScreen = new PipeConditional(filterScreen, pipeNull, pipeFilterButtonNextPage);
