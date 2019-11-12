@@ -342,7 +342,7 @@
 	</Screen>
 	<Screen Name="Screen6" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
-		<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Tostadas.jpg" ImagePath2="Banana.jpg" Check="true"/>
+		<ButtonCheck Name="Banana" PositionY="-80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Tostadas.jpg" ImagePath2="Banana.jpg" Check="false"/>
 		<ButtonCheck Name="Camara" PositionY="-80" PositionX="0" Length="150" Width="150" Screen="Screen", ImagePath="MorronVerde.jpg" ImagePath2="Camara.jpg" Check="true"/>
 		<ButtonCheck Name="Lampara" PositionY="-80" PositionX="170" Length="150" Width="150" Screen="Screen", ImagePath="Nueces.jpg" ImagePath2="Lampara.jpg" Check="false"/>
 		<ButtonCheck Name="Lapiz" PositionY="80" PositionX="-170" Length="150" Width="150" Screen="Screen" ImagePath="Torta.jpg" ImagePath2="Lapiz.jpg" Check="false"/>

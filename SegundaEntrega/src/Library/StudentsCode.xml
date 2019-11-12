@@ -13,8 +13,8 @@
             de BlankSpace, su unica razon de cambio es modificar los datos que guardamos sobre BlankSpace.
             HERENCIA: Esta clase hereda de la clase ancestra DragAndDropDestination
             COLABORACIONES: Colabora con la clase DragAndDropDestination y Screen ya que un BlankSpace debe pertenecer a una Screen
-            y es de tipo DragAndDropDestination. Tambien colabora con la clase Renderer ya que es quien dibuja
-            un objeto de tipo BlankSpace en Unity.
+            y es de tipo DragAndDropDestination. Tambien colabora con la Interfaz IRenderer para dibujar el elemento
+            correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.BlankSpace.Fill">
@@ -29,9 +29,9 @@
         </member>
         <member name="M:Library.BlankSpace.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRendere para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.ButtonCheck">
             <summary>
@@ -44,7 +44,7 @@
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
-            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonCheck en Unity.
+            Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.ButtonCheck.Action(System.String)">
@@ -65,9 +65,9 @@
         </member>
         <member name="M:Library.ButtonCheck.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.ButtonNextPage">
             <summary>
@@ -80,7 +80,7 @@
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
-            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonNextPage en Unity.
+            Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.ButtonNextPage.Action(System.String)">
@@ -91,9 +91,9 @@
         </member>
         <member name="M:Library.ButtonNextPage.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.ButtonSound">
             <summary>
@@ -106,7 +106,7 @@
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
-            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ButtonSound en Unity.
+            Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.ButtonSound.Action(System.String)">
@@ -117,9 +117,9 @@
         </member>
         <member name="M:Library.ButtonSound.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la Interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.Creator">
             <summary>
@@ -193,15 +193,14 @@
             de DragAndDropSource, su unica razon de cambio es modificar los datos que guardamos sobre DragAndDropSource.
             HERENCIA: Esta clase hereda de la clase ancestra Element
             COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropSource debe pertenecer a una Screen
-            y es de tipo Element. Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo
-            DragAndDropSource en Unity.
+            y es de tipo Element. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.DragAndDropSource.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.Element">
             <summary>
@@ -212,15 +211,14 @@
             SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
             de Element, su unica razon de cambio es modificar los datos que guardamos sobre el elemento.
             COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
-            Tambien colabora con la clase Renderer ya que tiene un metodo virtual para dibujar elementos en Unity
-            que sera sobrescrito por los metodos Render de cada elemento particular.
+            Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.Element.Render(Library.IRenderer)">
             <summary>
             metodo virtual el cual es remplazado por los metodos Render particulares de las clases que heredan de Element.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.NotFoundOnXMLException">
              <summary>
@@ -241,7 +239,7 @@
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
-            Tambien colabora con la clase Renderer ya que es quien dibuja un objeto de tipo ExitButton en Unity.
+            Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.ExitButton.Action(System.String)">
@@ -252,9 +250,9 @@
         </member>
         <member name="M:Library.ExitButton.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.IButton">
             <summary>
@@ -279,22 +277,21 @@
             y no agrega comportamiento ni atributos extras.(optamos pr herencia en lugar de composicion ya que necesitabamos
             todo los datos de Element y no ibamos a crear comportamiento)
             COLABORACIONES: Colabora con la clase Element y Screen ya que una imagen debe pertenecer a una Screen y ademas
-            es de tipo Element. Tambien colabora con la clase Renderer ya que es quien dibuja un
-            objeto de tipo Image en Unity.
+            es de tipo Element. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.Image.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.IRenderer">
             <summary>
             NOMBRE: IRenderer.
-            DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
-            COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
-            de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
+            DIP: esta interfaz fue creada para aplicar el patron de inversion de dependencias, el proposito es hacer
+            que nuestro modelo no dependa de Renderer ya que Renderer depende del adapter, para esto hacemos
+            que nuestro modelo dependa de esta interfaz IRenderer, y que la clase Renderer la implemente.
             </summary>
         </member>
         <member name="T:Library.IXML">
@@ -311,8 +308,7 @@
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
-            Tambien colabora con la clase Renderer ya que es quien dibuja un
-            objeto de tipo Letter en Unity.
+            Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.Letter.Action(System.String)">
@@ -323,9 +319,9 @@
         </member>
         <member name="M:Library.Letter.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="T:Library.Level">
             <summary>
@@ -1371,15 +1367,14 @@
             HERENCIA: Esta clase hereda de la clase ancestra DragAndDropItem
             COLABORACIONES: Colabora con la clase DragAndDropItem y Screen, debe pertenecer a una Screen
             y es de tipo DragAndDropItem, ademas colabora con DragAndDropSource y BlankSpace ya que un item debe
-            conocer un Source y un Destination. Tambien colabora con la clase Renderer ya que es quien dibuja un
-            objeto de tipo Word en Unity.
+            conocer un Source y un Destination. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
         <member name="M:Library.Word.Render(Library.IRenderer)">
             <summary>
-            metodo que llama al metodo correspondiente de la clase Rendere para renderizarce en Unity.
+            metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
             </summary>
-            <param name="renderer"> objeto Renderer al que se le delega la responsabilidad. </param>
+            <param name="renderer"> IRenderer al que se le delega la responsabilidad. </param>
         </member>
         <member name="M:Library.Word.OnDrop(System.String,System.Single,System.Single)">
             <summary>

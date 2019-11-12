@@ -42,7 +42,7 @@ namespace Library
 
             this.AddCorrectButton(buttonCheck);
 
-            if ((this.clickNum % 2) == 0)
+            if (this.clickNum == 2)
             {
                 if (this.correctList.Count == 2)
                 {
@@ -55,6 +55,10 @@ namespace Library
                         button.Unselect();
                         OneAdapter.Adapter.SetImage(button.ButtonId, button.ImagePath);
                     }
+
+                    this.correctList.Clear();
+                    this.selectedList.Clear();
+                    this.clickNum = 0;
                 }
             }
         }
@@ -99,6 +103,7 @@ namespace Library
                 OneAdapter.Adapter.SetImage(button.ButtonId, button.ImagePath);
             }
 
+            this.clickNum = 0;
             this.selectedList.Clear();
             screen.LevelUncompleted();
         }
