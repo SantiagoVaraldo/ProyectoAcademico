@@ -20,14 +20,14 @@ namespace Library
     /// </summary>
     public class Creator
     {
-        private static List<string> listPages = new List<string>();
+        private static Dictionary<string, List<string>> pagesUnity = new Dictionary<string, List<string>>();
         private List<Tag> listTags = new List<Tag>();
 
-        public static List<string> ListPages
+        public static Dictionary<string, List<string>> PagesUnity
         {
             get
             {
-                return Creator.listPages;
+                return Creator.pagesUnity;
             }
         }
 

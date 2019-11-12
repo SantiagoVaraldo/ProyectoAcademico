@@ -23,9 +23,39 @@ namespace Library
     /// </summary>
     public class ButtonNextPage : Element, IButton
     {
-        public ButtonNextPage(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath)
+        private string buttonId;
+        private string text;
+
+        public ButtonNextPage(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, string text)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {
+            this.Text = text;
+        }
+
+        public string ButtonId
+        {
+            get
+            {
+                return this.buttonId;
+            }
+
+            set
+            {
+                this.buttonId = value;
+            }
+        }
+
+        public string Text
+        {
+            get
+            {
+                return this.text;
+            }
+
+            set
+            {
+                this.text = value;
+            }
         }
 
         /// <summary>
@@ -34,8 +64,12 @@ namespace Library
         /// <param name="name"> nombre del boton. </param>
         public void Action(string name)
         {
-            IObserver generalEngine = Singleton<GeneralEngine>.Instance;
-            generalEngine.Update();
+            if (name == this.ButtonId)
+            {
+                GeneralEngine generalEngine = Singleton<GeneralEngine>.Instance;
+                generalEngine.ChangeLevel(this.Name);
+                generalEngine.Update();
+            }
         }
 
         /// <summary>

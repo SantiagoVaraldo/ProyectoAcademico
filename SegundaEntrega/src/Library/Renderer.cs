@@ -51,9 +51,9 @@ namespace Library
         /// <param name="buttonNextPage"> ButtonNextPage a dibujar. </param>
         public void RenderButtonNextPage(ButtonNextPage buttonNextPage)
         {
-            string buttonId = this.adapter.CreateButton((int)buttonNextPage.PositionX, (int)buttonNextPage.PositionY, (int)buttonNextPage.Width, (int)buttonNextPage.Length, "#FFFFFFFF", buttonNextPage.Action);
-            this.adapter.SetImage(buttonId, buttonNextPage.ImagePath);
-            this.adapter.SetText(buttonId, "Next");
+            buttonNextPage.ButtonId = this.adapter.CreateButton((int)buttonNextPage.PositionX, (int)buttonNextPage.PositionY, (int)buttonNextPage.Width, (int)buttonNextPage.Length, "#FFFFFFFF", buttonNextPage.Action);
+            this.adapter.SetImage(buttonNextPage.ButtonId, buttonNextPage.ImagePath);
+            this.adapter.SetText(buttonNextPage.ButtonId, buttonNextPage.Text);
         }
 
         /// <summary>

@@ -38,8 +38,9 @@ namespace Proyecto.StudentsCode
 
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
 
+            Creator.PagesUnity.Add("Inicio", new List<string>());
             this.firstPageName = this.adapter.AddPage();
-            Creator.ListPages.Add(this.firstPageName);
+            Creator.PagesUnity["Inicio"].Add(this.firstPageName);
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
             string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
@@ -50,10 +51,11 @@ namespace Proyecto.StudentsCode
 
             foreach (Level level in world.ListLevel)
             {
+                Creator.PagesUnity.Add(level.Name, new List<string>());
                 foreach (Screen screen in level.ScreenList)
                 {
                     this.nextPageName = this.adapter.AddPage();
-                    Creator.ListPages.Add(this.nextPageName);
+                    Creator.PagesUnity[level.Name].Add(this.nextPageName);
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
 
                     foreach (Element element in screen.ElementList)
@@ -70,11 +72,6 @@ namespace Proyecto.StudentsCode
             this.adapter.ShowPage(this.firstPageName);
         }
 
-        public void AfterBuildShowPage(string page)
-        {
-            this.adapter.ShowPage(page);
-        }
-
         private void GoToFirstPage()
         {
             this.adapter.ShowPage(this.firstPageName);
@@ -82,7 +79,7 @@ namespace Proyecto.StudentsCode
 
         private void GoToNextPage(string name)
         {
-            this.adapter.ShowPage(Creator.ListPages[1]);
+            this.adapter.ShowPage(Creator.PagesUnity["Menu"][0]);
         }
 
         private void OnClick()
