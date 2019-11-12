@@ -594,6 +594,12 @@
             metodo que actualiza la pagina, pasa a la siguiente pantalla.
             </summary>
         </member>
+        <member name="M:Library.GeneralEngine.ChangeLevel(System.String)">
+            <summary>
+            metodo que cambia el nivel actual en el que se encuentra el juego.
+            </summary>
+            <param name="levelName"> nivel al que se debe cambiar. </param>
+        </member>
         <member name="T:Library.IEngineDropable">
             <summary>
             Interfaz utilizada por los motores del nivel 2 y 4.

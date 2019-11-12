@@ -1,9 +1,15 @@
-<Level Name="Level" World="TheWorld">
+<Level Name="Menu" World="TheWorld">
+	<Screen Name="Screen40" Level="Level">
+		<ButtonNextPage Name="Animales" PositionY="0" PositionX="-150" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="ANIMALES">
+		<ButtonNextPage Name="Comida" PositionY="0" PositionX="150" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="COMIDA">
+	</Screen>
+</Level>
+<Level Name="Animales" World="TheWorld">
 	<Screen Name="Screen40" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-200" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="75" PositionX="0" Length="200" Width="200" Screen="Screen40" ImagePath="Texto.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -48,7 +54,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto2.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen4" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -108,7 +114,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto3.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen6" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -141,7 +147,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Texto" PositionY="75" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Texto4.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-220" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen10" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -228,15 +234,15 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Correcto.jpg"/>
 		<Image Name="Personaje" PositionY="0" PositionX="-350" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje2.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 </Level>
-<Level Name="Level2" World="TheWorld">
+<Level Name="Comida" World="TheWorld">
 	<Screen Name="Screen40" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-200" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="75" PositionX="0" Length="200" Width="200" Screen="Screen40" ImagePath="Texto.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -281,7 +287,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto2.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen4" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -338,7 +344,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-230" Length="220" Width="220" Screen="Screen41" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="0" Length="250" Width="250" Screen="Screen41" ImagePath="Texto3.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen41" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen6" level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -371,7 +377,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Correcto.jpg"/>
 		<Image Name="Personaje" PositionY="0" PositionX="-350" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje2.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 	<Screen Name="Screen9" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -445,7 +451,7 @@
 
 		<DragAndDropSource Name="p6" PositionY="0" PositionX="-100" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="p6" PositionY="-100" PositionX="120" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
-		
+
 		<DragAndDropSource Name="p7" PositionY="100" PositionX="250" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="p7" PositionY="-100" PositionX="220" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
 
@@ -462,12 +468,12 @@
 		<Word Name="p5" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen10" ImagePath="Nido.jpg" DragAndDropSource="p5" BlankSpace="p5"/>
 		<Word Name="p6" PositionY="0" PositionX="-100" Length="100" Width="100" Screen="Screen10" ImagePath="EnVerde.jpg" DragAndDropSource="p6" BlankSpace="p6"/>
 		<Word Name="p7" PositionY="100" PositionX="250" Length="100" Width="100" Screen="Screen10" ImagePath="Su.jpg" DragAndDropSource="p7" BlankSpace="p7"/>
-		<Word Name="p8" PositionY="0" PositionX="250" Length="100" Width="100" Screen="Screen10" ImagePath="ArbolTxt.jpg" DragAndDropSource="p8" BlankSpace="p8"/>			
+		<Word Name="p8" PositionY="0" PositionX="250" Length="100" Width="100" Screen="Screen10" ImagePath="ArbolTxt.jpg" DragAndDropSource="p8" BlankSpace="p8"/>
 	</Screen>
 	<Screen Name="Screen40" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Correcto.jpg"/>
 		<Image Name="Personaje" PositionY="0" PositionX="-350" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje2.jpg"/>
-		<ButtonNextPage Name="Flecha" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg">
+		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
 </Level>
