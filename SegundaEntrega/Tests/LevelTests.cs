@@ -4,7 +4,7 @@ using Library;
 using System.Collections.Generic;
 
 // usar el satus para declarar y definir el World 
-
+/* 
 namespace Tests
 {
     public class LevelTests
@@ -56,3 +56,4 @@ namespace Tests
         }
     }
 }
+ */
