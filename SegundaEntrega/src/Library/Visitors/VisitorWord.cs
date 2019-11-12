@@ -86,16 +86,16 @@ namespace Library
             {
                 if (element is BlankSpace && element.Name == name)
                 {
-                    this.LastElement = element;
+                    this.WordDestination = element;
                 }
 
                 else if (element is DragAndDropSource && element.Name == name)
                 {
-                    this.BeforeLastElement = element;
+                    this.WordSource = element;
                 }
             }
 
-            IXML word = new Word(name, positionY, positionX, length, width, this.LastScreen, imagePath, (DragAndDropSource)this.BeforeLastElement, (BlankSpace)this.LastElement);
+            IXML word = new Word(name, positionY, positionX, length, width, this.LastScreen, imagePath, (DragAndDropSource)this.WordSource, (BlankSpace)this.WordDestination);
             this.LastScreen.Add(word);
         }
     }

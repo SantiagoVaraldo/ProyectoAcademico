@@ -23,8 +23,8 @@ namespace Library
         private World world;
         private Level lastLevel;
         private Screen lastScreen;
-        private Element lastElement;
-        private Element beforeLastElement;
+        private Element wordDestination;
+        private Element wordSource;
 
         public World World
         {
@@ -65,29 +65,29 @@ namespace Library
             }
         }
 
-        public Element LastElement
+        public Element WordDestination
         {
             get
             {
-                return this.lastElement;
+                return this.wordDestination;
             }
 
             set
             {
-                this.lastElement = value;
+                this.wordDestination = value;
             }
         }
 
-        public Element BeforeLastElement
+        public Element WordSource
         {
             get
             {
-                return this.beforeLastElement;
+                return this.wordSource;
             }
 
             set
             {
-                this.beforeLastElement = value;
+                this.wordSource = value;
             }
         }
 
