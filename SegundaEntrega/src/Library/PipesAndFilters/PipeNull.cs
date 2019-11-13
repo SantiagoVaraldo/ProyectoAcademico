@@ -10,8 +10,8 @@ using Library;
 namespace Library
 {
     /// <summary>
-    /// Pipe al que se envia el Tag en caso de que sea filtrado con ExitButtono, es de tipo IPipe.
-    /// No es necesario tener un PipeNull pero decidimos deguir la estructura de Pipes que hemos visto.
+    /// Pipe al que se envia el Tag en caso de que sea filtrado con Exito, es de tipo IPipe.
+    /// No es necesario tener un PipeNull pero decidimos seguir la estructura de Pipes que hemos venido haciendo.
     /// </summary>
     public class PipeNull : IPipe
     {

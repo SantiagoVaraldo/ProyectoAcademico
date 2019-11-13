@@ -75,16 +75,6 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
-            if (screen.ElementList.Count >= 1)
-            {
-                this.LastElement = screen.ElementList[screen.ElementList.Count - 1];
-            }
-
-            if (screen.ElementList.Count >= 2)
-            {
-                this.BeforeLastElement = screen.ElementList[screen.ElementList.Count - 2];
-            }
-
             string name = this.tag.AttributeList["Name"].Value;
             int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
             int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
@@ -92,7 +82,20 @@ namespace Library
             int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
             string imagePath = this.tag.AttributeList["ImagePath"].Value;
 
-            IXML word = new Word(name, positionY, positionX, length, width, this.LastScreen, imagePath, (DragAndDropSource)this.BeforeLastElement, (BlankSpace)this.LastElement);
+            foreach (Element element in screen.ElementList)
+            {
+                if (element is BlankSpace && element.Name == name)
+                {
+                    this.WordDestination = element;
+                }
+
+                else if (element is DragAndDropSource && element.Name == name)
+                {
+                    this.WordSource = element;
+                }
+            }
+
+            IXML word = new Word(name, positionY, positionX, length, width, this.LastScreen, imagePath, (DragAndDropSource)this.WordSource, (BlankSpace)this.WordDestination);
             this.LastScreen.Add(word);
         }
     }

@@ -10,8 +10,9 @@ using System.Collections.Generic;
 namespace Library
 {
     /// <summary>
-    /// NOMBRE: GeneralEngine
+    /// NOMBRE: GeneralEngine.
     /// DESCRIPCION: Motor general del juego, es quien va a pasar a la siguiente pantalla cuando sea necesario
+    /// o al siguiente nivel.
     /// SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
     /// se quiere ir.
     /// OBSERVER: decidimos aplicar este patron para que el motor general no necesite estar preguntandole a los motores
@@ -20,25 +21,44 @@ namespace Library
     /// </summary>
     public class GeneralEngine : IObserver
     {
-        private int actualPage = 1;
+        private int nextPage = 0;
 
-        // private int actualLevel = 1;
+        private string actualLevel;
 
         /// <summary>
         /// metodo que actualiza la pagina, pasa a la siguiente pantalla.
         /// </summary>
         public void Update()
         {
-            if (this.actualPage < Creator.ListPages.Count - 1)
+            if (this.nextPage < this.getPagesLength())
             {
-                OneAdapter.Adapter.ShowPage(Creator.ListPages[this.actualPage + 1]);
-                this.actualPage += 1;
+                OneAdapter.Adapter.ShowPage(this.getNextPage());
+                this.nextPage += 1;
             }
             else
             {
-                OneAdapter.Adapter.ShowPage(Creator.ListPages[0]);
-                this.actualPage = 0;
+                OneAdapter.Adapter.ShowPage(Creator.PagesUnity["Menu"][0]);
+                this.nextPage = 0;
             }
+        }
+
+        public int getPagesLength()
+        {
+            return Creator.PagesUnity[this.actualLevel].Count - 1;
+        }
+
+        public string getNextPage()
+        {
+            return Creator.PagesUnity[this.actualLevel][this.nextPage];
+        }
+
+        /// <summary>
+        /// metodo que cambia el nivel actual en el que se encuentra el juego.
+        /// </summary>
+        /// <param name="levelName"> nivel al que se debe cambiar. </param>
+        public void ChangeLevel(string levelName)
+        {
+            this.actualLevel = levelName;
         }
     }
 }

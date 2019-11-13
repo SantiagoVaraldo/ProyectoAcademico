@@ -2,7 +2,7 @@
 
 ### El problema planteado por las compañeras de psicopedagogía fue el siguiente:
 
-Deberiamos crear una aplicacion, especialmente para IOS, que conste con dos grandes categorias, ANIMALES y COMIDA.
+Deberiamos crear una aplicacion, especialmente para IOS, que conste con dos grandes categorias, ANIMALES:elephant: y COMIDA:apple:.
 cada una de estas categoria debera de contar con cuatro niveles de tres pantallas cada uno, para poder explicar mejor la 
 tematica y el funcionamiento de esta aplicacion, empezaremos por contarles cada uno de estos cuatro niveles.
 
@@ -13,9 +13,9 @@ Este primer nivel consta de nueve letras del abecedario y un boton de sonido, el
 
 Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 
-*Letter* para representar las nueve letras 
+*Letter* para representar las nueve letras :a:
 
-*ButtonSound* para representar el boton con el sonido
+*ButtonSound* para representar el boton con el sonido :speaker:
 
 
 
@@ -34,7 +34,7 @@ Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 
 
 **nivel 3**
-En este tercer nivel se deberan mostrar seis imagenes variadas, de esas seis imagenes, dos deberan estar relacionadas(por ejemplo un frasco de miel y una abeja). En este desafio, el usuario debera seleccionar las dos imagenes que esten relacionadas, en caso de que seleccione dos imagenes no relacionadas, se le notificara y se le permitira seguir intentando hasta que logre seleccionar las correctas, en este caso pasara a la segunda pantalla de este nivel.
+En este tercer nivel se deberan mostrar seis imagenes variadas, de esas seis imagenes, dos deberan estar relacionadas(por ejemplo un frasco de miel:honey_pot: y una abeja:honeybee:). En este desafio, el usuario debera seleccionar las dos imagenes que esten relacionadas, en caso de que seleccione dos imagenes no relacionadas, se le notificara y se le permitira seguir intentando hasta que logre seleccionar las correctas, en este caso pasara a la segunda pantalla de este nivel.
 
 Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 
@@ -44,7 +44,7 @@ Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 
 **nivel 4** 
 La logica y funcionalidad de este cuarto nivel es muy similar al segundo, este nivel consta de varias imagenes y de varias palabras, lo que el usuario debera hacer es arrastrar las palabras en el orden correcto para formar una frase(las imagenes estan simplemente para ayudar al usuario a reconocer las palabras). Una vez que el usuario logre armar la frase pasara a la pantalla numero dos.
-Una vez que el usuario logre superar este cuarto desafío, se le preguntara si desea salir del juego o volver a jugar.
+Una vez que el usuario logre superar este cuarto desafío, se le dara la oportunidad de volver a jugar.
 
 Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 
@@ -60,13 +60,13 @@ Los patrones de diseño mas importantes que hemos utilizado para desarrollar est
 
 *Chain of Responibility*, en una primera instancia nosotros debiamos de poder crear nuestro modelo con los objetos correspondientes
 a partir de un archivo XML, para esto decidimos tomar como ejemplo el ejercicio de Pipes And Filters visto en clase, de esta manera
-enviar cada Tag del XML por la cadena de Pipes filtrando los mismos, una vez que el Tag sea filtrado, se creara la instancia de la clase
-que corresponda. La principal ventaja de utilizar este patron de diseño es el cumplimiento con el principio OCP, este patron permite que tu codigo este abierto a la extencion pero cerrado a la modificacion, simplemente agregando nuevos filtros en nuestro caso, se podrian
-agregar otras tareas sin necesidad de modificar los filtros existentes.
+enviar cada Tag del XML por la cadena de Pipes filtrando los mismos, una vez que el Tag sea filtrado, se creara una instancia de la clase Visitor correspondiente con el Tag. La principal ventaja de utilizar este patron de diseño es el cumplimiento con el principio OCP, este patron permite que tu codigo este abierto a la extencion pero cerrado a la modificacion, simplemente agregando nuevos filtros en nuestro caso, se podrian agregar otras tareas sin necesidad de modificar los filtros existentes.
 
 *Visitor*, decidimos utilizar este patron a la hora de crear las instancias de nuestros objetos, para crear un objeto de tipo *Element*
 por ejemplo, debiamos acceder a la lista de niveles de nuestro objeto *World* para encontrar el ultimo *Level* de la lista,
-posteriormente debiamos acceder a la lista de pantallas de ese ultimo *Level* para encontrar la ultima *Screen* de la lista, de este  modo poder crear nuestro objeto de tipo *Element* que pertenece a esa ultima *Screen*. Como se puede ver, en este caso estamos rompiendo con la *Ley de Demeter* ya que un objeto dado esta accediendo a objetos indirectos que no deberia de conocer. Como solucion a este problema decidimos utilizar el patron *Viditor*, la idea de este patron es poder crear un objeto *Visitor* que acceda a cada uno de los objetos, que acceda al *World*, luego al ultimo *Level* y finalmente a la ultima *Screen*, de esta manera ninguno de los objetos estaria accediendo a objetos indirectos. Al igual que el patron mencionado anteriormente, el patron *Visitor* tiene entre sus ventajas el cumplimiento de los principios OCP y SRP.
+posteriormente debiamos acceder a la lista de pantallas de ese ultimo *Level* para encontrar la ultima *Screen* de la lista, de este  modo poder crear nuestro objeto de tipo *Element* que pertenece a esa ultima *Screen*. Como se puede ver, en este caso estamos rompiendo con la *Ley de Demeter* ya que un objeto dado esta accediendo a objetos indirectos que no deberia de conocer. Como solucion a este problema decidimos utilizar el patron *Visitor*, la idea de este patron es poder crear un objeto *Visitor* que acceda a cada uno de los objetos, que acceda al *World*, luego al ultimo *Level* y finalmente a la ultima *Screen*, de esta manera ninguno de los objetos estaria accediendo a objetos indirectos. Al igual que el patron mencionado anteriormente, el patron *Visitor* tiene entre sus ventajas el cumplimiento de los principios OCP y SRP.
+
+*Singleton*. Hemos utilizado este patron para poder instanciar y utilizar objetos que necesariamente existe una y solo una instancia de los mismos. Por ejemplo, en nuestro juego vamos a tener una unica instancia de *World* al igual que una sola instancia para cada uno de los motores implementados. Al crear una instancia de estos objetos por medio del patron *Singleton*, este nos crea la instancia del objeto en caso de que no exista, y nos devuelve la instancia ya existente en caso de que exista.
 
 *Observer*. Una vez terminamos de crear nuestro modelo del juego procedimos a crear el motor del juego, para esto decidimos aplicar el patron *Observer*, para esto creamos dos interfaces, *IObserver* e *IObservable*, luego creamos un motor general el cual se va a subscibir a cada uno de los motores individuales, de este modo, cada vez que uno de los motores individuales determina que el nivel fue completado, se le notificara al motor general el cual tiene la responsabilidad de pasar al siguiente nivel, de este modo evitamos la necesidad de que el motor general tenga que estar preguntando constantemente a los motores individuales si el nivel fue completado. Nuevamente una de las ventajas de aplicar este patron es el cumplimiento con el principio de OCP ya que podriamos agregar nuevos subscriptores para realizar nuevas tareas sin la necesidad de modificar las clases existentes.
 

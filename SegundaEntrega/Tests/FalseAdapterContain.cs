@@ -43,6 +43,20 @@ namespace Library
         {
             throw new Exception();
         }
+
+        public string GetFileContents(string fileName)
+        {
+            throw new Exception();
+        }
+        public void SetActive(string element, bool active)
+        {
+
+        }
+
+        public void SetText(string elementName, string value, bool wrap = false)
+        {
+
+        }
         public void ShowPage(string pageName)
         {
 

@@ -14,14 +14,17 @@ namespace Library
     /// DESCRIPCION: clase abstracta para implementar el patron Visitor.
     /// VISITOR: decidimos utilizar este patron para poder acceder a un objeto de tipo World, un objeto Level y un objeto
     /// Screen para poder acceder a algunas de sus propiedades sin la necesidad de romper con la ley de Demeter.
+    /// primero lo que hacemos es visitar el World, tomamos el ultimo Level de su lista y lo visitamos, tomamos
+    /// la ultima Screen de su lista y la visitamos, por ultimo visitamos esa Screen para encontrar algunos de
+    /// sus elementos.
     /// </summary>
     public abstract class Visitor
     {
         private World world;
         private Level lastLevel;
         private Screen lastScreen;
-        private Element lastElement;
-        private Element beforeLastElement;
+        private Element wordDestination;
+        private Element wordSource;
 
         public World World
         {
@@ -62,29 +65,29 @@ namespace Library
             }
         }
 
-        public Element LastElement
+        public Element WordDestination
         {
             get
             {
-                return this.lastElement;
+                return this.wordDestination;
             }
 
             set
             {
-                this.lastElement = value;
+                this.wordDestination = value;
             }
         }
 
-        public Element BeforeLastElement
+        public Element WordSource
         {
             get
             {
-                return this.beforeLastElement;
+                return this.wordSource;
             }
 
             set
             {
-                this.beforeLastElement = value;
+                this.wordSource = value;
             }
         }
 

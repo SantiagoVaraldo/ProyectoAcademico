@@ -11,12 +11,12 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Library
 {
-         /// <summary>
-         /// esta interfaz es de tipo IXML, contiene la firma Add la cual hace que todas las clases que implementan esta
-         /// interfaz, deban tener un metodo Add.
-         /// </summary>
-         public interface IContainer : IXML
-         {
-                  void Add(IXML ixml);
-         }
+    /// <summary>
+    /// esta interfaz es de tipo IXML, contiene la firma Add la cual hace que todas las clases que implementan esta
+    /// interfaz, deban tener un metodo Add.
+    /// </summary>
+    public interface IContainer : IXML
+    {
+        void Add(IXML ixml);
+    }
 }

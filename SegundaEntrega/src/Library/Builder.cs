@@ -14,7 +14,7 @@ namespace Proyecto.StudentsCode
     /// <summary>
     /// NOMBRE: Builder.
     /// DESCRIPCION: contiene un IMainvieadapter, contiene un metodo build que crea el mundo en unity a partir del World.
-    /// POLIMORFISMO: cuando se recorre la lista de niveles del World, se hace element.Render(), en este momento se hace
+    /// POLIMORFISMO: cuando se recorre la lista de niveles del World, se hace element.Render(renderer), en este momento se hace
     /// uso del polimorfismo ya que no se sabe cual es el tipo de elemento, simplemente se renderiza el elemento de la
     /// forma que corresponda sin preguntar por el tipo del elemento.
     /// COLABORACIONES: Colabora con la clase World y la interfaz IMainviewadapter y es de tipo IBuilder ya que debe conocer un objeto de tipo World.
@@ -38,8 +38,9 @@ namespace Proyecto.StudentsCode
 
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
 
+            Creator.PagesUnity.Add("Inicio", new List<string>());
             this.firstPageName = this.adapter.AddPage();
-            Creator.ListPages.Add(this.firstPageName);
+            Creator.PagesUnity["Inicio"].Add(this.firstPageName);
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
             string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
@@ -50,15 +51,16 @@ namespace Proyecto.StudentsCode
 
             foreach (Level level in world.ListLevel)
             {
+                Creator.PagesUnity.Add(level.Name, new List<string>());
                 foreach (Screen screen in level.ScreenList)
                 {
                     this.nextPageName = this.adapter.AddPage();
-                    Creator.ListPages.Add(this.nextPageName);
+                    Creator.PagesUnity[level.Name].Add(this.nextPageName);
                     this.adapter.ChangeLayout(Layout.ContentSizeFitter);
 
                     foreach (Element element in screen.ElementList)
                     {
-                        Renderer renderer = new Renderer();
+                        IRenderer renderer = new Renderer();
                         element.Render(renderer);
                     }
                 }
@@ -70,30 +72,19 @@ namespace Proyecto.StudentsCode
             this.adapter.ShowPage(this.firstPageName);
         }
 
-        public void AfterBuildShowPage(string page)
-        {
-            this.adapter.ShowPage(page);
-        }
-
         private void GoToFirstPage()
         {
             this.adapter.ShowPage(this.firstPageName);
-
-            // this.adapter.PlayAudio("Speech On.wav");
         }
 
         private void GoToNextPage(string name)
         {
-            this.adapter.ShowPage(Creator.ListPages[1]);
-
-            // cambiar a Creator.ListPages
+            this.adapter.ShowPage(Creator.PagesUnity["Menu"][0]);
         }
 
         private void OnClick()
         {
             this.adapter.Debug($"Button clicked!");
-
-            // this.adapter.ShowPage("MainPage");
         }
     }
 }

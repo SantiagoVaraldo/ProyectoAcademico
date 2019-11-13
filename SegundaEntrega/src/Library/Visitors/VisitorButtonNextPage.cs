@@ -72,8 +72,9 @@ namespace Library
             int length = Int32.Parse(this.tag.AttributeList["Length"].Value);
             int width = Int32.Parse(this.tag.AttributeList["Width"].Value);
             string imagePath = this.tag.AttributeList["ImagePath"].Value;
+            string text = this.tag.AttributeList["Text"].Value;
 
-            IXML button = new ButtonNextPage(name, positionY, positionX, length, width, this.LastScreen, imagePath);
+            IXML button = new ButtonNextPage(name, positionY, positionX, length, width, this.LastScreen, imagePath, text);
             this.LastScreen.Add(button);
         }
 
@@ -83,6 +84,7 @@ namespace Library
         /// <param name="screen"> objeto Screen a la que se accede. </param>
         public override void Visit(Screen screen)
         {
+            // linea en blanco intencionalmente
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Library
     /// <summary>
     /// NOMBRE: Singleton
     /// SINGLETON: clase implementada para aplicar el patron singleton, esta clase crea una instancia del objeto T, en caso
-    /// de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores.
+    /// de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores y para World.
     /// </summary>
     /// <typeparam name="T"> tipo generico. </typeparam>
     public static class Singleton<T>
