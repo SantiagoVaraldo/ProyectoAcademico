@@ -63,11 +63,11 @@ namespace Tests
         {
             String screenName = "screen1";
             String levelName = "level1";
-            String elementName = "element1";
 
             World world = Singleton<World>.Instance;
             Level level = new Level(levelName, world);
             Screen screen = new Screen(screenName, level);
+            world.Add(level);
             level.Add(screen);
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
@@ -84,10 +84,10 @@ namespace Tests
 
             Attribute attributeName = new Attribute("Name", name);
             Attribute attributeScreen = new Attribute("Screen", screenName);
-            Attribute attributeLenght = new Attribute("Lenght", length);
+            Attribute attributeLenght = new Attribute("Length", length);
             Attribute attributeWidth = new Attribute("Width", width);
-            Attribute attributePositionY = new Attribute("positionY", positionY);
-            Attribute attributePositionX = new Attribute("positionX", positionX);
+            Attribute attributePositionY = new Attribute("PositionY", positionY);
+            Attribute attributePositionX = new Attribute("PositionX", positionX);
             Attribute attributeImagePath = new Attribute("ImagePath", imagePath);
 
             attributeList.Add(attributeName.Key, attributeName);
@@ -100,13 +100,13 @@ namespace Tests
 
             Tag tag = new Tag("Image", attributeList);
 
-            VisitorScreen visitor = new VisitorScreen(tag);
+            VisitorImage visitor = new VisitorImage(tag);
             visitor.Visit(world);
 
             Image expectedImage = new Image(name, Int32.Parse(positionY), Int32.Parse(positionX), Int32.Parse(length), Int32.Parse(width), screen, imagePath);
 
             Assert.True(world.ListLevel[2].ScreenList[0].ElementList[0] is Image);
-            Assert.Equal(world.ListLevel[2].ScreenList[0].ElementList[0].Name, elementName);
+            Assert.Equal(world.ListLevel[2].ScreenList[0].ElementList[0].Name, name);
         }
     }
 }
