@@ -16,7 +16,8 @@ namespace Tests
 
         public EngineLvl3Test()
         {
-            
+
+            world = Singleton<World>.Instance;
             level = new Level("level", world);
             screen = new Screen("screen", level);
             engine = new EngineLvl3();
