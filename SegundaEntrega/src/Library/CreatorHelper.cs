@@ -54,18 +54,17 @@ namespace Library
         /// <returns> un string. </returns>
         public static string GetContent(string fileName)
         {
-            String path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), fileName);
+            String assemblyExecutingLocation = Assembly.GetExecutingAssembly().Location;
+            String directoryPath = Path.GetDirectoryName(assemblyExecutingLocation);
+            String path = Path.Combine(directoryPath, fileName);
             UriBuilder builder = new UriBuilder("file", string.Empty, 0, path);
             String uri = builder.Uri.ToString();
 
             // Creamos un nuevo descargador pasándole una ubicación.
             Downloader downloader = new Downloader(uri);
 
-            // Pedimos al descargador que descargue el contenido
-            string content;
-
-            // Carga el contenido del archivo en la variable content
-            content = downloader.Download();
+            // Pedimos al descargador que descargue el contenido y carga el contenido del archivo en la variable content
+            string content = downloader.Download();
 
             return content;
         }

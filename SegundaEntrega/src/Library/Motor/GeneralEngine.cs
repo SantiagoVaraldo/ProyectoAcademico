@@ -21,7 +21,7 @@ namespace Library
     /// </summary>
     public class GeneralEngine : IObserver
     {
-        private int actualPage = 0;
+        private int nextPage = 0;
 
         private string actualLevel;
 
@@ -30,16 +30,26 @@ namespace Library
         /// </summary>
         public void Update()
         {
-            if (this.actualPage < Creator.PagesUnity[this.actualLevel].Count - 1)
+            if (this.nextPage < this.getPagesLength())
             {
-                OneAdapter.Adapter.ShowPage(Creator.PagesUnity[this.actualLevel][this.actualPage]);
-                this.actualPage += 1;
+                OneAdapter.Adapter.ShowPage(this.getNextPage());
+                this.nextPage += 1;
             }
             else
             {
                 OneAdapter.Adapter.ShowPage(Creator.PagesUnity["Menu"][0]);
-                this.actualPage = 0;
+                this.nextPage = 0;
             }
+        }
+
+        public int getPagesLength()
+        {
+            return Creator.PagesUnity[this.actualLevel].Count - 1;
+        }
+
+        public string getNextPage()
+        {
+            return Creator.PagesUnity[this.actualLevel][this.nextPage];
         }
 
         /// <summary>

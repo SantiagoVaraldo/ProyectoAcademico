@@ -46,7 +46,15 @@ namespace Proyecto.StudentsCode
             string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
 
             Creator creator = new Creator();
-            creator.Create();
+            try
+            {
+                creator.Create();
+            }
+            catch (NotFoundOnXMLException e)
+            {
+                this.adapter.Debug(e.Message);
+            }
+
             World world = Singleton<World>.Instance;
 
             foreach (Level level in world.ListLevel)

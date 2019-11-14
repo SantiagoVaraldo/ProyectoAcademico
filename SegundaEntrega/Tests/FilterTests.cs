@@ -11,32 +11,6 @@ namespace Tests
     public class FilterTests
     {
         [Fact]
-        public void FilterWorld()
-        {
-            IPipe pipeNull = new PipeNull();
-
-            Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
-            Attribute attribute = new Attribute("Name", "world1");
-            Attribute attribute2 = new Attribute("Length", "100");
-            Attribute attribute3 = new Attribute("Width", "100");
-            attributeList.Add(attribute.Key, attribute);
-            attributeList.Add(attribute2.Key, attribute2);
-            attributeList.Add(attribute3.Key, attribute3);
-            Tag tag = new Tag("World", attributeList);
-
-            IFilterConditional filterWorld = new FilterWorld();
-            IPipe pipe0 = new PipeConditional(filterWorld, pipeNull, pipeNull);
-            pipe0.Send(tag);
-
-            string nameExpected = "world1";
-            int lengthExpected = 100;
-            int widthExpected = 100;
-
-            Assert.Equal(Singleton<World>.Instance.Name, nameExpected);
-            Assert.Equal(Singleton<World>.Instance.Length, lengthExpected);
-            Assert.Equal(Singleton<World>.Instance.Width, widthExpected);
-        }
-        [Fact]
         public void FilterLevelTest()
         {
             IPipe pipeNull = new PipeNull();
@@ -49,13 +23,15 @@ namespace Tests
 
             IFilterConditional filterLevel = new FilterLevel();
             IPipe pipe0 = new PipeConditional(filterLevel, pipeNull, pipeNull);
-            pipe0.Send(tag);
+            
+            Assert.True(pipe0.Send(tag) is VisitorLevel);
 
-            string NameExpected = "level1";
-            World world = Singleton<World>.Instance;
+            // string NameExpected = "level1";
+            // World world = Singleton<World>.Instance;
+            // VisitorLevel visitorLevel = new VisitorLevel();
 
-            Assert.Equal(Singleton<World>.Instance.ListLevel[0].Name, NameExpected);
-            Assert.Equal(Singleton<World>.Instance.ListLevel[0].World, world);
+            // Assert.Equal(world.ListLevel[0].Name, NameExpected);
+            // Assert.Equal(world.ListLevel[0].World, world);
         }
         [Fact]
         public void FilterScreen()
@@ -69,13 +45,14 @@ namespace Tests
 
             IFilterConditional filterScreen = new FilterScreen();
             IPipe pipe0 = new PipeConditional(filterScreen, pipeNull, pipeNull);
-            pipe0.Send(tag);
+            
+            Assert.True(pipe0.Send(tag) is VisitorScreen);
 
-            string nameExpected = "screen1";
-            Level level = Singleton<World>.Instance.ListLevel[0];
+            // string nameExpected = "screen1";
+            // Level level = Singleton<World>.Instance.ListLevel[0];
 
-            Assert.Equal(level.ScreenList[0].Name, nameExpected);
-            Assert.Equal(level.ScreenList[0].Level, level);
+            // Assert.Equal(level.ScreenList[0].Name, nameExpected);
+            // Assert.Equal(level.ScreenList[0].Level, level);
         }
         [Fact]
         public void FilterElement()
@@ -99,24 +76,27 @@ namespace Tests
 
             IFilterConditional filterImage = new FilterImage();
             IPipe pipe0 = new PipeConditional(filterImage, pipeNull, pipeNull);
-            pipe0.Send(tag);
 
-            string nameExpected = "image1";
-            Level level = Singleton<World>.Instance.ListLevel[0];
-            Screen screen = level.ScreenList[0];
-            int lengthExpected = 100;
-            int widthExpected = 100;
-            int positionYExpected = 100;
-            int positionXExpected = 100;
-            string imagePathExpected = "Oceano.jpg";
+            Assert.True(pipe0.Send(tag) is VisitorImage);
 
-            Assert.Equal(screen.ElementList[0].Name, nameExpected);
-            Assert.Equal(screen.ElementList[0].Screen, screen);
-            Assert.Equal(screen.ElementList[0].PositionY, positionYExpected);
-            Assert.Equal(screen.ElementList[0].PositionX, positionXExpected);
-            Assert.Equal(screen.ElementList[0].Length, lengthExpected);
-            Assert.Equal(screen.ElementList[0].Width, widthExpected);
-            Assert.Equal(screen.ElementList[0].ImagePath, imagePathExpected);
+            // pipe0.Send(tag);
+
+            // string nameExpected = "image1";
+            // Level level = Singleton<World>.Instance.ListLevel[0];
+            // Screen screen = level.ScreenList[0];
+            // int lengthExpected = 100;
+            // int widthExpected = 100;
+            // int positionYExpected = 100;
+            // int positionXExpected = 100;
+            // string imagePathExpected = "Oceano.jpg";
+
+            // Assert.Equal(screen.ElementList[0].Name, nameExpected);
+            // Assert.Equal(screen.ElementList[0].Screen, screen);
+            // Assert.Equal(screen.ElementList[0].PositionY, positionYExpected);
+            // Assert.Equal(screen.ElementList[0].PositionX, positionXExpected);
+            // Assert.Equal(screen.ElementList[0].Length, lengthExpected);
+            // Assert.Equal(screen.ElementList[0].Width, widthExpected);
+            // Assert.Equal(screen.ElementList[0].ImagePath, imagePathExpected);
         }
     }
 }

@@ -5,9 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        },
+        {
             "name": "Unity Editor",
             "type": "unity",
-            "path": "/c:/Users/FIT/programacion2/ProyectoFinal/pii_2019_2_equipo9/Library/EditorInstance.json",
+            "path": "/c:/Users/FIT/Documents/GitHub/pii_2019_2_equipo9/Library/EditorInstance.json",
             "request": "launch"
         },
         {
