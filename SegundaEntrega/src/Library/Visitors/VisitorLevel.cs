@@ -47,9 +47,17 @@ namespace Library
         /// <param name="world"> objeto world al que accede. </param>
         public override void Visit(World world)
         {
-            string name = this.tag.AttributeList["Name"].Value;
-            IXML level = new Level(name, world);
-            world.Add(level);
+            try
+            {
+                string name = this.tag.AttributeList["Name"].Value;
+                IXML level = new Level(name, world);
+                world.Add(level);
+            }
+            catch (Exception)
+            {
+                string message = "there was an error while fetching data from the XML file";
+                throw new NotFoundOnXMLException(message);
+            }
         }
 
         /// <summary>

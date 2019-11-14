@@ -66,6 +66,8 @@ namespace Library
                 this.LastScreen = level.ScreenList[level.ScreenList.Count - 1];
             }
 
+            try
+            {
             string name = this.tag.AttributeList["Name"].Value;
             int positionY = Int32.Parse(this.tag.AttributeList["PositionY"].Value);
             int positionX = Int32.Parse(this.tag.AttributeList["PositionX"].Value);
@@ -77,6 +79,13 @@ namespace Library
 
             IXML button = new ButtonCheck(name, positionY, positionX, length, width, this.LastScreen, imagePath, imagePath2, check);
             this.LastScreen.Add(button);
+            }
+
+            catch (Exception)
+            {
+                string message = "there was an error while fetching data from the XML file";
+                throw new NotFoundOnXMLException(message);
+            }
         }
 
         /// <summary>
