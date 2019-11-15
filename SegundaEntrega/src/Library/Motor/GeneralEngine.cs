@@ -15,11 +15,8 @@ namespace Library
     /// o al siguiente nivel.
     /// SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
     /// se quiere ir.
-    /// OBSERVER: decidimos aplicar este patron para que el motor general no necesite estar preguntandole a los motores
-    /// particulares cuando debera cambiar de pagina, simplemente se suscribe a los diferentes "mini motores"
-    /// y cuando se necesite cambiar de pantalla estos le notificaran al motor general.
     /// </summary>
-    public class GeneralEngine : IObserver
+    public class GeneralEngine
     {
         private int actualPage = 0;
 

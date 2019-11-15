@@ -37,6 +37,7 @@ namespace Tests
         [Fact]
         public void NegativeTest()
         {
+            OneAdapter.Adapter = new FalseAdapterContain(true);
             //string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
             Letter letter = new Letter("letter", 10, 10, 10, 10, screen, "path", false);
             Singleton<EngineLvl1>.Instance.Check(letter);
