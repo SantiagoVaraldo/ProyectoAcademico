@@ -1,7 +1,8 @@
 <Level Name="Menu" World="TheWorld">
 	<Screen Name="Screen40" Level="Level">
-		<ButtonNextPage Name="Animales" PositionY="0" PositionX="-150" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="ANIMALES">
-		<ButtonNextPage Name="Comida" PositionY="0" PositionX="150" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="COMIDA">
+		<Image Name="Fondo" PositionY="107" PositionX="0" Length="630" Width="884" Screen="Screen40" ImagePath="Fondo.jpg"/>
+		<ButtonNextPage Name="Animales" PositionY="0" PositionX="-150" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="ANIMALES"/>
+		<ButtonNextPage Name="Comida" PositionY="0" PositionX="150" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="COMIDA"/>
 	</Screen>
 </Level>
 <Level Name="Animales" World="TheWorld">
@@ -375,7 +376,7 @@
 	</Screen>
 	<Screen Name="Screen40" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
-		<Image Name="Texto" PositionY="50" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Correcto.jpg"/>
+		<Image Name="Texto" PositionY="50" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Texto4.jpg"/>
 		<Image Name="Personaje" PositionY="0" PositionX="-350" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje2.jpg"/>
 		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
@@ -404,7 +405,7 @@
 	<Screen Name="Screen10" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 
-		<DragAndDropSource Name="pez1" PositionY="100" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<DragAndDropSource Name="pez1" PositionY="100" PositionX="-153" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="pez1" PositionY="-100" PositionX="-350" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
 
 		<DragAndDropSource Name="pez2" PositionY="100" PositionX="200" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
@@ -419,17 +420,17 @@
 		<DragAndDropSource Name="pez5" PositionY="0" PositionX="0" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="pez5" PositionY="-100" PositionX="125" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
 
-		<DragAndDropSource Name="pez6" PositionY="0" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
+		<DragAndDropSource Name="pez6" PositionY="0" PositionX="-153" Length="100" Width="100" Screen="Screen10" ImagePath="FondoBlanco.jpg"/>
 		<BlankSpace Name="pez6" PositionY="-100" PositionX="250" Length="30" Width="100" Screen="Screen10" ImagePath="Linea.jpg"/>
 
 		<Image Name="Letter8" PositionY="100" PositionX="-300" Length="150" Width="150" Screen="Screen10" ImagePath="Oceano.jpg"/>
 
-		<Word Name="pez1" PositionY="100" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="El.jpg" DragAndDropSource="pez1" BlankSpace="pez1"/>
+		<Word Name="pez1" PositionY="100" PositionX="-153" Length="100" Width="100" Screen="Screen10" ImagePath="El.jpg" DragAndDropSource="pez1" BlankSpace="pez1"/>
 		<Word Name="pez2" PositionY="100" PositionX="200" Length="100" Width="130" Screen="Screen10" ImagePath="PezTxt.jpg" DragAndDropSource="pez2" BlankSpace="pez2"/>
 		<Word Name="pez3" PositionY="100" PositionX="0" Length="100" Width="100" Screen="Screen10" ImagePath="Vive.jpg" DragAndDropSource="pez3" BlankSpace="pez3"/>
 		<Word Name="pez4" PositionY="0" PositionX="150" Length="100" Width="100" Screen="Screen10" ImagePath="En.jpg" DragAndDropSource="pez4" BlankSpace="pez4"/>
 		<Word Name="pez5" PositionY="0" PositionX="0" Length="100" Width="120" Screen="Screen10" ImagePath="El.jpg" DragAndDropSource="pez5" BlankSpace="pez5"/>
-		<Word Name="pez6" PositionY="0" PositionX="-200" Length="100" Width="100" Screen="Screen10" ImagePath="Agua.jpg" DragAndDropSource="pez6" BlankSpace="pez6"/>
+		<Word Name="pez6" PositionY="0" PositionX="-153" Length="100" Width="100" Screen="Screen10" ImagePath="Agua.jpg" DragAndDropSource="pez6" BlankSpace="pez6"/>
 	</Screen>
 		<Screen Name="Screen11" Level="Level">
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -471,7 +472,7 @@
 		<Word Name="p8" PositionY="0" PositionX="250" Length="100" Width="100" Screen="Screen10" ImagePath="ArbolTxt.jpg" DragAndDropSource="p8" BlankSpace="p8"/>
 	</Screen>
 	<Screen Name="Screen40" Level="Level">
-		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
+		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen40" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Texto" PositionY="50" PositionX="30" Length="200" Width="300" Screen="Screen40" ImagePath="Correcto.jpg"/>
 		<Image Name="Personaje" PositionY="0" PositionX="-350" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje2.jpg"/>
 		<ButtonNextPage Name="Comida" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
