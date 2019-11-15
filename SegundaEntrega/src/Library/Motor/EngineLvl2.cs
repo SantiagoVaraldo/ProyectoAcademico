@@ -37,8 +37,6 @@ namespace Library
             {
                 word.Screen.LevelCompleted();
                 Singleton<GeneralEngine>.Instance.Update();
-
-                this.Reset(word.Screen);
                 return true;
             }
 

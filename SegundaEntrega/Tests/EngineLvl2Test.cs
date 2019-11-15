@@ -18,8 +18,18 @@ namespace Tests
         Word word1;
         Word word2;
         FalseAdapterContain falseAdapterContainTrue;
-        public void Create()
+        public EngineLvl2Test()
         {
+            Dictionary<string, List<string>> dicc = new Dictionary<string, List<string>>();
+            List<string> list = new List<string>();
+            list.Add("Page1");
+            dicc.Add("Menu", list);
+            Creator.PagesUnity = dicc;
+
+            Singleton<GeneralEngine>.Instance.ActualLevel = "Menu";
+
+            OneAdapter.Adapter = new FalseAdapterContain(true);
+
             level = new Level("level", world);
             screen = new Screen("screen", level);
 
@@ -42,7 +52,6 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            Create();
 
             // simulamos que nuestros objetos Word se encuentran en el lugar correcto.
             if (falseAdapterContainTrue.Contains(word1.Name, 50, 50))
@@ -50,7 +59,7 @@ namespace Tests
                 Singleton<EngineLvl2>.Instance.Check(word1);
                 Singleton<EngineLvl2>.Instance.AddWord(word1);
                 Singleton<EngineLvl2>.Instance.NextLevel(word1);
-                LevelPass(word1, true, false);
+                this.LevelPass(word1, true, false);
             }
 
             if (falseAdapterContainTrue.Contains(word2.Name, 50, 50))
@@ -58,22 +67,20 @@ namespace Tests
                 Singleton<EngineLvl2>.Instance.Check(word2);
                 Singleton<EngineLvl2>.Instance.AddWord(word2);
                 Singleton<EngineLvl2>.Instance.NextLevel(word2);
-                LevelPass(word2, true, true);
+                this.LevelPass(word2, true, true);
             }
         }
 
         [Fact]
         public void NegativeTest()
         {
-            Create();
-
             // simulamos que nuestros objetos Word se encuentran en el lugar incorrecto.
             if (!falseAdapterContainTrue.Contains(word1.Name, 50, 50))
             {
                 Singleton<EngineLvl2>.Instance.Check(word1);
                 Singleton<EngineLvl2>.Instance.AddWord(word1);
                 Singleton<EngineLvl2>.Instance.NextLevel(word1);
-                LevelPass(word1, true, false);
+                this.LevelPass(word1, true, false);
             }
 
             if (!falseAdapterContainTrue.Contains(word2.Name, 50, 50))
@@ -81,7 +88,7 @@ namespace Tests
                 Singleton<EngineLvl2>.Instance.Check(word2);
                 Singleton<EngineLvl2>.Instance.AddWord(word2);
                 Singleton<EngineLvl2>.Instance.NextLevel(word2);
-                LevelPass(word2, true, false);
+                this.LevelPass(word2, true, false);
             }
         }
 
