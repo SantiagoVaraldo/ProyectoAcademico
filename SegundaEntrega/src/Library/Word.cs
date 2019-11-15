@@ -66,8 +66,7 @@ namespace Library
                     engineLvl2.RemoveWord(this);
                 }
 
-                
-                if(engineLvl2.NextLevel(this))
+                if (engineLvl2.NextLevel(this))
                 {
                     engineLvl2.Reset(this.Screen);
                 }

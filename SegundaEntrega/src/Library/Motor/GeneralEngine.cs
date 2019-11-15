@@ -15,6 +15,8 @@ namespace Library
     /// o al siguiente nivel.
     /// SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
     /// se quiere ir.
+    /// EXPERT: conoce la pagina actual y el nivel actual por lo que es quien obtiene y muestra la pagina
+    /// siguiente en Unity.
     /// </summary>
     public class GeneralEngine
     {
@@ -47,7 +49,7 @@ namespace Library
             }
             else
             {
-                OneAdapter.Adapter.ShowPage(Creator.PagesUnity["Menu"][0]);
+                OneAdapter.Adapter.ShowPage(Creator.UnityPages["Menu"][0]);
                 this.nextPage = 0;
             }
         }
@@ -55,10 +57,10 @@ namespace Library
         /// <summary>
         /// obtiene el largo de la lista con las paginas.
         /// </summary>
-        /// <returns> largo </returns>
+        /// <returns> largo. </returns>
         public int GetPagesLength()
         {
-            return Creator.PagesUnity[this.actualLevel].Count - 1;
+            return Creator.UnityPages[this.actualLevel].Count - 1;
         }
 
         /// <summary>
@@ -67,7 +69,7 @@ namespace Library
         /// <returns> pagina siguiente. </returns>
         public string GetNextPage()
         {
-            return Creator.PagesUnity[this.actualLevel][this.nextPage];
+            return Creator.UnityPages[this.actualLevel][this.nextPage];
         }
 
         /// <summary>

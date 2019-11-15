@@ -1,9 +1,13 @@
+//--------------------------------------------------------------------------------
+// <copyright file="LevelTests.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Xunit;
 using Library;
 using System.Collections.Generic;
-
-// usar el satus para declarar y definir el World 
 
 namespace Tests
 {
@@ -19,6 +23,7 @@ namespace Tests
             Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
         }
+
         [Fact]
         public void LevelWithoutName()
         {
@@ -29,6 +34,7 @@ namespace Tests
             Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
         }
+
         [Fact]
         public void LevelWithoutWorld()
         {

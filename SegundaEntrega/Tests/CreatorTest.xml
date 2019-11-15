@@ -1,5 +1,0 @@
-<Level Name="Level" World="TheWorld">
-    <Screen Name="Screen" Level="Level">
-        <Image Name="ImageBanana" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
-    </Screen>
-</Level>

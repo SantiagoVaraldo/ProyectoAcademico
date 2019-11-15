@@ -259,11 +259,23 @@
             interfaz IButton con la firma Action(se utiliza para que cada tipo de boton tenga una accion particular).
             </summary>
         </member>
+        <member name="M:Library.IButton.Action(System.String)">
+            <summary>
+            se ejecuta al hacer click en un boton.
+            </summary>
+            <param name="name"></param>
+        </member>
         <member name="T:Library.IContainer">
             <summary>
             esta interfaz es de tipo IXML, contiene la firma Add la cual hace que todas las clases que implementan esta
             interfaz, deban tener un metodo Add.
             </summary>
+        </member>
+        <member name="M:Library.IContainer.Add(Library.IXML)">
+            <summary>
+            añade un elemento a una lista.
+            </summary>
+            <param name="ixml"> elemento a agregar. </param>
         </member>
         <member name="T:Library.Image">
             <summary>
@@ -293,6 +305,60 @@
             que nuestro modelo no dependa de Renderer ya que Renderer depende del adapter, para esto hacemos
             que nuestro modelo dependa de esta interfaz IRenderer, y que la clase Renderer la implemente.
             </summary>
+        </member>
+        <member name="M:Library.IRenderer.RenderBlankSpace(Library.BlankSpace)">
+            <summary>
+            dibuja un BlankSpace.
+            </summary>
+            <param name="blankSpace"> BlankSpace dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderButtonCheck(Library.ButtonCheck)">
+            <summary>
+            dibuja un ButtonCheck.
+            </summary>
+            <param name="buttonCheck"> ButtonCheck dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderButtonNextPage(Library.ButtonNextPage)">
+            <summary>
+            dibuja un ButtonNextPage.
+            </summary>
+            <param name="buttonNextPage"> ButtonNextPage dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderButtonSound(Library.ButtonSound)">
+            <summary>
+            dibuja un ButtonSound.
+            </summary>
+            <param name="buttonSound"> ButtonSound dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderDragAndDropSource(Library.DragAndDropSource)">
+            <summary>
+            dibuja un DragAndDropSource.
+            </summary>
+            <param name="dragAndDropSource"> DragAndDropSource dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderExitButton(Library.ExitButton)">
+            <summary>
+            dibuja un ExitButton.
+            </summary>
+            <param name="exitButton"> ExitButton dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderImage(Library.Image)">
+            <summary>
+            dibuja una imagen.
+            </summary>
+            <param name="image"> Image dibujada. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderLetter(Library.Letter)">
+            <summary>
+            dibuja una Letter.
+            </summary>
+            <param name="letter"> Letter dibujada. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderWord(Library.Word)">
+            <summary>
+            dibuja un Word.
+            </summary>
+            <param name="word"> Word dibujado. </param>
         </member>
         <member name="T:Library.IXML">
             <summary>
@@ -456,6 +522,7 @@
             verifica que se haya superado el nivel.
             </summary>
             <param name="buttonCheck"> boton clickeado. </param>
+            <returns> booleano. </returns>
         </member>
         <member name="M:Library.EngineLvl3.AddButtonSelected(Library.ButtonCheck)">
             <summary>
@@ -539,6 +606,8 @@
             o al siguiente nivel.
             SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
             se quiere ir.
+            EXPERT: conoce la pagina actual y el nivel actual por lo que es quien obtiene y muestra la pagina
+            siguiente en Unity.
             </summary>
         </member>
         <member name="M:Library.GeneralEngine.Update">
@@ -550,7 +619,7 @@
             <summary>
             obtiene el largo de la lista con las paginas.
             </summary>
-            <returns> largo </returns>
+            <returns> largo. </returns>
         </member>
         <member name="M:Library.GeneralEngine.GetNextPage">
             <summary>
@@ -1007,6 +1076,24 @@
             sus elementos.
             </summary>
         </member>
+        <member name="M:Library.Visitor.Visit(Library.World)">
+            <summary>
+            se accede a un World.
+            </summary>
+            <param name="world"> World al que se accede. </param>
+        </member>
+        <member name="M:Library.Visitor.Visit(Library.Level)">
+            <summary>
+            se accede a un Level.
+            </summary>
+            <param name="level"> Level al que se accede. </param>
+        </member>
+        <member name="M:Library.Visitor.Visit(Library.Screen)">
+            <summary>
+            se accede a una Screen.
+            </summary>
+            <param name="screen"> Screen a la que se accede. </param>
+        </member>
         <member name="T:Library.VisitorButtonCheck">
             <summary>
             NOMBRE: VisitorButtonCheck.
@@ -1412,6 +1499,17 @@
             metodo que crea el mundo en Unity.
             </summary>
             <param name="providedAdapter"> recibe un IMainViewAdapter para crear el mundo. </param>
+        </member>
+        <member name="M:Proyecto.StudentsCode.Builder.AfterBuildShowFirstPage">
+            <summary>
+            muestra la primera pagina luego de que se cree.
+            </summary>
+        </member>
+        <member name="M:Proyecto.StudentsCode.Builder.GoToNextPage(System.String)">
+            <summary>
+            va al menu luego de crear el juego(se utiliza solo una vez).
+            </summary>
+            <param name="name"> nombre de la pagina que simboliza el menu. </param>
         </member>
     </members>
 </doc>

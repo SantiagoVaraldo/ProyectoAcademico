@@ -1,3 +1,9 @@
+//--------------------------------------------------------------------------------
+// <copyright file="FilterTests.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Xunit;
 using Library;
@@ -7,7 +13,7 @@ using Attribute = ExerciseOne.Attribute;
 
 namespace Tests
 {
-    
+
     public class FilterTests
     {
         [Fact]
@@ -25,7 +31,7 @@ namespace Tests
             //Creamos un filter Level
             IFilterConditional filterLevel = new FilterLevel();
             IPipe pipe0 = new PipeConditional(filterLevel, pipeNull, pipeNull);
-            
+
             //Nos fijamos que el resultado de la pipe sea un VisitorLevel
             Assert.True(pipe0.Send(tag) is VisitorLevel);
         }
@@ -43,7 +49,7 @@ namespace Tests
             //Creamos un filterScreen
             IFilterConditional filterScreen = new FilterScreen();
             IPipe pipe0 = new PipeConditional(filterScreen, pipeNull, pipeNull);
-            
+
             //Nos fijamos que devuelva el Visitor correcto
             Assert.True(pipe0.Send(tag) is VisitorScreen);
         }

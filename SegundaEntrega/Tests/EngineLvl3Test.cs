@@ -1,8 +1,13 @@
+//--------------------------------------------------------------------------------
+// <copyright file="EngineLvl3Test.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Xunit;
 using Library;
 using System.Collections.Generic;
-
 
 namespace Tests
 {
@@ -20,7 +25,7 @@ namespace Tests
 
         public EngineLvl3Test()
         {
-            // seteamos una instancia "falsa" del adapter para usar en los tests
+            // seteamos una instancia "falsa" del adapter para usar en los tests.
             OneAdapter.Adapter = new FalseAdapterContain(true);
 
             // creamos el diccionario de paginas y niveles para los tests.
@@ -28,7 +33,7 @@ namespace Tests
             List<string> pagesList = new List<string>();
             pagesList.Add("Page1");
             dicc.Add("Menu", pagesList);
-            Creator.PagesUnity = dicc;
+            Creator.UnityPages = dicc;
             Singleton<GeneralEngine>.Instance.ActualLevel = "Menu";
 
             // creamos el mundo necesario para testear el motor.
@@ -40,6 +45,12 @@ namespace Tests
             buttonCheck3 = new ButtonCheck("ButtonCheck3", 30, 30, 30, 30, screen, "path", "path2", true);
             buttonCheck4 = new ButtonCheck("ButtonCheck4", 40, 40, 40, 40, screen, "path", "path2", false);
             buttonCheck5 = new ButtonCheck("ButtonCheck5", 50, 50, 50, 50, screen, "path", "path2", false);
+
+            screen.Add(buttonCheck1);
+            screen.Add(buttonCheck2);
+            screen.Add(buttonCheck3);
+            screen.Add(buttonCheck4);
+            screen.Add(buttonCheck5);
         }
 
         public void Test(ButtonCheck buttonCheck, bool expectedSelectedButton, bool expectedState)
@@ -56,49 +67,49 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck1);
-            Test(buttonCheck1, true, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck1);
+            this.Test(this.buttonCheck1, true, false);
 
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck2);
-            Test(buttonCheck2, true, true);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck2);
+            this.Test(this.buttonCheck2, true, true);
 
         }
 
         [Fact]
         public void TwoClicksIncorrectTest()
         {
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck4);
-            Test(buttonCheck4, true, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck4);
+            this.Test(this.buttonCheck4, true, false);
 
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck5);
-            Test(buttonCheck5, false, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck5);
+            this.Test(this.buttonCheck5, false, false);
 
         }
 
         [Fact]
         public void FirstCorrectAndSecondIncorrectTest()
         {
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck1);
-            Test(buttonCheck1, true, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck1);
+            this.Test(this.buttonCheck1, true, false);
 
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck4);
-            Test(buttonCheck4, false, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck4);
+            this.Test(this.buttonCheck4, false, false);
 
         }
         [Fact]
         public void ClickTwoThreeAndFourCorrect()
         {
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck4);
-            Test(buttonCheck4, true, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck4);
+            this.Test(this.buttonCheck4, true, false);
 
             Singleton<EngineLvl3>.Instance.Check(buttonCheck1);
             Test(buttonCheck1, false, false);
 
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck2);
-            Test(buttonCheck2, true, false);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck2);
+            this.Test(this.buttonCheck2, true, false);
 
-            Singleton<EngineLvl3>.Instance.Check(buttonCheck3);
-            Test(buttonCheck3, true, true);
+            Singleton<EngineLvl3>.Instance.Check(this.buttonCheck3);
+            this.Test(this.buttonCheck3, true, true);
         }
 
     }

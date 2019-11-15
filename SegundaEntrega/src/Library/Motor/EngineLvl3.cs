@@ -31,6 +31,7 @@ namespace Library
         /// verifica que se haya superado el nivel.
         /// </summary>
         /// <param name="buttonCheck"> boton clickeado. </param>
+        /// <returns> booleano. </returns>
         public bool Check(ButtonCheck buttonCheck)
         {
             this.clickNum += 1;

@@ -7,9 +7,9 @@
     <Rule Id="CA1303" Action="None" />
     <Rule Id="CA1000" Action="None" />
     <Rule Id="CA1822" Action="None" />
-    <!--el primero se puede solucionar con Excepciones y el segundo no tengo idea-->
     <Rule Id="CA1062" Action="None" />
     <Rule Id="CA1305" Action="None" />
+    <Rule Id="CA2227" Action="None" />
   </Rules>
 
 <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">

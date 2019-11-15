@@ -91,10 +91,22 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// se accede a un World.
+        /// </summary>
+        /// <param name="world"> World al que se accede. </param>
         public abstract void Visit(World world);
 
+        /// <summary>
+        /// se accede a un Level.
+        /// </summary>
+        /// <param name="level"> Level al que se accede. </param>
         public abstract void Visit(Level level);
 
+        /// <summary>
+        /// se accede a una Screen.
+        /// </summary>
+        /// <param name="screen"> Screen a la que se accede. </param>
         public abstract void Visit(Screen screen);
     }
 }

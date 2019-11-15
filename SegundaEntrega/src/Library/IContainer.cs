@@ -17,6 +17,10 @@ namespace Library
     /// </summary>
     public interface IContainer : IXML
     {
+        /// <summary>
+        /// añade un elemento a una lista.
+        /// </summary>
+        /// <param name="ixml"> elemento a agregar. </param>
         void Add(IXML ixml);
     }
 }
