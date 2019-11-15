@@ -68,7 +68,7 @@ posteriormente debiamos acceder a la lista de pantallas de ese ultimo *Level* pa
 
 *Singleton*. Hemos utilizado este patron para poder instanciar y utilizar objetos que necesariamente existe una y solo una instancia de los mismos. Por ejemplo, en nuestro juego vamos a tener una unica instancia de *World* al igual que una sola instancia para cada uno de los motores implementados. Al crear una instancia de estos objetos por medio del patron *Singleton*, este nos crea la instancia del objeto en caso de que no exista, y nos devuelve la instancia ya existente en caso de que exista.
 
-*Observer*. Una vez terminamos de crear nuestro modelo del juego procedimos a crear el motor del juego, para esto decidimos aplicar el patron *Observer*, para esto creamos dos interfaces, *IObserver* e *IObservable*, luego creamos un motor general el cual se va a subscibir a cada uno de los motores individuales, de este modo, cada vez que uno de los motores individuales determina que el nivel fue completado, se le notificara al motor general el cual tiene la responsabilidad de pasar al siguiente nivel, de este modo evitamos la necesidad de que el motor general tenga que estar preguntando constantemente a los motores individuales si el nivel fue completado. Nuevamente una de las ventajas de aplicar este patron es el cumplimiento con el principio de OCP ya que podriamos agregar nuevos subscriptores para realizar nuevas tareas sin la necesidad de modificar las clases existentes.
+
 
 
 
