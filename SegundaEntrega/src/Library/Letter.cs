@@ -14,6 +14,8 @@ namespace Library
     /// DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los objetos de tipo Letter.
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
     /// pertinente para nuestros requisitos de crear objetos Letter.
+    /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+    /// de Letter, su unica razon de cambio es modificar los datos que guardamos sobre Letter.
     /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton.
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
     /// y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
