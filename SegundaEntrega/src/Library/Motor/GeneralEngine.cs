@@ -60,7 +60,7 @@ namespace Library
         /// <returns> largo. </returns>
         public int GetPagesLength()
         {
-            return Creator.UnityPages[this.actualLevel].Count - 1;
+            return Creator.UnityPages[this.actualLevel].Count;
         }
 
         /// <summary>

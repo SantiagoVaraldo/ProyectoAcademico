@@ -52,6 +52,8 @@
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
             pertinente para nuestros requisitos de crear objetos ButtonCheck, conoce el nombre, tamaño, la posicion,
             la pantalla, las rutas y la variable check del ButtonCheck.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+            de ButtonCheck, su unica razon de cambio es modificar los datos que guardamos sobre ButtonCheck.
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
@@ -112,6 +114,8 @@
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
             pertinente para nuestros requisitos de crear objetos ButtonNextPage, conoce el nombre, tamaño, la posicion,
             la pantalla y la ruta del ButtonNextPage.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+            de ButtonNextPage, su unica razon de cambio es modificar los datos que guardamos sobre ButtonNextPage.
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
@@ -150,6 +154,8 @@
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
             pertinente para nuestros requisitos de crear objetos ButtonSound, conoce el nombre, tamaño, la posicion,
             la pantalla y las rutas del ButtonSound.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+            de ButtonSound, su unica razon de cambio es modificar los datos que guardamos sobre ButtonSound.
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
@@ -373,6 +379,8 @@
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
             pertinente para nuestros requisitos de crear objetos ExitButton, conoce el nombre, tamaño, la posicion,
             la pantalla y la ruta del ExitButton.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+            de ExitButton, su unica razon de cambio es modificar los datos que guardamos sobre ExitButton.
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
             es un tipo de boton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
@@ -509,6 +517,8 @@
             DESCRIPCION: Esta clase se encarga de conocer toda la informacion pertinente a los objetos de tipo Letter.
             PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
             pertinente para nuestros requisitos de crear objetos Letter.
+            SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+            de Letter, su unica razon de cambio es modificar los datos que guardamos sobre Letter.
             HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton.
             COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,
             y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
@@ -1132,6 +1142,7 @@
             DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
             COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
             de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
+            DIP: implementa la interfaz IRenderer para cumplir el patron de inversion de dependencias.
             </summary>
         </member>
         <member name="M:Library.Renderer.RenderBlankSpace(Library.BlankSpace)">
