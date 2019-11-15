@@ -17,14 +17,11 @@ namespace Library
     /// la logica del nivel.
     /// EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
     /// cuando se completa el nivel 1.
-    /// COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
-    /// IObservable ya que es de tipo IObservable, Colabora con la clase Letter ya que es el elemento con el que va a
+    /// COLABORACIONES: colabora con la clase Letter ya que es el elemento con el que va a
     /// realizar la logica. Ademas colabora con la clase OneAdapter.
     /// </summary>
-    public class EngineLvl1 : IObservable
+    public class EngineLvl1
     {
-        private List<IObserver> observers = new List<IObserver>();
-
         /// <summary>
         /// checkea que sea la letra correcta.
         /// </summary>
@@ -45,14 +42,11 @@ namespace Library
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer.
         /// </summary>
         /// <param name="letter"> letra que fue clickeada. </param>
-        /// <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        /// <returns> retorna true si se paso de nivel. </returns>
         public bool NextLevel(Letter letter)
         {
             letter.Screen.LevelCompleted();
-            foreach (IObserver observer in this.observers)
-            {
-                observer.Update();
-            }
+            Singleton<GeneralEngine>.Instance.Update();
 
             this.Reset(letter.Screen);
             return true;
@@ -67,34 +61,14 @@ namespace Library
             screen.LevelUncompleted();
         }
 
+        /// <summary>
+        /// hace el sonido de una letra.
+        /// </summary>
+        /// <param name="buttonSound"> boton con el sonido. </param>
         public void Sound(ButtonSound buttonSound)
         {
             OneAdapter.Adapter.Debug($"Button clicked!");
             OneAdapter.Adapter.PlayAudio(buttonSound.SoundPath);
-        }
-
-        /// <summary>
-        /// metodo que agrega un IObserver a la lista de Observers.
-        /// </summary>
-        /// <param name="observer"> observer a agregar. </param>
-        public void Subscribe(IObserver observer)
-        {
-            if (!this.observers.Contains(observer))
-            {
-                this.observers.Add(observer);
-            }
-        }
-
-        /// <summary>
-        /// metodo que elimina un IObserver de la lista de Observers.
-        /// </summary>
-        /// <param name="observer"> observer a eliminar. </param>
-        public void Unsubscribe(IObserver observer)
-        {
-            if (this.observers.Contains(observer))
-            {
-                this.observers.Remove(observer);
-            }
         }
     }
 }

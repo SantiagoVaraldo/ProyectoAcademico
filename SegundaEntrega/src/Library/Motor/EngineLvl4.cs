@@ -17,15 +17,13 @@ namespace Library
     /// cambio es modificar la logica de este nivel.
     /// EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
     /// cuando se completa el nivel 4.
-    /// COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
-    /// IObservable ya que es de tipo IObservable,colabora con IEngineDropable ya que tambien es de ese tipo,
+    /// COLABORACIONES: colabora con IEngineDropable ya que tambien es de ese tipo,
     /// colabora con la clase Word ya que es el elemento con el que va a realizar la logica. Ademas colabora
     /// con la clase OneAdapter.
     /// </summary>
-    public class EngineLvl4 : IObservable, IEngineDropable
+    public class EngineLvl4 : IEngineDropable
     {
         private List<Word> listWords = new List<Word>();
-        private List<IObserver> observers = new List<IObserver>();
         private int countDestinations = 0;
 
         /// <summary>
@@ -38,10 +36,7 @@ namespace Library
             if (this.listWords.Count == this.countDestinations)
             {
                 word.Screen.LevelCompleted();
-                foreach (IObserver observer in this.observers)
-                {
-                    observer.Update();
-                }
+                Singleton<GeneralEngine>.Instance.Update();
 
                 this.Reset(word.Screen);
                 return true;
@@ -123,30 +118,6 @@ namespace Library
             {
                 this.listWords.Remove(word);
                 word.Destination.Unfill();
-            }
-        }
-
-        /// <summary>
-        /// metodo que agrega un IObserver a la lista de Observers.
-        /// </summary>
-        /// <param name="observer"> observer para agregar. </param>
-        public void Subscribe(IObserver observer)
-        {
-            if (!this.observers.Contains(observer))
-            {
-                this.observers.Add(observer);
-            }
-        }
-
-        /// <summary>
-        /// metodo que elimina un IObserver de la lista de Observers.
-        /// </summary>
-        /// <param name="observer"> observer a eliminar. </param>
-        public void Unsubscribe(IObserver observer)
-        {
-            if (this.observers.Contains(observer))
-            {
-                this.observers.Remove(observer);
             }
         }
     }

@@ -49,9 +49,7 @@ namespace Library
         {
             if (elementName == this.ItemId)
             {
-                IObserver generalEngine = Singleton<GeneralEngine>.Instance;
                 EngineLvl2 engineLvl2 = Singleton<EngineLvl2>.Instance;
-                engineLvl2.Subscribe(generalEngine);
                 engineLvl2.Check(this);
                 OneAdapter.Adapter.Debug($"Drop '{elementName}' {x}@{y}");
 
