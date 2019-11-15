@@ -294,6 +294,14 @@
             que nuestro modelo dependa de esta interfaz IRenderer, y que la clase Renderer la implemente.
             </summary>
         </member>
+        <member name="T:Library.IUnityAction">
+            <summary>
+            NOMBRE: IUnityAction.
+            DIP: esta interfaz fue creada para aplicar el patron de inversion de dependencias, el proposito es hacer
+            que nuestro motor no dependa del adapter, para esto hacemos
+            que nuestro motor dependa de esta interfaz IUnityAction, y que la clase UnityAction la implemente.
+            </summary>
+        </member>
         <member name="T:Library.IXML">
             <summary>
             esta interfaz no implementa ningun metodo, simplemente tiene un atributo Name de tipo string.
@@ -359,8 +367,7 @@
             la logica del nivel.
             EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
             cuando se completa el nivel 1.
-            COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
-            IObservable ya que es de tipo IObservable, Colabora con la clase Letter ya que es el elemento con el que va a
+            COLABORACIONES: colabora con la clase Letter ya que es el elemento con el que va a
             realizar la logica. Ademas colabora con la clase OneAdapter.
             </summary>
         </member>
@@ -375,7 +382,7 @@
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
             </summary>
             <param name="letter"> letra que fue clickeada. </param>
-            <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+            <returns> retorna true si se paso de nivel. </returns>
         </member>
         <member name="M:Library.EngineLvl1.Reset(Library.Screen)">
             <summary>
@@ -383,17 +390,11 @@
             </summary>
             <param name="screen">screen reseteada.</param>
         </member>
-        <member name="M:Library.EngineLvl1.Subscribe(Library.IObserver)">
+        <member name="M:Library.EngineLvl1.Sound(Library.ButtonSound)">
             <summary>
-            metodo que agrega un IObserver a la lista de Observers.
+            hace el sonido de una letra.
             </summary>
-            <param name="observer"> observer a agregar. </param>
-        </member>
-        <member name="M:Library.EngineLvl1.Unsubscribe(Library.IObserver)">
-            <summary>
-            metodo que elimina un IObserver de la lista de Observers.
-            </summary>
-            <param name="observer"> observer a eliminar. </param>
+            <param name="buttonSound"> boton con el sonido. </param>
         </member>
         <member name="T:Library.EngineLvl2">
             <summary>
@@ -403,8 +404,7 @@
             cambio es modificar la logica de este nivel.
             EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
             cuando se completa el nivel 2.
-            COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
-            IObservable ya que es de tipo IObservable,colabora con IEngineDropable ya que tambien es de ese tipo,
+            COLABORACIONES: colabora con IEngineDropable ya que tambien es de ese tipo,
             colabora con la clase Word ya que es el elemento con el que va a realizar la logica. Ademas colabora
             con la clase OneAdapter.
             </summary>
@@ -446,18 +446,6 @@
             </summary>
             <param name="word"> Word a eliminar. </param>
         </member>
-        <member name="M:Library.EngineLvl2.Subscribe(Library.IObserver)">
-            <summary>
-            metodo que agrega un IObserver a la lista de Observers.
-            </summary>
-            <param name="observer"> observer para agregar. </param>
-        </member>
-        <member name="M:Library.EngineLvl2.Unsubscribe(Library.IObserver)">
-            <summary>
-            metodo que elimina un IObserver de la lista de Observers.
-            </summary>
-            <param name="observer"> observer a eliminar. </param>
-        </member>
         <member name="T:Library.EngineLvl3">
             <summary>
             NOMBRE: EngineLvl3
@@ -488,7 +476,7 @@
             metodo que establece que la pantalla fue superada y se lo notifica al Observer.
             </summary>
             <param name="buttonCheck"> boton que fue clickeado. </param>
-            <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+            <returns> retorna true si se paso de nivel. </returns>
         </member>
         <member name="M:Library.EngineLvl3.Reset(Library.Screen)">
             <summary>
@@ -502,18 +490,6 @@
             </summary>
             <param name="buttonCheck"> boton que fue clickeado. </param>
         </member>
-        <member name="M:Library.EngineLvl3.Subscribe(Library.IObserver)">
-            <summary>
-            metodo que agrega un IObserver a la lista de observers.
-            </summary>
-            <param name="observer"> observer para agregar. </param>
-        </member>
-        <member name="M:Library.EngineLvl3.Unsubscribe(Library.IObserver)">
-            <summary>
-            metodo que elimina un IObserver de la lista de Observers.
-            </summary>
-            <param name="observer"> observer a eliminar. </param>
-        </member>
         <member name="T:Library.EngineLvl4">
             <summary>
             NOMBRE: EngineLvl4
@@ -522,8 +498,7 @@
             cambio es modificar la logica de este nivel.
             EXPERT: es el experto en conocer una lista de observers por lo que va a ser quien le notifique al GeneralEngine
             cuando se completa el nivel 4.
-            COLABORACIONES: colabora con la interfaz IObserver ya que conoce una lista de IObservers, colabora con la interfaz
-            IObservable ya que es de tipo IObservable,colabora con IEngineDropable ya que tambien es de ese tipo,
+            COLABORACIONES: colabora con IEngineDropable ya que tambien es de ese tipo,
             colabora con la clase Word ya que es el elemento con el que va a realizar la logica. Ademas colabora
             con la clase OneAdapter.
             </summary>
@@ -565,18 +540,6 @@
             </summary>
             <param name="word"> Word a eliminar. </param>
         </member>
-        <member name="M:Library.EngineLvl4.Subscribe(Library.IObserver)">
-            <summary>
-            metodo que agrega un IObserver a la lista de Observers.
-            </summary>
-            <param name="observer"> observer para agregar. </param>
-        </member>
-        <member name="M:Library.EngineLvl4.Unsubscribe(Library.IObserver)">
-            <summary>
-            metodo que elimina un IObserver de la lista de Observers.
-            </summary>
-            <param name="observer"> observer a eliminar. </param>
-        </member>
         <member name="T:Library.GeneralEngine">
             <summary>
             NOMBRE: GeneralEngine.
@@ -584,9 +547,6 @@
             o al siguiente nivel.
             SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
             se quiere ir.
-            OBSERVER: decidimos aplicar este patron para que el motor general no necesite estar preguntandole a los motores
-            particulares cuando debera cambiar de pagina, simplemente se suscribe a los diferentes "mini motores"
-            y cuando se necesite cambiar de pantalla estos le notificaran al motor general.
             </summary>
         </member>
         <member name="M:Library.GeneralEngine.Update">
@@ -603,16 +563,6 @@
         <member name="T:Library.IEngineDropable">
             <summary>
             Interfaz utilizada por los motores del nivel 2 y 4.
-            </summary>
-        </member>
-        <member name="T:Library.IObservable">
-            <summary>
-            Interfaz IObservable con las firmas Subscribe and Unsubscribe.
-            </summary>
-        </member>
-        <member name="T:Library.IObserver">
-            <summary>
-            Interfaz IObserver con la firma Update.
             </summary>
         </member>
         <member name="T:Library.OneAdapter">
@@ -1017,6 +967,11 @@
             de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores y para World.
             </summary>
             <typeparam name="T"> tipo generico. </typeparam>
+        </member>
+        <member name="T:Library.UnityAction">
+            <summary>
+            NOMBRE: UnityAction.
+            </summary>
         </member>
         <member name="T:Library.Visitor">
             <summary>

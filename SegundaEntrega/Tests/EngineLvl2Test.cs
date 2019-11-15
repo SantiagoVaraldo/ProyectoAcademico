@@ -3,80 +3,97 @@ using Xunit;
 using Library;
 using System.Collections.Generic;
 
-/*
+
 namespace Tests
 {
-         public class EngineLvl2Test
-         {
-                  World world;
-                  Level level;
-                  Screen screen;
-                  EngineLvl2 engine;
-                  BlankSpace destination1, destination2, destination3, destination4;
-                  DragAndDropSource source1, source2, source3, source4;
-                  Word word1, word2, word3, word4;
-                  public void Create()
-                  {
-                           world = new World("world", 50, 50);
-                           level = new Level("level", world);
-                           screen = new Screen("screen", level);
+    public class EngineLvl2Test
+    {
+        World world;
+        Level level;
+        Screen screen;
+        BlankSpace destination1;
+        BlankSpace destination2;
+        DragAndDropSource source1;
+        DragAndDropSource source2;
+        Word word1;
+        Word word2;
+        FalseAdapterContain falseAdapterContainTrue;
+        public void Create()
+        {
+            level = new Level("level", world);
+            screen = new Screen("screen", level);
 
-                           destination1 = new BlankSpace("destination1", 10, 10, 50, 50, screen, "path");
-                           source1 = new DragAndDropSource("source1", 50, 50, 50, 50, screen, "path");
-                           destination2 = new BlankSpace("destination2", 20, 20, 50, 50, screen, "path");
-                           source2 = new DragAndDropSource("source2", 50, 50, 50, 50, screen, "path");
-                           destination3 = new BlankSpace("destination3", 30, 30, 50, 50, screen, "path");
-                           source3 = new DragAndDropSource("source3", 50, 50, 50, 50, screen, "path");
-                           destination4 = new BlankSpace("destination4", 40, 40, 50, 50, screen, "path");
-                           source4 = new DragAndDropSource("source4", 50, 50, 50, 50, screen, "path");
+            destination1 = new BlankSpace("destination1", 10, 10, 50, 50, screen, "path");
+            source1 = new DragAndDropSource("source1", 50, 50, 50, 50, screen, "path");
+            destination2 = new BlankSpace("destination2", 20, 20, 50, 50, screen, "path");
+            source2 = new DragAndDropSource("source2", 50, 50, 50, 50, screen, "path");
 
-                           word1 = new Word("word1", 10, 10, 50, 50, screen, "path1", source1, destination1);
-                           word2 = new Word("word2", 10, 10, 50, 50, screen, "path2", source2, destination2);
-                           word3 = new Word("word3", 10, 10, 50, 50, screen, "path3", source3, destination3);
-                           word4 = new Word("word4", 10, 10, 50, 50, screen, "path4", source4, destination4);
+            word1 = new Word("word1", 10, 10, 50, 50, screen, "path1", source1, destination1);
+            word2 = new Word("word2", 10, 10, 50, 50, screen, "path2", source2, destination2);
 
-                           engine = new EngineLvl2();
-                  }
+            screen.Add(word1);
+            screen.Add(word2);
+            screen.Add(destination1);
+            screen.Add(destination2);
 
-                  [Fact]
-                  public void PositiveTest()
-                  {
-                           Create();
+            falseAdapterContainTrue = new FalseAdapterContain(true);
+        }
 
-                           LevelPass(word1, destination1, true, false);
-                           LevelPass(word2, destination2, true, false);
-                           LevelPass(word3, destination3, true, false);
-                           LevelPass(word4, destination4, true, true);
-                  }
+        [Fact]
+        public void PositiveTest()
+        {
+            Create();
 
-                  [Fact]
-                  public void NegativeTest()
-                  {
-                           Create();
+            // simulamos que nuestros objetos Word se encuentran en el lugar correcto.
+            if (falseAdapterContainTrue.Contains(word1.Name, 50, 50))
+            {
+                Singleton<EngineLvl2>.Instance.Check(word1);
+                Singleton<EngineLvl2>.Instance.AddWord(word1);
+                Singleton<EngineLvl2>.Instance.NextLevel(word1);
+                LevelPass(word1, true, false);
+            }
 
-                           LevelPass(word1, destination1, true, false);
-                           LevelPass(word2, destination2, true, false);
-                           LevelPass(word3, destination3, true, false);
-                           LevelPass(word4, destination1, false, false);
+            if (falseAdapterContainTrue.Contains(word2.Name, 50, 50))
+            {
+                Singleton<EngineLvl2>.Instance.Check(word2);
+                Singleton<EngineLvl2>.Instance.AddWord(word2);
+                Singleton<EngineLvl2>.Instance.NextLevel(word2);
+                LevelPass(word2, true, true);
+            }
+        }
 
-                  }
+        [Fact]
+        public void NegativeTest()
+        {
+            Create();
 
-                  public void LevelPass(Word word, BlankSpace destination, bool expectedFill, bool expectedState)
-                  {
-                           //Con esto simulamos que el objeto fue movido a alguna posicion.
-                           word.PositionX = destination.PositionX;
-                           word.PositionY = destination.PositionY;
+            // simulamos que nuestros objetos Word se encuentran en el lugar incorrecto.
+            if (!falseAdapterContainTrue.Contains(word1.Name, 50, 50))
+            {
+                Singleton<EngineLvl2>.Instance.Check(word1);
+                Singleton<EngineLvl2>.Instance.AddWord(word1);
+                Singleton<EngineLvl2>.Instance.NextLevel(word1);
+                LevelPass(word1, true, false);
+            }
 
-                           engine.Check(word);
+            if (!falseAdapterContainTrue.Contains(word2.Name, 50, 50))
+            {
+                Singleton<EngineLvl2>.Instance.Check(word2);
+                Singleton<EngineLvl2>.Instance.AddWord(word2);
+                Singleton<EngineLvl2>.Instance.NextLevel(word2);
+                LevelPass(word2, true, false);
+            }
+        }
 
-                           //nos fijamos si el destination tiene un objeto dentro
-                           bool actualFill = word.Destination.Filled;
-                           Assert.Equal(expectedFill, actualFill);
+        public void LevelPass(Word word, bool expectedFill, bool expectedState)
+        {
+            //nos fijamos si el destination tiene un objeto dentro
+            bool actualFill = word.Destination.Filled;
+            Assert.Equal(expectedFill, actualFill);
 
-                           //nos fijamos si se paso de nivel
-                           bool actualState = word.Screen.State;
-                           Assert.Equal(actualState, expectedState);
-                  }
-         }
+            //nos fijamos si se paso de nivel
+            bool actualState = word.Screen.State;
+            Assert.Equal(actualState, expectedState);
+        }
+    }
 }
-*/
