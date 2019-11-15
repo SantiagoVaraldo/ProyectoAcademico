@@ -150,20 +150,10 @@ namespace Library
         {
             // intencionalmente en blanco.
         }
-        
-        public void SetActive(string elementName, bool boolean)
-        {
-
-        }
 
         public void SetImage(string elementName, string resourceName)
         {
             // intencionalmente en blanco.
-        }
-
-        public string GetFileContents(string fileName)
-        {
-            throw new Exception();
         }
 
         public string GetText(string elementName)
@@ -174,11 +164,6 @@ namespace Library
         public void SetText(string elementName, string value)
         {
             // intencionalmente en blanco.
-        }
-
-         public void SetText(string elementName, string value, bool boolean)
-        {
-
         }
 
         public bool GetCheckedState(string elementName)

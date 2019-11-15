@@ -294,14 +294,6 @@
             que nuestro modelo dependa de esta interfaz IRenderer, y que la clase Renderer la implemente.
             </summary>
         </member>
-        <member name="T:Library.IUnityAction">
-            <summary>
-            NOMBRE: IUnityAction.
-            DIP: esta interfaz fue creada para aplicar el patron de inversion de dependencias, el proposito es hacer
-            que nuestro motor no dependa del adapter, para esto hacemos
-            que nuestro motor dependa de esta interfaz IUnityAction, y que la clase UnityAction la implemente.
-            </summary>
-        </member>
         <member name="T:Library.IXML">
             <summary>
             esta interfaz no implementa ningun metodo, simplemente tiene un atributo Name de tipo string.
@@ -967,11 +959,6 @@
             de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores y para World.
             </summary>
             <typeparam name="T"> tipo generico. </typeparam>
-        </member>
-        <member name="T:Library.UnityAction">
-            <summary>
-            NOMBRE: UnityAction.
-            </summary>
         </member>
         <member name="T:Library.Visitor">
             <summary>

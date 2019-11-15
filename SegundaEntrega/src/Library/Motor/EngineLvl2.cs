@@ -24,7 +24,6 @@ namespace Library
     public class EngineLvl2 : IEngineDropable
     {
         private List<Word> listWords = new List<Word>();
-        private List<IObserver> observers = new List<IObserver>();
         private int countDestinations = 0;
 
         /// <summary>
