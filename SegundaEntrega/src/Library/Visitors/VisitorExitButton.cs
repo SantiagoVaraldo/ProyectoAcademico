@@ -25,6 +25,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorExitButton.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorExitButton(Tag tag)
         {
             this.Tag = tag;

@@ -23,8 +23,6 @@ namespace Proyecto.StudentsCode
     {
         private IMainViewAdapter adapter;
 
-        private string firstPageName;
-
         private string nextPageName;
 
         /// <summary>
@@ -38,14 +36,7 @@ namespace Proyecto.StudentsCode
             OneAdapter.Adapter = this.adapter;
 
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
-/*
-            Creator.UnityPages.Add("Inicio", new List<string>());
-            this.firstPageName = this.adapter.AddPage();
-            Creator.UnityPages["Inicio"].Add(this.firstPageName);
 
-            this.adapter.ChangeLayout(Layout.ContentSizeFitter);
-            string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
-*/
             Creator creator = new Creator();
             try
             {
@@ -80,15 +71,6 @@ namespace Proyecto.StudentsCode
         /// muestra la primera pagina luego de que se cree.
         /// </summary>
         public void AfterBuildShowFirstPage()
-        {
-            this.adapter.ShowPage(Creator.UnityPages["Menu"][0]);
-        }
-
-        /// <summary>
-        /// va al menu luego de crear el juego(se utiliza solo una vez).
-        /// </summary>
-        /// <param name="name"> nombre de la pagina que simboliza el menu. </param>
-        private void GoToNextPage(string name)
         {
             this.adapter.ShowPage(Creator.UnityPages["Menu"][0]);
         }

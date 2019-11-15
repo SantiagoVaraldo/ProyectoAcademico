@@ -21,6 +21,10 @@ namespace Library
         private string fileName;
         private List<Tag> listtags = new List<Tag>();
 
+        /// <summary>
+        /// constructor de CreatorHelper.
+        /// </summary>
+        /// <param name="fileName">nombre del archivo.</param>
         public CreatorHelper(string fileName)
         {
             this.FileName = fileName;

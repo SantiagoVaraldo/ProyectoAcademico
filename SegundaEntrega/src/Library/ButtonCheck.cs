@@ -30,6 +30,18 @@ namespace Library
         private string imagepath2;
         private string buttonId;
 
+        /// <summary>
+        /// constructor de ButtonCheck.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="positionY">posicion Y.</param>
+        /// <param name="positionX">posicion X.</param>
+        /// <param name="length">largo.</param>
+        /// <param name="width">ancho.</param>
+        /// <param name="screen">Screen a la que pertenece el Elemento.</param>
+        /// <param name="imagePath">imagen 1 del elemento.</param>
+        /// <param name="imagePath2">imagen 2 del elemento.</param>
+        /// <param name="check">indica si este elemento es el correcto.</param>
         public ButtonCheck(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, string imagePath2, bool check)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {

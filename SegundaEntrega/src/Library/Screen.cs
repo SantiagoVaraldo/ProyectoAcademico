@@ -28,6 +28,11 @@ namespace Library
         private Level level;
         private List<Element> elementList = new List<Element>();
 
+        /// <summary>
+        /// constructor de la screen.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="level">nivel al que pertenece.</param>
         public Screen(string name, Level level)
         {
             this.Name = name;

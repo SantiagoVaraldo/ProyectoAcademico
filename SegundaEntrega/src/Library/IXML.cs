@@ -14,6 +14,10 @@ namespace Library
     /// </summary>
     public interface IXML
     {
+        /// <summary>
+        /// nombre.
+        /// </summary>
+        /// <value>string.</value>
         string Name { get; set; }
     }
 }

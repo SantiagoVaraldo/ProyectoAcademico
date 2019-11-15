@@ -25,6 +25,10 @@ namespace Library
     /// </summary>
     public class FilterButtonSound : IFilterConditional
     {
+        /// <summary>
+        /// resultado de aplicar el filtro.
+        /// </summary>
+        /// <value>bool.</value>
         public bool Result { get; set; }
 
         /// <summary>

@@ -24,6 +24,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorButtonCheck.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorButtonCheck(Tag tag)
         {
             this.Tag = tag;

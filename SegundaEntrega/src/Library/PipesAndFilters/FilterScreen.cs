@@ -24,6 +24,10 @@ namespace Library
     /// </summary>
     public class FilterScreen : IFilterConditional
     {
+        /// <summary>
+        /// resultado de aplicar el filtro.
+        /// </summary>
+        /// <value>bool.</value>
         public bool Result { get; set; }
 
         /// <summary>

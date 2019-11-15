@@ -27,6 +27,9 @@ namespace Library
         private string name;
         private List<Level> listLevel = new List<Level>();
 
+        /// <summary>
+        /// constructor de un World.
+        /// </summary>
         public World()
         {
             this.Name = "TheWorld";
