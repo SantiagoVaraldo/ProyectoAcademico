@@ -26,6 +26,17 @@ namespace Library
         private bool right;
         private string buttonId;
 
+        /// <summary>
+        /// constructor de la letra.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="positionY">posicion Y.</param>
+        /// <param name="positionX">posicion X.</param>
+        /// <param name="length">largo.</param>
+        /// <param name="width">ancho.</param>
+        /// <param name="screen">Screen a la que pertenece la letra.</param>
+        /// <param name="imagePath">imagen que posee la letra.</param>
+        /// <param name="right">indica si la letra es correcta.</param>
         public Letter(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, bool right)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {

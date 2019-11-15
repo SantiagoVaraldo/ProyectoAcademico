@@ -24,6 +24,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorButtonSound.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorButtonSound(Tag tag)
         {
             this.Tag = tag;
@@ -83,7 +87,7 @@ namespace Library
                 IXML button = new ButtonSound(name, positionY, positionX, length, width, this.LastScreen, imagePath, soundPath);
                 this.LastScreen.Add(button);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 string message = "there was an error while fetching data from the XML file";
                 throw new NotFoundOnXMLException(message);

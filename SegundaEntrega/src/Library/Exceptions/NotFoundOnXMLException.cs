@@ -14,20 +14,37 @@ namespace Library
     /// </summary>
     public class NotFoundOnXMLException : System.Exception
     {
+        /// <summary>
+        /// constructor de la excepcion.
+        /// </summary>
         public NotFoundOnXMLException()
         {
         }
 
+        /// <summary>
+        /// constructor de la excepcion.
+        /// </summary>
+        /// <param name="message">mensaje.</param>
         public NotFoundOnXMLException(string message)
         : base(message)
         {
         }
 
+        /// <summary>
+        /// constructor de la excepcion.
+        /// </summary>
+        /// <param name="message">mensaje.</param>
+        /// <param name="inner">inner exception.</param>
         public NotFoundOnXMLException(string message, System.Exception inner)
         : base(message, inner)
         {
         }
 
+        /// <summary>
+        /// constructor de la excepcion.
+        /// </summary>
+        /// <param name="info">info.</param>
+        /// <param name="context">context.</param>
         protected NotFoundOnXMLException(
             System.Runtime.Serialization.SerializationInfo info,
             System.Runtime.Serialization.StreamingContext context)

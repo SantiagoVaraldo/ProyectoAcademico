@@ -23,6 +23,10 @@ namespace Library
         private static Dictionary<string, List<string>> unityPages = new Dictionary<string, List<string>>();
         private List<Tag> listTags = new List<Tag>();
 
+        /// <summary>
+        /// diccionario de paginas.
+        /// </summary>
+        /// <value>diccionario.</value>
         public static Dictionary<string, List<string>> UnityPages
         {
             get

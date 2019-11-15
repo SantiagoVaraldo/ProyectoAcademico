@@ -25,6 +25,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorLetter.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorLetter(Tag tag)
         {
             this.Tag = tag;

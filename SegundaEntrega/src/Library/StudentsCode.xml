@@ -17,6 +17,18 @@
             correspondiente en Unity.
             </summary>
         </member>
+        <member name="M:Library.BlankSpace.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String)">
+            <summary>
+            constructor de BlankSpace.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
+        </member>
         <member name="P:Library.BlankSpace.DestinationCellImageId">
             <summary>
             Id que corresponde con la imagen creada como destination.
@@ -60,6 +72,20 @@
             y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="M:Library.ButtonCheck.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String,System.String,System.Boolean)">
+            <summary>
+            constructor de ButtonCheck.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el Elemento.</param>
+            <param name="imagePath">imagen 1 del elemento.</param>
+            <param name="imagePath2">imagen 2 del elemento.</param>
+            <param name="check">indica si este elemento es el correcto.</param>
         </member>
         <member name="P:Library.ButtonCheck.ButtonId">
             <summary>
@@ -123,6 +149,19 @@
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
+        <member name="M:Library.ButtonNextPage.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String,System.String)">
+            <summary>
+            constructor de ButtonNextPage.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
+            <param name="text">texto que contiene cada elemento.</param>
+        </member>
         <member name="P:Library.ButtonNextPage.ButtonId">
             <summary>
             id que corresponde con el boton creado.
@@ -163,6 +202,19 @@
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
+        <member name="M:Library.ButtonSound.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String,System.String)">
+            <summary>
+            constructor de ButtonSound.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
+            <param name="soundPath">sonido que posee el elemento.</param>
+        </member>
         <member name="P:Library.ButtonSound.State">
             <summary>
             estado del boton.
@@ -201,6 +253,12 @@
             de forma cercana, cumple una de las condiciones necesarias para ser quien crea los objetos.
             </summary>
         </member>
+        <member name="P:Library.Creator.UnityPages">
+            <summary>
+            diccionario de paginas.
+            </summary>
+            <value>diccionario.</value>
+        </member>
         <member name="M:Library.Creator.Create">
             <summary>
             crea la cadena de pipes and filters.
@@ -211,6 +269,12 @@
             NOMBRE: CreatorHelper
             DESCRIPCION: Esta clase llama a los metodos de la clase Finder y Download de la primera entrega.
             </summary>
+        </member>
+        <member name="M:Library.CreatorHelper.#ctor(System.String)">
+            <summary>
+            constructor de CreatorHelper.
+            </summary>
+            <param name="fileName">nombre del archivo.</param>
         </member>
         <member name="P:Library.CreatorHelper.FileName">
             <summary>
@@ -251,6 +315,18 @@
             y es de tipo Element.
             </summary>
         </member>
+        <member name="M:Library.DragAndDropDestination.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String)">
+            <summary>
+            constructor de DragAndDropDestination.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
+        </member>
         <member name="T:Library.DragAndDropItem">
             <summary>
             NOMBRE: DragAndDropItem.
@@ -265,6 +341,20 @@
             y es de tipo Element. Tambien colabora con DragAndDropSource y BlankSpace ya que un item debe conocer
             un source y un destination.
             </summary>
+        </member>
+        <member name="M:Library.DragAndDropItem.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String,Library.DragAndDropSource,Library.BlankSpace)">
+            <summary>
+            constructor de DragAndDropItem.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
+            <param name="source">fuente del elemento.</param>
+            <param name="destination">destino del elemento.</param>
         </member>
         <member name="P:Library.DragAndDropItem.Source">
             <summary>
@@ -292,6 +382,18 @@
             y es de tipo Element. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
+        <member name="M:Library.DragAndDropSource.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String)">
+            <summary>
+            constructor de DragAndDropSource.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
+        </member>
         <member name="P:Library.DragAndDropSource.SourceCellImageId">
             <summary>
             Id que corresponde con la imagen.
@@ -315,6 +417,18 @@
             COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="M:Library.Element.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String)">
+            <summary>
+            constructor de Element.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
         </member>
         <member name="P:Library.Element.Name">
             <summary>
@@ -372,6 +486,31 @@
              la exepcion es para el caso de que no se encuentre lo que se busca.
              </summary>
         </member>
+        <member name="M:Library.NotFoundOnXMLException.#ctor">
+            <summary>
+            constructor de la excepcion.
+            </summary>
+        </member>
+        <member name="M:Library.NotFoundOnXMLException.#ctor(System.String)">
+            <summary>
+            constructor de la excepcion.
+            </summary>
+            <param name="message">mensaje.</param>
+        </member>
+        <member name="M:Library.NotFoundOnXMLException.#ctor(System.String,System.Exception)">
+            <summary>
+            constructor de la excepcion.
+            </summary>
+            <param name="message">mensaje.</param>
+            <param name="inner">inner exception.</param>
+        </member>
+        <member name="M:Library.NotFoundOnXMLException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            constructor de la excepcion.
+            </summary>
+            <param name="info">info.</param>
+            <param name="context">context.</param>
+        </member>
         <member name="T:Library.ExitButton">
             <summary>
             NOMBRE: ExitButton.
@@ -387,6 +526,18 @@
             y es de tipo Element. Ademas colabora con la Interfaz IButoon ya que la implementa.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="M:Library.ExitButton.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String)">
+            <summary>
+            constructor de ExitButton.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece el elemento.</param>
+            <param name="imagePath">imagen que posee el elemento.</param>
         </member>
         <member name="M:Library.ExitButton.Action(System.String)">
             <summary>
@@ -437,6 +588,18 @@
             COLABORACIONES: Colabora con la clase Element y Screen ya que una imagen debe pertenecer a una Screen y ademas
             es de tipo Element. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="M:Library.Image.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String)">
+            <summary>
+            constructor de la imagen.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece la imagen.</param>
+            <param name="imagePath">imagen que posee el objeto.</param>
         </member>
         <member name="M:Library.Image.Render(Library.IRenderer)">
             <summary>
@@ -511,6 +674,12 @@
             esta interfaz no implementa ningun metodo, simplemente tiene un atributo Name de tipo string.
             </summary>
         </member>
+        <member name="P:Library.IXML.Name">
+            <summary>
+            nombre.
+            </summary>
+            <value>string.</value>
+        </member>
         <member name="T:Library.Letter">
             <summary>
             NOMBRE: Letter.
@@ -524,6 +693,19 @@
             y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="M:Library.Letter.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String,System.Boolean)">
+            <summary>
+            constructor de la letra.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">Screen a la que pertenece la letra.</param>
+            <param name="imagePath">imagen que posee la letra.</param>
+            <param name="right">indica si la letra es correcta.</param>
         </member>
         <member name="P:Library.Letter.Right">
             <summary>
@@ -563,6 +745,13 @@
             y ademas con la interfaz IContainer. Tambien colabora con Visitor ya que es parte de la implemetacion de
             dicho patron por medio del metodo Accept.
             </summary>
+        </member>
+        <member name="M:Library.Level.#ctor(System.String,Library.World)">
+            <summary>
+            constructor del nivel.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="world">mundo al que pertenece el nivel.</param>
         </member>
         <member name="P:Library.Level.Name">
             <summary>
@@ -788,6 +977,12 @@
             siguiente en Unity.
             </summary>
         </member>
+        <member name="P:Library.GeneralEngine.ActualLevel">
+            <summary>
+            nivel actual.
+            </summary>
+            <value>string.</value>
+        </member>
         <member name="M:Library.GeneralEngine.Update">
             <summary>
             metodo que actualiza la pagina, pasa a la siguiente pantalla.
@@ -847,6 +1042,12 @@
             un FalseAdapterContains que se usara para los tests.
             </summary>
         </member>
+        <member name="P:Library.OneAdapter.Adapter">
+            <summary>
+            constructor de OneAdapter.
+            </summary>
+            <value>adapter.</value>
+        </member>
         <member name="T:Library.FilterButtonCheck">
             <summary>
             NOMBRE: FilterButtonCheck.
@@ -859,6 +1060,12 @@
             modificacion ya que no se debera modificar los pipes and filters ya creados.
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
+        </member>
+        <member name="P:Library.FilterButtonCheck.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
         </member>
         <member name="M:Library.FilterButtonCheck.Filter(ExerciseOne.Tag)">
             <summary>
@@ -880,6 +1087,12 @@
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
+        <member name="P:Library.FilterButtonNextPage.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
+        </member>
         <member name="M:Library.FilterButtonNextPage.Filter(ExerciseOne.Tag)">
             <summary>
             filtra el Tag recibido.
@@ -899,6 +1112,12 @@
             modificacion ya que no se debera modificar los pipes and filters ya creados.
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
+        </member>
+        <member name="P:Library.FilterButtonSound.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
         </member>
         <member name="M:Library.FilterButtonSound.Filter(ExerciseOne.Tag)">
             <summary>
@@ -920,6 +1139,12 @@
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
+        <member name="P:Library.FilterDragAndDropDestination.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
+        </member>
         <member name="M:Library.FilterDragAndDropDestination.Filter(ExerciseOne.Tag)">
             <summary>
             filtra el Tag recibido.
@@ -939,6 +1164,12 @@
             modificacion ya que no se debera modificar los pipes and filters ya creados.
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
+        </member>
+        <member name="P:Library.FilterDragAndDropSource.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
         </member>
         <member name="M:Library.FilterDragAndDropSource.Filter(ExerciseOne.Tag)">
             <summary>
@@ -960,6 +1191,12 @@
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
+        <member name="P:Library.FilterExitButton.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
+        </member>
         <member name="M:Library.FilterExitButton.Filter(ExerciseOne.Tag)">
             <summary>
             filtra el Tag recibido.
@@ -979,6 +1216,12 @@
             modificacion ya que no se debera modificar los pipes and filters ya creados.
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
+        </member>
+        <member name="P:Library.FilterImage.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
         </member>
         <member name="M:Library.FilterImage.Filter(ExerciseOne.Tag)">
             <summary>
@@ -1000,6 +1243,12 @@
             CHAIN RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
+        <member name="P:Library.FilterLetter.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
+        </member>
         <member name="M:Library.FilterLetter.Filter(ExerciseOne.Tag)">
             <summary>
             filtra el Tag recibido.
@@ -1019,6 +1268,12 @@
             modificacion ya que no se debera modificar los pipes and filters ya creados.
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
+        </member>
+        <member name="P:Library.FilterLevel.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
         </member>
         <member name="M:Library.FilterLevel.Filter(ExerciseOne.Tag)">
             <summary>
@@ -1040,6 +1295,12 @@
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
+        <member name="P:Library.FilterScreen.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
+        </member>
         <member name="M:Library.FilterScreen.Filter(ExerciseOne.Tag)">
             <summary>
             filtra un tag recibido por parametros.
@@ -1060,6 +1321,12 @@
             CHAIN OF RESPONSiBILITY: esta clase es parte de la cadena de Pipes And Filters.
             </summary>
         </member>
+        <member name="P:Library.FilterWord.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
+        </member>
         <member name="M:Library.FilterWord.Filter(ExerciseOne.Tag)">
             <summary>
             filtra el Tag recibido.
@@ -1074,6 +1341,12 @@
             <remarks>
             Un filtro procesa un Tag, creando un Visitor en caso que corresponda.
             </remarks>
+        </member>
+        <member name="P:Library.IFilterConditional.Result">
+            <summary>
+            resultado de aplicar el filtro.
+            </summary>
+            <value>bool.</value>
         </member>
         <member name="M:Library.IFilterConditional.Filter(ExerciseOne.Tag)">
             <summary>
@@ -1116,6 +1389,14 @@
             sobre nuestro programa.
             </summary>
         </member>
+        <member name="M:Library.PipeConditional.#ctor(Library.IFilterConditional,Library.IPipe,Library.IPipe)">
+            <summary>
+            constructor de PipeConditional.
+            </summary>
+            <param name="filter">filtro del Pipe.</param>
+            <param name="truePipe">pipe1.</param>
+            <param name="falsePipe">pipe2.</param>
+        </member>
         <member name="M:Library.PipeConditional.Send(ExerciseOne.Tag)">
             <summary>
             metodo de la interfaz IPipe, envia un Tag a otro pipe.
@@ -1143,6 +1424,11 @@
             COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
             de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
             DIP: implementa la interfaz IRenderer para cumplir el patron de inversion de dependencias.
+            </summary>
+        </member>
+        <member name="M:Library.Renderer.#ctor">
+            <summary>
+            constructor de la clase.
             </summary>
         </member>
         <member name="M:Library.Renderer.RenderBlankSpace(Library.BlankSpace)">
@@ -1213,6 +1499,13 @@
             y con la clase Visitor ya que es parte de la implemetacion de dicho patron por medio del metodo Accept.
             </summary>
         </member>
+        <member name="M:Library.Screen.#ctor(System.String,Library.Level)">
+            <summary>
+            constructor de la screen.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="level">nivel al que pertenece.</param>
+        </member>
         <member name="P:Library.Screen.State">
             <summary>
             estado de la Screen.
@@ -1267,6 +1560,12 @@
             de que exista ya una instancia simplemente te devuelve la misma, es usada para los motores y para World.
             </summary>
             <typeparam name="T"> tipo generico. </typeparam>
+        </member>
+        <member name="P:Library.Singleton`1.Instance">
+            <summary>
+            crea una instancia del singleton o devuelve una si ya esta creada.
+            </summary>
+            <value>singleton.</value>
         </member>
         <member name="T:Library.Visitor">
             <summary>
@@ -1339,6 +1638,12 @@
             con ButtonCheck ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="M:Library.VisitorButtonCheck.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorButtonCheck.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorButtonCheck.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1375,6 +1680,12 @@
             con ButtonNextPage ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="M:Library.VisitorButtonNextPage.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorButtonNextPage.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorButtonNextPage.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1410,6 +1721,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con ButtonSound ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="M:Library.VisitorButtonSound.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorButtonSound.
+            </summary>
+            <param name="tag">Tag recibido.</param>
         </member>
         <member name="P:Library.VisitorButtonSound.Tag">
             <summary>
@@ -1448,6 +1765,12 @@
             con DragAndDropDestination ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="M:Library.VisitorDragAndDropDestination.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorDragAndDropDestination.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorDragAndDropDestination.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1484,6 +1807,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con DragAndDropSource ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="M:Library.VisitorDragAndDropSource.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorDragAndDropSource.
+            </summary>
+            <param name="tag">Tag recibido.</param>
         </member>
         <member name="P:Library.VisitorDragAndDropSource.Tag">
             <summary>
@@ -1522,6 +1851,12 @@
             con ExitButton ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="M:Library.VisitorExitButton.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorExitButton.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorExitButton.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1558,6 +1893,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con Image ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="M:Library.VisitorImage.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorImage.
+            </summary>
+            <param name="tag">Tag recibido.</param>
         </member>
         <member name="P:Library.VisitorImage.Tag">
             <summary>
@@ -1596,6 +1937,12 @@
             con Letter ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="M:Library.VisitorLetter.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorLetter.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorLetter.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1631,6 +1978,12 @@
             un objeto Tag, colabora con Word, Level y Screen.
             </summary>
         </member>
+        <member name="M:Library.VisitorLevel.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorLevel.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorLevel.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1665,6 +2018,12 @@
             COLABORACIONES: colabora con la clase Visitor, ya que hereda de la misma, colabora con la clase Tag ya que conoce
             un objeto Tag, colabora con Word, Level y Screen.
             </summary>
+        </member>
+        <member name="M:Library.VisitorScreen.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorScreen.
+            </summary>
+            <param name="tag">Tag recibido.</param>
         </member>
         <member name="P:Library.VisitorScreen.Tag">
             <summary>
@@ -1703,6 +2062,12 @@
             con Word, BlankSpace y DragAndDropSource ya que va a instanciar objetos Word.
             </summary>
         </member>
+        <member name="M:Library.VisitorWord.#ctor(ExerciseOne.Tag)">
+            <summary>
+            constructor de VisitorWord.
+            </summary>
+            <param name="tag">Tag recibido.</param>
+        </member>
         <member name="P:Library.VisitorWord.Tag">
             <summary>
             Tag con los datos para crear el modelo.
@@ -1740,6 +2105,20 @@
             conocer un Source y un Destination. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
+        <member name="M:Library.Word.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Library.Screen,System.String,Library.DragAndDropSource,Library.BlankSpace)">
+            <summary>
+            constructor de la clase Word.
+            </summary>
+            <param name="name">nombre.</param>
+            <param name="positionY">posicion Y.</param>
+            <param name="positionX">posicion X.</param>
+            <param name="length">largo.</param>
+            <param name="width">ancho.</param>
+            <param name="screen">pantalla a la que pertenece.</param>
+            <param name="imagePath">imagen que posee.</param>
+            <param name="source">fuente.</param>
+            <param name="destination">destino.</param>
+        </member>
         <member name="P:Library.Word.ItemId">
             <summary>
             este ItemId corresponde a la referencia del Word una vez creado.
@@ -1774,6 +2153,11 @@
             COLABORACIONES: Colabora con Level ya que conoce una lista de Level, con la interfaz IContainer ya
             que es un tipo de contenedor y con la clase Visitor, ya que implementa el patron mediante el metodo
             Accept.
+            </summary>
+        </member>
+        <member name="M:Library.World.#ctor">
+            <summary>
+            constructor de un World.
             </summary>
         </member>
         <member name="P:Library.World.Name">
@@ -1821,12 +2205,6 @@
             <summary>
             muestra la primera pagina luego de que se cree.
             </summary>
-        </member>
-        <member name="M:Proyecto.StudentsCode.Builder.GoToNextPage(System.String)">
-            <summary>
-            va al menu luego de crear el juego(se utiliza solo una vez).
-            </summary>
-            <param name="name"> nombre de la pagina que simboliza el menu. </param>
         </member>
     </members>
 </doc>

@@ -24,6 +24,10 @@ namespace Library
 
         private string actualLevel;
 
+        /// <summary>
+        /// nivel actual.
+        /// </summary>
+        /// <value>string.</value>
         public string ActualLevel
         {
             get

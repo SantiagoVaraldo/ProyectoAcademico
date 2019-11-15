@@ -23,6 +23,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorLevel.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorLevel(Tag tag)
         {
             this.Tag = tag;

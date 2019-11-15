@@ -19,6 +19,10 @@ namespace Library
     {
         private static T instance;
 
+        /// <summary>
+        /// crea una instancia del singleton o devuelve una si ya esta creada.
+        /// </summary>
+        /// <value>singleton.</value>
         public static T Instance
         {
             get
