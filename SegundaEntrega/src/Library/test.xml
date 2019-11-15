@@ -10,7 +10,7 @@
 		<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
 		<Image Name="Personaje" PositionY="-50" PositionX="-240" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje.jpg"/>
 		<Image Name="Texto" PositionY="46" PositionX="20" Length="217" Width="221" Screen="Screen40" ImagePath="Texto.jpg"/>
-		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
+		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT"/>
 	</Screen>
 	<Screen Name="Screen" level="Level">
 		<Image Name="Fondo" PositionY="7" PositionX="-24" Length="400" Width="933" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
@@ -247,7 +247,6 @@
 		<Image Name="Personaje" PositionY="0" PositionX="-350" Length="220" Width="220" Screen="Screen40" ImagePath="Personaje2.jpg"/>
 		<ButtonNextPage Name="Animales" PositionY="-100" PositionX="250" Length="50" Width="100" Screen="Screen40" ImagePath="Flecha.jpg" Text="NEXT">
 	</Screen>
-
 </Level>
 <Level Name="Comida" World="TheWorld">
 	<Screen Name="Screen40" Level="Level">
