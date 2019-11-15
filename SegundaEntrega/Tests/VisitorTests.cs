@@ -12,6 +12,7 @@ namespace Tests
         [Fact]
         public void FilterLevelTest()
         {
+            //Creamos tag de Level
             World world = Singleton<World>.Instance;
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             String levelName = "level1";
@@ -20,6 +21,7 @@ namespace Tests
             attributeList.Add(attribute.Key, attribute);
             Tag tag = new Tag("Level", attributeList);
 
+            //Visitamos el mundo con la tag de level, este agrega el level al world
             VisitorLevel visitor = new VisitorLevel(tag);
             visitor.Visit(world);
 
@@ -32,6 +34,7 @@ namespace Tests
         [Fact]
         public void FilterScreen()
         {
+            //Creamos un level y screen
             String screenName = "screen1";
             String levelName = "level1";
 
@@ -47,6 +50,7 @@ namespace Tests
             attributeList.Add(attributeName.Key, attributeName);
             attributeList.Add(attributeLevel.Key, attributeLevel);
 
+            //Visitamos el mundo con la tag de Screen, este agrega la screen al ultimo level del world
             Tag tag = new Tag("Screen", attributeList);
 
             VisitorScreen visitor = new VisitorScreen(tag);
@@ -61,6 +65,7 @@ namespace Tests
         [Fact]
         public void FilterElement()
         {
+            //Creamos un elemento, screen y elemento
             String screenName = "screen1";
             String levelName = "level1";
 
@@ -78,9 +83,6 @@ namespace Tests
             string positionY = "100";
             string positionX = "100";
             string imagePath = "Oceano.jpg";
-            
-            //<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
-
 
             Attribute attributeName = new Attribute("Name", name);
             Attribute attributeScreen = new Attribute("Screen", screenName);
@@ -97,6 +99,8 @@ namespace Tests
             attributeList.Add(attributePositionY.Key, attributePositionY);
             attributeList.Add(attributePositionX.Key, attributePositionX);
             attributeList.Add(attributeImagePath.Key, attributeImagePath);
+
+            //Visitamos el mundo con la tag de Image, este agrega la image a la ultima screen del world
 
             Tag tag = new Tag("Image", attributeList);
 
