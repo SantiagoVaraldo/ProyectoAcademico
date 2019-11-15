@@ -25,6 +25,7 @@ namespace Tests
 
         public EngineLvl3Test()
         {
+           
             // seteamos una instancia "falsa" del adapter para usar en los tests.
             OneAdapter.Adapter = new FalseAdapterContain(true);
 
@@ -40,6 +41,8 @@ namespace Tests
             world = Singleton<World>.Instance;
             level = new Level("level", world);
             screen = new Screen("screen", level);
+            Singleton<EngineLvl3>.Instance.Reset(screen);
+            
             buttonCheck1 = new ButtonCheck("ButtonCheck1", 10, 10, 10, 10, screen, "path", "path2", true);
             buttonCheck2 = new ButtonCheck("ButtonCheck2", 20, 20, 20, 20, screen, "path", "path2", true);
             buttonCheck3 = new ButtonCheck("ButtonCheck3", 30, 30, 30, 30, screen, "path", "path2", true);
