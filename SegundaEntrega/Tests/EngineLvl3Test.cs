@@ -12,15 +12,29 @@ namespace Tests
         Level level;
         Screen screen;
         EngineLvl3 engine;
-        ButtonCheck buttonCheck1, buttonCheck2, buttonCheck3, buttonCheck4, buttonCheck5;
+        ButtonCheck buttonCheck1;
+        ButtonCheck buttonCheck2;
+        ButtonCheck buttonCheck3;
+        ButtonCheck buttonCheck4;
+        ButtonCheck buttonCheck5;
 
         public EngineLvl3Test()
         {
+            // seteamos una instancia "falsa" del adapter para usar en los tests
+            OneAdapter.Adapter = new FalseAdapterContain(true);
 
+            // creamos el diccionario de paginas y niveles para los tests.
+            Dictionary<string, List<string>> dicc = new Dictionary<string, List<string>>();
+            List<string> pagesList = new List<string>();
+            pagesList.Add("Page1");
+            dicc.Add("Menu", pagesList);
+            Creator.PagesUnity = dicc;
+            Singleton<GeneralEngine>.Instance.ActualLevel = "Menu";
+
+            // creamos el mundo necesario para testear el motor.
             world = Singleton<World>.Instance;
             level = new Level("level", world);
             screen = new Screen("screen", level);
-            engine = new EngineLvl3();
             buttonCheck1 = new ButtonCheck("ButtonCheck1", 10, 10, 10, 10, screen, "path", "path2", true);
             buttonCheck2 = new ButtonCheck("ButtonCheck2", 20, 20, 20, 20, screen, "path", "path2", true);
             buttonCheck3 = new ButtonCheck("ButtonCheck3", 30, 30, 30, 30, screen, "path", "path2", true);
@@ -42,10 +56,10 @@ namespace Tests
         [Fact]
         public void PositiveTest()
         {
-            engine.Check(buttonCheck1);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck1);
             Test(buttonCheck1, true, false);
 
-            engine.Check(buttonCheck2);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck2);
             Test(buttonCheck2, true, true);
 
         }
@@ -53,10 +67,10 @@ namespace Tests
         [Fact]
         public void TwoClicksIncorrectTest()
         {
-            engine.Check(buttonCheck4);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck4);
             Test(buttonCheck4, true, false);
 
-            engine.Check(buttonCheck5);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck5);
             Test(buttonCheck5, false, false);
 
         }
@@ -64,28 +78,27 @@ namespace Tests
         [Fact]
         public void FirstCorrectAndSecondIncorrectTest()
         {
-            engine.Check(buttonCheck1);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck1);
             Test(buttonCheck1, true, false);
 
-            engine.Check(buttonCheck4);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck4);
             Test(buttonCheck4, false, false);
 
         }
         [Fact]
         public void ClickTwoThreeAndFourCorrect()
         {
-            engine.Check(buttonCheck4);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck4);
             Test(buttonCheck4, true, false);
 
-            engine.Check(buttonCheck1);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck1);
             Test(buttonCheck1, false, false);
 
-            engine.Check(buttonCheck2);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck2);
             Test(buttonCheck2, true, false);
 
-            engine.Check(buttonCheck3);
+            Singleton<EngineLvl3>.Instance.Check(buttonCheck3);
             Test(buttonCheck3, true, true);
-
         }
 
     }

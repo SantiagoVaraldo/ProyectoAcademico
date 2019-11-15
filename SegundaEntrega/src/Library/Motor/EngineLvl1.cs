@@ -48,7 +48,6 @@ namespace Library
             letter.Screen.LevelCompleted();
             Singleton<GeneralEngine>.Instance.Update();
 
-            this.Reset(letter.Screen);
             return true;
         }
 

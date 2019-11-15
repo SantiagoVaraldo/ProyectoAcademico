@@ -24,10 +24,11 @@ namespace Library
 
         public string ActualLevel
         {
-            get 
+            get
             {
                 return this.actualLevel;
             }
+
             set
             {
                 this.actualLevel = value;
@@ -39,9 +40,9 @@ namespace Library
         /// </summary>
         public void Update()
         {
-            if (this.nextPage < this.getPagesLength())
+            if (this.nextPage < this.GetPagesLength())
             {
-                OneAdapter.Adapter.ShowPage(this.getNextPage());
+                OneAdapter.Adapter.ShowPage(this.GetNextPage());
                 this.nextPage += 1;
             }
             else
@@ -51,12 +52,20 @@ namespace Library
             }
         }
 
-        public int getPagesLength()
+        /// <summary>
+        /// obtiene el largo de la lista con las paginas.
+        /// </summary>
+        /// <returns> largo </returns>
+        public int GetPagesLength()
         {
             return Creator.PagesUnity[this.actualLevel].Count - 1;
         }
 
-        public string getNextPage()
+        /// <summary>
+        /// obtiene la pagina siguiente.
+        /// </summary>
+        /// <returns> pagina siguiente. </returns>
+        public string GetNextPage()
         {
             return Creator.PagesUnity[this.actualLevel][this.nextPage];
         }

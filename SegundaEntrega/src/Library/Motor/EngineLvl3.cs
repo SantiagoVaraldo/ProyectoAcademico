@@ -31,7 +31,7 @@ namespace Library
         /// verifica que se haya superado el nivel.
         /// </summary>
         /// <param name="buttonCheck"> boton clickeado. </param>
-        public void Check(ButtonCheck buttonCheck)
+        public bool Check(ButtonCheck buttonCheck)
         {
             this.clickNum += 1;
 
@@ -46,6 +46,7 @@ namespace Library
                 if (this.correctList.Count == 2)
                 {
                     this.NextLevel(buttonCheck);
+                    return true;
                 }
                 else
                 {
@@ -58,8 +59,11 @@ namespace Library
                     this.correctList.Clear();
                     this.selectedList.Clear();
                     this.clickNum = 0;
+                    return false;
                 }
             }
+
+            return false;
         }
 
         /// <summary>
@@ -82,7 +86,6 @@ namespace Library
             buttonCheck.Screen.LevelCompleted();
             Singleton<GeneralEngine>.Instance.Update();
 
-            this.Reset(buttonCheck.Screen);
             return true;
         }
 

@@ -546,6 +546,18 @@
             metodo que actualiza la pagina, pasa a la siguiente pantalla.
             </summary>
         </member>
+        <member name="M:Library.GeneralEngine.GetPagesLength">
+            <summary>
+            obtiene el largo de la lista con las paginas.
+            </summary>
+            <returns> largo </returns>
+        </member>
+        <member name="M:Library.GeneralEngine.GetNextPage">
+            <summary>
+            obtiene la pagina siguiente.
+            </summary>
+            <returns> pagina siguiente. </returns>
+        </member>
         <member name="M:Library.GeneralEngine.ChangeLevel(System.String)">
             <summary>
             metodo que cambia el nivel actual en el que se encuentra el juego.
@@ -556,6 +568,30 @@
             <summary>
             Interfaz utilizada por los motores del nivel 2 y 4.
             </summary>
+        </member>
+        <member name="M:Library.IEngineDropable.Check(Library.Word)">
+            <summary>
+            metodo check de los motores.
+            </summary>
+            <param name="word"> Word para checkear. </param>
+        </member>
+        <member name="M:Library.IEngineDropable.AddWord(Library.Word)">
+            <summary>
+            agrega una word a una lista.
+            </summary>
+            <param name="word"> word que se agrega. </param>
+        </member>
+        <member name="M:Library.IEngineDropable.RemoveWord(Library.Word)">
+            <summary>
+            remueve la word de la lista.
+            </summary>
+            <param name="word"> word a remover. </param>
+        </member>
+        <member name="M:Library.IEngineDropable.ObtainCantDestination(Library.Screen)">
+            <summary>
+            obtiene la cantidad de BlankSpace que hay en una Screen.
+            </summary>
+            <param name="screen"> Screen en la que se calcula. </param>
         </member>
         <member name="T:Library.OneAdapter">
             <summary>

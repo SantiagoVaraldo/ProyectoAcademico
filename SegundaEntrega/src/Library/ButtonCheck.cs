@@ -100,7 +100,10 @@ namespace Library
             if (name == this.ButtonId)
             {
                 EngineLvl3 engineLvl3 = Singleton<EngineLvl3>.Instance;
-                engineLvl3.Check(this);
+                if (engineLvl3.Check(this))
+                {
+                    engineLvl3.Reset(this.Screen);
+                }
             }
         }
 
