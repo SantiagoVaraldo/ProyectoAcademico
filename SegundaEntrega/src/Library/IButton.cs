@@ -17,7 +17,7 @@ namespace Library
         /// <summary>
         /// se ejecuta al hacer click en un boton.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name"> nombre del elemento. </param>
         void Action(string name);
     }
 }

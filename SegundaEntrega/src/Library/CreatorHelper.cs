@@ -26,6 +26,10 @@ namespace Library
             this.FileName = fileName;
         }
 
+        /// <summary>
+        /// nombre del archivo.
+        /// </summary>
+        /// <value> archivo. </value>
         public string FileName
         {
             get
@@ -39,6 +43,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// lista de Tags.
+        /// </summary>
+        /// <value> lista. </value>
         public List<Tag> Listtags
         {
             get

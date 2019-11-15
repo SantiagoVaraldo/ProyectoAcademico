@@ -29,6 +29,10 @@ namespace Library
             this.Tag = tag;
         }
 
+        /// <summary>
+        /// Tag con los datos para crear el modelo.
+        /// </summary>
+        /// <value> Tag. </value>
         public Tag Tag
         {
             get

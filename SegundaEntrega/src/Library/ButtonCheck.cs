@@ -36,6 +36,10 @@ namespace Library
             this.ImagePath2 = imagePath2;
         }
 
+        /// <summary>
+        /// Id que corresponde con el boton creado.
+        /// </summary>
+        /// <value> id. </value>
         public string ButtonId
         {
             get
@@ -49,6 +53,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// estado del boton.
+        /// </summary>
+        /// <value> estado bool. </value>
         public bool State
         {
             get
@@ -62,6 +70,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// indica si es el boton correcto.
+        /// </summary>
+        /// <value> correcto bool. </value>
         public bool Check
         {
             get
@@ -75,6 +87,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// segunda imagen del boton.
+        /// </summary>
+        /// <value> path image. </value>
         public string ImagePath2
         {
             get

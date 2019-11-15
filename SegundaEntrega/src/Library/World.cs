@@ -32,6 +32,10 @@ namespace Library
             this.Name = "TheWorld";
         }
 
+        /// <summary>
+        /// nombre del world.
+        /// </summary>
+        /// <value> nombre. </value>
         public string Name
         {
             get
@@ -45,6 +49,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// lista de niveles del World.
+        /// </summary>
+        /// <value> lista de niveles. </value>
         public List<Level> ListLevel
         {
             get

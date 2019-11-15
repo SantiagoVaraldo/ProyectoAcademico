@@ -30,6 +30,10 @@ namespace Library
             this.Right = right;
         }
 
+        /// <summary>
+        /// indica si es la letra correcta.
+        /// </summary>
+        /// <value> rigth bool. </value>
         public bool Right
         {
             get
@@ -43,6 +47,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Id que pertenece al boton creado.
+        /// </summary>
+        /// <value> id. </value>
         public string ButtonId
         {
             get

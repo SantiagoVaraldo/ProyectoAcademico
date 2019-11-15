@@ -28,6 +28,10 @@ namespace Library
         {
         }
 
+        /// <summary>
+        /// Id que corresponde con la imagen.
+        /// </summary>
+        /// <value> sourceId. </value>
         public string SourceCellImageId { get; set; }
 
         /// <summary>

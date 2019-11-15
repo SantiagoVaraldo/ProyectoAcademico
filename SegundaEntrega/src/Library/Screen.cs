@@ -35,6 +35,10 @@ namespace Library
             this.State = false;
         }
 
+        /// <summary>
+        /// estado de la Screen.
+        /// </summary>
+        /// <value> estado bool. </value>
         public bool State
         {
             get
@@ -48,6 +52,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// nombre de la Screen.
+        /// </summary>
+        /// <value> nombre. </value>
         public string Name
         {
             get
@@ -64,6 +72,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// nivel al que pertenece la Screen.
+        /// </summary>
+        /// <value> nombre. </value>
         public Level Level
         {
             get
@@ -80,6 +92,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// lista de elementos que posee la Screen.
+        /// </summary>
+        /// <value> lista de elementos. </value>
         public List<Element> ElementList
         {
             get

@@ -30,8 +30,16 @@ namespace Library
             this.Filled = false;
         }
 
+        /// <summary>
+        /// Id que corresponde con la imagen creada como destination.
+        /// </summary>
+        /// <value> destination id. </value>
         public string DestinationCellImageId { get; set; }
 
+        /// <summary>
+        /// indica si el destino ya esta lleno.
+        /// </summary>
+        /// <value> lleno bool. </value>
         public bool Filled
         {
             get

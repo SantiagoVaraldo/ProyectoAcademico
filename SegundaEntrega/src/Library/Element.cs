@@ -40,6 +40,10 @@ namespace Library
             this.ImagePath = imagePath;
         }
 
+        /// <summary>
+        /// nombre del elemento.
+        /// </summary>
+        /// <value> nombre. </value>
         public string Name
         {
             get
@@ -56,6 +60,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// posicion y del elemento.
+        /// </summary>
+        /// <value> posicion y .</value>
         public int? PositionY
         {
             get
@@ -72,6 +80,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// posicion x del elemento.
+        /// </summary>
+        /// <value> posicion x. </value>
         public int? PositionX
         {
             get
@@ -88,6 +100,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// largo del elemento.
+        /// </summary>
+        /// <value> largo. </value>
         public int? Length
         {
             get
@@ -104,6 +120,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// ancho del elemento.
+        /// </summary>
+        /// <value> ancho. </value>
         public int? Width
         {
             get
@@ -120,6 +140,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Screen a la que pertenece el elemento.
+        /// </summary>
+        /// <value> Screen. </value>
         public Screen Screen
         {
             get
@@ -136,6 +160,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// imagen que posee el elemento.
+        /// </summary>
+        /// <value> imagePath. </value>
         public string ImagePath
         {
             get

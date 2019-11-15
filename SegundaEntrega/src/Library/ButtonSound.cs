@@ -34,6 +34,10 @@ namespace Library
             this.state = false;
         }
 
+        /// <summary>
+        /// estado del boton.
+        /// </summary>
+        /// <value> estado bool. </value>
         public bool State
         {
             get
@@ -47,6 +51,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Path del sonido.
+        /// </summary>
+        /// <value> path sonido. </value>
         public string SoundPath
         {
             get
@@ -63,6 +71,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Id que corresponde con el boton creado.
+        /// </summary>
+        /// <value> id. </value>
         public string ButtonId
         {
             get
