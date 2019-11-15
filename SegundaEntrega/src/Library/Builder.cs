@@ -38,14 +38,14 @@ namespace Proyecto.StudentsCode
             OneAdapter.Adapter = this.adapter;
 
             this.adapter.AfterBuild += this.AfterBuildShowFirstPage;
-
+/*
             Creator.UnityPages.Add("Inicio", new List<string>());
             this.firstPageName = this.adapter.AddPage();
             Creator.UnityPages["Inicio"].Add(this.firstPageName);
 
             this.adapter.ChangeLayout(Layout.ContentSizeFitter);
             string buttonid = this.adapter.CreateButton(150, 100, 100, 100, "#09FF0064", this.GoToNextPage);
-
+*/
             Creator creator = new Creator();
             try
             {
@@ -81,7 +81,7 @@ namespace Proyecto.StudentsCode
         /// </summary>
         public void AfterBuildShowFirstPage()
         {
-            this.adapter.ShowPage(this.firstPageName);
+            this.adapter.ShowPage(Creator.UnityPages["Menu"][0]);
         }
 
         /// <summary>
