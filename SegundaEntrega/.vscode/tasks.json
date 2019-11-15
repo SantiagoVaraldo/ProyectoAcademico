@@ -21,7 +21,8 @@
                 "publish",
                 "${workspaceFolder}/Tests/Tests.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary",
+                "-nowarn:CS1591",
             ],
             "problemMatcher": "$msCompile"
         },

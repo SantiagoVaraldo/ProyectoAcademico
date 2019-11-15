@@ -21,12 +21,11 @@ namespace Library
     /// IObservable ya que es de tipo IObservable, Colabora con la clase ButtonCheck ya que es el elemento con el que va a
     /// realizar la logica. Ademas colabora con la clase OneAdapter.
     /// </summary>
-    public class EngineLvl3 : IObservable
+    public class EngineLvl3
     {
         private List<ButtonCheck> correctList = new List<ButtonCheck>();
         private List<ButtonCheck> selectedList = new List<ButtonCheck>();
         private int clickNum;
-        private List<IObserver> observers = new List<IObserver>();
 
         /// <summary>
         /// verifica que se haya superado el nivel.
@@ -77,14 +76,11 @@ namespace Library
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer.
         /// </summary>
         /// <param name="buttonCheck"> boton que fue clickeado. </param>
-        /// <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
+        /// <returns> retorna true si se paso de nivel. </returns>
         public bool NextLevel(ButtonCheck buttonCheck)
         {
             buttonCheck.Screen.LevelCompleted();
-            foreach (IObserver observer in this.observers)
-            {
-                observer.Update();
-            }
+            Singleton<GeneralEngine>.Instance.Update();
 
             this.Reset(buttonCheck.Screen);
             return true;
@@ -117,30 +113,6 @@ namespace Library
             if (buttonCheck.Check & !this.correctList.Contains(buttonCheck))
             {
                 this.correctList.Add(buttonCheck);
-            }
-        }
-
-        /// <summary>
-        /// metodo que agrega un IObserver a la lista de observers.
-        /// </summary>
-        /// <param name="observer"> observer para agregar. </param>
-        public void Subscribe(IObserver observer)
-        {
-            if (!this.observers.Contains(observer))
-            {
-                this.observers.Add(observer);
-            }
-        }
-
-        /// <summary>
-        /// metodo que elimina un IObserver de la lista de Observers.
-        /// </summary>
-        /// <param name="observer"> observer a eliminar. </param>
-        public void Unsubscribe(IObserver observer)
-        {
-            if (this.observers.Contains(observer))
-            {
-                this.observers.Remove(observer);
             }
         }
     }

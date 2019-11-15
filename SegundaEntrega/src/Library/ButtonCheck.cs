@@ -99,9 +99,7 @@ namespace Library
         {
             if (name == this.ButtonId)
             {
-                IObserver generalEngine = Singleton<GeneralEngine>.Instance;
                 EngineLvl3 engineLvl3 = Singleton<EngineLvl3>.Instance;
-                engineLvl3.Subscribe(generalEngine);
                 engineLvl3.Check(this);
             }
         }
