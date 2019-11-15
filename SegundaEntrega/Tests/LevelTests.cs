@@ -4,7 +4,7 @@ using Library;
 using System.Collections.Generic;
 
 // usar el satus para declarar y definir el World 
-/* 
+
 namespace Tests
 {
     public class LevelTests
@@ -38,7 +38,6 @@ namespace Tests
             World WorldExpected = null;
             Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
-
         }
 
         [Fact]
@@ -50,8 +49,6 @@ namespace Tests
             World WorldExpected = null;
             Assert.Equal(level.Name, nameExpected);
             Assert.Equal(level.World, WorldExpected);
-
         }
     }
 }
- */
