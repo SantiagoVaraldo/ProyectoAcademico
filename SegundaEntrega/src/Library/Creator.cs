@@ -58,20 +58,20 @@ namespace Library
 
             // creamos instancias de todos los pipeSerial que vayamos a utilizar
             // IPipe pipe11 = new PipeConditional(filterExit, pipeNull, pipeNull);
-            IPipe pipe10 = new PipeConditional(filterImage, pipeNull, pipeNull);
-            IPipe pipe9 = new PipeConditional(filterWord, pipeNull, pipe10);
-            IPipe pipe8 = new PipeConditional(filterDragAndDropDestination, pipeNull, pipe9);
-            IPipe pipe7 = new PipeConditional(filterDragAndDropSource, pipeNull, pipe8);
-            IPipe pipe6 = new PipeConditional(filterLetter, pipeNull, pipe7);
-            IPipe pipe5 = new PipeConditional(filterButtonCheck, pipeNull, pipe6);
-            IPipe pipe4 = new PipeConditional(filterButtonSound, pipeNull, pipe5);
-            IPipe pipe3 = new PipeConditional(filterButtonNextPage, pipeNull, pipe4);
-            IPipe pipe2 = new PipeConditional(filterScreen, pipeNull, pipe3);
-            IPipe pipe1 = new PipeConditional(filterLevel, pipeNull, pipe2);
+            IPipe pipeFilterImage = new PipeConditional(filterImage, pipeNull, pipeNull);
+            IPipe pipeFilterWorld = new PipeConditional(filterWord, pipeNull, pipeFilterImage);
+            IPipe pipeFilterDragAndDropDestination = new PipeConditional(filterDragAndDropDestination, pipeNull, pipeFilterWorld);
+            IPipe pipeFilterDragAndDropSource = new PipeConditional(filterDragAndDropSource, pipeNull, pipeFilterDragAndDropDestination);
+            IPipe pipeFilterLetter = new PipeConditional(filterLetter, pipeNull, pipeFilterDragAndDropSource);
+            IPipe pipeFilterButtonCheck = new PipeConditional(filterButtonCheck, pipeNull, pipeFilterLetter);
+            IPipe pipeFilterButtonSound = new PipeConditional(filterButtonSound, pipeNull, pipeFilterButtonCheck);
+            IPipe pipeFilterButtonNextPage = new PipeConditional(filterButtonNextPage, pipeNull, pipeFilterButtonSound);
+            IPipe pipeFilterScreen = new PipeConditional(filterScreen, pipeNull, pipeFilterButtonNextPage);
+            IPipe pipeFilterLevel = new PipeConditional(filterLevel, pipeNull, pipeFilterScreen);
 
             foreach (Tag tag in this.listTags)
             {
-                Visitor visitor = pipe1.Send(tag);
+                Visitor visitor = pipeFilterLevel.Send(tag);
                 if (visitor != null)
                 {
                     visitor.Visit(Singleton<World>.Instance);

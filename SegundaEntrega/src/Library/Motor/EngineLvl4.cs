@@ -24,7 +24,8 @@ namespace Library
     public class EngineLvl4 : IEngineDropable
     {
         private List<Word> listWords = new List<Word>();
-        private int cantDestination = 0;
+        private List<IObserver> observers = new List<IObserver>();
+        private int countDestinations = 0;
 
         /// <summary>
         /// metodo que establece que la pantalla fue superada y se lo notifica al Observer.
@@ -33,7 +34,7 @@ namespace Library
         /// <returns> retorna true si se paso de nivel y false en caso contrario. </returns>
         public bool NextLevel(Word word)
         {
-            if (this.listWords.Count == this.cantDestination)
+            if (this.listWords.Count == this.countDestinations)
             {
                 word.Screen.LevelCompleted();
                 Singleton<GeneralEngine>.Instance.Update();
@@ -52,7 +53,7 @@ namespace Library
         public void Reset(Screen screen)
         {
             this.listWords.Clear();
-            this.cantDestination = 0;
+            this.countDestinations = 0;
             foreach (Element element in screen.ElementList)
             {
                 if (element is Word)
@@ -71,7 +72,7 @@ namespace Library
         /// <param name="word"> Word clickeado. </param>
         public void Check(Word word)
         {
-            if (this.cantDestination == 0)
+            if (this.countDestinations == 0)
             {
                 this.ObtainCantDestination(word.Screen);
             }
@@ -92,7 +93,7 @@ namespace Library
                 }
             }
 
-            this.cantDestination = num;
+            this.countDestinations = num;
         }
 
         /// <summary>
