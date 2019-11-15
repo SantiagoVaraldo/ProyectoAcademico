@@ -15,6 +15,8 @@ namespace Library
     /// PATRON EXPERT: Esta clase cumple con el patron Expert, porque es experta en conocer la informacion
     /// pertinente para nuestros requisitos de crear objetos ExitButton, conoce el nombre, tamaño, la posicion,
     /// la pantalla y la ruta del ExitButton.
+    /// SRP: Esta clase cumple con SRP porque, presenta una unica responsabilidad que es conocer la informacion
+    /// de ExitButton, su unica razon de cambio es modificar los datos que guardamos sobre ExitButton.
     /// HERENCIA: esta clase hereda de la clase mas general Element, tambien implementa la interfaz IButton, por lo que
     /// es un tipo de boton.
     /// COLABORACIONES: Colabora con la clase Element y Screen ya que debe conocer un objeto de tipo Screen al cual pertenecer,

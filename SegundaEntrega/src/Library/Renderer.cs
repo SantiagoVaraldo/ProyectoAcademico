@@ -14,6 +14,7 @@ namespace Library
     /// DESCRIPCION: Contiene un metodo de renderizacion para cada uno de nuestros elementos que vamos a usar en Unity.
     /// COLABORACIONES: Esta clase colabora con IMainViewAdapter ya que conoce un adapter, colabora con todo el modelo
     /// de nuestro juego, es una especie de intermediario entre nuestro modelo y Unity.
+    /// DIP: implementa la interfaz IRenderer para cumplir el patron de inversion de dependencias.
     /// </summary>
     public class Renderer : IRenderer
     {
