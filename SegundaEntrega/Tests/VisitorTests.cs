@@ -78,9 +78,6 @@ namespace Tests
             string positionY = "100";
             string positionX = "100";
             string imagePath = "Oceano.jpg";
-            
-            //<Image Name="Fondo" PositionY="0" PositionX="-250" Length="600" Width="1500" Screen="Screen" ImagePath="FondoBlanco.jpg"/>
-
 
             Attribute attributeName = new Attribute("Name", name);
             Attribute attributeScreen = new Attribute("Screen", screenName);
