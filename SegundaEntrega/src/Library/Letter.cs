@@ -66,6 +66,7 @@ namespace Library
             {
                 EngineLvl1 engineLvl1 = Singleton<EngineLvl1>.Instance;
                 engineLvl1.Check(this);
+                engineLvl1.Reset(this.Screen);
             }
         }
 

@@ -14,9 +14,19 @@ namespace Tests
         EngineLvl1 engine;
         public EngineLvl1Test()
         {
+            OneAdapter.Adapter = new FalseAdapterContain(true);
+
             world = Singleton<World>.Instance;
             level = new Level("level", world);
             screen = new Screen("screen", level);
+
+            // creamos el diccionario de paginas y niveles para los tests.
+            Dictionary<string, List<string>> dicc = new Dictionary<string, List<string>>();
+            List<string> pagesList = new List<string>();
+            pagesList.Add("Page1");
+            dicc.Add("Menu", pagesList);
+            Creator.PagesUnity = dicc;
+            Singleton<GeneralEngine>.Instance.ActualLevel = "Menu";
         }
 
         [Fact]
@@ -24,6 +34,8 @@ namespace Tests
         {
             // string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
             Letter letter = new Letter("letter", 10, 10, 10, 10, screen, "path", true);
+            screen.Add(letter);
+
             Singleton<EngineLvl1>.Instance.Check(letter);
 
             bool actualState = letter.Screen.State;
@@ -37,7 +49,6 @@ namespace Tests
         [Fact]
         public void NegativeTest()
         {
-            OneAdapter.Adapter = new FalseAdapterContain(true);
             //string Name, int PositionY, int PositionX, int Length, int Width,Screen Screen, string ImagePath, bool Right
             Letter letter = new Letter("letter", 10, 10, 10, 10, screen, "path", false);
             Singleton<EngineLvl1>.Instance.Check(letter);

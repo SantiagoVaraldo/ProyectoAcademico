@@ -29,6 +29,11 @@ namespace Library
             {
                 return Creator.pagesUnity;
             }
+
+            set
+            {
+                Creator.pagesUnity = value;
+            }
         }
 
         /// <summary>

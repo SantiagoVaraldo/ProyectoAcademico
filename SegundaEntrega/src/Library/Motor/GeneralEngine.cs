@@ -22,6 +22,19 @@ namespace Library
 
         private string actualLevel;
 
+        public string ActualLevel
+        {
+            get
+            {
+                return this.actualLevel;
+            }
+
+            set
+            {
+                this.actualLevel = value;
+            }
+        }
+
         /// <summary>
         /// metodo que actualiza la pagina, pasa a la siguiente pantalla.
         /// </summary>
