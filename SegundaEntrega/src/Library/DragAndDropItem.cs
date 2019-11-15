@@ -34,6 +34,10 @@ namespace Library
             this.Source = source;
         }
 
+        /// <summary>
+        /// fuente a la que pertenece el item.
+        /// </summary>
+        /// <value> source. </value>
         public DragAndDropSource Source
         {
             get
@@ -47,6 +51,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// destino en el que debe terminar el item.
+        /// </summary>
+        /// <value> destination. </value>
         public BlankSpace Destination
         {
             get

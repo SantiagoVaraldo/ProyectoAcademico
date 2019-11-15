@@ -1,3 +1,9 @@
+//--------------------------------------------------------------------------------
+// <copyright file="VisitorTests.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Xunit;
 using Library;
@@ -12,7 +18,7 @@ namespace Tests
         [Fact]
         public void FilterLevelTest()
         {
-            //Creamos tag de Level
+            // Creamos tag de Level.
             World world = Singleton<World>.Instance;
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
             String levelName = "level1";
@@ -21,7 +27,7 @@ namespace Tests
             attributeList.Add(attribute.Key, attribute);
             Tag tag = new Tag("Level", attributeList);
 
-            //Visitamos el mundo con la tag de level, este agrega el level al world
+            // Visitamos el mundo con la tag de level, este agrega el level al world.
             VisitorLevel visitor = new VisitorLevel(tag);
             visitor.Visit(world);
 
@@ -31,10 +37,11 @@ namespace Tests
             Assert.True(world.ListLevel[0] is Level);
             Assert.Equal(world.ListLevel[0].Name, levelName);
         }
+
         [Fact]
         public void FilterScreen()
         {
-            //Creamos un level y screen
+            // Creamos un level y screen.
             String screenName = "screen1";
             String levelName = "level1";
 
@@ -43,14 +50,14 @@ namespace Tests
             world.Add(level);
 
             Dictionary<string, Attribute> attributeList = new Dictionary<string, Attribute>();
-            
+
             Attribute attributeName = new Attribute("Name", screenName);
             Attribute attributeLevel = new Attribute("Level", levelName);
 
             attributeList.Add(attributeName.Key, attributeName);
             attributeList.Add(attributeLevel.Key, attributeLevel);
 
-            //Visitamos el mundo con la tag de Screen, este agrega la screen al ultimo level del world
+            // Visitamos el mundo con la tag de Screen, este agrega la screen al ultimo level del world.
             Tag tag = new Tag("Screen", attributeList);
 
             VisitorScreen visitor = new VisitorScreen(tag);
@@ -62,10 +69,11 @@ namespace Tests
             Assert.True(world.ListLevel[1].ScreenList[0] is Screen);
             Assert.Equal(world.ListLevel[1].ScreenList[0].Name, screenName);
         }
+
         [Fact]
         public void FilterElement()
         {
-            //Creamos un elemento, screen y elemento
+            // Creamos un elemento, screen y elemento.
             String screenName = "screen1";
             String levelName = "level1";
 
@@ -100,8 +108,7 @@ namespace Tests
             attributeList.Add(attributePositionX.Key, attributePositionX);
             attributeList.Add(attributeImagePath.Key, attributeImagePath);
 
-            //Visitamos el mundo con la tag de Image, este agrega la image a la ultima screen del world
-
+            // Visitamos el mundo con la tag de Image, este agrega la image a la ultima screen del world.
             Tag tag = new Tag("Image", attributeList);
 
             VisitorImage visitor = new VisitorImage(tag);

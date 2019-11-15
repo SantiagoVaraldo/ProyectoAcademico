@@ -32,6 +32,10 @@ namespace Library
             this.Text = text;
         }
 
+        /// <summary>
+        /// id que corresponde con el boton creado.
+        /// </summary>
+        /// <value> id. </value>
         public string ButtonId
         {
             get
@@ -45,6 +49,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// texto que se ve en el boton.
+        /// </summary>
+        /// <value> texto. </value>
         public string Text
         {
             get

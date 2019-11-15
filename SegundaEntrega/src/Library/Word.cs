@@ -27,6 +27,10 @@ namespace Library
         {
         }
 
+        /// <summary>
+        /// este ItemId corresponde a la referencia del Word una vez creado.
+        /// </summary>
+        /// <value> itemId. </value>
         public string ItemId { get; set; }
 
         /// <summary>
@@ -66,8 +70,7 @@ namespace Library
                     engineLvl2.RemoveWord(this);
                 }
 
-                
-                if(engineLvl2.NextLevel(this))
+                if (engineLvl2.NextLevel(this))
                 {
                     engineLvl2.Reset(this.Screen);
                 }

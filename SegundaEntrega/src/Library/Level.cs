@@ -34,6 +34,10 @@ namespace Library
             this.World = world;
         }
 
+        /// <summary>
+        /// nombre del Level.
+        /// </summary>
+        /// <value> nombre. </value>
         public string Name
         {
             get
@@ -50,6 +54,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// World al que pertenece el Level.
+        /// </summary>
+        /// <value> World. </value>
         public World World
         {
             get
@@ -66,6 +74,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// lista de Screen que contiene el Level.
+        /// </summary>
+        /// <value> lista de Screens. </value>
         public List<Screen> ScreenList
         {
             get

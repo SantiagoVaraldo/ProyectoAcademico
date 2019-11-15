@@ -1,8 +1,13 @@
+//--------------------------------------------------------------------------------
+// <copyright file="EngineLvl1Test.cs" company="Universidad Católica del Uruguay">
+// Copyright (c) Programación II. Derechos reservados.
+// </copyright>
+//--------------------------------------------------------------------------------
+
 using System;
 using Xunit;
 using Library;
 using System.Collections.Generic;
-
 
 namespace Tests
 {
@@ -11,9 +16,9 @@ namespace Tests
         World world;
         Level level;
         Screen screen;
-        EngineLvl1 engine;
         public EngineLvl1Test()
         {
+            // seteamos una instancia "falsa" del adapter para usar en los tests
             OneAdapter.Adapter = new FalseAdapterContain(true);
 
             world = Singleton<World>.Instance;
@@ -25,7 +30,7 @@ namespace Tests
             List<string> pagesList = new List<string>();
             pagesList.Add("Page1");
             dicc.Add("Menu", pagesList);
-            Creator.PagesUnity = dicc;
+            Creator.UnityPages = dicc;
             Singleton<GeneralEngine>.Instance.ActualLevel = "Menu";
         }
 

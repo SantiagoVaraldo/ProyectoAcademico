@@ -26,6 +26,10 @@ namespace Library
         private Element wordDestination;
         private Element wordSource;
 
+        /// <summary>
+        /// World a visitar.
+        /// </summary>
+        /// <value> World. </value>
         public World World
         {
             get
@@ -39,6 +43,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Level a visitar.
+        /// </summary>
+        /// <value> Level. </value>
         public Level LastLevel
         {
             get
@@ -52,6 +60,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Screen a visitar.
+        /// </summary>
+        /// <value> Screen. </value>
         public Screen LastScreen
         {
             get
@@ -65,6 +77,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// destination correspondiente al word.
+        /// </summary>
+        /// <value> destination. </value>
         public Element WordDestination
         {
             get
@@ -78,6 +94,10 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// source correspondiente al Word.
+        /// </summary>
+        /// <value> source. </value>
         public Element WordSource
         {
             get
@@ -91,10 +111,22 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// se accede a un World.
+        /// </summary>
+        /// <param name="world"> World al que se accede. </param>
         public abstract void Visit(World world);
 
+        /// <summary>
+        /// se accede a un Level.
+        /// </summary>
+        /// <param name="level"> Level al que se accede. </param>
         public abstract void Visit(Level level);
 
+        /// <summary>
+        /// se accede a una Screen.
+        /// </summary>
+        /// <param name="screen"> Screen a la que se accede. </param>
         public abstract void Visit(Screen screen);
     }
 }

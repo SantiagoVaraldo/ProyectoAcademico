@@ -25,8 +25,6 @@ namespace Library
     /// </summary>
     public class FilterButtonNextPage : IFilterConditional
     {
-        private bool result;
-
         public bool Result { get; set; }
 
         /// <summary>

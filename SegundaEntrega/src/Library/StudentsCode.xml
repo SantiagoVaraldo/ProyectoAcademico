@@ -17,6 +17,18 @@
             correspondiente en Unity.
             </summary>
         </member>
+        <member name="P:Library.BlankSpace.DestinationCellImageId">
+            <summary>
+            Id que corresponde con la imagen creada como destination.
+            </summary>
+            <value> destination id. </value>
+        </member>
+        <member name="P:Library.BlankSpace.Filled">
+            <summary>
+            indica si el destino ya esta lleno.
+            </summary>
+            <value> lleno bool. </value>
+        </member>
         <member name="M:Library.BlankSpace.Fill">
             <summary>
             cambia atributo Filled a true.
@@ -46,6 +58,30 @@
             y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="P:Library.ButtonCheck.ButtonId">
+            <summary>
+            Id que corresponde con el boton creado.
+            </summary>
+            <value> id. </value>
+        </member>
+        <member name="P:Library.ButtonCheck.State">
+            <summary>
+            estado del boton.
+            </summary>
+            <value> estado bool. </value>
+        </member>
+        <member name="P:Library.ButtonCheck.Check">
+            <summary>
+            indica si es el boton correcto.
+            </summary>
+            <value> correcto bool. </value>
+        </member>
+        <member name="P:Library.ButtonCheck.ImagePath2">
+            <summary>
+            segunda imagen del boton.
+            </summary>
+            <value> path image. </value>
         </member>
         <member name="M:Library.ButtonCheck.Action(System.String)">
             <summary>
@@ -83,6 +119,18 @@
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
+        <member name="P:Library.ButtonNextPage.ButtonId">
+            <summary>
+            id que corresponde con el boton creado.
+            </summary>
+            <value> id. </value>
+        </member>
+        <member name="P:Library.ButtonNextPage.Text">
+            <summary>
+            texto que se ve en el boton.
+            </summary>
+            <value> texto. </value>
+        </member>
         <member name="M:Library.ButtonNextPage.Action(System.String)">
             <summary>
             accion que realiza el boton de tipo ButtonNextPage al hacerle click.
@@ -108,6 +156,24 @@
             y es de tipo Element. Ademas colabora con la Interfaz IButton ya que la implementa.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="P:Library.ButtonSound.State">
+            <summary>
+            estado del boton.
+            </summary>
+            <value> estado bool. </value>
+        </member>
+        <member name="P:Library.ButtonSound.SoundPath">
+            <summary>
+            Path del sonido.
+            </summary>
+            <value> path sonido. </value>
+        </member>
+        <member name="P:Library.ButtonSound.ButtonId">
+            <summary>
+            Id que corresponde con el boton creado.
+            </summary>
+            <value> id. </value>
         </member>
         <member name="M:Library.ButtonSound.Action(System.String)">
             <summary>
@@ -139,6 +205,18 @@
             NOMBRE: CreatorHelper
             DESCRIPCION: Esta clase llama a los metodos de la clase Finder y Download de la primera entrega.
             </summary>
+        </member>
+        <member name="P:Library.CreatorHelper.FileName">
+            <summary>
+            nombre del archivo.
+            </summary>
+            <value> archivo. </value>
+        </member>
+        <member name="P:Library.CreatorHelper.Listtags">
+            <summary>
+            lista de Tags.
+            </summary>
+            <value> lista. </value>
         </member>
         <member name="M:Library.CreatorHelper.GetContent(System.String)">
             <summary>
@@ -182,6 +260,18 @@
             un source y un destination.
             </summary>
         </member>
+        <member name="P:Library.DragAndDropItem.Source">
+            <summary>
+            fuente a la que pertenece el item.
+            </summary>
+            <value> source. </value>
+        </member>
+        <member name="P:Library.DragAndDropItem.Destination">
+            <summary>
+            destino en el que debe terminar el item.
+            </summary>
+            <value> destination. </value>
+        </member>
         <member name="T:Library.DragAndDropSource">
             <summary>
             NOMBRE: DragAndDropSource.
@@ -195,6 +285,12 @@
             COLABORACIONES: Colabora con la clase Element y Screen ya que un DragAndDropSource debe pertenecer a una Screen
             y es de tipo Element. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="P:Library.DragAndDropSource.SourceCellImageId">
+            <summary>
+            Id que corresponde con la imagen.
+            </summary>
+            <value> sourceId. </value>
         </member>
         <member name="M:Library.DragAndDropSource.Render(Library.IRenderer)">
             <summary>
@@ -213,6 +309,48 @@
             COLABORACIONES: Colabora con la clase Screen ya que un elemento debe pertenecer a una pantalla y con la interfaz IXML.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="P:Library.Element.Name">
+            <summary>
+            nombre del elemento.
+            </summary>
+            <value> nombre. </value>
+        </member>
+        <member name="P:Library.Element.PositionY">
+            <summary>
+            posicion y del elemento.
+            </summary>
+            <value> posicion y .</value>
+        </member>
+        <member name="P:Library.Element.PositionX">
+            <summary>
+            posicion x del elemento.
+            </summary>
+            <value> posicion x. </value>
+        </member>
+        <member name="P:Library.Element.Length">
+            <summary>
+            largo del elemento.
+            </summary>
+            <value> largo. </value>
+        </member>
+        <member name="P:Library.Element.Width">
+            <summary>
+            ancho del elemento.
+            </summary>
+            <value> ancho. </value>
+        </member>
+        <member name="P:Library.Element.Screen">
+            <summary>
+            Screen a la que pertenece el elemento.
+            </summary>
+            <value> Screen. </value>
+        </member>
+        <member name="P:Library.Element.ImagePath">
+            <summary>
+            imagen que posee el elemento.
+            </summary>
+            <value> imagePath. </value>
         </member>
         <member name="M:Library.Element.Render(Library.IRenderer)">
             <summary>
@@ -259,11 +397,23 @@
             interfaz IButton con la firma Action(se utiliza para que cada tipo de boton tenga una accion particular).
             </summary>
         </member>
+        <member name="M:Library.IButton.Action(System.String)">
+            <summary>
+            se ejecuta al hacer click en un boton.
+            </summary>
+            <param name="name"> nombre del elemento. </param>
+        </member>
         <member name="T:Library.IContainer">
             <summary>
             esta interfaz es de tipo IXML, contiene la firma Add la cual hace que todas las clases que implementan esta
             interfaz, deban tener un metodo Add.
             </summary>
+        </member>
+        <member name="M:Library.IContainer.Add(Library.IXML)">
+            <summary>
+            añade un elemento a una lista.
+            </summary>
+            <param name="ixml"> elemento a agregar. </param>
         </member>
         <member name="T:Library.Image">
             <summary>
@@ -294,6 +444,60 @@
             que nuestro modelo dependa de esta interfaz IRenderer, y que la clase Renderer la implemente.
             </summary>
         </member>
+        <member name="M:Library.IRenderer.RenderBlankSpace(Library.BlankSpace)">
+            <summary>
+            dibuja un BlankSpace.
+            </summary>
+            <param name="blankSpace"> BlankSpace dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderButtonCheck(Library.ButtonCheck)">
+            <summary>
+            dibuja un ButtonCheck.
+            </summary>
+            <param name="buttonCheck"> ButtonCheck dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderButtonNextPage(Library.ButtonNextPage)">
+            <summary>
+            dibuja un ButtonNextPage.
+            </summary>
+            <param name="buttonNextPage"> ButtonNextPage dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderButtonSound(Library.ButtonSound)">
+            <summary>
+            dibuja un ButtonSound.
+            </summary>
+            <param name="buttonSound"> ButtonSound dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderDragAndDropSource(Library.DragAndDropSource)">
+            <summary>
+            dibuja un DragAndDropSource.
+            </summary>
+            <param name="dragAndDropSource"> DragAndDropSource dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderExitButton(Library.ExitButton)">
+            <summary>
+            dibuja un ExitButton.
+            </summary>
+            <param name="exitButton"> ExitButton dibujado. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderImage(Library.Image)">
+            <summary>
+            dibuja una imagen.
+            </summary>
+            <param name="image"> Image dibujada. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderLetter(Library.Letter)">
+            <summary>
+            dibuja una Letter.
+            </summary>
+            <param name="letter"> Letter dibujada. </param>
+        </member>
+        <member name="M:Library.IRenderer.RenderWord(Library.Word)">
+            <summary>
+            dibuja un Word.
+            </summary>
+            <param name="word"> Word dibujado. </param>
+        </member>
         <member name="T:Library.IXML">
             <summary>
             esta interfaz no implementa ningun metodo, simplemente tiene un atributo Name de tipo string.
@@ -310,6 +514,18 @@
             y es de tipo Element. Ademas colabora con la interfaz IButton ya que la implementa.
             Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
+        </member>
+        <member name="P:Library.Letter.Right">
+            <summary>
+            indica si es la letra correcta.
+            </summary>
+            <value> rigth bool. </value>
+        </member>
+        <member name="P:Library.Letter.ButtonId">
+            <summary>
+            Id que pertenece al boton creado.
+            </summary>
+            <value> id. </value>
         </member>
         <member name="M:Library.Letter.Action(System.String)">
             <summary>
@@ -337,6 +553,24 @@
             y ademas con la interfaz IContainer. Tambien colabora con Visitor ya que es parte de la implemetacion de
             dicho patron por medio del metodo Accept.
             </summary>
+        </member>
+        <member name="P:Library.Level.Name">
+            <summary>
+            nombre del Level.
+            </summary>
+            <value> nombre. </value>
+        </member>
+        <member name="P:Library.Level.World">
+            <summary>
+            World al que pertenece el Level.
+            </summary>
+            <value> World. </value>
+        </member>
+        <member name="P:Library.Level.ScreenList">
+            <summary>
+            lista de Screen que contiene el Level.
+            </summary>
+            <value> lista de Screens. </value>
         </member>
         <member name="M:Library.Level.Add(Library.IXML)">
             <summary>
@@ -456,6 +690,7 @@
             verifica que se haya superado el nivel.
             </summary>
             <param name="buttonCheck"> boton clickeado. </param>
+            <returns> booleano. </returns>
         </member>
         <member name="M:Library.EngineLvl3.AddButtonSelected(Library.ButtonCheck)">
             <summary>
@@ -539,6 +774,8 @@
             o al siguiente nivel.
             SRP: su unica responsabilidad es mostrar la pagina siguiente, su unica razon de cambio es modificar a que pagina
             se quiere ir.
+            EXPERT: conoce la pagina actual y el nivel actual por lo que es quien obtiene y muestra la pagina
+            siguiente en Unity.
             </summary>
         </member>
         <member name="M:Library.GeneralEngine.Update">
@@ -550,7 +787,7 @@
             <summary>
             obtiene el largo de la lista con las paginas.
             </summary>
-            <returns> largo </returns>
+            <returns> largo. </returns>
         </member>
         <member name="M:Library.GeneralEngine.GetNextPage">
             <summary>
@@ -965,6 +1202,30 @@
             y con la clase Visitor ya que es parte de la implemetacion de dicho patron por medio del metodo Accept.
             </summary>
         </member>
+        <member name="P:Library.Screen.State">
+            <summary>
+            estado de la Screen.
+            </summary>
+            <value> estado bool. </value>
+        </member>
+        <member name="P:Library.Screen.Name">
+            <summary>
+            nombre de la Screen.
+            </summary>
+            <value> nombre. </value>
+        </member>
+        <member name="P:Library.Screen.Level">
+            <summary>
+            nivel al que pertenece la Screen.
+            </summary>
+            <value> nombre. </value>
+        </member>
+        <member name="P:Library.Screen.ElementList">
+            <summary>
+            lista de elementos que posee la Screen.
+            </summary>
+            <value> lista de elementos. </value>
+        </member>
         <member name="M:Library.Screen.Add(Library.IXML)">
             <summary>
             metodo de la interfaz IContainer donde agrega un elemento de tipo
@@ -1007,6 +1268,54 @@
             sus elementos.
             </summary>
         </member>
+        <member name="P:Library.Visitor.World">
+            <summary>
+            World a visitar.
+            </summary>
+            <value> World. </value>
+        </member>
+        <member name="P:Library.Visitor.LastLevel">
+            <summary>
+            Level a visitar.
+            </summary>
+            <value> Level. </value>
+        </member>
+        <member name="P:Library.Visitor.LastScreen">
+            <summary>
+            Screen a visitar.
+            </summary>
+            <value> Screen. </value>
+        </member>
+        <member name="P:Library.Visitor.WordDestination">
+            <summary>
+            destination correspondiente al word.
+            </summary>
+            <value> destination. </value>
+        </member>
+        <member name="P:Library.Visitor.WordSource">
+            <summary>
+            source correspondiente al Word.
+            </summary>
+            <value> source. </value>
+        </member>
+        <member name="M:Library.Visitor.Visit(Library.World)">
+            <summary>
+            se accede a un World.
+            </summary>
+            <param name="world"> World al que se accede. </param>
+        </member>
+        <member name="M:Library.Visitor.Visit(Library.Level)">
+            <summary>
+            se accede a un Level.
+            </summary>
+            <param name="level"> Level al que se accede. </param>
+        </member>
+        <member name="M:Library.Visitor.Visit(Library.Screen)">
+            <summary>
+            se accede a una Screen.
+            </summary>
+            <param name="screen"> Screen a la que se accede. </param>
+        </member>
         <member name="T:Library.VisitorButtonCheck">
             <summary>
             NOMBRE: VisitorButtonCheck.
@@ -1018,6 +1327,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con ButtonCheck ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="P:Library.VisitorButtonCheck.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
         </member>
         <member name="M:Library.VisitorButtonCheck.Visit(Library.World)">
             <summary>
@@ -1049,6 +1364,12 @@
             con ButtonNextPage ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="P:Library.VisitorButtonNextPage.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
+        </member>
         <member name="M:Library.VisitorButtonNextPage.Visit(Library.World)">
             <summary>
             metodo para acceder al world.
@@ -1078,6 +1399,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con ButtonSound ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="P:Library.VisitorButtonSound.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
         </member>
         <member name="M:Library.VisitorButtonSound.Visit(Library.World)">
             <summary>
@@ -1110,6 +1437,12 @@
             con DragAndDropDestination ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="P:Library.VisitorDragAndDropDestination.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
+        </member>
         <member name="M:Library.VisitorDragAndDropDestination.Visit(Library.World)">
             <summary>
             metodo para acceder al world.
@@ -1140,6 +1473,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con DragAndDropSource ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="P:Library.VisitorDragAndDropSource.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
         </member>
         <member name="M:Library.VisitorDragAndDropSource.Visit(Library.World)">
             <summary>
@@ -1172,6 +1511,12 @@
             con ExitButton ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="P:Library.VisitorExitButton.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
+        </member>
         <member name="M:Library.VisitorExitButton.Visit(Library.World)">
             <summary>
             metodo para acceder al world.
@@ -1202,6 +1547,12 @@
             un objeto Tag, colabora con Word, Level y Screen ya que son los objetos que va a "Visitar", por ultimo colabora
             con Image ya que va a instanciar dichos objetos.
             </summary>
+        </member>
+        <member name="P:Library.VisitorImage.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
         </member>
         <member name="M:Library.VisitorImage.Visit(Library.World)">
             <summary>
@@ -1234,6 +1585,12 @@
             con Letter ya que va a instanciar dichos objetos.
             </summary>
         </member>
+        <member name="P:Library.VisitorLetter.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
+        </member>
         <member name="M:Library.VisitorLetter.Visit(Library.World)">
             <summary>
             metodo para acceder al world.
@@ -1263,6 +1620,12 @@
             un objeto Tag, colabora con Word, Level y Screen.
             </summary>
         </member>
+        <member name="P:Library.VisitorLevel.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
+        </member>
         <member name="M:Library.VisitorLevel.Visit(Library.World)">
             <summary>
             metodo para acceder al world.
@@ -1291,6 +1654,12 @@
             COLABORACIONES: colabora con la clase Visitor, ya que hereda de la misma, colabora con la clase Tag ya que conoce
             un objeto Tag, colabora con Word, Level y Screen.
             </summary>
+        </member>
+        <member name="P:Library.VisitorScreen.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
         </member>
         <member name="M:Library.VisitorScreen.Visit(Library.World)">
             <summary>
@@ -1323,6 +1692,12 @@
             con Word, BlankSpace y DragAndDropSource ya que va a instanciar objetos Word.
             </summary>
         </member>
+        <member name="P:Library.VisitorWord.Tag">
+            <summary>
+            Tag con los datos para crear el modelo.
+            </summary>
+            <value> Tag. </value>
+        </member>
         <member name="M:Library.VisitorWord.Visit(Library.World)">
             <summary>
             metodo para acceder al world.
@@ -1354,6 +1729,12 @@
             conocer un Source y un Destination. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
             </summary>
         </member>
+        <member name="P:Library.Word.ItemId">
+            <summary>
+            este ItemId corresponde a la referencia del Word una vez creado.
+            </summary>
+            <value> itemId. </value>
+        </member>
         <member name="M:Library.Word.Render(Library.IRenderer)">
             <summary>
             metodo que llama al metodo correspondiente de la interfaz IRenderer para renderizarce en Unity.
@@ -1384,6 +1765,18 @@
             Accept.
             </summary>
         </member>
+        <member name="P:Library.World.Name">
+            <summary>
+            nombre del world.
+            </summary>
+            <value> nombre. </value>
+        </member>
+        <member name="P:Library.World.ListLevel">
+            <summary>
+            lista de niveles del World.
+            </summary>
+            <value> lista de niveles. </value>
+        </member>
         <member name="M:Library.World.Add(Library.IXML)">
             <summary>
             metodo de la interfaz IContainer donde agrega un elemento de tipo
@@ -1412,6 +1805,17 @@
             metodo que crea el mundo en Unity.
             </summary>
             <param name="providedAdapter"> recibe un IMainViewAdapter para crear el mundo. </param>
+        </member>
+        <member name="M:Proyecto.StudentsCode.Builder.AfterBuildShowFirstPage">
+            <summary>
+            muestra la primera pagina luego de que se cree.
+            </summary>
+        </member>
+        <member name="M:Proyecto.StudentsCode.Builder.GoToNextPage(System.String)">
+            <summary>
+            va al menu luego de crear el juego(se utiliza solo una vez).
+            </summary>
+            <param name="name"> nombre de la pagina que simboliza el menu. </param>
         </member>
     </members>
 </doc>

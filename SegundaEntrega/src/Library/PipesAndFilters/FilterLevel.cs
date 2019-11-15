@@ -24,8 +24,6 @@ namespace Library
     /// </summary>
     public class FilterLevel : IFilterConditional
     {
-        private bool result;
-
         public bool Result { get; set; }
 
         /// <summary>

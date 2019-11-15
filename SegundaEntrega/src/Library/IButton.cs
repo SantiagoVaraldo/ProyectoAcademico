@@ -14,6 +14,10 @@ namespace Library
     /// </summary>
     public interface IButton
     {
+        /// <summary>
+        /// se ejecuta al hacer click en un boton.
+        /// </summary>
+        /// <param name="name"> nombre del elemento. </param>
         void Action(string name);
     }
 }

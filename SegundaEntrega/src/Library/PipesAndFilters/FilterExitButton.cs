@@ -25,8 +25,6 @@ namespace Library
     /// </summary>
     public class FilterExitButton : IFilterConditional
     {
-        private bool result;
-
         public bool Result { get; set; }
 
         /// <summary>
