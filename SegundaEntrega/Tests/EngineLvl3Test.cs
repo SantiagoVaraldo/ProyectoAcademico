@@ -31,6 +31,7 @@ namespace Tests
             Creator.PagesUnity = dicc;
             Singleton<GeneralEngine>.Instance.ActualLevel = "Menu";
 
+            // creamos el mundo necesario para testear el motor.
             world = Singleton<World>.Instance;
             level = new Level("level", world);
             screen = new Screen("screen", level);
