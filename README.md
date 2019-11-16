@@ -37,7 +37,7 @@ Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 *word* Para representar cada una de las "palabras", en este caso silabas.
 
 
-\n\n
+
 
 
 
