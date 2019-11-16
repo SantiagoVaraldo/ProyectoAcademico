@@ -6,7 +6,10 @@ Deberiamos crear una aplicacion que contenga con dos grandes categorias, ANIMALE
 Cada una de estas categorias deberá de contar con cuatro niveles de tres pantallas cada uno, para poder explicar mejor la 
 tematica y el funcionamiento de esta aplicación, empezaremos por contarles cada uno de estos cuatro niveles.
 
+### Video presentando el funcionamiento del juego
 
+
+[![Watch the video](https://img.youtube.com/vi/pQ6Ezq72J5A/hqdefault.jpg)](https://youtu.be/pQ6Ezq72J5A)
 
 **Nivel 1**
 Este primer nivel consta de nueve letras del abecedario y un botón de sonido, el botón de sonido le indicara al usuario el sonido de una de las letras que se encuentran en pantalla, el usuario debera indicar cual cree que es la letra correcta, en caso de que seleccione la letra correcta, pasara a la pantalla numero dos del nivel uno, cada nivel consta de tres pantallas con el mismo funcionamiento. En caso de que la letra seleccionada por el usuario sea incorrecta, se le debera de notificar y permitirle volver a intentarlo hasta que lo logre.
@@ -16,6 +19,8 @@ Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 *Letter* Para representar las nueve letras :a:.
 
 *ButtonSound* Para representar el boton con el sonido :speaker:.
+
+
 
 
 
@@ -32,6 +37,9 @@ Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 *word* Para representar cada una de las "palabras", en este caso silabas.
 
 
+\n\n
+
+
 
 **Nivel 3**
 En este tercer nivel se deberan mostrar seis imagenes variadas, de esas seis imagenes, dos deberan estar relacionadas (por ejemplo un frasco de miel :honey_pot: y una abeja :honeybee:). En este desafio, el usuario debera seleccionar las dos imagenes que esten relacionadas, en caso de que seleccione dos imagenes no relacionadas, se le notificara y se le permitira seguir intentando hasta que logre seleccionar las correctas, en este caso pasara a la segunda pantalla de este nivel.
@@ -39,6 +47,9 @@ En este tercer nivel se deberan mostrar seis imagenes variadas, de esas seis ima
 Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 
 *ButtonCheck* Para representar las seis imagenes que el usuario debera seleccionar.
+
+
+
 
 
 
@@ -51,6 +62,9 @@ Para diseñar el modelo de este nivel utilizamos las siguientes clases:
 *Image* Para representar las imagenes.
 
 *word* Para representar cada una de las palabras que el usuario debera usar.
+
+
+
 
 
 
