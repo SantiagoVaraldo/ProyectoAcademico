@@ -25,6 +25,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorDragAndDropSource.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorDragAndDropSource(Tag tag)
         {
             this.Tag = tag;

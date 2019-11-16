@@ -29,6 +29,17 @@ namespace Library
         private string soundPath;
         private string buttonId;
 
+        /// <summary>
+        /// constructor de ButtonSound.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="positionY">posicion Y.</param>
+        /// <param name="positionX">posicion X.</param>
+        /// <param name="length">largo.</param>
+        /// <param name="width">ancho.</param>
+        /// <param name="screen">Screen a la que pertenece el elemento.</param>
+        /// <param name="imagePath">imagen que posee el elemento.</param>
+        /// <param name="soundPath">sonido que posee el elemento.</param>
         public ButtonSound(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, string soundPath)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {

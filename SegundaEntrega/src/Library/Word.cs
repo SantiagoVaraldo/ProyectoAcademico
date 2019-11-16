@@ -19,9 +19,27 @@ namespace Library
     /// COLABORACIONES: Colabora con la clase DragAndDropItem y Screen, debe pertenecer a una Screen
     /// y es de tipo DragAndDropItem, ademas colabora con DragAndDropSource y BlankSpace ya que un item debe
     /// conocer un Source y un Destination. Tambien colabora con la Interfaz IRenderer para dibujar el elemento correspondiente en Unity.
+    /// COMENTARIOS: el metodo OnDrop no deberia de estar en la clase Word. De esta manera estamos dejando
+    /// acoplado nuestro modelo con Unity, lo cual no queriamos que pase.
+    /// La manera de solucionar este problema es que el metodo este en el EngineLvl2, que es quien colabora
+    /// con el adapter, para poder hacer esto debiamos de cambiar nuestros motores para que estos conozcan
+    /// el nivel que se esta jugando de alguna manera, no lo logramos hacer ya que cuando nos dimos cuenta de este
+    /// error no contabamos con el tiempo suficiente para poder modificar los motores y los tests.
     /// </summary>
     public class Word : DragAndDropItem
     {
+        /// <summary>
+        /// constructor de la clase Word.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="positionY">posicion Y.</param>
+        /// <param name="positionX">posicion X.</param>
+        /// <param name="length">largo.</param>
+        /// <param name="width">ancho.</param>
+        /// <param name="screen">pantalla a la que pertenece.</param>
+        /// <param name="imagePath">imagen que posee.</param>
+        /// <param name="source">fuente.</param>
+        /// <param name="destination">destino.</param>
         public Word(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath, DragAndDropSource source, BlankSpace destination)
         : base(name, positionY, positionX, length, width, screen, imagePath, source, destination)
         {

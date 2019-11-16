@@ -23,6 +23,10 @@ namespace Library
     {
         private Tag tag;
 
+        /// <summary>
+        /// constructor de VisitorScreen.
+        /// </summary>
+        /// <param name="tag">Tag recibido.</param>
         public VisitorScreen(Tag tag)
         {
             this.Tag = tag;

@@ -17,6 +17,10 @@ namespace Library
     /// </remarks>
     public interface IFilterConditional
     {
+        /// <summary>
+        /// resultado de aplicar el filtro.
+        /// </summary>
+        /// <value>bool.</value>
         bool Result { get; }
 
         /// <summary>

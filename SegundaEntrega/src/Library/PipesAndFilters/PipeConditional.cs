@@ -35,6 +35,12 @@ namespace Library
         private IPipe falsePipe;
         private IFilterConditional filter;
 
+        /// <summary>
+        /// constructor de PipeConditional.
+        /// </summary>
+        /// <param name="filter">filtro del Pipe.</param>
+        /// <param name="truePipe">pipe1.</param>
+        /// <param name="falsePipe">pipe2.</param>
         public PipeConditional(IFilterConditional filter, IPipe truePipe, IPipe falsePipe)
         {
             this.truePipe = truePipe;

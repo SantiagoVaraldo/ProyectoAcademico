@@ -28,6 +28,11 @@ namespace Library
         private World world;
         private List<Screen> screenList = new List<Screen>();
 
+        /// <summary>
+        /// constructor del nivel.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="world">mundo al que pertenece el nivel.</param>
         public Level(string name, World world)
         {
             this.Name = name;

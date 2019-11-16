@@ -15,6 +15,10 @@ namespace Library
     /// </summary>
     public static class OneAdapter
     {
+        /// <summary>
+        /// constructor de OneAdapter.
+        /// </summary>
+        /// <value>adapter.</value>
         public static IMainViewAdapter Adapter { get; set; }
     }
 }

@@ -24,6 +24,16 @@ namespace Library
     {
         private bool filled;
 
+        /// <summary>
+        /// constructor de BlankSpace.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="positionY">posicion Y.</param>
+        /// <param name="positionX">posicion X.</param>
+        /// <param name="length">largo.</param>
+        /// <param name="width">ancho.</param>
+        /// <param name="screen">Screen a la que pertenece el elemento.</param>
+        /// <param name="imagePath">imagen que posee el elemento.</param>
         public BlankSpace(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath)
         : base(name, positionY, positionX, length, width, screen, imagePath)
         {

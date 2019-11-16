@@ -29,6 +29,16 @@ namespace Library
         private Screen screen;
         private string imagePath;
 
+        /// <summary>
+        /// constructor de Element.
+        /// </summary>
+        /// <param name="name">nombre.</param>
+        /// <param name="positionY">posicion Y.</param>
+        /// <param name="positionX">posicion X.</param>
+        /// <param name="length">largo.</param>
+        /// <param name="width">ancho.</param>
+        /// <param name="screen">Screen a la que pertenece el elemento.</param>
+        /// <param name="imagePath">imagen que posee el elemento.</param>
         public Element(string name, int positionY, int positionX, int length, int width, Screen screen, string imagePath)
         {
             this.Name = name;

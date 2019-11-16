@@ -20,6 +20,9 @@ namespace Library
     {
         private IMainViewAdapter adapter;
 
+        /// <summary>
+        /// constructor de la clase.
+        /// </summary>
         public Renderer()
         {
             this.adapter = OneAdapter.Adapter;
