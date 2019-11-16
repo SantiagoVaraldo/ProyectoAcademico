@@ -9,7 +9,7 @@ tematica y el funcionamiento de esta aplicación, empezaremos por contarles cada
 ### Video presentando el funcionamiento del juego
 
 
-[![Watch the video](https://img.youtube.com/vi/pQ6Ezq72J5A/hqdefault.jpg)](https://youtu.be/pQ6Ezq72J5A)
+[![Mira el video](https://img.youtube.com/vi/_Oe1G7H2f9E/hqdefault.jpg)](https://youtu.be/_Oe1G7H2f9E)
 
 **Nivel 1**
 Este primer nivel consta de nueve letras del abecedario y un botón de sonido, el botón de sonido le indicara al usuario el sonido de una de las letras que se encuentran en pantalla, el usuario debera indicar cual cree que es la letra correcta, en caso de que seleccione la letra correcta, pasara a la pantalla numero dos del nivel uno, cada nivel consta de tres pantallas con el mismo funcionamiento. En caso de que la letra seleccionada por el usuario sea incorrecta, se le debera de notificar y permitirle volver a intentarlo hasta que lo logre.
