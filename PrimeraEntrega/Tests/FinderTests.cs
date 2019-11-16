@@ -102,45 +102,6 @@ namespace Tests
         }
 
         [Fact]
-        public void BadlyFormatedHTMLTest()
-        {
-            //Finder.Find:
-            //Input = string -> html
-            //Output = List<Tag> tags
-
-            string input = @"<font color=""blue"" size=""3"">Ingrese su nombre 
-                             <input type=""text"" name=""nombre"" maxlength=""8"">
-                             <br>
-                             <font size=""2"">Máximo 8 caracteres";
-
-            List<Tag> expectedTags = new List<Tag>();
-
-            Dictionary<string, Attribute> fontAttributes1 = new Dictionary<string, Attribute>();
-            Attribute attribute = new Attribute("color", "blue");
-            Attribute attribute1 = new Attribute("size", "3");
-            fontAttributes1.Add(attribute.Key, attribute);
-            fontAttributes1.Add(attribute1.Key, attribute1);
-            expectedTags.Add(new Tag("font", fontAttributes1));
-
-            Dictionary<string, Attribute> inputAttributes = new Dictionary<string, Attribute>();
-            Attribute attribute2 = new Attribute("type", "text");
-            Attribute attribute3 = new Attribute("name", "nombre");
-            Attribute attribute4 = new Attribute("maxlength", "8");
-            inputAttributes.Add(attribute2.Key, attribute2);
-            inputAttributes.Add(attribute3.Key, attribute3);
-            inputAttributes.Add(attribute4.Key, attribute4);
-            expectedTags.Add(new Tag("input", inputAttributes));
-
-            expectedTags.Add(new Tag("br"));
-
-            Dictionary<string, Attribute> fontAttributes2 = new Dictionary<string, Attribute>();
-            Attribute attribute5 = new Attribute("type", "text");
-            fontAttributes2.Add(attribute5.Key, attribute5);
-            expectedTags.Add(new Tag("font", fontAttributes2));
-            FinderTests.ComparatorMethod(input, expectedTags);
-        }
-
-        [Fact]
         public void NoTagsTest()
         {
             //Finder.Find:
